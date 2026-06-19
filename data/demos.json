@@ -16,10 +16,10 @@
     },
     {
       "title": "Algorithmic Trading Backtester",
-      "description": "A minimal Python backtesting harness for ML-based trading signals. Input a feature set and a model; get equity curve, drawdown, and Sharpe ratio. Designed for low-latency tick data.",
-      "status": "coming",
-      "url": null,
-      "stack": ["Python", "pandas", "scikit-learn", "matplotlib", "MQL5"]
+      "description": "A minimal Python backtesting harness for ML-based trading signals. Input a feature set and a model; get equity curve, drawdown, and Sharpe ratio. Logistic Regression, Random Forest, and Gradient Boosting supported.",
+      "status": "live",
+      "url": "/backtester",
+      "stack": ["Python", "pandas", "scikit-learn", "numpy", "Chart.js"]
     },
     {
       "title": "DiMSAR LoRa Network Map",

@@ -11,10 +11,15 @@ import re
 from pathlib import Path
 from datetime import datetime
 
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
 import markdown
-from flask import Flask, render_template, abort, request
+from flask import Flask, render_template, abort, request, redirect, url_for, flash, jsonify
 
 app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-neal-site-2026")
 
 TAG_URLS = {
     "Claude API":           "https://www.anthropic.com/api",
@@ -213,9 +218,214 @@ def demos():
     return render_template("demos.html", demos=data.get("demos", []))
 
 
+# ── Backtester ────────────────────────────────────────────────────────────────
+
+def _run_backtest(config: dict) -> dict:
+    """Pure-Python ML backtesting engine. No external data required."""
+    import numpy as np
+    import pandas as pd
+    from sklearn.linear_model import LogisticRegression
+    from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+    from sklearn.preprocessing import StandardScaler
+
+    seed       = int(config.get("seed", 42))
+    n_days     = int(config.get("n_days", 500))
+    capital0   = float(config.get("capital", 10000))
+    model_type = config.get("model", "logistic")
+    features   = config.get("features", ["sma", "rsi", "momentum"])
+    train_pct  = float(config.get("train_pct", 0.7))
+
+    # ── Synthetic OHLCV (geometric random walk with slight upward drift) ──
+    rng = np.random.default_rng(seed)
+    daily_ret = rng.normal(0.0005, 0.015, n_days)
+    closes = pd.Series(100.0 * np.cumprod(1 + daily_ret))
+
+    # ── Features ──────────────────────────────────────────────────────────
+    feat: dict = {}
+
+    if "sma" in features:
+        feat["sma_ratio"] = closes.rolling(10).mean() / closes.rolling(30).mean() - 1
+
+    if "ema" in features:
+        feat["ema_ratio"] = closes.ewm(span=12).mean() / closes.ewm(span=26).mean() - 1
+
+    if "rsi" in features:
+        delta = closes.diff()
+        gain  = delta.clip(lower=0).rolling(14).mean()
+        loss  = (-delta).clip(lower=0).rolling(14).mean()
+        feat["rsi"] = 100 - 100 / (1 + gain / (loss + 1e-9))
+
+    if "momentum" in features:
+        feat["mom_5"]  = closes.pct_change(5)
+        feat["mom_20"] = closes.pct_change(20)
+
+    if "volatility" in features:
+        r = closes.pct_change()
+        feat["vol_10"]   = r.rolling(10).std()
+        feat["vol_ratio"]= r.rolling(10).std() / (r.rolling(30).std() + 1e-9)
+
+    if "macd" in features:
+        ema12  = closes.ewm(span=12).mean()
+        ema26  = closes.ewm(span=26).mean()
+        macd   = ema12 - ema26
+        sig9   = macd.ewm(span=9).mean()
+        feat["macd_hist"] = (macd - sig9) / (closes + 1e-9)
+
+    X_all = pd.DataFrame(feat)
+    y_all = (closes.shift(-1) > closes).astype(int)
+
+    combined = X_all.copy()
+    combined["target"] = y_all
+    combined["price"]  = closes
+    combined.dropna(inplace=True)
+
+    feat_cols   = list(feat.keys())
+    X_mat       = combined[feat_cols].values
+    y_vec       = combined["target"].values
+    prices_vec  = combined["price"].values
+
+    split = int(train_pct * len(X_mat))
+    X_tr, X_te = X_mat[:split], X_mat[split:]
+    y_tr, y_te = y_vec[:split], y_vec[split:]
+    p_te        = prices_vec[split:]
+
+    scaler   = StandardScaler()
+    X_tr_sc  = scaler.fit_transform(X_tr)
+    X_te_sc  = scaler.transform(X_te)
+
+    # ── Model ─────────────────────────────────────────────────────────────
+    if model_type == "rf":
+        model = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=seed)
+    elif model_type == "gb":
+        model = GradientBoostingClassifier(n_estimators=100, max_depth=3, random_state=seed)
+    else:
+        model = LogisticRegression(max_iter=1000)
+
+    model.fit(X_tr_sc, y_tr)
+    signals  = model.predict(X_te_sc)
+    accuracy = float((signals == y_te).mean())
+
+    # ── Backtest (long-only, fully invested when signal=1) ────────────────
+    capital   = capital0
+    position  = 0.0
+    entry_px  = 0.0
+    equity    = [capital]
+    bnh       = [capital]
+    trades    = []
+    bnh_shares = capital / p_te[0]
+
+    for i in range(len(p_te) - 1):
+        px  = p_te[i]
+        sig = signals[i]
+
+        if sig == 1 and position == 0.0:
+            position = capital / px
+            entry_px = px
+            capital  = 0.0
+        elif sig == 0 and position > 0.0:
+            capital = position * px
+            trades.append((px - entry_px) / entry_px)
+            position = 0.0
+
+        mtm = capital if position == 0.0 else position * p_te[i + 1]
+        equity.append(mtm)
+        bnh.append(bnh_shares * p_te[i + 1])
+
+    if position > 0.0:
+        trades.append((p_te[-1] - entry_px) / entry_px)
+
+    eq  = np.array(equity, dtype=float)
+    bnh = np.array(bnh,    dtype=float)
+
+    # ── Metrics ───────────────────────────────────────────────────────────
+    ret_arr  = np.diff(eq) / (eq[:-1] + 1e-9)
+    sharpe   = float(np.sqrt(252) * ret_arr.mean() / (ret_arr.std() + 1e-9))
+    tot_ret  = float((eq[-1]  - eq[0])  / eq[0])
+    bnh_ret  = float((bnh[-1] - bnh[0]) / bnh[0])
+    run_max  = np.maximum.accumulate(eq)
+    dd       = (eq - run_max) / (run_max + 1e-9)
+    max_dd   = float(dd.min())
+    n_tr     = len(trades)
+    win_rate = float(sum(1 for p in trades if p > 0) / max(n_tr, 1))
+
+    dates = pd.bdate_range(end="2026-06-19", periods=len(eq)).strftime("%Y-%m-%d").tolist()
+
+    return {
+        "equity":   [round(v, 2) for v in eq.tolist()],
+        "bnh":      [round(v, 2) for v in bnh.tolist()],
+        "drawdown": [round(v * 100, 3) for v in dd.tolist()],
+        "dates":    dates,
+        "metrics": {
+            "total_return": round(tot_ret * 100, 2),
+            "bnh_return":   round(bnh_ret * 100, 2),
+            "sharpe":       round(sharpe, 3),
+            "max_drawdown": round(max_dd * 100, 2),
+            "win_rate":     round(win_rate * 100, 1),
+            "n_trades":     n_tr,
+            "accuracy":     round(accuracy * 100, 1),
+        },
+    }
+
+
+@app.route("/backtester")
+def backtester():
+    return render_template("backtester.html")
+
+
+@app.route("/backtester/run", methods=["POST"])
+def backtester_run():
+    try:
+        config = request.get_json(force=True) or {}
+        result = _run_backtest(config)
+        return jsonify({"ok": True, **result})
+    except Exception as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 500
+
+
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+
+@app.route("/contact", methods=["POST"])
+def contact():
+    name    = request.form.get("name", "").strip()
+    email   = request.form.get("email", "").strip()
+    subject = request.form.get("subject", "Message from drnealaggarwal.info").strip()
+    message = request.form.get("message", "").strip()
+
+    if not all([name, email, message]):
+        flash("All fields are required.", "error")
+        return redirect(url_for("about") + "#contact")
+
+    try:
+        gmail_user = os.environ.get("GMAIL_USER", "dr.neal.aggarwal@gmail.com")
+        gmail_pass = os.environ.get("GMAIL_APP_PASS", "")
+
+        body = (
+            f"From:    {name} <{email}>\n"
+            f"Subject: {subject}\n"
+            f"{'─'*48}\n\n"
+            f"{message}"
+        )
+
+        msg = MIMEMultipart()
+        msg["From"]    = gmail_user
+        msg["To"]      = "dr.neal.aggarwal@gmail.com"
+        msg["Reply-To"] = email
+        msg["Subject"] = f"[drnealaggarwal.info] {subject}"
+        msg.attach(MIMEText(body, "plain"))
+
+        if gmail_pass:
+            with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+                smtp.login(gmail_user, gmail_pass)
+                smtp.send_message(msg)
+
+        flash("Message sent — I'll be in touch.", "ok")
+    except Exception:
+        flash("Something went wrong. Please email me directly at dr.neal.aggarwal@gmail.com.", "error")
+
+    return redirect(url_for("about") + "#contact")
 
 
 @app.errorhandler(404)

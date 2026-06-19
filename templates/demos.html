@@ -23,7 +23,11 @@
         {% endfor %}
       </div>
       {% if demo.url and demo.status == 'live' %}
-      <a class="demo-card__cta" href="{{ demo.url }}" target="_blank" rel="noopener">Launch Demo</a>
+        {% if demo.url.startswith('http') %}
+        <a class="demo-card__cta" href="{{ demo.url }}" target="_blank" rel="noopener">Launch Demo →</a>
+        {% else %}
+        <a class="demo-card__cta" href="{{ demo.url }}">Launch Demo →</a>
+        {% endif %}
       {% elif demo.status == 'coming' %}
       <span class="text-mono text-dim" style="font-size:0.78rem">In development</span>
       {% endif %}

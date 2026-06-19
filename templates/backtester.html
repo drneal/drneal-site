@@ -1,0 +1,492 @@
+{% extends "base.html" %}
+{% block title %}Algorithmic Trading Backtester — Dr Neal Aggarwal{% endblock %}
+
+{% block extra_head %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  .bt-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* ── Config panel ── */
+  .bt-config {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    position: sticky;
+    top: 1rem;
+  }
+  .bt-config h3 {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--cyan);
+    letter-spacing: 0.08em;
+    margin: 0 0 1.25rem;
+    text-transform: uppercase;
+  }
+  .bt-config h3 + h3 { margin-top: 1.5rem; }
+  .cfg-section { margin-bottom: 1.5rem; }
+  .cfg-label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .cfg-select, .cfg-input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    padding: 0.5rem 0.7rem;
+    box-sizing: border-box;
+    transition: border-color 0.15s;
+  }
+  .cfg-select:focus, .cfg-input:focus {
+    border-color: var(--cyan);
+    outline: none;
+  }
+  .cfg-checks { display: flex; flex-direction: column; gap: 0.45rem; }
+  .cfg-check {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .cfg-check input[type=checkbox] { accent-color: var(--cyan); width: 14px; height: 14px; cursor: pointer; }
+  .btn-run {
+    width: 100%;
+    background: var(--cyan);
+    border: none;
+    border-radius: 4px;
+    color: var(--bg);
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.75rem;
+    margin-top: 1.5rem;
+    transition: opacity 0.15s;
+  }
+  .btn-run:hover { opacity: 0.88; }
+  .btn-run:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  /* ── Results area ── */
+  .bt-results { min-width: 0; }
+
+  .bt-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 320px;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    color: var(--text-dim);
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    gap: 0.75rem;
+  }
+  .bt-placeholder .icon { font-size: 2.5rem; opacity: 0.4; }
+
+  /* ── Metric cards ── */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.9rem 1rem;
+  }
+  .metric-card__label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 0.3rem;
+  }
+  .metric-card__value {
+    font-family: var(--mono);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--cyan);
+  }
+  .metric-card__value.pos { color: var(--green); }
+  .metric-card__value.neg { color: #ff5555; }
+  .metric-card__sub {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    margin-top: 0.2rem;
+  }
+
+  /* ── Charts ── */
+  .chart-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem 1.25rem 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .chart-wrap h4 {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin: 0 0 1rem;
+  }
+  .chart-wrap canvas { max-height: 240px; }
+
+  /* ── Trade summary ── */
+  .trade-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  /* ── Spinner ── */
+  .spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(0,212,245,0.3);
+    border-top-color: var(--cyan);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Responsive ── */
+  @media (max-width: 860px) {
+    .bt-layout { grid-template-columns: 1fr; }
+    .bt-config { position: static; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .metrics-grid { grid-template-columns: 1fr 1fr; }
+    .trade-row { grid-template-columns: 1fr; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <header class="page-hero">
+    <h1>// algo_backtester</h1>
+    <p class="subtitle">ML-based signal generation on synthetic OHLCV data. Configure a model and feature set — get equity curve, drawdown, and risk metrics.</p>
+  </header>
+
+  <div class="bt-layout">
+
+    <!-- ── Config panel ──────────────────────────────────────────────────── -->
+    <aside class="bt-config">
+      <div class="cfg-section">
+        <h3>// model</h3>
+        <label class="cfg-label" for="cfg-model">Algorithm</label>
+        <select id="cfg-model" class="cfg-select">
+          <option value="logistic">Logistic Regression</option>
+          <option value="rf">Random Forest</option>
+          <option value="gb">Gradient Boosting</option>
+        </select>
+      </div>
+
+      <div class="cfg-section">
+        <h3>// features</h3>
+        <div class="cfg-checks">
+          <label class="cfg-check"><input type="checkbox" value="sma" checked> SMA Crossover (10/30)</label>
+          <label class="cfg-check"><input type="checkbox" value="ema"> EMA Crossover (12/26)</label>
+          <label class="cfg-check"><input type="checkbox" value="rsi" checked> RSI (14)</label>
+          <label class="cfg-check"><input type="checkbox" value="momentum" checked> Momentum (5/20d)</label>
+          <label class="cfg-check"><input type="checkbox" value="volatility"> Volatility (10/30d)</label>
+          <label class="cfg-check"><input type="checkbox" value="macd"> MACD Histogram</label>
+        </div>
+      </div>
+
+      <div class="cfg-section">
+        <h3>// parameters</h3>
+        <label class="cfg-label" for="cfg-capital">Initial Capital ($)</label>
+        <input id="cfg-capital" class="cfg-input" type="number" value="10000" min="1000" step="1000">
+
+        <label class="cfg-label" style="margin-top:0.9rem" for="cfg-days">Simulation Days</label>
+        <select id="cfg-days" class="cfg-select">
+          <option value="250">1 Year (250 days)</option>
+          <option value="500" selected>2 Years (500 days)</option>
+          <option value="750">3 Years (750 days)</option>
+        </select>
+
+        <label class="cfg-label" style="margin-top:0.9rem" for="cfg-split">Train / Test Split</label>
+        <select id="cfg-split" class="cfg-select">
+          <option value="0.6">60 / 40</option>
+          <option value="0.7" selected>70 / 30</option>
+          <option value="0.8">80 / 20</option>
+        </select>
+
+        <label class="cfg-label" style="margin-top:0.9rem" for="cfg-seed">Random Seed</label>
+        <input id="cfg-seed" class="cfg-input" type="number" value="42" min="0" max="9999">
+      </div>
+
+      <button class="btn-run" id="btn-run">⚡ Run Backtest</button>
+    </aside>
+
+    <!-- ── Results panel ─────────────────────────────────────────────────── -->
+    <section class="bt-results" id="results-panel">
+      <div class="bt-placeholder" id="placeholder">
+        <div class="icon">📈</div>
+        <div>Configure and run a backtest to see results</div>
+        <div style="font-size:0.72rem;opacity:0.6">Model · Features · Capital → Equity Curve</div>
+      </div>
+
+      <div id="results-content" style="display:none">
+        <!-- Metrics -->
+        <div class="metrics-grid" id="metrics-grid"></div>
+
+        <!-- Equity chart -->
+        <div class="chart-wrap">
+          <h4>// equity_curve.py &nbsp;—&nbsp; Strategy vs Buy-and-Hold</h4>
+          <canvas id="chart-equity"></canvas>
+        </div>
+
+        <!-- Drawdown chart -->
+        <div class="chart-wrap">
+          <h4>// drawdown.py &nbsp;—&nbsp; Strategy Drawdown (%)</h4>
+          <canvas id="chart-dd"></canvas>
+        </div>
+
+        <!-- Extra stats row -->
+        <div class="trade-row" id="trade-row"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Source note -->
+  <p class="text-mono text-dim" style="font-size:0.72rem;margin-top:2.5rem;text-align:center">
+    Data: synthetic geometric random walk · Long-only · No transaction costs · Past performance of synthetic data is not indicative of real trading results.
+  </p>
+
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+(function () {
+  "use strict";
+
+  const btn     = document.getElementById("btn-run");
+  const ph      = document.getElementById("placeholder");
+  const content = document.getElementById("results-content");
+  let equityChart = null;
+  let ddChart     = null;
+
+  // Chart.js defaults
+  Chart.defaults.color = "#a0aec0";
+  Chart.defaults.font.family = "'JetBrains Mono', monospace";
+  Chart.defaults.font.size   = 11;
+
+  function buildConfig() {
+    const features = [...document.querySelectorAll(".cfg-checks input:checked")]
+                       .map(el => el.value);
+    return {
+      model:     document.getElementById("cfg-model").value,
+      features,
+      capital:   parseFloat(document.getElementById("cfg-capital").value) || 10000,
+      n_days:    parseInt(document.getElementById("cfg-days").value) || 500,
+      train_pct: parseFloat(document.getElementById("cfg-split").value) || 0.7,
+      seed:      parseInt(document.getElementById("cfg-seed").value) || 42,
+    };
+  }
+
+  function fmt(v, suffix = "") {
+    const s = v > 0 ? "+" : "";
+    return s + v.toFixed(2) + suffix;
+  }
+
+  function colorClass(v) {
+    if (v > 0) return "pos";
+    if (v < 0) return "neg";
+    return "";
+  }
+
+  function renderMetrics(m) {
+    const grid = document.getElementById("metrics-grid");
+    const cards = [
+      { label: "Total Return",   value: fmt(m.total_return, "%"), cls: colorClass(m.total_return),
+        sub: `B&H: ${fmt(m.bnh_return, "%")}` },
+      { label: "Sharpe Ratio",  value: m.sharpe.toFixed(3),        cls: colorClass(m.sharpe),
+        sub: "annualised" },
+      { label: "Max Drawdown",  value: fmt(m.max_drawdown, "%"),    cls: "neg",
+        sub: "peak-to-trough" },
+      { label: "Win Rate",      value: m.win_rate + "%",            cls: colorClass(m.win_rate - 50),
+        sub: `${m.n_trades} trades` },
+      { label: "Signal Acc.",   value: m.accuracy + "%",            cls: colorClass(m.accuracy - 50),
+        sub: "directional" },
+      { label: "Trades",        value: m.n_trades,                  cls: "",
+        sub: "completed" },
+      { label: "Final Equity",  value: "$" + Math.round(
+          10000 * (1 + m.total_return / 100)).toLocaleString(),      cls: colorClass(m.total_return),
+        sub: "from $10,000" },
+      { label: "Alpha vs B&H",  value: fmt(m.total_return - m.bnh_return, "%"),
+        cls: colorClass(m.total_return - m.bnh_return),              sub: "excess return" },
+    ];
+    grid.innerHTML = cards.map(c =>
+      `<div class="metric-card">
+        <div class="metric-card__label">${c.label}</div>
+        <div class="metric-card__value ${c.cls}">${c.value}</div>
+        <div class="metric-card__sub">${c.sub}</div>
+      </div>`
+    ).join("");
+  }
+
+  function thinDates(dates, maxLabels = 8) {
+    const step = Math.ceil(dates.length / maxLabels);
+    return dates.map((d, i) => i % step === 0 ? d.slice(0, 7) : "");
+  }
+
+  function renderCharts(data) {
+    const dates = data.dates;
+    const thin  = thinDates(dates);
+
+    // Destroy old charts
+    if (equityChart) equityChart.destroy();
+    if (ddChart)     ddChart.destroy();
+
+    const gridColor = "rgba(255,255,255,0.06)";
+
+    equityChart = new Chart(
+      document.getElementById("chart-equity"),
+      {
+        type: "line",
+        data: {
+          labels: thin,
+          datasets: [
+            {
+              label: "Strategy",
+              data:  data.equity,
+              borderColor: "#00d4f5",
+              borderWidth: 1.5,
+              pointRadius: 0,
+              tension: 0.1,
+              fill: false,
+            },
+            {
+              label: "Buy & Hold",
+              data:  data.bnh,
+              borderColor: "#f6a623",
+              borderWidth: 1.5,
+              borderDash: [4, 4],
+              pointRadius: 0,
+              tension: 0.1,
+              fill: false,
+            }
+          ]
+        },
+        options: {
+          animation: { duration: 600 },
+          plugins: {
+            legend: { labels: { boxWidth: 16 } },
+            tooltip: {
+              callbacks: {
+                label: ctx => " $" + ctx.parsed.y.toFixed(0)
+              }
+            }
+          },
+          scales: {
+            x: { grid: { color: gridColor }, ticks: { maxRotation: 0 } },
+            y: { grid: { color: gridColor },
+                 ticks: { callback: v => "$" + v.toLocaleString() } }
+          }
+        }
+      }
+    );
+
+    ddChart = new Chart(
+      document.getElementById("chart-dd"),
+      {
+        type: "line",
+        data: {
+          labels: thin,
+          datasets: [{
+            label: "Drawdown",
+            data:  data.drawdown,
+            borderColor: "#ff5555",
+            borderWidth: 1.2,
+            pointRadius: 0,
+            tension: 0.1,
+            fill: { target: "origin", above: "rgba(255,85,85,0.06)", below: "rgba(255,85,85,0.12)" },
+          }]
+        },
+        options: {
+          animation: { duration: 600 },
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { color: gridColor }, ticks: { maxRotation: 0 } },
+            y: { grid: { color: gridColor },
+                 ticks: { callback: v => v.toFixed(1) + "%" } }
+          }
+        }
+      }
+    );
+  }
+
+  async function runBacktest() {
+    const cfg = buildConfig();
+    if (cfg.features.length === 0) {
+      alert("Select at least one feature.");
+      return;
+    }
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span>Running…';
+
+    try {
+      const resp = await fetch("/backtester/run", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(cfg),
+      });
+      const data = await resp.json();
+
+      if (!data.ok) throw new Error(data.error || "Unknown error");
+
+      ph.style.display      = "none";
+      content.style.display = "block";
+
+      renderMetrics(data.metrics);
+      renderCharts(data);
+
+    } catch (err) {
+      alert("Backtest failed: " + err.message);
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = "⚡ Run Backtest";
+    }
+  }
+
+  btn.addEventListener("click", runBacktest);
+  // Auto-run on load with defaults
+  window.addEventListener("DOMContentLoaded", runBacktest);
+})();
+</script>
+{% endblock %}

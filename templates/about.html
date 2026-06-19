@@ -17,7 +17,7 @@
 
       <div class="contact-links">
         <a class="contact-link" href="mailto:dr.neal.aggarwal@gmail.com">✉ email</a>
-        <a class="contact-link" href="https://drnealaggarwal.info/contact/" target="_blank" rel="noopener">⚡ contact form</a>
+        <a class="contact-link" href="#contact">⚡ contact form</a>
         <a class="contact-link" href="{{ url_for('static', filename='brinkAndBack.pdf') }}" target="_blank" rel="noopener">📖 memoir (PDF)</a>
       </div>
 
@@ -93,8 +93,39 @@
       <p>
         I don't do contracts. I do partnerships. I engage as a collaborator with shared stakes — similar to an angel investor
         model but with technical execution rather than just capital. If you have a hard problem at the intersection of AI,
-        medicine, data, or engineering, <a href="https://drnealaggarwal.info/contact/" target="_blank">talk to me</a>.
+        medicine, data, or engineering, <a href="#contact">talk to me</a>.
       </p>
+
+      <!-- ── Contact form ──────────────────────────────────────────────── -->
+      <div id="contact" style="margin-top:3rem">
+        <h2>Get In Touch</h2>
+        <p class="text-muted" style="font-size:0.9rem;margin-bottom:1.5rem">
+          Direct line: <a href="mailto:dr.neal.aggarwal@gmail.com" class="text-cyan">dr.neal.aggarwal@gmail.com</a>
+          &nbsp;·&nbsp; or use the form below.
+        </p>
+
+        <form class="contact-form" action="/contact" method="POST">
+          <div class="contact-form__row">
+            <div class="contact-form__field">
+              <label for="cf-name" class="text-mono" style="font-size:0.8rem;color:var(--text-dim)">// name</label>
+              <input id="cf-name" type="text" name="name" placeholder="Your name" required>
+            </div>
+            <div class="contact-form__field">
+              <label for="cf-email" class="text-mono" style="font-size:0.8rem;color:var(--text-dim)">// email</label>
+              <input id="cf-email" type="email" name="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="contact-form__field">
+            <label for="cf-subject" class="text-mono" style="font-size:0.8rem;color:var(--text-dim)">// subject</label>
+            <input id="cf-subject" type="text" name="subject" placeholder="What's this about?">
+          </div>
+          <div class="contact-form__field">
+            <label for="cf-message" class="text-mono" style="font-size:0.8rem;color:var(--text-dim)">// message</label>
+            <textarea id="cf-message" name="message" rows="6" placeholder="Your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">⚡ send message</button>
+        </form>
+      </div>
 
     </div>
   </div>
