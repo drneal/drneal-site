@@ -11,6 +11,8 @@ featured: true
 
 *Based on Jeremy Howard's fast.ai Practical Deep Learning for Coders 2022 · Lesson 3: Neural Net Foundations*
 
+[▶ Watch Lesson 3 on YouTube](https://www.youtube.com/watch?v=hBBOjCiFcuo&list=PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU&index=3)
+
 Jeremy Howard's fast.ai Lesson 3 is where the course transitions from "use the library" to "understand what the library is doing." This post reconstructs Howard's argument in full — from a manually-tuned quadratic on a toy dataset all the way to the matrix-algebra skeleton of a multi-layer neural network — at the level of detail an experienced developer needs to actually internalize, not just nod along to.
 
 ## The Central Question Howard Poses
