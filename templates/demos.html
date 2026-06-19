@@ -9,6 +9,27 @@
     <p class="subtitle">Working prototypes and interactive experiments. Proof of concept beats proof of paper.</p>
   </header>
 
+  <!-- ── Featured live demo callout ──────────────────────────────────────── -->
+  <div class="featured-demo" style="margin-bottom:2.5rem">
+    <div class="featured-demo__badge">
+      <span style="color:var(--green);font-size:0.7rem">●</span> FEATURED &nbsp;·&nbsp; LIVE NOW
+    </div>
+    <h2 class="featured-demo__title">Algorithmic Trading Backtester</h2>
+    <p class="featured-demo__body">
+      This tool lets you run a complete ML-based trading strategy backtest directly in your browser — no data download, no setup, no Python environment required.
+      You select a machine learning model (Logistic Regression, Random Forest, or Gradient Boosting), tick the technical features you want it trained on
+      (SMA crossover, RSI, momentum, MACD, volatility), set your starting capital and simulation length, then hit <em>Run</em>.
+      Within a few seconds you get a full equity curve plotted against a buy-and-hold benchmark, a drawdown chart, and eight risk/performance metrics including
+      annualised Sharpe ratio, maximum drawdown, signal accuracy, win rate, and alpha versus the passive baseline.
+    </p>
+    <p class="featured-demo__body" style="margin-top:0.75rem">
+      The backtest runs on a synthetic geometric random-walk price series — the same statistical structure as real OHLCV data, but without any dependency on a live market feed.
+      This makes it ideal for experimenting with feature engineering and model selection: change one variable at a time and observe the effect on Sharpe and drawdown immediately.
+      Practitioners can use it as a rapid sanity-check harness before porting a signal to a real data pipeline or an MQL5 strategy on MetaTrader.
+    </p>
+    <a class="featured-demo__cta" href="/backtester">Open the Backtester →</a>
+  </div>
+
   <div class="demos-grid">
     {% for demo in demos %}
     <div class="card demo-card">
