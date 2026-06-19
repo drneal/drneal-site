@@ -28,7 +28,11 @@
         </div>
         <div class="skill-tags">
           {% for tag in skill.tags %}
+          {% if tag in tag_urls %}
+          <a class="skill-tag" href="{{ tag_urls[tag] }}" target="_blank" rel="noopener noreferrer">{{ tag }}</a>
+          {% else %}
           <span class="skill-tag">{{ tag }}</span>
+          {% endif %}
           {% endfor %}
         </div>
       </div>

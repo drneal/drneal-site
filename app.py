@@ -16,6 +16,70 @@ from flask import Flask, render_template, abort, request
 
 app = Flask(__name__)
 
+TAG_URLS = {
+    "Claude API":           "https://www.anthropic.com/api",
+    "OpenAI":               "https://en.wikipedia.org/wiki/OpenAI",
+    "Gemini":               "https://en.wikipedia.org/wiki/Gemini_(language_model)",
+    "RAG":                  "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+    "tool use":             "https://en.wikipedia.org/wiki/Prompt_engineering",
+    "prompt engineering":   "https://en.wikipedia.org/wiki/Prompt_engineering",
+    "Claude Code":          "https://www.anthropic.com/claude-code",
+    "multi-agent":          "https://en.wikipedia.org/wiki/Multi-agent_system",
+    "MCP":                  "https://modelcontextprotocol.io",
+    "autonomous execution": "https://en.wikipedia.org/wiki/Autonomous_agent",
+    "agent SDKs":           "https://en.wikipedia.org/wiki/Software_development_kit",
+    "tool servers":         "https://modelcontextprotocol.io",
+    "connectors":           "https://modelcontextprotocol.io",
+    "local + remote":       "https://modelcontextprotocol.io",
+    "PyTorch":              "https://en.wikipedia.org/wiki/PyTorch",
+    "TensorFlow":           "https://en.wikipedia.org/wiki/TensorFlow",
+    "transformers":         "https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)",
+    "LoRA":                 "https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)",
+    "PEFT":                 "https://en.wikipedia.org/wiki/Fine-tuning_(deep_learning)",
+    "HuggingFace":          "https://en.wikipedia.org/wiki/Hugging_Face",
+    "scikit-learn":         "https://en.wikipedia.org/wiki/Scikit-learn",
+    "XGBoost":              "https://en.wikipedia.org/wiki/XGBoost",
+    "statsmodels":          "https://www.statsmodels.org",
+    "scipy":                "https://en.wikipedia.org/wiki/SciPy",
+    "R":                    "https://en.wikipedia.org/wiki/R_(programming_language)",
+    "spaCy":                "https://en.wikipedia.org/wiki/SpaCy",
+    "NLTK":                 "https://en.wikipedia.org/wiki/Natural_Language_Toolkit",
+    "BERT":                 "https://en.wikipedia.org/wiki/BERT_(language_model)",
+    "clinical NLP":         "https://en.wikipedia.org/wiki/Natural_language_processing",
+    "embeddings":           "https://en.wikipedia.org/wiki/Word_embedding",
+    "vector search":        "https://en.wikipedia.org/wiki/Nearest_neighbor_search",
+    "diagnostic AI":        "https://en.wikipedia.org/wiki/Artificial_intelligence_in_healthcare",
+    "risk models":          "https://en.wikipedia.org/wiki/Risk_assessment",
+    "FHIR":                 "https://en.wikipedia.org/wiki/Fast_Healthcare_Interoperability_Resources",
+    "HL7":                  "https://en.wikipedia.org/wiki/Health_Level_7",
+    "DICOM":                "https://en.wikipedia.org/wiki/DICOM",
+    "pandas":               "https://en.wikipedia.org/wiki/Pandas_(software)",
+    "data pipelines":       "https://en.wikipedia.org/wiki/Pipeline_(computing)",
+    "anonymisation":        "https://en.wikipedia.org/wiki/Data_anonymization",
+    "Arduino":              "https://en.wikipedia.org/wiki/Arduino",
+    "ESP32":                "https://en.wikipedia.org/wiki/ESP32",
+    "ESP-IDF":              "https://docs.espressif.com/projects/esp-idf/en/latest/",
+    "Raspberry Pi":         "https://en.wikipedia.org/wiki/Raspberry_Pi",
+    "LoRa":                 "https://en.wikipedia.org/wiki/LoRa",
+    "I2C/SPI":              "https://en.wikipedia.org/wiki/I%C2%B2C",
+    "Python":               "https://en.wikipedia.org/wiki/Python_(programming_language)",
+    "Flask":                "https://en.wikipedia.org/wiki/Flask_(web_framework)",
+    "FastAPI":              "https://en.wikipedia.org/wiki/FastAPI",
+    "C/C++":                "https://en.wikipedia.org/wiki/C%2B%2B",
+    "LISP":                 "https://en.wikipedia.org/wiki/Lisp_(programming_language)",
+    "EMACS":                "https://en.wikipedia.org/wiki/Emacs",
+    "MQL5":                 "https://en.wikipedia.org/wiki/MQL5",
+    "MetaTrader":           "https://en.wikipedia.org/wiki/MetaTrader_4",
+    "quant finance":        "https://en.wikipedia.org/wiki/Quantitative_analysis_(finance)",
+    "neural nets":          "https://en.wikipedia.org/wiki/Artificial_neural_network",
+    "backtesting":          "https://en.wikipedia.org/wiki/Backtesting",
+    "Bitcoin":              "https://en.wikipedia.org/wiki/Bitcoin",
+    "Ethereum":             "https://en.wikipedia.org/wiki/Ethereum",
+    "Solidity":             "https://en.wikipedia.org/wiki/Solidity",
+    "Cardano":              "https://en.wikipedia.org/wiki/Cardano_(blockchain_platform)",
+    "cryptography":         "https://en.wikipedia.org/wiki/Cryptography",
+}
+
 BASE = Path(__file__).parent
 POSTS_DIR = BASE / "content" / "posts"
 DATA_DIR = BASE / "data"
@@ -125,7 +189,7 @@ def post(slug):
 @app.route("/skills")
 def skills():
     data = load_json("skills.json")
-    return render_template("skills.html", skills=data)
+    return render_template("skills.html", skills=data, tag_urls=TAG_URLS)
 
 
 @app.route("/library")
