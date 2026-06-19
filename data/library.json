@@ -24,7 +24,7 @@
       "year": "2024",
       "type": "paper",
       "description": "The specification document that defines how Claude is trained to be helpful, harmless, and honest. A remarkable piece of AI alignment engineering made public.",
-      "url": "https://www.anthropic.com/claude/model-spec",
+      "url": "https://www.anthropic.com/transparency",
       "tags": ["alignment", "RLHF", "Constitutional AI", "safety"]
     },
     {
