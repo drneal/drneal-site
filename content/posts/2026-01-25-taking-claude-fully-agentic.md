@@ -5,7 +5,7 @@ category: "AI Engineering"
 tags: "AI, agentic, Claude Code, LLM engineering"
 level: "Intermediate"
 read_time: "12 minutes"
-featured: true
+featured: false
 summary: "Superclaude = claude --dangerously-skip-permissions. The transition from manual coder to system architect is the biggest productivity jump in my 40+ years of electronics development."
 ---
 

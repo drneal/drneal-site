@@ -6,7 +6,7 @@ tags: deep learning, neural networks, fast.ai, gradient descent, PyTorch, ReLU
 level: Intermediate
 read_time: 14 min
 summary: Jeremy Howard's fast.ai Lesson 3 reconstructed in full — from a manually-tuned quadratic on a toy dataset all the way to the matrix-algebra skeleton of a multi-layer neural network — at the level of detail an experienced developer needs to actually internalize.
-featured: false
+featured: true
 ---
 
 *Based on Jeremy Howard's fast.ai Practical Deep Learning for Coders 2022 · Lesson 3: Neural Net Foundations*
