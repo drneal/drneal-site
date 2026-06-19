@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Demos — Dr Neal Aggarwal{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <header class="page-hero">
+    <h1>// ai_demos &amp; tools</h1>
+    <p class="subtitle">Working prototypes and interactive experiments. Proof of concept beats proof of paper.</p>
+  </header>
+
+  <div class="demos-grid">
+    {% for demo in demos %}
+    <div class="card demo-card">
+      <span class="demo-card__badge demo-card__badge--{{ 'live' if demo.status == 'live' else 'coming' }}">
+        {{ '● LIVE' if demo.status == 'live' else '◌ COMING SOON' }}
+      </span>
+      <h3>{{ demo.title }}</h3>
+      <p>{{ demo.description }}</p>
+      <div class="demo-tech-stack">
+        {% for tech in demo.stack %}
+        <span class="skill-tag">{{ tech }}</span>
+        {% endfor %}
+      </div>
+      {% if demo.url and demo.status == 'live' %}
+      <a class="demo-card__cta" href="{{ demo.url }}" target="_blank" rel="noopener">Launch Demo</a>
+      {% elif demo.status == 'coming' %}
+      <span class="text-mono text-dim" style="font-size:0.78rem">In development</span>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="terminal" style="margin-top:3rem">
+    <div class="terminal__titlebar">
+      <span class="terminal__dot terminal__dot--red"></span>
+      <span class="terminal__dot terminal__dot--yellow"></span>
+      <span class="terminal__dot terminal__dot--green"></span>
+      <span class="terminal__title">collaboration.sh</span>
+    </div>
+    <div class="terminal__body">
+      <div><span class="prompt">$ </span><span class="cmd">echo "Want to build something together?"</span></div>
+      <div class="out">I'm open to collaborations on medical AI, LLM tooling, and IoT+AI integration.</div>
+      <div class="out">I work as a partner — not a contractor. Deep engagement, shared stakes.</div>
+      <div class="mt-1"><span class="prompt">$ </span><a href="/about" style="color:var(--amber)">./contact_me.sh</a></div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

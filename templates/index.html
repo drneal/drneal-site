@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Dr Neal Aggarwal — [Medical] AI Engineering{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <!-- ── Terminal intro ──────────────────────────────────────────────── -->
+  <div class="terminal mt-4">
+    <div class="terminal__titlebar">
+      <span class="terminal__dot terminal__dot--red"></span>
+      <span class="terminal__dot terminal__dot--yellow"></span>
+      <span class="terminal__dot terminal__dot--green"></span>
+      <span class="terminal__title">neal@nairobi ~ bash</span>
+    </div>
+    <div class="terminal__body">
+      <div><span class="prompt">$ </span><span class="cmd">whoami</span></div>
+      <div class="out">Dr Neal Aggarwal &mdash; physician, AI engineer, electronics builder, Kenya</div>
+      <div class="mt-1"><span class="prompt">$ </span><span class="cmd">cat focus.txt</span></div>
+      <div class="out"><span class="hi">Medical AI · LLM Engineering · Agentic Systems · Deep Learning · Algorithmic Trading</span></div>
+      <div class="mt-1"><span class="prompt">$ </span><span class="cmd">ls posts/</span></div>
+      <div class="out">{{ posts|length }} articles &mdash; machine intelligence, AI safety, blockchain, medical science</div>
+      <div class="mt-1"><span class="prompt">$ </span><span class="cmd">_</span></div>
+    </div>
+  </div>
+
+  <!-- ── Featured post ───────────────────────────────────────────────── -->
+  {% if featured %}
+  {% set fp = featured[0] %}
+  <div class="featured-post mt-4">
+    <div class="post-card__meta" style="margin-bottom:0.75rem">
+      <span class="badge badge--cat">{{ fp.category }}</span>
+      {% if fp.level %}<span class="badge badge--level">{{ fp.level }}</span>{% endif %}
+      {% if fp.read_time %}<span class="text-mono text-dim" style="font-size:0.72rem">⏱ {{ fp.read_time }}</span>{% endif %}
+      <span class="post-date">{{ fp.date }}</span>
+    </div>
+    <h2><a href="/post/{{ fp.slug }}">{{ fp.title }}</a></h2>
+    <p class="post-card__excerpt" style="margin-top:0.5rem;font-size:0.92rem">{{ fp.summary }}</p>
+    <a class="read-more" href="/post/{{ fp.slug }}">Read article</a>
+  </div>
+  {% endif %}
+
+  <!-- ── Recent posts ────────────────────────────────────────────────── -->
+  <div class="section-header">
+    <h2 class="text-mono">// recent_posts</h2>
+    {% if posts|length > 8 %}
+    <a href="/archive">view all {{ posts|length }}</a>
+    {% endif %}
+  </div>
+
+  <div class="post-grid">
+    {% for p in recent %}
+    <article class="card post-card">
+      <div class="post-card__meta">
+        <span class="badge badge--cat">{{ p.category }}</span>
+        {% if p.level %}<span class="badge badge--level">{{ p.level }}</span>{% endif %}
+        {% for tag in p.tags[:2] %}<span class="badge badge--tag">{{ tag }}</span>{% endfor %}
+        <span class="post-date">{{ p.date }}</span>
+      </div>
+      <h2><a href="/post/{{ p.slug }}">{{ p.title }}</a></h2>
+      <p class="post-card__excerpt">{{ p.summary }}</p>
+      {% if p.read_time %}
+      <span class="text-mono text-dim" style="font-size:0.72rem;margin-bottom:0.75rem;display:block">⏱ {{ p.read_time }}</span>
+      {% endif %}
+      <a class="read-more" href="/post/{{ p.slug }}">Read article</a>
+    </article>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}

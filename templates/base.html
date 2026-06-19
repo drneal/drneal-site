@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Dr Neal Aggarwal — [Medical] AI Engineering{% endblock %}</title>
+  <meta name="description" content="{% block description %}AI Engineering, medical intelligence, deep learning research, and the frontier of machine cognition — by Dr Neal Aggarwal.{% endblock %}">
+  <meta name="author" content="Dr Neal Aggarwal">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+<!-- ── Navigation ─────────────────────────────────────────────────────── -->
+<nav class="site-nav" role="navigation">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">dr_neal_aggarwal</a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/">Blog</a></li>
+      <li><a href="/skills">Skills</a></li>
+      <li><a href="/library">Library</a></li>
+      <li><a href="/demos">Demos</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Status bar ─────────────────────────────────────────────────────── -->
+<div class="statusbar" aria-hidden="true">
+  <span class="ok">● ONLINE</span>
+  <span>drnealaggarwal.info</span>
+  <span class="warn">python 3.12 / flask 3.x</span>
+  <span>nairobi, kenya (UTC+3)</span>
+  <span id="statusbar-time"></span>
+</div>
+
+<!-- ── Main content ───────────────────────────────────────────────────── -->
+<main role="main">
+  {% block content %}{% endblock %}
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Dr Neal Aggarwal &mdash; [Medical] AI Engineering &mdash; Nairobi, Kenya</span>
+    <nav class="footer-links">
+      <a href="/">Blog</a>
+      <a href="/skills">Skills</a>
+      <a href="/library">Library</a>
+      <a href="/demos">Demos</a>
+      <a href="/about">About</a>
+      <a href="https://drnealaggarwal.info/contact/" target="_blank" rel="noopener">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% block extra_scripts %}{% endblock %}
+</body>
+</html>

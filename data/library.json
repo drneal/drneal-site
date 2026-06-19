@@ -1,0 +1,148 @@
+{
+  "items": [
+    {
+      "title": "Machines of Loving Grace",
+      "author": "Dario Amodei",
+      "year": "2024",
+      "type": "post",
+      "description": "Amodei's long-form vision of how transformative AI could compress decades of scientific progress into a few years — covering biology, neuroscience, mental health, economic development and more. Essential reading on AI's potential upside.",
+      "url": "https://darioamodei.com/machines-of-loving-grace",
+      "tags": ["AI futures", "biology", "AGI", "economic development"]
+    },
+    {
+      "title": "On the Importance of AI Safety Research",
+      "author": "Dario Amodei",
+      "year": "2023",
+      "type": "post",
+      "description": "Anthropic's CEO on why safety and capability research must proceed together, not in sequence. The clearest articulation of the 'race to the top' philosophy from inside the frontier lab.",
+      "url": "https://www.anthropic.com/research",
+      "tags": ["AI safety", "alignment", "Anthropic"]
+    },
+    {
+      "title": "Claude's Model Spec (Constitutional AI)",
+      "author": "Dario Amodei",
+      "year": "2024",
+      "type": "paper",
+      "description": "The specification document that defines how Claude is trained to be helpful, harmless, and honest. A remarkable piece of AI alignment engineering made public.",
+      "url": "https://www.anthropic.com/claude/model-spec",
+      "tags": ["alignment", "RLHF", "Constitutional AI", "safety"]
+    },
+    {
+      "title": "Planning for AGI and Beyond",
+      "author": "Sam Altman",
+      "year": "2023",
+      "type": "post",
+      "description": "OpenAI's CEO lays out the organisation's transition plan for when AGI arrives — governance structures, iterative deployment, and why 'slow is impossible'. Candid and worth reading critically.",
+      "url": "https://openai.com/index/planning-for-agi-and-beyond/",
+      "tags": ["AGI", "governance", "OpenAI", "deployment"]
+    },
+    {
+      "title": "The Intelligence Age",
+      "author": "Sam Altman",
+      "year": "2024",
+      "type": "post",
+      "description": "Altman's argument that we're entering a new era of human prosperity driven by AI tools accessible to everyone — optimistic, controversial, and impossible to ignore.",
+      "url": "https://ia.samaltman.com/",
+      "tags": ["AI futures", "prosperity", "superintelligence"]
+    },
+    {
+      "title": "Intro to Large Language Models (lecture)",
+      "author": "Andrej Karpathy",
+      "year": "2023",
+      "type": "video",
+      "description": "One of the clearest technical explanations of LLMs ever recorded. Karpathy walks from tokenisation through attention to RLHF. Mandatory viewing for anyone working in this space.",
+      "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
+      "tags": ["LLMs", "transformers", "attention", "RLHF", "tutorial"]
+    },
+    {
+      "title": "Let's Build GPT from Scratch",
+      "author": "Andrej Karpathy",
+      "year": "2023",
+      "type": "video",
+      "description": "Karpathy builds a GPT implementation in ~2 hours of live coding. The single best way to understand what a transformer actually is. Code is clear, explanations are exceptional.",
+      "url": "https://www.youtube.com/watch?v=kCc8FmEb1nY",
+      "tags": ["GPT", "transformer", "PyTorch", "tutorial", "from scratch"]
+    },
+    {
+      "title": "The Spelled-Out Intro to Neural Networks & Backprop",
+      "author": "Andrej Karpathy",
+      "year": "2022",
+      "type": "video",
+      "description": "Micrograd: building autograd from scratch with pure Python. The deepest, most rigorous treatment of backpropagation I've seen in video format. Essential before you touch PyTorch.",
+      "url": "https://www.youtube.com/watch?v=VMj-3S1tku0",
+      "tags": ["backpropagation", "autograd", "neural networks", "tutorial"]
+    },
+    {
+      "title": "Software 2.0",
+      "author": "Andrej Karpathy",
+      "year": "2017",
+      "type": "post",
+      "description": "Karpathy's prescient argument that neural networks are not just a tool but a new programming paradigm — one where the programmer specifies desired behaviour, not explicit logic. Reads even better today.",
+      "url": "https://karpathy.medium.com/software-2-0-a64152b37c35",
+      "tags": ["paradigm shift", "neural networks", "programming", "prediction"]
+    },
+    {
+      "title": "The Forward-Forward Algorithm (2022)",
+      "author": "Geoffrey Hinton",
+      "year": "2022",
+      "type": "paper",
+      "description": "Hinton's alternative to backpropagation — training neural networks using only local, positive and negative data without ever computing a global gradient. Potentially significant for neuromorphic and on-device learning.",
+      "url": "https://arxiv.org/abs/2212.13345",
+      "tags": ["backpropagation", "learning algorithms", "neuromorphic", "alternative training"]
+    },
+    {
+      "title": "Geoffrey Hinton — Turing Award Lecture",
+      "author": "Geoffrey Hinton",
+      "year": "2018",
+      "type": "talk",
+      "description": "Hinton's lecture on the development of deep learning, from the early days of backpropagation through the ImageNet moment. A first-hand account of the long AI winter and what it took to survive it.",
+      "url": "https://www.youtube.com/watch?v=VsnQf7exv5I",
+      "tags": ["deep learning history", "backpropagation", "Turing Award", "ImageNet"]
+    },
+    {
+      "title": "Will Digital Intelligence Replace Biological Intelligence?",
+      "author": "Geoffrey Hinton",
+      "year": "2023",
+      "type": "talk",
+      "description": "Hinton's talk following his departure from Google — the 'Godfather of AI' explains why he changed his mind on AI risk, and what he now believes we should be worried about.",
+      "url": "https://www.youtube.com/watch?v=N1TEjTeQeg0",
+      "tags": ["AI risk", "existential safety", "digital intelligence", "AGI"]
+    },
+    {
+      "title": "Attention Is All You Need",
+      "author": "Vaswani et al. (Google Brain)",
+      "year": "2017",
+      "type": "paper",
+      "description": "The paper that changed everything. The transformer architecture introduced here is the foundation of every major language model in existence. If you work in AI, you must have read this.",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "tags": ["transformer", "attention", "NLP", "foundational", "seminal"]
+    },
+    {
+      "title": "Scaling Laws for Neural Language Models",
+      "author": "Kaplan et al. (OpenAI)",
+      "year": "2020",
+      "type": "paper",
+      "description": "The empirical laws governing how model performance scales with compute, data, and parameters. The theoretical backbone behind the scaling hypothesis that has driven frontier AI for five years.",
+      "url": "https://arxiv.org/abs/2001.08361",
+      "tags": ["scaling laws", "language models", "compute", "empirical ML"]
+    },
+    {
+      "title": "Constitutional AI: Harmlessness from AI Feedback",
+      "author": "Bai et al. (Anthropic)",
+      "year": "2022",
+      "type": "paper",
+      "description": "The research paper behind Claude's training methodology. Describes how a set of principles ('constitution') guides RLHF without requiring human labellers for every harmful output.",
+      "url": "https://arxiv.org/abs/2212.08073",
+      "tags": ["Constitutional AI", "RLHF", "alignment", "Anthropic", "safety"]
+    },
+    {
+      "title": "Deep Learning (textbook)",
+      "author": "Goodfellow, Bengio, Courville",
+      "year": "2016",
+      "type": "paper",
+      "description": "The canonical deep learning textbook — freely available online. Chapter 6 onwards remains the most rigorous treatment of feedforward nets, regularisation, and optimisation available.",
+      "url": "https://www.deeplearningbook.org/",
+      "tags": ["textbook", "deep learning", "foundational", "Bengio"]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Skills — Dr Neal Aggarwal{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <header class="page-hero">
+    <h1>// skills &amp; expertise</h1>
+    <p class="subtitle">40+ years building, breaking, and rebuilding machines — from discrete logic gates to large language models.</p>
+  </header>
+
+  <!-- ── Domain groups ──────────────────────────────────────────────── -->
+  {% for group in skills %}
+  <section style="margin-top:3rem">
+    <div class="section-header">
+      <h2 class="text-mono text-cyan">{{ group.group }}</h2>
+    </div>
+    <p class="text-muted" style="font-size:0.88rem;margin-bottom:1rem">{{ group.description }}</p>
+
+    <div class="skills-grid">
+      {% for skill in group.skills %}
+      <div class="card skill-card">
+        <div class="skill-card__icon">{{ skill.icon }}</div>
+        <h3>{{ skill.name }}</h3>
+        <p>{{ skill.description }}</p>
+        <div class="level-bar">
+          <div class="level-bar__fill" style="width:{{ skill.level }}%"></div>
+        </div>
+        <div class="skill-tags">
+          {% for tag in skill.tags %}
+          <span class="skill-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+
+  <!-- ── Timeline callout ───────────────────────────────────────────── -->
+  <div class="terminal" style="margin-top:3rem">
+    <div class="terminal__titlebar">
+      <span class="terminal__dot terminal__dot--red"></span>
+      <span class="terminal__dot terminal__dot--yellow"></span>
+      <span class="terminal__dot terminal__dot--green"></span>
+      <span class="terminal__title">career_timeline.sh</span>
+    </div>
+    <div class="terminal__body">
+      <div><span class="prompt">1975 </span><span class="hi">→</span> <span class="out">Built first computer from discrete components (Intel 8080 era)</span></div>
+      <div><span class="prompt">1976 </span><span class="hi">→</span> <span class="out">Started using EMACS; adopted Assembly → C → LISP</span></div>
+      <div><span class="prompt">1990s</span><span class="hi">→</span> <span class="out">C++, Fortran, Pascal; founded CyberCollege Africa (first MOOC on continent)</span></div>
+      <div><span class="prompt">2000s</span><span class="hi">→</span> <span class="out">Deep dive into ML, neural networks, algorithmic trading (MQL)</span></div>
+      <div><span class="prompt">2009 </span><span class="hi">→</span> <span class="out">Bitcoin genesis block; mined thousands of coins; built blockchain tools in Solidity</span></div>
+      <div><span class="prompt">2015+</span><span class="hi">→</span> <span class="out">Python-first AI pipeline; PyTorch, TensorFlow, medical NLP, >600 AI practitioners trained</span></div>
+      <div><span class="prompt">2024+</span><span class="hi">→</span> <span class="out">LLM engineering, agentic systems (Claude Code), multi-agent orchestration</span></div>
+      <div><span class="prompt">now  </span><span class="hi">→</span> <span class="cmd">_</span></div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

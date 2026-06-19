@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}404 — Dr Neal Aggarwal{% endblock %}
+
+{% block content %}
+<div class="container" style="padding-top:4rem;text-align:center">
+  <div class="terminal" style="max-width:520px;margin:0 auto">
+    <div class="terminal__titlebar">
+      <span class="terminal__dot terminal__dot--red"></span>
+      <span class="terminal__dot terminal__dot--yellow"></span>
+      <span class="terminal__dot terminal__dot--green"></span>
+      <span class="terminal__title">bash</span>
+    </div>
+    <div class="terminal__body" style="text-align:left">
+      <div><span class="prompt">$ </span><span class="cmd">open {{ request.path }}</span></div>
+      <div style="color:var(--red)">bash: {{ request.path }}: No such file or directory</div>
+      <div class="out">exit code: 404</div>
+      <div class="mt-1"><span class="prompt">$ </span><a href="/" style="color:var(--cyan)">cd ~</a></div>
+    </div>
+  </div>
+</div>
+{% endblock %}

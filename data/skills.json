@@ -1,0 +1,110 @@
+[
+  {
+    "group": "LLM & Agentic AI",
+    "description": "Engineering with large language models — from API integration through fully autonomous multi-agent pipelines.",
+    "skills": [
+      {
+        "icon": "🤖",
+        "name": "LLM Engineering",
+        "description": "System prompting, tool use, RAG pipelines, context window management, multi-turn conversation design. Daily driver: Claude Sonnet/Opus via API and Claude Code.",
+        "level": 92,
+        "tags": ["Claude API", "OpenAI", "Gemini", "RAG", "tool use", "prompt engineering"]
+      },
+      {
+        "icon": "⚡",
+        "name": "Agentic Systems",
+        "description": "Multi-agent orchestration, autonomous code generation and execution, Claude Code in YOLO mode, agent memory, CLI integration for compile-debug-deploy loops.",
+        "level": 88,
+        "tags": ["Claude Code", "multi-agent", "MCP", "autonomous execution", "agent SDKs"]
+      },
+      {
+        "icon": "🔗",
+        "name": "Model Context Protocol (MCP)",
+        "description": "Building and consuming MCP servers to connect LLMs to live data sources, databases, APIs, and local tools.",
+        "level": 82,
+        "tags": ["MCP", "tool servers", "connectors", "local + remote"]
+      }
+    ]
+  },
+  {
+    "group": "Machine Learning & Deep Learning",
+    "description": "Classical ML through modern transformer architectures — built, trained, and deployed at production scale.",
+    "skills": [
+      {
+        "icon": "🧠",
+        "name": "Deep Learning",
+        "description": "Transformer architectures, CNNs, RNNs/LSTMs, attention mechanisms, fine-tuning, LoRA/QLoRA PEFT. Built and trained models from scratch before it was cool.",
+        "level": 90,
+        "tags": ["PyTorch", "TensorFlow", "transformers", "LoRA", "PEFT", "HuggingFace"]
+      },
+      {
+        "icon": "📊",
+        "name": "Classical ML & Statistics",
+        "description": "Feature engineering, ensemble methods, Bayesian inference, time-series analysis. The fundamentals still matter when the data is small or interpretability is required.",
+        "level": 88,
+        "tags": ["scikit-learn", "XGBoost", "statsmodels", "scipy", "R"]
+      },
+      {
+        "icon": "🗣️",
+        "name": "Natural Language Processing",
+        "description": "Clinical NLP, named entity recognition, information extraction from medical texts, text classification, embedding-based search.",
+        "level": 85,
+        "tags": ["spaCy", "NLTK", "BERT", "clinical NLP", "embeddings", "vector search"]
+      }
+    ]
+  },
+  {
+    "group": "Medical AI",
+    "description": "The intersection of clinical medicine and machine intelligence — where domain knowledge is the competitive moat.",
+    "skills": [
+      {
+        "icon": "🏥",
+        "name": "Clinical Decision Support",
+        "description": "ML models for diagnostic assistance, risk stratification, and outcome prediction. Built systems that operate in low-resource clinical settings.",
+        "level": 87,
+        "tags": ["clinical NLP", "diagnostic AI", "risk models", "FHIR", "HL7"]
+      },
+      {
+        "icon": "📡",
+        "name": "Medical Data Engineering",
+        "description": "EHR/EMR pipeline development, DICOM image processing, anonymisation, and dataset curation for downstream ML.",
+        "level": 80,
+        "tags": ["DICOM", "FHIR", "pandas", "data pipelines", "anonymisation"]
+      }
+    ]
+  },
+  {
+    "group": "Engineering & Systems",
+    "description": "Hardware, firmware, embedded systems — the physical layer that makes software real.",
+    "skills": [
+      {
+        "icon": "🔧",
+        "name": "Electronics & Embedded Systems",
+        "description": "From discrete logic gates (1975) to modern MCUs. Arduino, ESP32/ESP-IDF, Raspberry Pi, IoT sensor networks, HAM radio (NE4AL), LoRa-based disaster comms (DiMSAR Kenya).",
+        "level": 95,
+        "tags": ["Arduino", "ESP32", "ESP-IDF", "Raspberry Pi", "LoRa", "I2C/SPI"]
+      },
+      {
+        "icon": "🐍",
+        "name": "Python & Software Engineering",
+        "description": "Primary development language for AI/ML work. Flask, FastAPI, async Python, packaging, testing. Drops to C/C++ when performance demands it.",
+        "level": 92,
+        "tags": ["Python", "Flask", "FastAPI", "C/C++", "LISP", "EMACS"]
+      },
+      {
+        "icon": "📈",
+        "name": "Algorithmic Trading",
+        "description": "ML-based trading strategies, MQL5 development, neural networks for market prediction. Achieved personal financial independence via systematic trading.",
+        "level": 85,
+        "tags": ["MQL5", "MetaTrader", "quant finance", "neural nets", "backtesting"]
+      },
+      {
+        "icon": "₿",
+        "name": "Blockchain & Web3",
+        "description": "Bitcoin since genesis (2009). Solidity smart contract development, Ethereum ecosystem, Cardano. Deep understanding of cryptographic primitives.",
+        "level": 83,
+        "tags": ["Bitcoin", "Ethereum", "Solidity", "Cardano", "cryptography"]
+      }
+    ]
+  }
+]

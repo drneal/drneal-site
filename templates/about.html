@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}About — Dr Neal Aggarwal{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="about-layout mt-4">
+
+    <!-- ── Sidebar ───────────────────────────────────────────────────── -->
+    <aside class="about-sidebar">
+      <img class="about-avatar"
+           src="https://drnealaggarwal.info/wp-content/uploads/2025/09/cropped-360_F_324584485_qtdluDzmBNkJvmntEPlNeG1htwPktgCa-1.jpg"
+           alt="Dr Neal Aggarwal">
+      <div class="about-name">Dr Neal Aggarwal</div>
+      <div class="about-title">[Medical] AI Engineering</div>
+      <div class="text-mono text-dim" style="font-size:0.75rem;margin-bottom:1.25rem">Nairobi, Kenya · UTC+3</div>
+
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:dr.neal.aggarwal@gmail.com">✉ email</a>
+        <a class="contact-link" href="https://drnealaggarwal.info/contact/" target="_blank" rel="noopener">⚡ contact form</a>
+        <a class="contact-link" href="https://drnealaggarwal.info/brinkAndBack.pdf" target="_blank" rel="noopener">📖 memoir (PDF)</a>
+      </div>
+
+      <div style="margin-top:1.5rem;font-family:var(--mono);font-size:0.72rem;color:var(--text-dim)">
+        <div>HAM: <span class="text-cyan">NE4AL / 5Z4NA</span></div>
+        <div>BTC: <span style="color:var(--amber)">early adopter '09</span></div>
+        <div>EMACS: <span style="color:var(--green)">since 1976</span></div>
+      </div>
+    </aside>
+
+    <!-- ── Body ─────────────────────────────────────────────────────── -->
+    <div class="about-body">
+
+      <div class="terminal">
+        <div class="terminal__titlebar">
+          <span class="terminal__dot terminal__dot--red"></span>
+          <span class="terminal__dot terminal__dot--yellow"></span>
+          <span class="terminal__dot terminal__dot--green"></span>
+          <span class="terminal__title">bio.md</span>
+        </div>
+        <div class="terminal__body">
+          <div><span class="prompt">$ </span><span class="cmd">cat bio.md | head -3</span></div>
+          <div class="out">"Computers are bicycles of the mind." — Steve Jobs</div>
+          <div class="out">I've been riding that bicycle since 1975. <span class="hi">Hard.</span></div>
+        </div>
+      </div>
+
+      <h2 style="margin-top:2rem">The Long Game</h2>
+      <p>
+        In January 1975, aged 15, I read about the <a href="https://en.wikipedia.org/wiki/Altair_8800" target="_blank">Altair 8800</a> in Popular Electronics.
+        I couldn't afford one, so I built my own from discrete components cadged from physics teachers.
+        That decision set the trajectory for everything that followed — fifty years of machines, code, medicine, and obsessive curiosity.
+      </p>
+      <p>
+        My software career ran through assembly → C → LISP → C++ → Python, with long detours through Fortran, Solidity, and a dozen
+        domain-specific languages. EMACS has been my editor since 1976 and remains so today. I'm not nostalgic — it's simply the best
+        tool for the job and always has been.
+      </p>
+
+      <h2>AI Engineering</h2>
+      <p>
+        I've trained more than <strong>600 AI practitioners</strong> — from medical doctors to high school graduates — to build and
+        deploy real machine learning systems. I founded CyberCollege, the first online college in Africa, long before the word MOOC existed,
+        where we pioneered the flipped classroom, speed reading, and spaced memory techniques.
+      </p>
+      <p>
+        Today my focus is on the frontier: <strong>large language models, agentic architectures, and the intersection of AI with
+        medicine</strong>. I run Claude in fully autonomous YOLO mode daily. I've seen ten distinct levels of AI-driven development
+        emerge in the last three years — from vibe coding through fully agentic systems that compile, debug, and deploy without
+        human intervention. I live at level 8 and am pushing toward 10.
+      </p>
+
+      <h2>Medical AI</h2>
+      <p>
+        As a physician and data scientist, I apply ML/DL to medical diagnostics, clinical NLP, and health-system process engineering.
+        The combination of clinical domain knowledge and deep technical capability is rare and, I believe, enormously valuable.
+        AI that doesn't understand biology will miss what matters.
+      </p>
+
+      <h2>Beyond the Code</h2>
+      <p>
+        I'm a HAM radio operator (NE4AL / 5Z4NA), sport pilot, Land Rover Defender obsessive, and modular synthesizer builder.
+        I maintain a small robotics lab complete with 3D printers and CNC machines, and I'm in the process of converting a 300Tdi
+        Defender to full battery EV. My wife Ami and I keep bees, build things from wood and rebar, and manage an environmental
+        conservation project at Nyari Lake in Kenya.
+      </p>
+      <p>
+        The common thread across all of it: systems thinking, first principles, and a refusal to accept "it can't be done"
+        as an answer.
+      </p>
+
+      <h2>Work With Me</h2>
+      <p>
+        I don't do contracts. I do partnerships. I engage as a collaborator with shared stakes — similar to an angel investor
+        model but with technical execution rather than just capital. If you have a hard problem at the intersection of AI,
+        medicine, data, or engineering, <a href="https://drnealaggarwal.info/contact/" target="_blank">talk to me</a>.
+      </p>
+
+    </div>
+  </div>
+
+</div>
+{% endblock %}

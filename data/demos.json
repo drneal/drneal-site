@@ -1,0 +1,39 @@
+{
+  "demos": [
+    {
+      "title": "Clinical Text NLP Extractor",
+      "description": "Paste clinical notes and extract structured entities: diagnoses, medications, dosages, dates. Built on fine-tuned BERT with a spaCy post-processor. Runs entirely in the browser via ONNX.",
+      "status": "coming",
+      "url": null,
+      "stack": ["Python", "spaCy", "BERT", "ONNX", "HuggingFace"]
+    },
+    {
+      "title": "LLM Agent Trace Visualiser",
+      "description": "Feed in a Claude/GPT agent session JSON and get an interactive visualisation of tool calls, reasoning chains, and token usage over time. Useful for debugging multi-step agents.",
+      "status": "coming",
+      "url": null,
+      "stack": ["Flask", "d3.js", "Claude API", "JSON tracing"]
+    },
+    {
+      "title": "Algorithmic Trading Backtester",
+      "description": "A minimal Python backtesting harness for ML-based trading signals. Input a feature set and a model; get equity curve, drawdown, and Sharpe ratio. Designed for low-latency tick data.",
+      "status": "coming",
+      "url": null,
+      "stack": ["Python", "pandas", "scikit-learn", "matplotlib", "MQL5"]
+    },
+    {
+      "title": "DiMSAR LoRa Network Map",
+      "description": "Live map of the DiMSAR Kenya LoRa mesh radio network — nodes, signal strength, and last heartbeat. Part of my disaster management / search-and-rescue infrastructure work for the Radio Society of Kenya.",
+      "status": "coming",
+      "url": null,
+      "stack": ["LoRa", "Raspberry Pi", "Python", "Leaflet.js", "MQTT"]
+    },
+    {
+      "title": "Binaural Beat Generator",
+      "description": "Browser-based binaural beat generator built with the Web Audio API. Set carrier frequency, beat frequency, and waveform. Export as WAV. Inspired by years of modular synthesis and sound design.",
+      "status": "coming",
+      "url": null,
+      "stack": ["Web Audio API", "JavaScript", "DSP"]
+    }
+  ]
+}

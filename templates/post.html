@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} — Dr Neal Aggarwal{% endblock %}
+{% block description %}{{ post.summary }}{% endblock %}
+
+{% block content %}
+<div class="container--narrow">
+
+  <!-- ── Post header ─────────────────────────────────────────────────── -->
+  <header class="post-header">
+    <div class="post-card__meta" style="margin-bottom:1rem">
+      <a class="badge badge--cat" href="/?cat={{ post.category }}" style="text-decoration:none">{{ post.category }}</a>
+      {% if post.level %}<span class="badge badge--level">{{ post.level }}</span>{% endif %}
+      {% if post.read_time %}
+      <span class="text-mono text-dim" style="font-size:0.75rem">⏱ {{ post.read_time }}</span>
+      {% endif %}
+      {% for tag in post.tags %}<span class="badge badge--tag">{{ tag }}</span>{% endfor %}
+    </div>
+    <h1>{{ post.title }}</h1>
+    <div style="margin-top:0.75rem;font-family:var(--mono);font-size:0.78rem;color:var(--text-dim)">
+      Published {{ post.date }} &mdash; <a href="/about" style="color:var(--text-muted)">Dr Neal Aggarwal</a>
+    </div>
+  </header>
+
+  <!-- ── Post body ───────────────────────────────────────────────────── -->
+  <article class="post-body">
+    {{ post.content | safe }}
+  </article>
+
+  <!-- ── Tags ────────────────────────────────────────────────────────── -->
+  {% if post.tags %}
+  <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:1.25rem">
+    <span class="text-mono text-dim" style="font-size:0.75rem">tags:</span>
+    {% for tag in post.tags %}
+    <span class="badge badge--tag">{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- ── Post navigation ─────────────────────────────────────────────── -->
+  <nav class="post-nav" aria-label="Post navigation">
+    {% if prev_post %}
+    <a href="/post/{{ prev_post.slug }}">
+      <div class="post-nav__label">← Older</div>
+      <div class="post-nav__title">{{ prev_post.title }}</div>
+    </a>
+    {% else %}
+    <div></div>
+    {% endif %}
+
+    {% if next_post %}
+    <a class="next" href="/post/{{ next_post.slug }}">
+      <div class="post-nav__label">Newer →</div>
+      <div class="post-nav__title">{{ next_post.title }}</div>
+    </a>
+    {% else %}
+    <div></div>
+    {% endif %}
+  </nav>
+
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Library — Dr Neal Aggarwal{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <header class="page-hero">
+    <h1>// curated_library</h1>
+    <p class="subtitle">Seminal papers, key talks, and essential videos from the people shaping AI — filtered for signal, not noise.</p>
+  </header>
+
+  <!-- ── Filters ─────────────────────────────────────────────────────── -->
+  <div class="library-filters mt-4">
+    <span class="text-mono text-dim" style="font-size:0.78rem">type:</span>
+    <a href="/library" class="filter-btn {% if current_cat == 'all' %}active{% endif %}">all</a>
+    <a href="/library?cat=paper" class="filter-btn {% if current_cat == 'paper' %}active{% endif %}">papers</a>
+    <a href="/library?cat=video" class="filter-btn {% if current_cat == 'video' %}active{% endif %}">videos</a>
+    <a href="/library?cat=post" class="filter-btn {% if current_cat == 'post' %}active{% endif %}">blog posts</a>
+    <a href="/library?cat=talk" class="filter-btn {% if current_cat == 'talk' %}active{% endif %}">talks</a>
+
+    <span class="text-mono text-dim" style="font-size:0.78rem;margin-left:1rem">author:</span>
+    <a href="/library" class="filter-btn {% if current_author == 'all' %}active{% endif %}">all</a>
+    {% for author in authors %}
+    <a href="/library?author={{ author | urlencode }}" class="filter-btn {% if current_author == author %}active{% endif %}">{{ author }}</a>
+    {% endfor %}
+  </div>
+
+  <!-- ── Cards ───────────────────────────────────────────────────────── -->
+  <div class="library-grid">
+    {% for item in items %}
+    <div class="card lib-card">
+      <span class="lib-card__type lib-card__type--{{ item.type }}">{{ item.type }}</span>
+      <h3>{{ item.title }}</h3>
+      <div class="lib-card__author">{{ item.author }} &mdash; <span class="text-dim">{{ item.year }}</span></div>
+      <p class="lib-card__desc">{{ item.description }}</p>
+      {% if item.tags %}
+      <div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:auto;margin-bottom:0.5rem">
+        {% for tag in item.tags %}
+        <span class="skill-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <a class="lib-card__link" href="{{ item.url }}" target="_blank" rel="noopener">Open ↗</a>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if not items %}
+  <p class="text-muted text-mono" style="margin-top:2rem">No items match this filter.</p>
+  {% endif %}
+
+</div>
+{% endblock %}
