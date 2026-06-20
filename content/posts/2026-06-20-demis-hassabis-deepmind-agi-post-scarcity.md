@@ -201,4 +201,30 @@ Which, if the trajectory holds, is all of us.
 
 ---
 
-*References and further reading: AlphaGo (2017 documentary, dir. Greg Kohs); The Thinking Game (2025 documentary, dir. Greg Kohs, Google DeepMind); Sebastian Mallaby, The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence (Penguin Press, 2026); Hassabis D., "Accelerating scientific discovery with AI," Nobel Lecture, Stockholm, 8 December 2024; Jumper J. et al., "Highly accurate protein structure prediction with AlphaFold," Nature 596, 583–589 (2021); Silver D. et al., "Mastering the game of Go with deep neural networks and tree search," Nature 529, 484–489 (2016); Banks I.M., The Player of Games (1988).*
+**References and further reading**
+
+1. [*AlphaGo* — Full documentary (YouTube, 2020)](https://youtu.be/WXuK6gekU1Y) — dir. Greg Kohs; Tribeca Film Festival official selection 2017; best documentary at Denver, Warsaw, and Traverse City IFF.
+
+2. [*The Thinking Game* — Full documentary (YouTube, 2025)](https://youtu.be/d95J8yzvjbQ) — dir. Greg Kohs; produced by Google DeepMind; Tribeca Film Festival 2024 world premiere.
+
+3. Sebastian Mallaby, [*The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence*](https://www.penguinrandomhouse.com/books/741523/the-infinity-machine-by-sebastian-mallaby/) (Penguin Press, 2026). ISBN 978-0-593-83184-7.
+
+4. Hassabis D., ["Accelerating scientific discovery with AI"](https://www.nobelprize.org/uploads/2024/12/hassabis-lecture.pdf) — Nobel Prize lecture in Chemistry, Stockholm, 8 December 2024. Full video at [NobelPrize.org](https://www.nobelprize.org/prizes/chemistry/2024/hassabis/lecture/).
+
+5. Jumper J. et al., ["Highly accurate protein structure prediction with AlphaFold"](https://www.nature.com/articles/s41586-021-03819-2), *Nature* 596, 583–589 (2021).
+
+6. Abramson J. et al., ["Accurate structure prediction of biomolecular interactions with AlphaFold 3"](https://www.nature.com/articles/s41586-024-07487-w), *Nature* 630, 493–500 (2024).
+
+7. Silver D. et al., ["Mastering the game of Go with deep neural networks and tree search"](https://www.nature.com/articles/nature16961), *Nature* 529, 484–489 (2016).
+
+8. Merchant A. et al., ["Scaling deep learning for materials discovery"](https://www.nature.com/articles/s41586-023-06735-9), *Nature* 624, 80–85 (2023). (GNoME)
+
+9. Lam R. et al., ["Learning skillful medium-range global weather forecasting"](https://www.science.org/doi/10.1126/science.adi2336), *Science* 382, 1416–1421 (2023). (GraphCast)
+
+10. Degrave J. et al., ["Magnetic control of tokamak plasmas through deep reinforcement learning"](https://www.nature.com/articles/s41586-021-04301-9), *Nature* 602, 414–419 (2022).
+
+11. Banks I.M., [*The Player of Games*](https://www.orbitbooks.net/2008/09/02/the-player-of-games/) (Orbit, 1988). First in the Culture series that directly shaped Hassabis's vision of AI-enabled post-scarcity civilisation.
+
+12. Hassabis D., [TIME100 interview on AlphaFold, AGI, and humanity](https://time.com/7277608/demis-hassabis-interview-time100-2025/) (TIME, 2025).
+
+13. Hassabis D. & Amodei D., ["The day after AGI: Two 'rock stars' of AI on what it will mean for humanity"](https://www.weforum.org/podcasts/radio-davos/episodes/ai-agi-dario-amodei-demis-hassabis/) — World Economic Forum Radio Davos, January 2026.
