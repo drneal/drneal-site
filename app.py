@@ -869,6 +869,824 @@ def nlp_extractor_run():
         return jsonify({"ok": False, "error": str(exc)}), 500
 
 
+# ── Drug Interaction Checker ─────────────────────────────────────────────────
+
+_DRUG_ALIASES: dict[str, str] = {
+    "acetaminophen": "paracetamol", "tylenol": "paracetamol",
+    "advil": "ibuprofen", "nurofen": "ibuprofen", "brufen": "ibuprofen",
+    "voltaren": "diclofenac", "voltarol": "diclofenac",
+    "coumadin": "warfarin",
+    "lasix": "furosemide", "frusemide": "furosemide",
+    "zocor": "simvastatin",
+    "lipitor": "atorvastatin",
+    "crestor": "rosuvastatin",
+    "glucophage": "metformin",
+    "lanoxin": "digoxin",
+    "cordarone": "amiodarone",
+    "plavix": "clopidogrel",
+    "eliquis": "apixaban",
+    "xarelto": "rivaroxaban",
+    "pradaxa": "dabigatran",
+    "prozac": "fluoxetine",
+    "zoloft": "sertraline",
+    "lexapro": "escitalopram",
+    "celexa": "citalopram",
+    "effexor": "venlafaxine",
+    "cymbalta": "duloxetine",
+    "seroquel": "quetiapine",
+    "risperdal": "risperidone",
+    "zyprexa": "olanzapine",
+    "depakote": "valproate", "depakene": "valproate",
+    "sodium valproate": "valproate", "semisodium valproate": "valproate",
+    "tegretol": "carbamazepine",
+    "lamictal": "lamotrigine",
+    "neurontin": "gabapentin",
+    "lyrica": "pregabalin",
+    "diflucan": "fluconazole",
+    "flagyl": "metronidazole",
+    "rifadin": "rifampicin", "rifampin": "rifampicin",
+    "sandimmun": "ciclosporin", "cyclosporine": "ciclosporin",
+    "ciclosporine": "ciclosporin", "cyclosporin": "ciclosporin",
+    "imuran": "azathioprine",
+    "zyloprim": "allopurinol",
+    "nitro": "nitroglycerine", "gtn": "nitroglycerine",
+    "glyceryl trinitrate": "nitroglycerine",
+    "viagra": "sildenafil",
+    "cialis": "tadalafil",
+    "prilosec": "omeprazole",
+    "nexium": "esomeprazole",
+    "clexane": "enoxaparin", "lovenox": "enoxaparin",
+    "zithromax": "azithromycin",
+    "biaxin": "clarithromycin",
+    "cipro": "ciprofloxacin",
+    "asa": "aspirin", "acetylsalicylic acid": "aspirin",
+    "ms contin": "morphine", "oramorph": "morphine",
+    "oxycontin": "oxycodone",
+    "ultram": "tramadol",
+    "colcrys": "colchicine",
+    "inderal": "propranolol", "avlocardyl": "propranolol",
+    "cardizem": "diltiazem",
+    "calan": "verapamil", "isoptin": "verapamil",
+    "slo-phyllin": "theophylline",
+}
+
+_DRUG_INTERACTIONS: list[dict] = [
+    # ── CONTRAINDICATED ─────────────────────────────────────────────────────────
+    {
+        "drugs": ["selegiline", "sertraline"], "severity": "CONTRAINDICATED",
+        "mechanism": "MAOI + SSRI: dual serotonergic stimulation causing serotonin syndrome.",
+        "effect": "Potentially fatal serotonin syndrome: hyperthermia, rigidity, clonus, rhabdomyolysis, seizures.",
+        "recommendation": "Do not co-prescribe. Allow ≥14 days washout after stopping MAOI before starting SSRI.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["selegiline", "fluoxetine"], "severity": "CONTRAINDICATED",
+        "mechanism": "MAOI + SSRI. Fluoxetine's active metabolite has a 1–2 week half-life, extending the washout requirement.",
+        "effect": "Potentially fatal serotonin syndrome.",
+        "recommendation": "Allow ≥5 weeks washout after stopping fluoxetine before starting any MAOI.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["selegiline", "venlafaxine"], "severity": "CONTRAINDICATED",
+        "mechanism": "MAOI + SNRI: dual serotonergic stimulation.",
+        "effect": "Potentially fatal serotonin syndrome.",
+        "recommendation": "Contraindicated. ≥14 days washout after stopping MAOI.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["selegiline", "tramadol"], "severity": "CONTRAINDICATED",
+        "mechanism": "Tramadol inhibits serotonin and noradrenaline reuptake; combined with MAO inhibition causes serotonin syndrome.",
+        "effect": "Serotonin syndrome; also lowers seizure threshold.",
+        "recommendation": "Contraindicated. Use alternative analgesia (e.g., paracetamol, codeine).",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["rasagiline", "sertraline"], "severity": "CONTRAINDICATED",
+        "mechanism": "Selective MAO-B inhibitor + SSRI: serotonin syndrome.",
+        "effect": "Serotonin syndrome.",
+        "recommendation": "Contraindicated. Use alternative antidepressant (e.g., mirtazapine).",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["rasagiline", "tramadol"], "severity": "CONTRAINDICATED",
+        "mechanism": "MAO-B inhibitor + tramadol serotonin reuptake inhibition.",
+        "effect": "Serotonin syndrome; seizures.",
+        "recommendation": "Contraindicated. Use alternative analgesia.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["sildenafil", "nitroglycerine"], "severity": "CONTRAINDICATED",
+        "mechanism": "Both increase cGMP via the nitric oxide pathway; additive smooth muscle vasodilation.",
+        "effect": "Severe, potentially fatal hypotension.",
+        "recommendation": "Contraindicated within 24 hours of sildenafil. Never co-prescribe as regular medications.",
+        "onset": "Minutes"
+    },
+    {
+        "drugs": ["tadalafil", "nitroglycerine"], "severity": "CONTRAINDICATED",
+        "mechanism": "Additive cGMP-mediated vasodilation. Tadalafil half-life is 17–35 hours.",
+        "effect": "Severe hypotension.",
+        "recommendation": "Contraindicated within 48 hours of tadalafil.",
+        "onset": "Minutes"
+    },
+    {
+        "drugs": ["sildenafil", "isosorbide"], "severity": "CONTRAINDICATED",
+        "mechanism": "PDE5 inhibitor + nitrate: additive vasodilation via cGMP pathway.",
+        "effect": "Severe hypotension.",
+        "recommendation": "Contraindicated.",
+        "onset": "Minutes to hours"
+    },
+    {
+        "drugs": ["tadalafil", "isosorbide"], "severity": "CONTRAINDICATED",
+        "mechanism": "PDE5 inhibitor + nitrate.",
+        "effect": "Severe hypotension.",
+        "recommendation": "Contraindicated.",
+        "onset": "Minutes to hours"
+    },
+    {
+        "drugs": ["linezolid", "sertraline"], "severity": "CONTRAINDICATED",
+        "mechanism": "Linezolid is a reversible, non-selective MAO inhibitor; combined with SSRIs causes serotonin syndrome.",
+        "effect": "Serotonin syndrome.",
+        "recommendation": "Avoid. Use alternative antibiotic. If linezolid essential, discontinue SSRI ≥2 weeks beforehand.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["linezolid", "fluoxetine"], "severity": "CONTRAINDICATED",
+        "mechanism": "Linezolid MAO inhibition + SSRI with long-acting active metabolite.",
+        "effect": "Serotonin syndrome.",
+        "recommendation": "Contraindicated. ≥5 weeks washout after fluoxetine.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["linezolid", "venlafaxine"], "severity": "CONTRAINDICATED",
+        "mechanism": "Linezolid MAO inhibition + SNRI.",
+        "effect": "Serotonin syndrome.",
+        "recommendation": "Contraindicated.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["linezolid", "tramadol"], "severity": "CONTRAINDICATED",
+        "mechanism": "Linezolid MAO inhibition + tramadol serotonin/noradrenaline reuptake inhibition.",
+        "effect": "Serotonin syndrome.",
+        "recommendation": "Contraindicated. Use alternative analgesia.",
+        "onset": "Hours"
+    },
+    # ── MAJOR ────────────────────────────────────────────────────────────────────
+    {
+        "drugs": ["warfarin", "amiodarone"], "severity": "MAJOR",
+        "mechanism": "Amiodarone inhibits CYP2C9 (primary warfarin metabolising enzyme) and CYP3A4.",
+        "effect": "INR increases 2–3× within days to weeks; major haemorrhage risk.",
+        "recommendation": "Reduce warfarin dose by 30–50% on starting amiodarone. Monitor INR every 3–5 days until stable, then weekly for 4–6 weeks.",
+        "onset": "Days to weeks"
+    },
+    {
+        "drugs": ["warfarin", "metronidazole"], "severity": "MAJOR",
+        "mechanism": "Metronidazole inhibits CYP2C9 and may directly inhibit warfarin metabolism.",
+        "effect": "Elevated INR; bleeding risk.",
+        "recommendation": "Monitor INR during and for 7–10 days after metronidazole. Empirical warfarin dose reduction of ~25% often needed.",
+        "onset": "2–7 days"
+    },
+    {
+        "drugs": ["warfarin", "fluconazole"], "severity": "MAJOR",
+        "mechanism": "Fluconazole inhibits CYP2C9 (major) and CYP3A4 (minor).",
+        "effect": "Marked INR elevation; serious bleeding risk.",
+        "recommendation": "Check INR on day 3 of fluconazole. Empirical warfarin dose reduction 30–50% often required.",
+        "onset": "2–4 days"
+    },
+    {
+        "drugs": ["warfarin", "aspirin"], "severity": "MAJOR",
+        "mechanism": "Additive: COX-1 antiplatelet inhibition + anticoagulant + GI mucosal damage.",
+        "effect": "Major bleeding, particularly GI haemorrhage.",
+        "recommendation": "Avoid unless dual antithrombotic therapy is specifically indicated (ACS with AF). Always add PPI.",
+        "onset": "Immediate"
+    },
+    {
+        "drugs": ["warfarin", "ibuprofen"], "severity": "MAJOR",
+        "mechanism": "NSAIDs inhibit platelet aggregation and cause GI mucosal damage; potential CYP2C9 competition.",
+        "effect": "Significantly increased GI and systemic bleeding risk.",
+        "recommendation": "Avoid. Use paracetamol. If NSAID essential, monitor INR closely and add PPI.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["warfarin", "naproxen"], "severity": "MAJOR",
+        "mechanism": "NSAID: antiplatelet + gastric mucosal damage.",
+        "effect": "Increased bleeding risk.",
+        "recommendation": "Avoid. Paracetamol preferred.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["warfarin", "diclofenac"], "severity": "MAJOR",
+        "mechanism": "NSAID + CYP2C9 inhibition by diclofenac.",
+        "effect": "Increased bleeding risk.",
+        "recommendation": "Avoid. Paracetamol preferred.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["warfarin", "carbamazepine"], "severity": "MAJOR",
+        "mechanism": "Carbamazepine is a potent CYP2C9/CYP3A4 inducer, accelerating warfarin clearance.",
+        "effect": "Reduced anticoagulation; thrombosis risk.",
+        "recommendation": "Monitor INR closely on starting carbamazepine; warfarin dose may need to increase significantly.",
+        "onset": "1–2 weeks"
+    },
+    {
+        "drugs": ["warfarin", "rifampicin"], "severity": "MAJOR",
+        "mechanism": "Rifampicin is one of the most potent CYP enzyme inducers (CYP2C9, CYP3A4, CYP1A2).",
+        "effect": "Dramatic reduction in warfarin effect; INR may fall to sub-therapeutic levels.",
+        "recommendation": "Warfarin dose may need to double or more. Monitor INR very frequently. Consider alternative anticoagulation.",
+        "onset": "Days to 2 weeks"
+    },
+    {
+        "drugs": ["digoxin", "amiodarone"], "severity": "MAJOR",
+        "mechanism": "Amiodarone inhibits P-glycoprotein, reducing digoxin renal excretion and altering volume of distribution.",
+        "effect": "Digoxin toxicity: nausea, bradycardia, AV block, ventricular arrhythmias.",
+        "recommendation": "Reduce digoxin dose by 50% on starting amiodarone. Monitor digoxin level and ECG closely.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["digoxin", "verapamil"], "severity": "MAJOR",
+        "mechanism": "Verapamil inhibits P-glycoprotein, reducing digoxin renal clearance; additive AV nodal depression.",
+        "effect": "Digoxin toxicity and bradycardia/AV block.",
+        "recommendation": "Reduce digoxin dose by 33–50%. Monitor ECG and digoxin levels.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["digoxin", "diltiazem"], "severity": "MAJOR",
+        "mechanism": "Diltiazem reduces digoxin clearance and has additive AV nodal effects.",
+        "effect": "Elevated digoxin levels; bradycardia; AV block.",
+        "recommendation": "Monitor digoxin levels and ECG. Reduce digoxin dose accordingly.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["methotrexate", "ibuprofen"], "severity": "MAJOR",
+        "mechanism": "NSAIDs reduce renal prostaglandin synthesis, decreasing GFR and methotrexate renal excretion; may also displace methotrexate from plasma proteins.",
+        "effect": "Methotrexate toxicity: pancytopenia, mucositis, hepatotoxicity, nephrotoxicity.",
+        "recommendation": "Avoid NSAIDs in patients on methotrexate. Use paracetamol. If unavoidable, monitor FBC and renal function closely.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["methotrexate", "naproxen"], "severity": "MAJOR",
+        "mechanism": "NSAID-mediated reduction in methotrexate renal clearance.",
+        "effect": "Methotrexate toxicity.",
+        "recommendation": "Avoid. Use paracetamol.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["methotrexate", "trimethoprim"], "severity": "MAJOR",
+        "mechanism": "Both are antifolates; additive inhibition of dihydrofolate reductase.",
+        "effect": "Severe pancytopenia, megaloblastic anaemia.",
+        "recommendation": "Avoid. If unavoidable, folinic acid rescue and close FBC monitoring.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["methotrexate", "co-trimoxazole"], "severity": "MAJOR",
+        "mechanism": "Co-trimoxazole = trimethoprim (antifolate) + sulfamethoxazole (reduces methotrexate renal excretion).",
+        "effect": "Severe antifolate toxicity: pancytopenia, mucositis.",
+        "recommendation": "Avoid. If essential, folinic acid prophylaxis and close FBC monitoring required.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["lithium", "ibuprofen"], "severity": "MAJOR",
+        "mechanism": "NSAIDs reduce renal prostaglandin synthesis, decreasing GFR and lithium renal excretion.",
+        "effect": "Lithium toxicity: tremor, ataxia, confusion, renal failure, cardiac arrhythmias.",
+        "recommendation": "Avoid NSAIDs in patients on lithium. Use paracetamol. If NSAID unavoidable, reduce lithium dose and monitor levels closely.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["lithium", "naproxen"], "severity": "MAJOR",
+        "mechanism": "NSAID: reduced GFR → reduced lithium excretion.",
+        "effect": "Lithium toxicity.",
+        "recommendation": "Avoid. Use paracetamol.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["lithium", "diclofenac"], "severity": "MAJOR",
+        "mechanism": "NSAID: reduced lithium excretion.",
+        "effect": "Lithium toxicity.",
+        "recommendation": "Avoid.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["lithium", "ramipril"], "severity": "MAJOR",
+        "mechanism": "ACE inhibitors reduce aldosterone-mediated sodium reabsorption, causing compensatory lithium retention in the proximal tubule.",
+        "effect": "Lithium toxicity even at previously therapeutic doses.",
+        "recommendation": "Monitor lithium levels closely when starting or changing ACE inhibitor dose. Consider empirical 50% lithium dose reduction.",
+        "onset": "Days to weeks"
+    },
+    {
+        "drugs": ["lithium", "lisinopril"], "severity": "MAJOR",
+        "mechanism": "ACE inhibitor: sodium depletion → compensatory lithium reabsorption.",
+        "effect": "Lithium toxicity.",
+        "recommendation": "Monitor lithium levels closely.",
+        "onset": "Days to weeks"
+    },
+    {
+        "drugs": ["lithium", "furosemide"], "severity": "MAJOR",
+        "mechanism": "Loop diuretics cause sodium depletion, triggering compensatory lithium reabsorption in the proximal tubule.",
+        "effect": "Lithium toxicity.",
+        "recommendation": "Monitor lithium levels closely. Ensure adequate dietary sodium intake.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["morphine", "diazepam"], "severity": "MAJOR",
+        "mechanism": "Additive CNS and respiratory depression (opioid receptor agonism + GABA-A positive allosteric modulation).",
+        "effect": "Respiratory depression, coma, death. This combination accounts for a large proportion of opioid overdose deaths.",
+        "recommendation": "Avoid where possible. If co-prescribed (palliative care), use lowest doses, monitor respiratory rate closely, and have naloxone available.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["oxycodone", "diazepam"], "severity": "MAJOR",
+        "mechanism": "Additive opioid + benzodiazepine respiratory depression.",
+        "effect": "Respiratory depression, sedation.",
+        "recommendation": "Avoid where possible. Naloxone should be accessible if co-prescribed.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["codeine", "diazepam"], "severity": "MAJOR",
+        "mechanism": "Additive respiratory depression (opioid + benzodiazepine).",
+        "effect": "Respiratory depression.",
+        "recommendation": "Avoid. If necessary, lowest doses and close monitoring.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["tramadol", "sertraline"], "severity": "MAJOR",
+        "mechanism": "Tramadol inhibits serotonin and noradrenaline reuptake; combined with SSRIs substantially raises synaptic serotonin.",
+        "effect": "Serotonin syndrome: agitation, confusion, hyperthermia, tachycardia, clonus, rigidity.",
+        "recommendation": "Avoid if possible. If co-prescribed, use lowest tramadol dose and monitor for serotonin syndrome signs.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["tramadol", "fluoxetine"], "severity": "MAJOR",
+        "mechanism": "Serotonin syndrome + fluoxetine inhibits CYP2D6 (tramadol metabolic activation).",
+        "effect": "Serotonin syndrome.",
+        "recommendation": "Avoid. Use alternative analgesia.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["tramadol", "citalopram"], "severity": "MAJOR",
+        "mechanism": "Serotonin syndrome (SSRI + tramadol serotonin reuptake inhibition).",
+        "effect": "Serotonin syndrome.",
+        "recommendation": "Avoid.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["tramadol", "escitalopram"], "severity": "MAJOR",
+        "mechanism": "Serotonin syndrome (SSRI + tramadol).",
+        "effect": "Serotonin syndrome.",
+        "recommendation": "Avoid.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["tramadol", "venlafaxine"], "severity": "MAJOR",
+        "mechanism": "Serotonin syndrome (SNRI + tramadol); also additive seizure risk.",
+        "effect": "Serotonin syndrome; seizures.",
+        "recommendation": "Avoid. Use alternative analgesia.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["metoprolol", "verapamil"], "severity": "MAJOR",
+        "mechanism": "Additive AV nodal depression: beta-blockade + rate-limiting calcium channel blockade.",
+        "effect": "Severe bradycardia, complete heart block.",
+        "recommendation": "Avoid. Use dihydropyridine CCB (amlodipine) instead of verapamil if both rate control and BP control are needed.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["bisoprolol", "verapamil"], "severity": "MAJOR",
+        "mechanism": "Additive AV nodal depression.",
+        "effect": "Bradycardia, heart block.",
+        "recommendation": "Avoid. Use amlodipine if CCB required.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["atenolol", "verapamil"], "severity": "MAJOR",
+        "mechanism": "Additive AV nodal depression.",
+        "effect": "Bradycardia, heart block.",
+        "recommendation": "Avoid.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["propranolol", "verapamil"], "severity": "MAJOR",
+        "mechanism": "Additive AV nodal depression.",
+        "effect": "Bradycardia, heart block.",
+        "recommendation": "Avoid.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["metoprolol", "diltiazem"], "severity": "MAJOR",
+        "mechanism": "Additive AV nodal depression (beta-blocker + rate-limiting CCB).",
+        "effect": "Severe bradycardia, heart block.",
+        "recommendation": "Avoid. Use amlodipine instead of diltiazem if CCB needed.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["bisoprolol", "diltiazem"], "severity": "MAJOR",
+        "mechanism": "Additive AV nodal depression.",
+        "effect": "Bradycardia, heart block.",
+        "recommendation": "Avoid. Use amlodipine.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["amiodarone", "sotalol"], "severity": "MAJOR",
+        "mechanism": "Additive QTc prolongation via multiple mechanisms (IKr blockade + multiple ion channel effects).",
+        "effect": "Torsades de pointes; ventricular fibrillation.",
+        "recommendation": "Avoid combination. ECG monitoring mandatory in specialist settings.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["amiodarone", "azithromycin"], "severity": "MAJOR",
+        "mechanism": "Additive QTc prolongation (both prolong cardiac repolarisation via IKr blockade).",
+        "effect": "Torsades de pointes.",
+        "recommendation": "Avoid. Use doxycycline or co-amoxiclav as alternative to azithromycin.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["amiodarone", "clarithromycin"], "severity": "MAJOR",
+        "mechanism": "Additive QTc prolongation; clarithromycin also inhibits CYP3A4 (amiodarone metabolism), raising amiodarone levels.",
+        "effect": "Torsades de pointes.",
+        "recommendation": "Avoid. Use alternative antibiotic.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["amiodarone", "haloperidol"], "severity": "MAJOR",
+        "mechanism": "Additive QTc prolongation.",
+        "effect": "Torsades de pointes.",
+        "recommendation": "Avoid. If necessary, baseline ECG and regular QTc monitoring.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["amiodarone", "ciprofloxacin"], "severity": "MAJOR",
+        "mechanism": "Additive QTc prolongation (fluoroquinolone IKr blockade).",
+        "effect": "Torsades de pointes.",
+        "recommendation": "Avoid. Use alternative antibiotic.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["haloperidol", "azithromycin"], "severity": "MAJOR",
+        "mechanism": "Additive QTc prolongation.",
+        "effect": "Torsades de pointes.",
+        "recommendation": "Avoid. Use alternative antibiotic.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["simvastatin", "amiodarone"], "severity": "MAJOR",
+        "mechanism": "Amiodarone inhibits CYP3A4 (simvastatin metabolism); simvastatin has concentration-dependent myopathy.",
+        "effect": "Myopathy; rhabdomyolysis.",
+        "recommendation": "Simvastatin dose must not exceed 20 mg/day with amiodarone. Switch to pravastatin or rosuvastatin (less CYP3A4-dependent).",
+        "onset": "Weeks to months"
+    },
+    {
+        "drugs": ["simvastatin", "clarithromycin"], "severity": "MAJOR",
+        "mechanism": "Clarithromycin inhibits CYP3A4, markedly raising simvastatin acid levels.",
+        "effect": "Myopathy; rhabdomyolysis.",
+        "recommendation": "Suspend simvastatin for the duration of the clarithromycin course. Restart after completion.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["atorvastatin", "clarithromycin"], "severity": "MAJOR",
+        "mechanism": "Clarithromycin inhibits CYP3A4 (atorvastatin metabolism).",
+        "effect": "Elevated atorvastatin levels; myopathy risk.",
+        "recommendation": "Suspend atorvastatin during clarithromycin course or switch to pravastatin/rosuvastatin.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["simvastatin", "ciclosporin"], "severity": "MAJOR",
+        "mechanism": "Ciclosporin inhibits both OATP1B1 transporter (hepatic uptake) and CYP3A4, markedly increasing simvastatin bioavailability.",
+        "effect": "Severe myopathy; rhabdomyolysis.",
+        "recommendation": "Avoid simvastatin in patients on ciclosporin. Use pravastatin (lower OATP1B1 dependence) at low doses.",
+        "onset": "Weeks"
+    },
+    {
+        "drugs": ["simvastatin", "fluconazole"], "severity": "MAJOR",
+        "mechanism": "Fluconazole inhibits CYP3A4, raising simvastatin levels markedly.",
+        "effect": "Myopathy; rhabdomyolysis.",
+        "recommendation": "Suspend simvastatin during fluconazole course.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["spironolactone", "ramipril"], "severity": "MAJOR",
+        "mechanism": "Both raise serum potassium: aldosterone antagonist + reduced aldosterone synthesis via ACE inhibition.",
+        "effect": "Hyperkalaemia: cardiac arrhythmias, cardiac arrest.",
+        "recommendation": "Monitor potassium at baseline, 1–2 weeks, then monthly. Acceptable in heart failure if eGFR >30 and K+ <5.0 mmol/L at baseline.",
+        "onset": "Days to weeks"
+    },
+    {
+        "drugs": ["spironolactone", "lisinopril"], "severity": "MAJOR",
+        "mechanism": "Dual hyperkalaemia (aldosterone antagonist + ACE inhibitor).",
+        "effect": "Hyperkalaemia.",
+        "recommendation": "Monitor potassium at 1–2 weeks and monthly.",
+        "onset": "Days to weeks"
+    },
+    {
+        "drugs": ["allopurinol", "azathioprine"], "severity": "MAJOR",
+        "mechanism": "Allopurinol inhibits xanthine oxidase, the enzyme responsible for inactivating azathioprine's active metabolite (6-mercaptopurine), causing accumulation.",
+        "effect": "Severe bone marrow suppression: pancytopenia, agranulocytosis.",
+        "recommendation": "Avoid if at all possible. If essential, reduce azathioprine dose by 75% and monitor FBC very frequently.",
+        "onset": "Days to weeks"
+    },
+    {
+        "drugs": ["valproate", "lamotrigine"], "severity": "MAJOR",
+        "mechanism": "Valproate inhibits glucuronidation of lamotrigine, approximately doubling plasma lamotrigine levels.",
+        "effect": "Lamotrigine toxicity (ataxia, diplopia, dizziness); elevated Stevens-Johnson syndrome risk with rapid dose escalation.",
+        "recommendation": "Halve the standard starting lamotrigine dose and titrate at half the usual rate when adding to valproate.",
+        "onset": "Days to weeks"
+    },
+    {
+        "drugs": ["carbamazepine", "lamotrigine"], "severity": "MAJOR",
+        "mechanism": "Carbamazepine induces lamotrigine glucuronidation, reducing lamotrigine levels 40–50%.",
+        "effect": "Subtherapeutic lamotrigine levels; worsened seizure control.",
+        "recommendation": "Higher lamotrigine doses required when co-prescribed with carbamazepine. Monitor seizure control carefully.",
+        "onset": "Weeks"
+    },
+    {
+        "drugs": ["ramipril", "ibuprofen"], "severity": "MAJOR",
+        "mechanism": "NSAIDs reduce renal prostaglandin synthesis (reduces GFR) and antagonise ACE inhibitor antihypertensive effect. With a concurrent diuretic, this constitutes the 'triple whammy' — a leading cause of drug-induced AKI.",
+        "effect": "Acute kidney injury; loss of blood pressure control.",
+        "recommendation": "Avoid. Use paracetamol. If NSAID essential, stop ACE inhibitor temporarily and monitor renal function.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["lisinopril", "ibuprofen"], "severity": "MAJOR",
+        "mechanism": "NSAID reduces GFR and antagonises ACE inhibitor. With diuretic = triple whammy.",
+        "effect": "Acute kidney injury.",
+        "recommendation": "Avoid. Use paracetamol.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["theophylline", "ciprofloxacin"], "severity": "MAJOR",
+        "mechanism": "Ciprofloxacin inhibits CYP1A2, the primary enzyme metabolising theophylline.",
+        "effect": "Theophylline toxicity: tachycardia, nausea, vomiting, seizures, arrhythmias.",
+        "recommendation": "Reduce theophylline dose by 30–50% during ciprofloxacin. Monitor levels. Use alternative antibiotic if possible.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["theophylline", "clarithromycin"], "severity": "MAJOR",
+        "mechanism": "Clarithromycin inhibits CYP1A2 and CYP3A4 (theophylline metabolism).",
+        "effect": "Theophylline toxicity.",
+        "recommendation": "Monitor theophylline levels closely. Consider alternative antibiotic.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["apixaban", "aspirin"], "severity": "MAJOR",
+        "mechanism": "Additive anticoagulant + antiplatelet bleeding risk.",
+        "effect": "Major bleeding including intracranial haemorrhage.",
+        "recommendation": "Avoid unless dual antithrombotic therapy is specifically indicated (ACS/stent + AF). Add PPI.",
+        "onset": "Immediate"
+    },
+    {
+        "drugs": ["rivaroxaban", "aspirin"], "severity": "MAJOR",
+        "mechanism": "Additive anticoagulant + antiplatelet bleeding risk.",
+        "effect": "Major bleeding.",
+        "recommendation": "Avoid unless clinically indicated. Add PPI.",
+        "onset": "Immediate"
+    },
+    {
+        "drugs": ["apixaban", "ibuprofen"], "severity": "MAJOR",
+        "mechanism": "NSAIDs: antiplatelet + GI mucosal damage; additive with DOAC anticoagulation.",
+        "effect": "GI haemorrhage.",
+        "recommendation": "Avoid NSAIDs in patients on DOACs. Use paracetamol.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["rivaroxaban", "ibuprofen"], "severity": "MAJOR",
+        "mechanism": "Additive bleeding risk (DOAC + NSAID).",
+        "effect": "GI haemorrhage.",
+        "recommendation": "Avoid NSAIDs with DOACs.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["colchicine", "clarithromycin"], "severity": "MAJOR",
+        "mechanism": "Clarithromycin inhibits both P-glycoprotein (colchicine efflux) and CYP3A4 (colchicine metabolism), dramatically raising colchicine plasma levels.",
+        "effect": "Colchicine toxicity: myopathy, bone marrow suppression, multi-organ failure. Fatal cases reported.",
+        "recommendation": "Contraindicated in renal/hepatic impairment. In normal renal/hepatic function, use the lowest colchicine dose for the shortest duration.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["colchicine", "ciclosporin"], "severity": "MAJOR",
+        "mechanism": "Ciclosporin inhibits P-glycoprotein and CYP3A4 (colchicine clearance).",
+        "effect": "Colchicine toxicity.",
+        "recommendation": "Avoid. Use alternative gout therapy.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["ciclosporin", "ibuprofen"], "severity": "MAJOR",
+        "mechanism": "NSAIDs reduce renal prostaglandins; ciclosporin has direct nephrotoxicity — combination markedly increases AKI risk.",
+        "effect": "Acute kidney injury.",
+        "recommendation": "Avoid. Use paracetamol.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["tacrolimus", "ibuprofen"], "severity": "MAJOR",
+        "mechanism": "Additive nephrotoxicity (calcineurin inhibitor + NSAID).",
+        "effect": "Acute kidney injury.",
+        "recommendation": "Avoid. Use paracetamol.",
+        "onset": "Days"
+    },
+    # ── MODERATE ──────────────────────────────────────────────────────────────────
+    {
+        "drugs": ["clopidogrel", "omeprazole"], "severity": "MODERATE",
+        "mechanism": "Omeprazole inhibits CYP2C19, which activates clopidogrel (prodrug → active thiol metabolite).",
+        "effect": "Reduced antiplatelet activity of clopidogrel; potential increased cardiovascular events.",
+        "recommendation": "Use pantoprazole or esomeprazole (less CYP2C19 inhibition) instead of omeprazole as the PPI.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["quetiapine", "azithromycin"], "severity": "MODERATE",
+        "mechanism": "Additive QTc prolongation.",
+        "effect": "Torsades de pointes risk.",
+        "recommendation": "Baseline ECG. Monitor QTc. Use alternative antibiotic if feasible.",
+        "onset": "Hours to days"
+    },
+    {
+        "drugs": ["gabapentin", "morphine"], "severity": "MODERATE",
+        "mechanism": "Additive CNS and respiratory depression.",
+        "effect": "Excessive sedation, respiratory depression.",
+        "recommendation": "Use lowest effective doses. Monitor for respiratory depression. Avoid in patients with COPD.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["pregabalin", "oxycodone"], "severity": "MODERATE",
+        "mechanism": "Additive CNS depression (gabapentinoid + opioid).",
+        "effect": "Sedation, cognitive impairment, respiratory depression.",
+        "recommendation": "Lowest effective doses. Counsel on driving. Monitor closely.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["pregabalin", "morphine"], "severity": "MODERATE",
+        "mechanism": "Additive CNS and respiratory depression.",
+        "effect": "Respiratory depression.",
+        "recommendation": "Start low. Monitor.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["furosemide", "ibuprofen"], "severity": "MODERATE",
+        "mechanism": "NSAIDs antagonise the renal prostaglandin-dependent mechanism of loop diuretics.",
+        "effect": "Reduced diuretic efficacy; fluid retention; AKI risk.",
+        "recommendation": "Avoid NSAIDs in patients requiring diuretic therapy. Use paracetamol.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["sertraline", "ibuprofen"], "severity": "MODERATE",
+        "mechanism": "SSRIs deplete platelet serotonin (reducing platelet aggregation); NSAIDs add independent antiplatelet and mucosal effects.",
+        "effect": "3–15× increased risk of upper GI bleeding.",
+        "recommendation": "Add PPI cover if both drugs are necessary.",
+        "onset": "Days to weeks"
+    },
+    {
+        "drugs": ["fluoxetine", "ibuprofen"], "severity": "MODERATE",
+        "mechanism": "SSRI platelet depletion + NSAID antiplatelet/mucosal effects.",
+        "effect": "Increased GI bleeding risk.",
+        "recommendation": "Add PPI cover.",
+        "onset": "Days to weeks"
+    },
+    {
+        "drugs": ["simvastatin", "amlodipine"], "severity": "MODERATE",
+        "mechanism": "Amlodipine weakly inhibits CYP3A4, modestly increasing simvastatin exposure.",
+        "effect": "Slightly increased myopathy risk.",
+        "recommendation": "Simvastatin dose should not exceed 20 mg/day when co-prescribed with amlodipine.",
+        "onset": "Weeks"
+    },
+    {
+        "drugs": ["levothyroxine", "warfarin"], "severity": "MODERATE",
+        "mechanism": "Thyroid hormones increase catabolism of vitamin K-dependent clotting factors.",
+        "effect": "Elevated INR when levothyroxine dose is increased or a hypothyroid patient achieves euthyroidism.",
+        "recommendation": "Monitor INR whenever levothyroxine dose changes.",
+        "onset": "Weeks"
+    },
+    {
+        "drugs": ["carbamazepine", "valproate"], "severity": "MODERATE",
+        "mechanism": "Carbamazepine induces valproate metabolism; valproate inhibits carbamazepine epoxide hydrolase, raising the toxic carbamazepine-10,11-epoxide metabolite.",
+        "effect": "Reduced valproate levels; carbamazepine toxicity (diplopia, ataxia, dizziness) from raised epoxide.",
+        "recommendation": "Monitor both drug levels. Specialist epilepsy supervision recommended.",
+        "onset": "Weeks"
+    },
+    {
+        "drugs": ["metformin", "ibuprofen"], "severity": "MODERATE",
+        "mechanism": "NSAIDs reduce GFR; metformin accumulates in renal impairment with lactic acidosis risk.",
+        "effect": "Metformin accumulation and risk of lactic acidosis, particularly in CKD.",
+        "recommendation": "Use paracetamol instead. Monitor renal function if NSAID unavoidable.",
+        "onset": "Days"
+    },
+    {
+        "drugs": ["enoxaparin", "aspirin"], "severity": "MODERATE",
+        "mechanism": "Additive anticoagulant + antiplatelet bleeding risk.",
+        "effect": "Increased bleeding.",
+        "recommendation": "Often co-prescribed intentionally in ACS — acceptable with clear clinical indication and PPI cover.",
+        "onset": "Hours"
+    },
+    {
+        "drugs": ["ramipril", "furosemide"], "severity": "MODERATE",
+        "mechanism": "Furosemide-induced volume depletion sensitises patients to first-dose ACE inhibitor hypotension.",
+        "effect": "Symptomatic first-dose hypotension.",
+        "recommendation": "Start ACE inhibitor at lowest dose. Consider stopping furosemide 24h before initiating ACE inhibitor in volume-depleted patients.",
+        "onset": "Hours (first dose)"
+    },
+]
+
+
+def _check_drug_interactions(drug_list: list[str]) -> dict:
+    """Check a list of drug name strings for known clinically significant interactions."""
+
+    # Build symmetric lookup: frozenset({drug_a, drug_b}) → interaction
+    ix_lookup: dict[frozenset, dict] = {}
+    for ix in _DRUG_INTERACTIONS:
+        key = frozenset(ix["drugs"])
+        if key not in ix_lookup:
+            ix_lookup[key] = ix
+
+    # Normalise each drug name: lowercase, strip dose/frequency, resolve aliases
+    _med_lower = [m.lower() for m in _NLP_MEDICATIONS]
+
+    def _normalise(raw: str) -> str | None:
+        name = raw.strip().lower()
+        # Strip trailing dose / frequency info
+        name = re.sub(r'\s+\d[\d.]*\s*(mg|mcg|g|ml|mL|units?|IU|%)\S*', '', name)
+        name = re.sub(
+            r'\s+(od|bd|tds|qds|prn|nocte|stat|once\s+daily|twice\s+daily|'
+            r'three\s+times|four\s+times)\b.*', '', name, flags=re.I
+        )
+        name = name.strip()
+        # Check aliases
+        name = _DRUG_ALIASES.get(name, name)
+        # Exact match
+        if name in _med_lower:
+            return name
+        # Partial match: name is a substring of a known drug (handles brand-ish substrings)
+        for med in _med_lower:
+            if name and (name in med or med in name) and len(name) >= 4:
+                return med
+        return None
+
+    recognised: list[str] = []
+    unrecognised: list[str] = []
+    for raw in drug_list:
+        norm = _normalise(raw)
+        if norm and norm not in recognised:
+            recognised.append(norm)
+        elif not norm:
+            clean = raw.strip()
+            if clean and clean not in unrecognised:
+                unrecognised.append(clean)
+
+    # Check all unique pairs
+    interactions_found: list[dict] = []
+    sev_counts = {"CONTRAINDICATED": 0, "MAJOR": 0, "MODERATE": 0, "MINOR": 0}
+
+    for i in range(len(recognised)):
+        for j in range(i + 1, len(recognised)):
+            key = frozenset([recognised[i], recognised[j]])
+            if key in ix_lookup:
+                ix = ix_lookup[key]
+                interactions_found.append({
+                    **ix,
+                    "drug_a": recognised[i],
+                    "drug_b": recognised[j],
+                })
+                sev = ix["severity"]
+                if sev in sev_counts:
+                    sev_counts[sev] += 1
+
+    # Sort by severity
+    _sev_order = {"CONTRAINDICATED": 0, "MAJOR": 1, "MODERATE": 2, "MINOR": 3}
+    interactions_found.sort(key=lambda x: _sev_order.get(x["severity"], 4))
+
+    return {
+        "drugs_detected": recognised,
+        "drugs_unrecognised": unrecognised,
+        "interactions": interactions_found,
+        "severity_counts": sev_counts,
+        "total": len(interactions_found),
+    }
+
+
+@app.route("/drug-checker")
+def drug_checker():
+    return render_template("drug_checker.html")
+
+
+@app.route("/drug-checker/run", methods=["POST"])
+def drug_checker_run():
+    try:
+        data = request.get_json(force=True) or {}
+        text = data.get("text", "").strip()
+        if not text:
+            return jsonify({"ok": False, "error": "No medications provided"}), 400
+
+        # Extract medications from text using NLP extractor
+        nlp_result = _run_nlp_extractor(text)
+        drug_list = [e["text"] for e in nlp_result["entities"] if e["type"] == "MEDICATION"]
+
+        # Also parse line-by-line (handles plain lists and bullet-point lists)
+        lines = [l.strip() for l in text.split("\n") if l.strip()]
+        for line in lines:
+            # Strip bullets / numbers: "- warfarin 5mg" → "warfarin 5mg"
+            line = re.sub(r'^[\-\•\*\d\.]+\s*', '', line).strip()
+            if line and line not in drug_list:
+                drug_list.append(line)
+
+        result = _check_drug_interactions(drug_list)
+        return jsonify({"ok": True, **result})
+    except Exception as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 500
+
+
 @app.route("/about")
 def about():
     return render_template("about.html")

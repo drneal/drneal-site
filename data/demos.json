@@ -1,6 +1,13 @@
 {
   "demos": [
     {
+      "title": "Drug Interaction & Polypharmacy Checker",
+      "description": "Enter a medication list and screen every pair against a curated database of ~90 clinically significant interactions graded contraindicated, major, or moderate. Each flagged pair shows mechanism, clinical effect, and management recommendation. Covers CYP interactions, QTc prolongation, serotonin syndrome, triple whammy AKI, opioid + benzodiazepine respiratory depression, and more.",
+      "status": "live",
+      "url": "/drug-checker",
+      "stack": ["Python", "Flask", "pharmacology", "CYP enzymes", "RxNorm", "FHIR"]
+    },
+    {
       "title": "Voice Clinical Notes",
       "description": "One-tap voice dictation that auto-formats your spoken note into a structured clinical record (PC / Hx / Exam / Ix / Assessment / Plan) and puts it on the clipboard in one tap. Share via WhatsApp, email, SMS, or download as .txt or .rtf. Works in Safari and Chrome; installable as a home-screen app on iOS and Android.",
       "status": "live",
