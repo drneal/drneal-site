@@ -344,12 +344,22 @@ function buildRecog() {
 
   r.onstart = () => setStatus('<span class="live-dot">●</span> recording — speak clearly and naturally');
 
+  // Android Chrome has a known bug: e.resultIndex is always 0, so looping
+  // from e.resultIndex re-processes every previous final result on every event,
+  // producing the "is is this is this working" accumulation pattern.
+  // Fix: track our own per-session committed index and ignore e.resultIndex.
+  let sessionCommitted = 0;
+
   r.onresult = (e) => {
     let interim = '';
-    for (let i = e.resultIndex; i < e.results.length; i++) {
+    for (let i = sessionCommitted; i < e.results.length; i++) {
       const t = e.results[i][0].transcript;
-      if (e.results[i].isFinal) finalText += t + ' ';
-      else interim = t;
+      if (e.results[i].isFinal) {
+        finalText += t + ' ';
+        sessionCommitted = i + 1;   // advance our own counter, not e.resultIndex
+      } else {
+        interim = t;                // interim: display only, never commit
+      }
     }
     document.getElementById('t-placeholder').style.display = 'none';
     document.getElementById('final-span').textContent   = finalText;
