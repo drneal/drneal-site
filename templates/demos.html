@@ -9,7 +9,27 @@
     <p class="subtitle">Working prototypes and interactive experiments. Proof of concept beats proof of paper.</p>
   </header>
 
-  <!-- ── Featured live demo callout ──────────────────────────────────────── -->
+  <!-- ── Featured: Clinical NLP Extractor ─────────────────────────────────── -->
+  <div class="featured-demo" style="margin-bottom:1.5rem">
+    <div class="featured-demo__badge">
+      <span style="color:var(--green);font-size:0.7rem">●</span> FEATURED &nbsp;·&nbsp; LIVE NOW
+    </div>
+    <h2 class="featured-demo__title">Clinical Text NLP Extractor</h2>
+    <p class="featured-demo__body">
+      Paste any clinical note — discharge summary, outpatient letter, medication list, or ward round entry — and the extractor identifies and highlights six categories of entity in real time:
+      <strong style="color:#00d4ff">medications</strong>, <strong style="color:#ff6b6b">diagnoses</strong>,
+      <strong style="color:#ffbe0b">dosages</strong>, <strong style="color:#00ff88">dates</strong>,
+      <strong style="color:#c77dff">lab values</strong>, and <strong style="color:#4cc9f0">vital signs</strong>.
+      Each entity is labelled with its type and a confidence score, and the full annotated note is displayed alongside a structured entity table.
+    </p>
+    <p class="featured-demo__body" style="margin-top:0.75rem">
+      The demo uses a deterministic rule-based pipeline — regex patterns for structured data types combined with curated medical vocabularies covering 250+ drugs and 300+ clinical conditions.
+      The production system behind this uses a fine-tuned BioBERT model, SNOMED CT normalisation, and maps output to FHIR R4 resources for downstream integration with clinical data warehouses.
+    </p>
+    <a class="featured-demo__cta" href="/nlp-extractor">Open the NLP Extractor →</a>
+  </div>
+
+  <!-- ── Featured: Algorithmic Trading Backtester ──────────────────────────── -->
   <div class="featured-demo" style="margin-bottom:2.5rem">
     <div class="featured-demo__badge">
       <span style="color:var(--green);font-size:0.7rem">●</span> FEATURED &nbsp;·&nbsp; LIVE NOW

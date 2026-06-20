@@ -2,10 +2,10 @@
   "demos": [
     {
       "title": "Clinical Text NLP Extractor",
-      "description": "Paste clinical notes and extract structured entities: diagnoses, medications, dosages, dates. Built on fine-tuned BERT with a spaCy post-processor. Runs entirely in the browser via ONNX.",
-      "status": "coming",
-      "url": null,
-      "stack": ["Python", "spaCy", "BERT", "ONNX", "HuggingFace"]
+      "description": "Paste clinical notes and extract structured entities: diagnoses, medications, dosages, lab values, vital signs, and dates — highlighted and tabulated in real time. Rule-based pipeline; production system uses fine-tuned BioBERT with FHIR R4 output.",
+      "status": "live",
+      "url": "/nlp-extractor",
+      "stack": ["Python", "Flask", "regex", "spaCy", "BioBERT", "FHIR"]
     },
     {
       "title": "LLM Agent Trace Visualiser",
