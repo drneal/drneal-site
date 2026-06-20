@@ -1833,6 +1833,11 @@ def agent_trace_parse():
         return jsonify({"ok": False, "error": str(exc)}), 500
 
 
+@app.route("/binaural")
+def binaural():
+    return render_template("binaural.html")
+
+
 @app.route("/about")
 def about():
     return render_template("about.html")
