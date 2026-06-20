@@ -1,0 +1,474 @@
+{% extends "base.html" %}
+{% block title %}Drug Interaction Checker — Dr Neal Aggarwal{% endblock %}
+
+{% block extra_head %}
+<style>
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+.dc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .dc-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Panels ──────────────────────────────────────────────────────────────── */
+.dc-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+}
+.dc-panel__title {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+/* ── Textarea / Presets ──────────────────────────────────────────────────── */
+#dc-input {
+  width: 100%;
+  min-height: 260px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  padding: 0.75rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+#dc-input:focus { outline: none; border-color: var(--cyan); }
+
+.preset-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.preset-btn {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.preset-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+
+.run-btn {
+  width: 100%;
+  padding: 0.65rem;
+  margin-top: 0.75rem;
+  background: var(--cyan);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.run-btn:hover { opacity: 0.85; }
+.run-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Severity colours ────────────────────────────────────────────────────── */
+:root {
+  --sev-ci:  #ff2d2d;
+  --sev-maj: #ff6b35;
+  --sev-mod: #ffbe0b;
+  --sev-min: #00ff88;
+}
+
+/* ── Severity chips ──────────────────────────────────────────────────────── */
+.sev-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.sev-chip {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.sev-chip__n { font-weight: 700; font-size: 0.9rem; }
+
+/* ── Drug tags ───────────────────────────────────────────────────────────── */
+.drug-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.drug-tag {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  background: rgba(0,212,255,0.12);
+  border: 1px solid rgba(0,212,255,0.3);
+  color: var(--cyan);
+}
+.drug-tag--unknown {
+  background: rgba(255,255,255,0.04);
+  border-color: var(--border);
+  color: var(--text-dim);
+}
+
+/* ── Interaction cards ───────────────────────────────────────────────────── */
+.ix-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+}
+.ix-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+}
+.ix-card__badge {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.18rem 0.5rem;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.ix-card__drugs {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--text);
+  font-weight: 600;
+}
+.ix-card__body {
+  padding: 0 0.9rem 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.ix-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0.3rem 0.6rem;
+  margin-bottom: 0.2rem;
+}
+.ix-row__label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-top: 0.05rem;
+}
+.ix-row__val { color: var(--text); }
+.ix-row__val--rec { color: var(--cyan); }
+.ix-row__val--onset { color: var(--text-dim); font-style: italic; }
+
+/* ── CONTRAINDICATED card left border ────────────────────────────────────── */
+.ix-card--CI  { border-left: 3px solid var(--sev-ci); }
+.ix-card--MAJ { border-left: 3px solid var(--sev-maj); }
+.ix-card--MOD { border-left: 3px solid var(--sev-mod); }
+.ix-card--MIN { border-left: 3px solid var(--sev-min); }
+
+/* ── Spinner ─────────────────────────────────────────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid rgba(0,212,255,0.2);
+  border-top-color: var(--cyan);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <header class="page-hero">
+    <h1>// drug_interaction_checker</h1>
+    <p class="subtitle">Enter a medication list — one drug per line, or paste a clinical note. The checker screens all pairs against a curated database of clinically significant interactions and grades them: contraindicated, major, or moderate.</p>
+  </header>
+
+  <div class="dc-grid">
+
+    <!-- ── LEFT: Input ──────────────────────────────────────────────────── -->
+    <div class="dc-panel">
+      <div class="dc-panel__title">// medication_list</div>
+
+      <div class="preset-row">
+        <span style="font-family:var(--mono);font-size:0.7rem;color:var(--text-dim);align-self:center">Presets:</span>
+        <button class="preset-btn" data-preset="cardio">Cardiology</button>
+        <button class="preset-btn" data-preset="psych">Psych / Pain</button>
+        <button class="preset-btn" data-preset="epilepsy">Epilepsy</button>
+        <button class="preset-btn" data-preset="rheum">Rheumatology</button>
+        <button class="preset-btn" data-preset="clear">Clear</button>
+      </div>
+
+      <textarea id="dc-input" placeholder="Enter medications — one per line, or paste a full clinical note or medication list.
+
+Examples:
+warfarin 5 mg OD
+amiodarone 200 mg OD
+digoxin 125 mcg OD
+furosemide 40 mg OD
+aspirin 75 mg OD
+simvastatin 40 mg ON"></textarea>
+
+      <button class="run-btn" id="run-btn">⚡ check interactions</button>
+
+      <p style="font-family:var(--mono);font-size:0.68rem;color:var(--text-dim);margin-top:0.75rem;line-height:1.5">
+        // Clinical decision support only. Always verify against current BNF / MIMS / institutional formulary before prescribing.
+      </p>
+    </div>
+
+    <!-- ── RIGHT: Output ────────────────────────────────────────────────── -->
+    <div id="output-col">
+
+      <!-- Placeholder -->
+      <div class="dc-panel" id="placeholder-panel">
+        <div class="dc-panel__title">// results</div>
+        <p style="font-family:var(--mono);font-size:0.8rem;color:var(--text-dim)">
+          // Enter a medication list and press Check to screen for interactions.
+        </p>
+        <p style="font-family:var(--mono);font-size:0.75rem;color:var(--text-dim);margin-top:0.6rem">
+          // The cardiology preset loads a typical high-risk polypharmacy case:<br>
+          // warfarin + amiodarone + digoxin + furosemide + aspirin + simvastatin.
+        </p>
+      </div>
+
+      <!-- Drugs detected -->
+      <div id="drugs-panel" class="dc-panel" style="display:none;margin-bottom:1rem">
+        <div class="dc-panel__title">// drugs_detected</div>
+        <div class="drug-tags" id="drug-tags"></div>
+        <div id="unknown-row" style="display:none;margin-top:0.6rem">
+          <span style="font-family:var(--mono);font-size:0.68rem;color:var(--text-dim)">// not recognised: </span>
+          <span class="drug-tags" id="unknown-tags" style="display:inline-flex"></span>
+        </div>
+      </div>
+
+      <!-- Severity summary -->
+      <div id="summary-panel" class="dc-panel" style="display:none;margin-bottom:1rem">
+        <div class="dc-panel__title">// interaction_summary</div>
+        <div class="sev-grid" id="sev-grid"></div>
+        <div id="no-interactions-msg" style="display:none;font-family:var(--mono);font-size:0.8rem;color:var(--green)">
+          ✓ No known interactions detected between the recognised drugs.
+        </div>
+      </div>
+
+      <!-- Interaction cards -->
+      <div id="cards-container"></div>
+
+    </div><!-- /output-col -->
+
+  </div><!-- /dc-grid -->
+
+  <!-- Info terminal -->
+  <div class="terminal" style="margin-top:2.5rem">
+    <div class="terminal__titlebar">
+      <span class="terminal__dot terminal__dot--red"></span>
+      <span class="terminal__dot terminal__dot--yellow"></span>
+      <span class="terminal__dot terminal__dot--green"></span>
+      <span class="terminal__title">about_this_demo.sh</span>
+    </div>
+    <div class="terminal__body" style="font-size:0.8rem">
+      <div><span class="prompt">$ </span><span class="cmd">cat interaction_db.md</span></div>
+      <div class="out">Curated database of ~90 clinically significant drug pairs, covering:</div>
+      <div class="out">QTc prolongation, CYP2C9/3A4/1A2/2D6 interactions, serotonin syndrome,</div>
+      <div class="out">triple whammy (ACEi + NSAID + diuretic → AKI), hyperkalaemia, opioid +</div>
+      <div class="out">benzodiazepine respiratory depression, antifolate toxicity, and DOAC bleeding.</div>
+      <div class="mt-1"><span class="prompt">$ </span><span class="cmd">cat production_note.md</span></div>
+      <div class="out">Production system integrates with RxNorm (NIH drug normalisation API) and</div>
+      <div class="out">OpenFDA drug labelling for exhaustive pair coverage. Interactions are mapped</div>
+      <div class="out">to FHIR R4 DetectedIssue resources and surfaced at prescribing time in the EHR.</div>
+      <div class="mt-1"><span class="prompt">$ </span><a href="/about#contact" style="color:var(--amber)">./discuss_integration.sh</a></div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// ── Presets ───────────────────────────────────────────────────────────────────
+const PRESETS = {
+  cardio: `warfarin 5 mg OD
+amiodarone 200 mg OD
+digoxin 125 mcg OD
+furosemide 40 mg OD
+spironolactone 25 mg OD
+aspirin 75 mg OD
+simvastatin 40 mg ON
+ramipril 5 mg OD`,
+
+  psych: `tramadol 50 mg QDS
+sertraline 100 mg OD
+diazepam 5 mg TDS
+ibuprofen 400 mg TDS
+selegiline 5 mg OD`,
+
+  epilepsy: `carbamazepine 400 mg BD
+valproate 500 mg BD
+lamotrigine 100 mg BD`,
+
+  rheum: `methotrexate 15 mg once weekly
+ibuprofen 400 mg TDS
+trimethoprim 200 mg BD
+ciclosporin 100 mg BD
+colchicine 500 mcg BD`,
+};
+
+// ── Severity config ───────────────────────────────────────────────────────────
+const SEV = {
+  CONTRAINDICATED: { color: 'var(--sev-ci)',  css: 'CI',  label: 'CONTRAINDICATED' },
+  MAJOR:           { color: 'var(--sev-maj)', css: 'MAJ', label: 'MAJOR' },
+  MODERATE:        { color: 'var(--sev-mod)', css: 'MOD', label: 'MODERATE' },
+  MINOR:           { color: 'var(--sev-min)', css: 'MIN', label: 'MINOR' },
+};
+
+// ── Preset buttons ────────────────────────────────────────────────────────────
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.dataset.preset;
+    if (key === 'clear') { document.getElementById('dc-input').value = ''; return; }
+    document.getElementById('dc-input').value = PRESETS[key] || '';
+  });
+});
+
+// ── Check button ──────────────────────────────────────────────────────────────
+document.getElementById('run-btn').addEventListener('click', runCheck);
+
+async function runCheck() {
+  const text = document.getElementById('dc-input').value.trim();
+  if (!text) return;
+
+  const btn = document.getElementById('run-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>checking…';
+
+  try {
+    const res  = await fetch('/drug-checker/run', {
+      method:  'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:    JSON.stringify({ text }),
+    });
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error || 'Unknown error');
+    renderResults(data);
+  } catch(err) {
+    document.getElementById('cards-container').innerHTML =
+      `<div class="dc-panel"><p style="color:var(--red);font-family:var(--mono);font-size:0.8rem">// error: ${esc(err.message)}</p></div>`;
+    showOutput();
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '⚡ check interactions';
+  }
+}
+
+function showOutput() {
+  document.getElementById('placeholder-panel').style.display = 'none';
+}
+
+function renderResults(data) {
+  showOutput();
+
+  // ── Detected drugs ──────────────────────────────────────────────────────
+  const drugsPanel = document.getElementById('drugs-panel');
+  const tagsEl     = document.getElementById('drug-tags');
+  tagsEl.innerHTML = data.drugs_detected.length
+    ? data.drugs_detected.map(d => `<span class="drug-tag">${esc(d)}</span>`).join('')
+    : '<span style="font-family:var(--mono);font-size:0.78rem;color:var(--text-dim)">No recognised drugs found.</span>';
+  drugsPanel.style.display = 'block';
+
+  const unknownRow  = document.getElementById('unknown-row');
+  const unknownTags = document.getElementById('unknown-tags');
+  if (data.drugs_unrecognised && data.drugs_unrecognised.length) {
+    unknownTags.innerHTML = data.drugs_unrecognised
+      .map(d => `<span class="drug-tag drug-tag--unknown">${esc(d)}</span>`).join('');
+    unknownRow.style.display = 'block';
+  } else {
+    unknownRow.style.display = 'none';
+  }
+
+  // ── Severity summary ────────────────────────────────────────────────────
+  const summaryPanel = document.getElementById('summary-panel');
+  const sevGrid      = document.getElementById('sev-grid');
+  const noIxMsg      = document.getElementById('no-interactions-msg');
+  summaryPanel.style.display = 'block';
+  sevGrid.innerHTML = '';
+  const sc = data.severity_counts || {};
+  let anyIx = false;
+  for (const [sev, cfg] of Object.entries(SEV)) {
+    const n = sc[sev] || 0;
+    if (!n) continue;
+    anyIx = true;
+    sevGrid.innerHTML += `
+      <span class="sev-chip" style="background:${cfg.color}18;border:1px solid ${cfg.color}44">
+        <span class="sev-chip__n" style="color:${cfg.color}">${n}</span>
+        <span style="color:var(--text-dim)">${cfg.label}</span>
+      </span>`;
+  }
+  noIxMsg.style.display = anyIx ? 'none' : 'block';
+
+  // ── Interaction cards ───────────────────────────────────────────────────
+  const container = document.getElementById('cards-container');
+  container.innerHTML = '';
+  if (!data.interactions || !data.interactions.length) return;
+
+  for (const ix of data.interactions) {
+    const cfg    = SEV[ix.severity] || SEV.MODERATE;
+    const drugStr = `${esc(ix.drug_a)} + ${esc(ix.drug_b)}`;
+    container.innerHTML += `
+      <div class="ix-card ix-card--${cfg.css}">
+        <div class="ix-card__header" style="background:${cfg.color}10">
+          <span class="ix-card__badge"
+                style="background:${cfg.color}22;color:${cfg.color}">${cfg.label}</span>
+          <span class="ix-card__drugs">${drugStr}</span>
+        </div>
+        <div class="ix-card__body">
+          <div class="ix-row">
+            <span class="ix-row__label">Mechanism</span>
+            <span class="ix-row__val">${esc(ix.mechanism)}</span>
+          </div>
+          <div class="ix-row">
+            <span class="ix-row__label">Effect</span>
+            <span class="ix-row__val" style="color:${cfg.color}">${esc(ix.effect)}</span>
+          </div>
+          <div class="ix-row">
+            <span class="ix-row__label">Action</span>
+            <span class="ix-row__val ix-row__val--rec">${esc(ix.recommendation)}</span>
+          </div>
+          <div class="ix-row">
+            <span class="ix-row__label">Onset</span>
+            <span class="ix-row__val ix-row__val--onset">${esc(ix.onset)}</span>
+          </div>
+        </div>
+      </div>`;
+  }
+}
+
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// Auto-run cardiology preset on load
+document.getElementById('dc-input').value = PRESETS.cardio;
+</script>
+{% endblock %}
