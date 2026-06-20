@@ -44,10 +44,10 @@
     },
     {
       "title": "Binaural Beat Generator",
-      "description": "Browser-based binaural beat generator built with the Web Audio API. Set carrier frequency, beat frequency, and waveform. Export as WAV. Inspired by years of modular synthesis and sound design.",
-      "status": "coming",
-      "url": null,
-      "stack": ["Web Audio API", "JavaScript", "DSP"]
+      "description": "Browser-based binaural beat generator built with the Web Audio API. Two pure tones — one per ear — with a small frequency difference your brain perceives as a rhythmic pulse. Five brainwave presets (Delta, Theta, Alpha, Beta, Gamma), four waveforms, real-time oscilloscope visualiser, and WAV export via OfflineAudioContext. Use headphones.",
+      "status": "live",
+      "url": "/binaural",
+      "stack": ["Web Audio API", "JavaScript", "DSP", "OfflineAudioContext", "WAV encoding"]
     }
   ]
 }
