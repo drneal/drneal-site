@@ -1687,6 +1687,152 @@ def drug_checker_run():
         return jsonify({"ok": False, "error": str(exc)}), 500
 
 
+# ── LLM Agent Trace Visualiser ───────────────────────────────────────────────
+
+def _parse_agent_trace(raw: dict | list) -> dict:
+    """Normalise Claude API, OpenAI, or generic messages-array traces into a unified structure."""
+
+    # Detect format and extract messages list
+    if isinstance(raw, list):
+        msgs = raw
+        model = "unknown"
+    elif isinstance(raw, dict):
+        if "messages" in raw:
+            msgs = raw["messages"]
+            model = raw.get("model", raw.get("id", "unknown"))
+        elif "role" in raw:          # single Anthropic response object
+            msgs = [raw]
+            model = raw.get("model", "unknown")
+        elif "choices" in raw:       # OpenAI Chat Completion response
+            msgs = [c.get("message", {}) for c in raw.get("choices", [])]
+            model = raw.get("model", "unknown")
+        else:
+            raise ValueError("Unrecognised trace format — expected messages array, Anthropic response, or OpenAI response.")
+    else:
+        raise ValueError("Trace must be a JSON object or array.")
+
+    steps = []
+    total_input = 0
+    total_output = 0
+    tool_counts: dict[str, int] = {}
+
+    for i, msg in enumerate(msgs):
+        role    = msg.get("role", "unknown")
+        content = msg.get("content", "")
+        usage   = msg.get("usage", {})
+
+        # Token counts — Anthropic uses input_tokens/output_tokens;
+        # OpenAI uses prompt_tokens/completion_tokens at the top level
+        inp = usage.get("input_tokens", usage.get("prompt_tokens", 0))
+        out = usage.get("output_tokens", usage.get("completion_tokens", 0))
+        total_input  += inp
+        total_output += out
+
+        blocks = []
+
+        # Normalise content to a list of typed blocks
+        if isinstance(content, str) and content:
+            blocks.append({"type": "text", "text": content})
+        elif isinstance(content, list):
+            for block in content:
+                if not isinstance(block, dict):
+                    continue
+                btype = block.get("type", "text")
+
+                if btype == "text":
+                    blocks.append({"type": "text", "text": block.get("text", "")})
+
+                elif btype == "thinking":
+                    blocks.append({"type": "thinking", "text": block.get("thinking", "")})
+
+                elif btype == "tool_use":
+                    name = block.get("name", "")
+                    tool_counts[name] = tool_counts.get(name, 0) + 1
+                    blocks.append({
+                        "type": "tool_use",
+                        "id": block.get("id", ""),
+                        "name": name,
+                        "input": block.get("input", {}),
+                    })
+
+                elif btype == "tool_result":
+                    rc = block.get("content", "")
+                    if isinstance(rc, list):
+                        rc = "\n".join(
+                            c.get("text", "") for c in rc
+                            if isinstance(c, dict) and c.get("type") == "text"
+                        )
+                    blocks.append({
+                        "type": "tool_result",
+                        "tool_use_id": block.get("tool_use_id", ""),
+                        "content": rc,
+                        "is_error": block.get("is_error", False),
+                    })
+
+        # Handle OpenAI tool_calls field (parallel to content)
+        for tc in msg.get("tool_calls", []):
+            fn   = tc.get("function", {})
+            args = fn.get("arguments", {})
+            if isinstance(args, str):
+                try:
+                    args = json.loads(args)
+                except Exception:
+                    args = {"raw": args}
+            name = fn.get("name", "")
+            tool_counts[name] = tool_counts.get(name, 0) + 1
+            blocks.append({
+                "type": "tool_use",
+                "id": tc.get("id", ""),
+                "name": name,
+                "input": args,
+            })
+
+        # OpenAI tool response messages (role == "tool")
+        if role == "tool":
+            blocks.append({
+                "type": "tool_result",
+                "tool_use_id": msg.get("tool_call_id", ""),
+                "content": content if isinstance(content, str) else str(content),
+                "is_error": False,
+            })
+
+        steps.append({
+            "index": i,
+            "role": role,
+            "blocks": blocks,
+            "input_tokens": inp,
+            "output_tokens": out,
+        })
+
+    return {
+        "steps": steps,
+        "model": model,
+        "total_input_tokens": total_input,
+        "total_output_tokens": total_output,
+        "total_tokens": total_input + total_output,
+        "total_steps": len(steps),
+        "tool_counts": tool_counts,
+    }
+
+
+@app.route("/agent-trace")
+def agent_trace():
+    return render_template("agent_trace.html")
+
+
+@app.route("/agent-trace/parse", methods=["POST"])
+def agent_trace_parse():
+    try:
+        data = request.get_json(force=True) or {}
+        raw  = data.get("trace")
+        if raw is None:
+            return jsonify({"ok": False, "error": "No trace provided"}), 400
+        result = _parse_agent_trace(raw)
+        return jsonify({"ok": True, **result})
+    except Exception as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 500
+
+
 @app.route("/about")
 def about():
     return render_template("about.html")

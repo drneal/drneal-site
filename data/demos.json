@@ -23,10 +23,10 @@
     },
     {
       "title": "LLM Agent Trace Visualiser",
-      "description": "Feed in a Claude/GPT agent session JSON and get an interactive visualisation of tool calls, reasoning chains, and token usage over time. Useful for debugging multi-step agents.",
-      "status": "coming",
-      "url": null,
-      "stack": ["Flask", "d3.js", "Claude API", "JSON tracing"]
+      "description": "Paste a Claude or OpenAI agent session JSON and get an interactive step-by-step timeline of every message, tool call, tool result, and token count. Accepts Anthropic and OpenAI formats, extended thinking blocks, and tool_use/tool_result pairs. Useful for debugging multi-step agents and auditing token spend per reasoning step.",
+      "status": "live",
+      "url": "/agent-trace",
+      "stack": ["Flask", "JavaScript", "Claude API", "OpenAI API", "JSON"]
     },
     {
       "title": "Algorithmic Trading Backtester",

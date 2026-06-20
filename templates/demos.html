@@ -48,6 +48,24 @@
     <a class="featured-demo__cta" href="/nlp-extractor">Open the NLP Extractor →</a>
   </div>
 
+  <!-- ── Featured: LLM Agent Trace Visualiser ─────────────────────────────── -->
+  <div class="featured-demo" style="margin-bottom:1.5rem">
+    <div class="featured-demo__badge">
+      <span style="color:var(--green);font-size:0.7rem">●</span> FEATURED &nbsp;·&nbsp; LIVE NOW
+    </div>
+    <h2 class="featured-demo__title">LLM Agent Trace Visualiser</h2>
+    <p class="featured-demo__body">
+      Paste any Claude or OpenAI agent session JSON and get an interactive step-by-step timeline of every message, tool call, tool result, and token count.
+      Accepts the Anthropic Messages API format, OpenAI Chat Completion responses, Claude extended thinking blocks, raw messages arrays, and the <code>tool_calls</code> / <code>tool_result</code> pair structure used by both APIs.
+      A metadata strip shows total tokens, message count, model name, and number of tool invocations at a glance.
+    </p>
+    <p class="featured-demo__body" style="margin-top:0.75rem">
+      The sample trace shows a six-step clinical agent session: a user query triggers NLP entity extraction, then drug interaction checking, then synthesis of a prioritised clinical summary — with extended thinking blocks and token accounting at each step.
+      Useful for debugging why a multi-step agent looped, auditing token spend per reasoning step, or reviewing tool call inputs and outputs before deploying an agent to production.
+    </p>
+    <a class="featured-demo__cta" href="/agent-trace">Open the Trace Visualiser →</a>
+  </div>
+
   <!-- ── Featured: Drug Interaction Checker ──────────────────────────────── -->
   <div class="featured-demo" style="margin-bottom:1.5rem">
     <div class="featured-demo__badge">
