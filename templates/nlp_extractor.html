@@ -1,0 +1,499 @@
+{% extends "base.html" %}
+{% block title %}Clinical Text NLP Extractor — Dr Neal Aggarwal{% endblock %}
+
+{% block extra_head %}
+<style>
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+.nlp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .nlp-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Panels ──────────────────────────────────────────────────────────────── */
+.nlp-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+}
+.nlp-panel__title {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+/* ── Textarea / Presets ───────────────────────────────────────────────────── */
+#nlp-input {
+  width: 100%;
+  min-height: 280px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  padding: 0.75rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+#nlp-input:focus { outline: none; border-color: var(--cyan); }
+
+.preset-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.preset-btn {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.preset-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+
+.run-btn {
+  width: 100%;
+  padding: 0.65rem;
+  margin-top: 0.75rem;
+  background: var(--cyan);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.run-btn:hover { opacity: 0.85; }
+.run-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Legend ──────────────────────────────────────────────────────────────── */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+.legend__item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+.legend__dot {
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Entity colour scheme ────────────────────────────────────────────────── */
+.ent-MEDICATION  { background: rgba(0,212,255,0.18); border-bottom: 2px solid #00d4ff; color: inherit; border-radius: 2px; padding: 0 2px; }
+.ent-DIAGNOSIS   { background: rgba(255,107,107,0.18); border-bottom: 2px solid #ff6b6b; color: inherit; border-radius: 2px; padding: 0 2px; }
+.ent-DOSAGE      { background: rgba(255,190,11,0.18); border-bottom: 2px solid #ffbe0b; color: inherit; border-radius: 2px; padding: 0 2px; }
+.ent-DATE        { background: rgba(0,255,136,0.15); border-bottom: 2px solid #00ff88; color: inherit; border-radius: 2px; padding: 0 2px; }
+.ent-LAB_VALUE   { background: rgba(199,125,255,0.18); border-bottom: 2px solid #c77dff; color: inherit; border-radius: 2px; padding: 0 2px; }
+.ent-VITAL_SIGN  { background: rgba(76,201,240,0.18); border-bottom: 2px solid #4cc9f0; color: inherit; border-radius: 2px; padding: 0 2px; }
+
+/* ── Highlighted output ──────────────────────────────────────────────────── */
+#highlighted-text {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 80px;
+  color: var(--text);
+}
+.placeholder-msg {
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+/* ── Metric chips ────────────────────────────────────────────────────────── */
+.count-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.count-chip {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.count-chip__n {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* ── Entity table ────────────────────────────────────────────────────────── */
+.ent-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  margin-top: 0.75rem;
+}
+.ent-table th {
+  color: var(--text-dim);
+  text-align: left;
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  font-weight: 400;
+}
+.ent-table td {
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  vertical-align: top;
+}
+.ent-table tr:last-child td { border-bottom: none; }
+.ent-table .ent-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.conf-bar {
+  display: inline-block;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--cyan);
+  vertical-align: middle;
+}
+
+/* ── Spinner ─────────────────────────────────────────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid rgba(0,212,255,0.2);
+  border-top-color: var(--cyan);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <header class="page-hero">
+    <h1>// clinical_nlp_extractor</h1>
+    <p class="subtitle">Paste clinical text. Get structured entities — diagnoses, medications, dosages, lab values, vital signs, and dates — extracted and highlighted in real time.</p>
+  </header>
+
+  <div class="nlp-grid">
+
+    <!-- ── LEFT: Input ──────────────────────────────────────────────────── -->
+    <div class="nlp-panel">
+      <div class="nlp-panel__title">// clinical_text_input</div>
+
+      <div class="preset-row">
+        <span style="font-family:var(--mono);font-size:0.7rem;color:var(--text-dim);align-self:center">Presets:</span>
+        <button class="preset-btn" data-preset="cardio">Cardiology</button>
+        <button class="preset-btn" data-preset="resp">Respiratory</button>
+        <button class="preset-btn" data-preset="onco">Oncology</button>
+        <button class="preset-btn" data-preset="clear">Clear</button>
+      </div>
+
+      <textarea id="nlp-input" placeholder="Paste a clinical note, discharge summary, or medication list here..."></textarea>
+
+      <button class="run-btn" id="run-btn">⚡ extract entities</button>
+    </div>
+
+    <!-- ── RIGHT: Output ────────────────────────────────────────────────── -->
+    <div>
+      <!-- Legend -->
+      <div class="nlp-panel" style="margin-bottom:1rem">
+        <div class="nlp-panel__title">// entity_legend</div>
+        <div class="legend">
+          <span class="legend__item"><span class="legend__dot" style="background:#00d4ff"></span>MEDICATION</span>
+          <span class="legend__item"><span class="legend__dot" style="background:#ff6b6b"></span>DIAGNOSIS</span>
+          <span class="legend__item"><span class="legend__dot" style="background:#ffbe0b"></span>DOSAGE</span>
+          <span class="legend__item"><span class="legend__dot" style="background:#00ff88"></span>DATE</span>
+          <span class="legend__item"><span class="legend__dot" style="background:#c77dff"></span>LAB VALUE</span>
+          <span class="legend__item"><span class="legend__dot" style="background:#4cc9f0"></span>VITAL SIGN</span>
+        </div>
+      </div>
+
+      <!-- Highlighted text -->
+      <div class="nlp-panel" style="margin-bottom:1rem">
+        <div class="nlp-panel__title">// annotated_output</div>
+        <div id="highlighted-text">
+          <span class="placeholder-msg">// annotated text will appear here after extraction</span>
+        </div>
+      </div>
+
+      <!-- Count chips -->
+      <div id="count-section" style="display:none" class="nlp-panel" style="margin-bottom:1rem">
+        <div class="nlp-panel__title">// entity_counts</div>
+        <div class="count-grid" id="count-grid"></div>
+      </div>
+
+      <!-- Entity table -->
+      <div id="table-section" style="display:none" class="nlp-panel">
+        <div class="nlp-panel__title">// structured_entities</div>
+        <div style="overflow-x:auto">
+          <table class="ent-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Entity text</th>
+                <th>Type</th>
+                <th>Confidence</th>
+              </tr>
+            </thead>
+            <tbody id="entity-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /nlp-grid -->
+
+  <!-- Info terminal -->
+  <div class="terminal" style="margin-top:2.5rem">
+    <div class="terminal__titlebar">
+      <span class="terminal__dot terminal__dot--red"></span>
+      <span class="terminal__dot terminal__dot--yellow"></span>
+      <span class="terminal__dot terminal__dot--green"></span>
+      <span class="terminal__title">about_this_demo.sh</span>
+    </div>
+    <div class="terminal__body" style="font-size:0.8rem">
+      <div><span class="prompt">$ </span><span class="cmd">cat README.md</span></div>
+      <div class="out">This demo uses a rule-based NLP pipeline: regex patterns for dates, dosages,</div>
+      <div class="out">vital signs and lab values; curated medical vocabularies for medications (250+</div>
+      <div class="out">drugs) and diagnoses (300+ conditions). No ML model is called at runtime —</div>
+      <div class="out">extraction is deterministic and runs in &lt;50 ms per note.</div>
+      <div class="mt-1"><span class="prompt">$ </span><span class="cmd">cat production_note.md</span></div>
+      <div class="out">The production system replaces the vocabulary matcher with a fine-tuned</div>
+      <div class="out">BioBERT model and a spaCy post-processor, trained on de-identified EHR data.</div>
+      <div class="out">Output is validated against SNOMED CT and mapped to FHIR R4 resources.</div>
+      <div class="mt-1"><span class="prompt">$ </span><a href="/about#contact" style="color:var(--amber)">./discuss_your_data.sh</a></div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// ── Sample presets ────────────────────────────────────────────────────────────
+const PRESETS = {
+  cardio: `65-year-old male, admitted 12/06/2026 with decompensated heart failure.
+
+Background: hypertension, type 2 diabetes, atrial fibrillation, hypercholesterolaemia.
+
+Current medications:
+- amlodipine 10 mg OD
+- ramipril 5 mg OD
+- bisoprolol 5 mg OD
+- metformin 500 mg BD
+- apixaban 5 mg BD
+- atorvastatin 40 mg ON
+
+Observations: BP 162/98, HR 88 bpm, SpO2 94%, Temp 36.8°C, RR 20, BMI 31.2.
+
+Investigations: HbA1c 8.4%, Cr 118 µmol/L, K 4.2 mmol/L, Na 136 mmol/L,
+cholesterol 5.1 mmol/L, NT-proBNP 2840, ALT 32 U/L, INR 2.1.
+
+Impression: Decompensated heart failure secondary to uncontrolled hypertension
+and fluid overload. Newly diagnosed CKD stage 3a.
+
+Plan: Increase furosemide to 80 mg OD. Add spironolactone 25 mg OD.
+Follow up cardiology clinic in 2 weeks. Nephrology referral.`,
+
+  resp: `72-year-old female, emergency admission 15th June 2026.
+
+History: COPD (Gold Stage III), previous pulmonary embolism on rivaroxaban.
+
+Presenting complaint: 3-day history of worsening dyspnoea, productive cough,
+fever. SpO2 84% on room air at home.
+
+Observations on arrival: BP 108/72, HR 118 bpm, Temp 38.9°C, SpO2 88% on 4L O2,
+RR 28, GCS 15/15.
+
+Regular medications: tiotropium 18 mcg OD, salbutamol 2.5 mg PRN,
+beclometasone 200 mcg BD, rivaroxaban 20 mg OD, prednisolone 5 mg OD.
+
+Investigations: CRP 214, WBC 16.8, Hb 10.2 g/dL, Cr 104 µmol/L,
+Na 131 mmol/L, K 3.6 mmol/L, ALT 28 U/L, procalcitonin 3.4.
+
+Diagnosis: Infective exacerbation of COPD with right lower lobe pneumonia
+and type 2 respiratory failure.
+
+Plan: co-amoxiclav 1.2 g TDS IV, azithromycin 500 mg OD orally,
+prednisolone 30 mg OD (loading dose). NIV titration. Physiotherapy tomorrow.`,
+
+  onco: `54-year-old female, oncology follow-up 20 June 2026.
+
+History: ER-positive HER2-negative breast cancer, mastectomy March 2024,
+now on adjuvant anastrozole 1 mg OD. Osteoporosis on DEXA (T-score −2.8).
+
+Symptoms: fatigue, arthralgia in hands and wrists — consistent with
+anastrozole-related musculoskeletal side effects. No new lumps or lymphadenopathy.
+
+Observations: BP 128/76, HR 72 bpm, BMI 29.4, Weight 78 kg.
+
+Bloods (18 June 2026): HbA1c 5.9%, ALT 28 U/L, ALP 95 U/L,
+cholesterol 6.1 mmol/L, Hb 11.8 g/dL, PLT 287, Ca 2.31 mmol/L,
+TSH 2.4, ferritin 18.
+
+Current medications: anastrozole 1 mg OD, alendronate 70 mg once weekly,
+calcium carbonate 500 mg BD, omeprazole 20 mg OD, sertraline 50 mg OD,
+vitamin D 800 IU OD.
+
+Plan: Continue anastrozole. Start hydroxychloroquine 200 mg BD for
+joint symptoms (rheumatoid arthritis excluded). Next oncology review in 3 months.`
+};
+
+// ── Entity colour map ─────────────────────────────────────────────────────────
+const ENT_COLORS = {
+  MEDICATION: '#00d4ff',
+  DIAGNOSIS:  '#ff6b6b',
+  DOSAGE:     '#ffbe0b',
+  DATE:       '#00ff88',
+  LAB_VALUE:  '#c77dff',
+  VITAL_SIGN: '#4cc9f0',
+};
+
+function entStyle(type) {
+  const c = ENT_COLORS[type] || '#aaa';
+  return `background:${c}22;border-bottom:2px solid ${c};border-radius:2px;padding:0 2px;`;
+}
+
+// ── Preset buttons ────────────────────────────────────────────────────────────
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key = btn.dataset.preset;
+    const ta = document.getElementById('nlp-input');
+    if (key === 'clear') { ta.value = ''; return; }
+    ta.value = PRESETS[key] || '';
+  });
+});
+
+// ── Run extraction ────────────────────────────────────────────────────────────
+document.getElementById('run-btn').addEventListener('click', runExtraction);
+
+async function runExtraction() {
+  const text = document.getElementById('nlp-input').value.trim();
+  if (!text) return;
+
+  const btn = document.getElementById('run-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>extracting…';
+
+  try {
+    const res  = await fetch('/nlp-extractor/run', {
+      method:  'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:    JSON.stringify({ text })
+    });
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error || 'Unknown error');
+    renderResults(text, data);
+  } catch (err) {
+    document.getElementById('highlighted-text').innerHTML =
+      `<span style="color:var(--red)">// error: ${err.message}</span>`;
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '⚡ extract entities';
+  }
+}
+
+// ── Render highlighted text ───────────────────────────────────────────────────
+function renderResults(text, data) {
+  const entities = data.entities || [];
+  const counts   = data.counts   || {};
+
+  // --- Annotated text ---
+  let html  = '';
+  let cursor = 0;
+  for (const e of entities) {
+    if (e.start > cursor) {
+      html += escHtml(text.slice(cursor, e.start));
+    }
+    const c = ENT_COLORS[e.type] || '#aaa';
+    const style = `background:${c}22;border-bottom:2px solid ${c};border-radius:2px;padding:0 2px;cursor:default;`;
+    const title = `${e.type} (${(e.confidence*100).toFixed(0)}% conf)`;
+    html += `<span style="${style}" title="${title}">${escHtml(text.slice(e.start, e.end))}</span>`;
+    cursor = e.end;
+  }
+  if (cursor < text.length) html += escHtml(text.slice(cursor));
+  document.getElementById('highlighted-text').innerHTML = html || '<span class="placeholder-msg">// no entities found</span>';
+
+  // --- Count chips ---
+  const countSection = document.getElementById('count-section');
+  const countGrid    = document.getElementById('count-grid');
+  countGrid.innerHTML = '';
+  const order = ['MEDICATION','DIAGNOSIS','DOSAGE','DATE','LAB_VALUE','VITAL_SIGN'];
+  let anyCount = false;
+  for (const type of order) {
+    if (!counts[type]) continue;
+    anyCount = true;
+    const c = ENT_COLORS[type] || '#aaa';
+    countGrid.innerHTML += `
+      <span class="count-chip" style="background:${c}18;border:1px solid ${c}44">
+        <span class="count-chip__n" style="color:${c}">${counts[type]}</span>
+        <span style="color:var(--text-dim)">${type.replace('_',' ')}</span>
+      </span>`;
+  }
+  countSection.style.display = anyCount ? 'block' : 'none';
+
+  // --- Entity table ---
+  const tableSection = document.getElementById('table-section');
+  const tbody = document.getElementById('entity-tbody');
+  tbody.innerHTML = '';
+  for (let i = 0; i < entities.length; i++) {
+    const e = entities[i];
+    const c = ENT_COLORS[e.type] || '#aaa';
+    const barW = Math.round(e.confidence * 60);
+    tbody.innerHTML += `
+      <tr>
+        <td style="color:var(--text-dim)">${i+1}</td>
+        <td><span style="${entStyle(e.type)}">${escHtml(e.text)}</span></td>
+        <td><span class="ent-badge" style="background:${c}22;color:${c}">${e.type.replace('_',' ')}</span></td>
+        <td>
+          <span style="color:var(--text-dim);margin-right:0.4rem">${(e.confidence*100).toFixed(0)}%</span>
+          <span class="conf-bar" style="width:${barW}px;background:${c}"></span>
+        </td>
+      </tr>`;
+  }
+  tableSection.style.display = entities.length ? 'block' : 'none';
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// Auto-run cardiology preset on load
+document.getElementById('nlp-input').value = PRESETS.cardio;
+</script>
+{% endblock %}

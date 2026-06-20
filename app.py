@@ -382,6 +382,347 @@ def backtester_run():
         return jsonify({"ok": False, "error": str(exc)}), 500
 
 
+# ── Clinical Text NLP Extractor ───────────────────────────────────────────────
+
+_NLP_MEDICATIONS = [
+    # Cardiovascular
+    "metoprolol","bisoprolol","atenolol","carvedilol","nebivolol",
+    "lisinopril","ramipril","enalapril","perindopril","captopril","trandolapril",
+    "amlodipine","nifedipine","diltiazem","verapamil","felodipine",
+    "atorvastatin","simvastatin","rosuvastatin","pravastatin","fluvastatin",
+    "warfarin","apixaban","rivaroxaban","dabigatran","edoxaban",
+    "aspirin","clopidogrel","ticagrelor","prasugrel","dipyridamole",
+    "furosemide","spironolactone","bumetanide","torasemide","eplerenone",
+    "digoxin","amiodarone","flecainide","sotalol","dronedarone",
+    "nitroglycerine","isosorbide","hydralazine","doxazosin","prazosin",
+    "sacubitril","valsartan","ivabradine","empagliflozin","dapagliflozin",
+    # Antibiotics
+    "amoxicillin","ampicillin","co-amoxiclav","flucloxacillin",
+    "penicillin","piperacillin","tazobactam","piperacillin-tazobactam",
+    "ciprofloxacin","levofloxacin","moxifloxacin","ofloxacin",
+    "metronidazole","tinidazole",
+    "doxycycline","tetracycline","minocycline",
+    "azithromycin","clarithromycin","erythromycin",
+    "trimethoprim","nitrofurantoin","fosfomycin","co-trimoxazole",
+    "ceftriaxone","cefuroxime","cephalexin","cefazolin","ceftazidime",
+    "vancomycin","teicoplanin","linezolid","daptomycin","tigecycline",
+    "meropenem","ertapenem","imipenem","doripenem",
+    "gentamicin","amikacin","tobramycin",
+    # Analgesics / Anti-inflammatory
+    "paracetamol","acetaminophen",
+    "ibuprofen","naproxen","diclofenac","celecoxib","meloxicam","indomethacin","etoricoxib",
+    "morphine","oxycodone","hydromorphone","fentanyl","alfentanil","remifentanil",
+    "codeine","dihydrocodeine","tramadol","buprenorphine","tapentadol",
+    "prednisolone","dexamethasone","hydrocortisone","methylprednisolone","betamethasone",
+    # Psychiatric / Neurological
+    "sertraline","fluoxetine","paroxetine","citalopram","escitalopram","fluvoxamine",
+    "venlafaxine","duloxetine","desvenlafaxine","mirtazapine","trazodone","agomelatine",
+    "amitriptyline","nortriptyline","clomipramine","imipramine","dosulepin",
+    "diazepam","lorazepam","clonazepam","alprazolam","temazepam","nitrazepam","oxazepam",
+    "quetiapine","olanzapine","risperidone","aripiprazole","haloperidol","clozapine","amisulpride",
+    "lithium","valproate","lamotrigine","carbamazepine","levetiracetam","phenytoin","topiramate",
+    "donepezil","rivastigmine","galantamine","memantine",
+    "levodopa","pramipexole","ropinirole","rasagiline","selegiline","entacapone",
+    "sumatriptan","rizatriptan","zolmitriptan","propranolol",
+    "pregabalin","gabapentin",
+    "melatonin","zopiclone","zolpidem",
+    # Respiratory
+    "salbutamol","terbutaline","salmeterol","formoterol","indacaterol","olodaterol",
+    "ipratropium","tiotropium","umeclidinium","glycopyrronium","aclidinium",
+    "beclometasone","fluticasone","budesonide","ciclesonide","mometasone",
+    "montelukast","zafirlukast","theophylline","aminophylline",
+    "acetylcysteine","carbocisteine","dornase alfa",
+    "roflumilast","nintedanib","pirfenidone",
+    # Diabetes
+    "metformin","gliclazide","glibenclamide","glimepiride","glipizide",
+    "sitagliptin","saxagliptin","linagliptin","alogliptin","vildagliptin",
+    "canagliflozin","ertugliflozin",
+    "liraglutide","semaglutide","exenatide","dulaglutide","lixisenatide",
+    "insulin","glargine","detemir","degludec","aspart","lispro","glulisine","isophane",
+    "pioglitazone","acarbose","repaglinide",
+    # Gastrointestinal
+    "omeprazole","lansoprazole","pantoprazole","esomeprazole","rabeprazole",
+    "ranitidine","famotidine","cimetidine",
+    "ondansetron","metoclopramide","domperidone","prochlorperazine","cyclizine","granisetron",
+    "loperamide","codeine phosphate",
+    "lactulose","movicol","senna","bisacodyl","docusate","macrogol",
+    "mesalazine","sulfasalazine","infliximab","adalimumab","vedolizumab","ustekinumab",
+    "cholestyramine","colesevelam",
+    # Thyroid / Endocrine
+    "levothyroxine","liothyronine","carbimazole","propylthiouracil",
+    "alendronate","risedronate","denosumab","strontium","teriparatide",
+    "anastrozole","letrozole","exemestane","tamoxifen","fulvestrant",
+    "testosterone","estradiol","progesterone","norethisterone","etonogestrel",
+    "finasteride","dutasteride",
+    # Renal / Rheumatology
+    "allopurinol","febuxostat","colchicine","benzbromarone",
+    "hydroxychloroquine","methotrexate","azathioprine","mycophenolate","leflunomide",
+    "ciclosporin","tacrolimus","sirolimus",
+    "rituximab","tocilizumab","etanercept","abatacept","certolizumab","golimumab",
+    "belimumab","secukinumab","ixekizumab","baricitinib","tofacitinib",
+    # Anticoagulation / Haematology
+    "heparin","enoxaparin","dalteparin","fondaparinux","tinzaparin",
+    "erythropoietin","epoetin","darbepoetin",
+    "ferrous sulphate","ferrous fumarate","iron sucrose","ferric carboxymaltose",
+    "folic acid","hydroxocobalamin","cyanocobalamin",
+    "filgrastim","lenograstim","pegfilgrastim",
+    # Miscellaneous
+    "calcium carbonate","calcium acetate","sevelamer","lanthanum",
+    "vitamin d","cholecalciferol","alfacalcidol","calcitriol",
+    "bisoprolol","carvedilol",
+    "sildenafil","tadalafil","vardenafil",
+]
+
+_NLP_DIAGNOSES = [
+    # Cardiovascular
+    "hypertension","essential hypertension","secondary hypertension","resistant hypertension",
+    "heart failure","congestive heart failure","cardiac failure","systolic heart failure",
+    "diastolic heart failure","heart failure with reduced ejection fraction",
+    "atrial fibrillation","atrial flutter","supraventricular tachycardia","ventricular tachycardia",
+    "ventricular fibrillation","complete heart block","sick sinus syndrome",
+    "myocardial infarction","ST elevation myocardial infarction","STEMI","NSTEMI",
+    "angina","stable angina","unstable angina","Prinzmetal angina",
+    "acute coronary syndrome","ACS",
+    "stroke","ischaemic stroke","haemorrhagic stroke","subarachnoid haemorrhage",
+    "transient ischaemic attack","TIA",
+    "deep vein thrombosis","DVT","pulmonary embolism","PE",
+    "peripheral vascular disease","peripheral arterial disease",
+    "aortic stenosis","mitral regurgitation","aortic regurgitation","mitral stenosis",
+    "cardiomyopathy","dilated cardiomyopathy","hypertrophic cardiomyopathy","restrictive cardiomyopathy",
+    "pericarditis","endocarditis","myocarditis","cardiac tamponade",
+    # Respiratory
+    "asthma","brittle asthma","exercise-induced asthma",
+    "chronic obstructive pulmonary disease","COPD","emphysema","chronic bronchitis",
+    "pneumonia","community-acquired pneumonia","hospital-acquired pneumonia","aspiration pneumonia",
+    "pulmonary fibrosis","idiopathic pulmonary fibrosis","IPF",
+    "pleural effusion","pneumothorax","haemothorax","haemopneumothorax",
+    "pulmonary oedema","cardiogenic pulmonary oedema","acute respiratory distress syndrome","ARDS",
+    "pulmonary hypertension","cor pulmonale",
+    "sleep apnoea","obstructive sleep apnoea","OSA",
+    "bronchiectasis","cystic fibrosis",
+    "COVID-19","SARS-CoV-2","influenza",
+    "sarcoidosis","hypersensitivity pneumonitis","mesothelioma",
+    # Metabolic / Endocrine
+    "type 2 diabetes","type 1 diabetes","diabetes mellitus","gestational diabetes",
+    "hypothyroidism","hyperthyroidism","thyrotoxicosis","thyroid storm",
+    "Grave's disease","Hashimoto's thyroiditis","autoimmune thyroiditis",
+    "hypercholesterolaemia","dyslipidaemia","hyperlipidaemia","hypertriglyceridaemia",
+    "obesity","morbid obesity","metabolic syndrome",
+    "Cushing's syndrome","Addison's disease","primary adrenal insufficiency",
+    "hyperparathyroidism","hypoparathyroidism",
+    "hypokalaemia","hyperkalaemia","hyponatraemia","hypernatraemia",
+    "hypomagnesaemia","hypocalcaemia","hypercalcaemia",
+    "acromegaly","hypopituitarism","diabetes insipidus","SIADH",
+    # Renal
+    "chronic kidney disease","CKD","acute kidney injury","AKI","acute tubular necrosis",
+    "nephrotic syndrome","nephritic syndrome","proteinuria",
+    "glomerulonephritis","IgA nephropathy","membranous nephropathy",
+    "polycystic kidney disease","renal artery stenosis","renal cell carcinoma",
+    "urinary tract infection","UTI","cystitis","pyelonephritis","prostatitis",
+    # Gastrointestinal
+    "peptic ulcer disease","gastric ulcer","duodenal ulcer","H pylori",
+    "Crohn's disease","ulcerative colitis","inflammatory bowel disease","IBD",
+    "irritable bowel syndrome","IBS",
+    "gastro-oesophageal reflux","GORD","GERD","Barrett's oesophagus","oesophagitis",
+    "cirrhosis","alcoholic liver disease","non-alcoholic fatty liver disease","NAFLD","NASH",
+    "pancreatitis","acute pancreatitis","chronic pancreatitis",
+    "cholecystitis","cholelithiasis","gallstones","cholangitis","primary sclerosing cholangitis",
+    "diverticulitis","diverticular disease","diverticulosis",
+    "appendicitis","bowel obstruction","volvulus","intussusception",
+    "coeliac disease","malabsorption","short bowel syndrome",
+    "hepatitis","hepatitis B","hepatitis C","autoimmune hepatitis",
+    # Musculoskeletal
+    "rheumatoid arthritis","osteoarthritis","psoriatic arthritis","reactive arthritis",
+    "gout","pseudogout","calcium pyrophosphate deposition",
+    "osteoporosis","osteopenia","osteomalacia","Paget's disease",
+    "systemic lupus erythematosus","SLE","lupus nephritis",
+    "ankylosing spondylitis","fibromyalgia","polymyalgia rheumatica",
+    "Sjogren's syndrome","systemic sclerosis","scleroderma",
+    "polymyositis","dermatomyositis",
+    # Neurological
+    "epilepsy","seizure disorder","generalised epilepsy","focal epilepsy","status epilepticus",
+    "Parkinson's disease","Parkinsonism","Lewy body dementia",
+    "Alzheimer's disease","dementia","vascular dementia","frontotemporal dementia",
+    "multiple sclerosis","MS","relapsing remitting MS","primary progressive MS",
+    "migraine","cluster headache","tension headache","trigeminal neuralgia",
+    "peripheral neuropathy","diabetic neuropathy","Charcot-Marie-Tooth",
+    "Guillain-Barré syndrome","myasthenia gravis","motor neurone disease","ALS",
+    "Bell's palsy","carpal tunnel syndrome","sciatica","spinal stenosis",
+    "meningitis","encephalitis","brain abscess","subdural haematoma","extradural haematoma",
+    "normal pressure hydrocephalus","Huntington's disease","cerebellar ataxia",
+    # Psychiatric
+    "depression","major depressive disorder","treatment-resistant depression",
+    "bipolar disorder","bipolar affective disorder","mania","hypomania",
+    "anxiety","generalised anxiety disorder","GAD","panic disorder","social anxiety disorder",
+    "schizophrenia","schizoaffective disorder","psychosis","first episode psychosis",
+    "PTSD","post-traumatic stress disorder",
+    "obsessive-compulsive disorder","OCD","body dysmorphic disorder",
+    "eating disorder","anorexia nervosa","bulimia nervosa","ARFID",
+    "ADHD","attention deficit hyperactivity disorder","autism spectrum disorder",
+    "alcohol use disorder","substance misuse","opiate dependence",
+    # Infections
+    "sepsis","septic shock","bacteraemia","SIRS",
+    "cellulitis","erysipelas","necrotising fasciitis","abscess",
+    "tuberculosis","TB","latent TB","multi-drug resistant TB",
+    "HIV","AIDS","opportunistic infection",
+    "Lyme disease","brucellosis","malaria","typhoid",
+    "COVID-19","SARS-CoV-2","influenza","RSV",
+    "hepatitis B","hepatitis C",
+    "infective endocarditis",
+    # Cancer / Haematology
+    "breast cancer","lung cancer","colorectal cancer","colon cancer","rectal cancer",
+    "prostate cancer","ovarian cancer","cervical cancer","endometrial cancer",
+    "lymphoma","Hodgkin lymphoma","non-Hodgkin lymphoma","diffuse large B-cell lymphoma",
+    "leukaemia","chronic lymphocytic leukaemia","CLL","acute myeloid leukaemia","AML",
+    "acute lymphoblastic leukaemia","ALL","chronic myeloid leukaemia","CML",
+    "multiple myeloma","myelodysplastic syndrome","MDS",
+    "melanoma","basal cell carcinoma","squamous cell carcinoma",
+    "hepatocellular carcinoma","cholangiocarcinoma","pancreatic cancer",
+    "bladder cancer","kidney cancer","thyroid cancer","gastric cancer",
+    "brain tumour","glioblastoma","glioma","meningioma",
+    "anaemia","iron deficiency anaemia","pernicious anaemia","aplastic anaemia",
+    "thrombocytopenia","thrombophilia","antiphospholipid syndrome",
+    # Other
+    "chronic fatigue syndrome","fibromyalgia","sarcoidosis",
+    "psoriasis","eczema","dermatitis","urticaria","angioedema",
+    "glaucoma","macular degeneration","diabetic retinopathy","cataracts",
+    "hypothyroidism","hyperthyroidism",
+]
+
+
+def _run_nlp_extractor(text: str) -> dict:
+    """Rule-based clinical NLP entity extractor using regex + curated medical vocabulary."""
+    entities: list[dict] = []
+    seen_spans: list[tuple] = []
+
+    def no_overlap(s: int, e: int) -> bool:
+        return all(e <= a or s >= b for a, b in seen_spans)
+
+    # ── DATES ──────────────────────────────────────────────────────────────
+    date_patterns = [
+        r'\b\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\b',
+        r'\b\d{1,2}(?:st|nd|rd|th)?\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{4}\b',
+        r'\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2}(?:st|nd|rd|th)?,?\s+\d{4}\b',
+        r'\b\d{4}[-\/]\d{2}[-\/]\d{2}\b',
+        r'\btoday\b|\byesterday\b|\btomorrow\b',
+        r'\b(?:last|this|next)\s+(?:week|month|year|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b',
+        r'\b\d+\s+(?:days?|weeks?|months?|years?)\s+ago\b',
+        r'\b(?:in|since|from)\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\b',
+    ]
+    for pat in date_patterns:
+        for m in re.finditer(pat, text, re.IGNORECASE):
+            if no_overlap(m.start(), m.end()):
+                entities.append({"type": "DATE", "text": m.group(), "start": m.start(), "end": m.end(), "confidence": 0.95})
+                seen_spans.append((m.start(), m.end()))
+
+    # ── DOSAGES ────────────────────────────────────────────────────────────
+    dosage_patterns = [
+        r'\b\d+(?:\.\d+)?\s*(?:mg|mcg|µg|micrograms?|g|ml|mL|L|mmol|units?|IU|mEq|mg\/kg|mcg\/kg|mg\/mL|µg\/kg)\b',
+        r'\b\d+\s*(?:micrograms?|milligrams?|grams?)\b',
+        r'\b(?:once|twice|three\s+times|four\s+times)\s+(?:daily|a\s+day|per\s+day)\b',
+        r'\b(?:BD|TDS|QDS|OD|PRN|QID|TID|BID|OM|ON|stat|STAT|nocte)\b',
+        r'\b\d+\s+(?:tablet|capsule|puff|drop|patch|vial|ampoule|sachet)s?\b',
+        r'\b(?:loading dose|maintenance dose|starting dose|initial dose)\b',
+        r'\b\d+(?:\.\d+)?%\s+(?:solution|cream|ointment|gel|drops?|lotion|infusion)\b',
+    ]
+    for pat in dosage_patterns:
+        for m in re.finditer(pat, text, re.IGNORECASE):
+            if no_overlap(m.start(), m.end()):
+                entities.append({"type": "DOSAGE", "text": m.group(), "start": m.start(), "end": m.end(), "confidence": 0.92})
+                seen_spans.append((m.start(), m.end()))
+
+    # ── VITAL SIGNS ────────────────────────────────────────────────────────
+    vital_patterns = [
+        r'\bBP\s*:?\s*\d{2,3}\s*\/\s*\d{2,3}\b',
+        r'\b(?:blood\s+pressure)\s*:?\s*\d{2,3}\s*\/\s*\d{2,3}\b',
+        r'\b(?:HR|heart\s+rate|pulse\s+rate|pulse)\s*:?\s*\d{2,3}\s*(?:bpm|\/min)?\b',
+        r'\bSpO2\s*:?\s*\d{2,3}\s*%?\b',
+        r'\b(?:O2\s+sat(?:uration)?|oxygen\s+saturation)\s*:?\s*\d{2,3}\s*%?\b',
+        r'\b(?:temp(?:erature)?)\s*:?\s*\d{2}(?:\.\d)?\s*°?\s*[CF]?\b',
+        r'\b(?:RR|respiratory\s+rate)\s*:?\s*\d{1,2}\b',
+        r'\bGCS\s*:?\s*\d{1,2}(?:\/15)?\b',
+        r'\bBMI\s*:?\s*\d{2}(?:\.\d+)?\b',
+        r'\b(?:weight|Wt)\s*:?\s*\d+(?:\.\d+)?\s*kg\b',
+        r'\b(?:height|Ht)\s*:?\s*\d+(?:\.\d+)?\s*(?:cm|m)\b',
+    ]
+    for pat in vital_patterns:
+        for m in re.finditer(pat, text, re.IGNORECASE):
+            if no_overlap(m.start(), m.end()):
+                entities.append({"type": "VITAL_SIGN", "text": m.group(), "start": m.start(), "end": m.end(), "confidence": 0.96})
+                seen_spans.append((m.start(), m.end()))
+
+    # ── LAB VALUES ─────────────────────────────────────────────────────────
+    lab_patterns = [
+        r'\b(?:HbA1c|haemoglobin\s+A1c)\s*:?\s*\d+(?:\.\d+)?\s*%?\b',
+        r'\b(?:Hb|haemoglobin)\s*:?\s*\d+(?:\.\d+)?\s*(?:g\/dL|g\/L)?\b',
+        r'\b(?:Na|sodium)\s*:?\s*\d{2,3}\s*(?:mmol\/L)?\b',
+        r'\b(?:K|potassium)\s*:?\s*\d(?:\.\d)?\s*(?:mmol\/L)?\b',
+        r'\b(?:Cr|creatinine)\s*:?\s*\d+(?:\.\d+)?\s*(?:µmol\/L|umol\/L|mg\/dL)?\b',
+        r'\b(?:eGFR|GFR)\s*:?\s*\d+(?:\.\d+)?\b',
+        r'\b(?:WBC|white\s+(?:blood\s+)?cell\s+count)\s*:?\s*\d+(?:\.\d+)?\b',
+        r'\b(?:Hct|haematocrit)\s*:?\s*\d+(?:\.\d+)?%?\b',
+        r'\b(?:PLT|platelets?)\s*:?\s*\d+(?:\.\d+)?\b',
+        r'\b(?:ALT|AST|ALP|GGT|bilirubin)\s*:?\s*\d+(?:\.\d+)?\s*(?:U\/L|IU\/L|µmol\/L)?\b',
+        r'\b(?:TSH|free\s+T4|T3)\s*:?\s*\d+(?:\.\d+)?\b',
+        r'\b(?:CRP|ESR|procalcitonin)\s*:?\s*\d+(?:\.\d+)?\b',
+        r'\b(?:troponin|BNP|NT-proBNP)\s*:?\s*\d+(?:\.\d+)?\b',
+        r'\b(?:INR|APTT|PT)\s*:?\s*\d+(?:\.\d+)?\b',
+        r'\b(?:cholesterol|LDL|HDL|triglycerides?)\s*:?\s*\d+(?:\.\d+)?\s*(?:mmol\/L)?\b',
+        r'\b(?:glucose|blood\s+glucose|fasting\s+glucose)\s*:?\s*\d+(?:\.\d+)?\s*(?:mmol\/L|mg\/dL)?\b',
+        r'\b(?:urea|BUN|uric\s+acid)\s*:?\s*\d+(?:\.\d+)?\b',
+        r'\b(?:albumin|total\s+protein)\s*:?\s*\d+(?:\.\d+)?\s*(?:g\/L|g\/dL)?\b',
+        r'\b(?:calcium|phosphate|magnesium)\s*:?\s*\d+(?:\.\d+)?\s*(?:mmol\/L)?\b',
+        r'\b(?:ferritin|iron|TIBC|transferrin\s+saturation)\s*:?\s*\d+(?:\.\d+)?\b',
+    ]
+    for pat in lab_patterns:
+        for m in re.finditer(pat, text, re.IGNORECASE):
+            if no_overlap(m.start(), m.end()):
+                entities.append({"type": "LAB_VALUE", "text": m.group(), "start": m.start(), "end": m.end(), "confidence": 0.94})
+                seen_spans.append((m.start(), m.end()))
+
+    # ── MEDICATIONS ────────────────────────────────────────────────────────
+    for med in sorted(_NLP_MEDICATIONS, key=len, reverse=True):
+        pat = r'\b' + re.escape(med) + r'\b'
+        for m in re.finditer(pat, text, re.IGNORECASE):
+            if no_overlap(m.start(), m.end()):
+                entities.append({"type": "MEDICATION", "text": m.group(), "start": m.start(), "end": m.end(), "confidence": 0.90})
+                seen_spans.append((m.start(), m.end()))
+
+    # ── DIAGNOSES ──────────────────────────────────────────────────────────
+    for diag in sorted(_NLP_DIAGNOSES, key=len, reverse=True):
+        pat = r'\b' + re.escape(diag) + r'\b'
+        for m in re.finditer(pat, text, re.IGNORECASE):
+            if no_overlap(m.start(), m.end()):
+                entities.append({"type": "DIAGNOSIS", "text": m.group(), "start": m.start(), "end": m.end(), "confidence": 0.88})
+                seen_spans.append((m.start(), m.end()))
+
+    entities.sort(key=lambda x: x["start"])
+
+    counts: dict[str, int] = {}
+    for e in entities:
+        counts[e["type"]] = counts.get(e["type"], 0) + 1
+
+    return {"entities": entities, "counts": counts, "total": len(entities)}
+
+
+@app.route("/nlp-extractor")
+def nlp_extractor():
+    return render_template("nlp_extractor.html")
+
+
+@app.route("/nlp-extractor/run", methods=["POST"])
+def nlp_extractor_run():
+    try:
+        data = request.get_json(force=True) or {}
+        text = data.get("text", "").strip()
+        if not text:
+            return jsonify({"ok": False, "error": "No text provided"}), 400
+        result = _run_nlp_extractor(text)
+        return jsonify({"ok": True, **result})
+    except Exception as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 500
+
+
 @app.route("/about")
 def about():
     return render_template("about.html")
