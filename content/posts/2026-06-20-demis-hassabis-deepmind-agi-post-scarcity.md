@@ -207,7 +207,7 @@ Which, if the trajectory holds, is all of us.
 
 2. [*The Thinking Game* — Full documentary (YouTube, 2025)](https://youtu.be/d95J8yzvjbQ) — dir. Greg Kohs; produced by Google DeepMind; Tribeca Film Festival 2024 world premiere.
 
-3. Sebastian Mallaby, [*The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence*](https://www.penguinrandomhouse.com/books/741523/the-infinity-machine-by-sebastian-mallaby/) (Penguin Press, 2026). ISBN 978-0-593-83184-7.
+3. Sebastian Mallaby, [*The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence*](https://www.amazon.com/Infinity-Machine-Hassabis-DeepMind-Superintelligence/dp/0593831845) (Penguin Press, 2026). ISBN 978-0-593-83184-7.
 
 4. Hassabis D., ["Accelerating scientific discovery with AI"](https://www.nobelprize.org/uploads/2024/12/hassabis-lecture.pdf) — Nobel Prize lecture in Chemistry, Stockholm, 8 December 2024. Full video at [NobelPrize.org](https://www.nobelprize.org/prizes/chemistry/2024/hassabis/lecture/).
 
@@ -223,7 +223,7 @@ Which, if the trajectory holds, is all of us.
 
 10. Degrave J. et al., ["Magnetic control of tokamak plasmas through deep reinforcement learning"](https://www.nature.com/articles/s41586-021-04301-9), *Nature* 602, 414–419 (2022).
 
-11. Banks I.M., [*The Player of Games*](https://www.orbitbooks.net/2008/09/02/the-player-of-games/) (Orbit, 1988). First in the Culture series that directly shaped Hassabis's vision of AI-enabled post-scarcity civilisation.
+11. Banks I.M., [*The Player of Games*](https://www.amazon.com/Player-Games-Culture-Iain-Banks/dp/0316005401) (Orbit, 1988). Second in the Culture series that directly shaped Hassabis's vision of AI-enabled post-scarcity civilisation.
 
 12. Hassabis D., [TIME100 interview on AlphaFold, AGI, and humanity](https://time.com/7277608/demis-hassabis-interview-time100-2025/) (TIME, 2025).
 
