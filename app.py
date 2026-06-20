@@ -705,6 +705,152 @@ def _run_nlp_extractor(text: str) -> dict:
     return {"entities": entities, "counts": counts, "total": len(entities)}
 
 
+# ── Voice Clinical Notes ──────────────────────────────────────────────────────
+
+def _format_clinical_note(transcript: str) -> str:
+    """Format a voice transcript into a structured clinical note using NLP entity extraction."""
+    from datetime import datetime
+
+    # Strip filler words common in dictation
+    fillers = r'\b(um|uh|er|ah|hmm|so|like|you know|sort of|kind of|basically|right|okay so|and so)\b'
+    text = re.sub(fillers, '', transcript, flags=re.IGNORECASE)
+    text = re.sub(r'\s{2,}', ' ', text).strip()
+
+    # Split into sentences (handle lack of punctuation in speech-to-text)
+    # Split on ". " or "? " or "! " or common verbal full-stops like ", so " / ", and "
+    raw_sents = re.split(r'(?<=[.!?])\s+|(?<=\n)', text)
+    sentences = [s.strip() for s in raw_sents if len(s.strip()) > 3]
+
+    # Extract entities from full text
+    nlp = _run_nlp_extractor(text)
+    def ents(t): return list(dict.fromkeys(e['text'] for e in nlp['entities'] if e['type'] == t))
+    meds   = ents('MEDICATION')
+    diags  = ents('DIAGNOSIS')
+    vitals = ents('VITAL_SIGN')
+    labs   = ents('LAB_VALUE')
+    doses  = ents('DOSAGE')
+
+    # Keyword patterns for section classification (use alternation groups, not char classes)
+    PC = re.compile(r'\b(presenting|presented|presents|complaining|complaint|came in|brought in|attending|attended|referr(?:ed|al)?|admitted|c/o|chief complaint)\b', re.I)
+    HX = re.compile(r'\b(background|history of|known|past medical|pmh|previous|chronic|suffered|diagnosed with|has a history|long.?standing)\b', re.I)
+    EX = re.compile(r'\b(examin(?:ation|ed|es)?|on exam(?:ination)?|inspection|auscultation|palpation|found on|on observation|looks|appears|clinically)\b', re.I)
+    IX = re.compile(r'\b(bloods?(?:\s+(?:test|show|result))|blood\s+test|ecg|x.?ray|ct\s+scan|mri|ultrasound|imaging|scan(?:ned)?|result(?:s)?|showed|pending|investig(?:ations?|ated)|fbc|u&e|lft|tfts?|troponin|cultures?)\b', re.I)
+    AS = re.compile(r'\b(impression|assessment|working\s+diagnosis|likely|probable|suspect|rule\s+out|differential|my\s+(?:working\s+)?impression|diagnosis is|consistent with)\b', re.I)
+    PL = re.compile(r'\b(plan(?:ning)?(?:\s+for)?|for\s+(?:serial|urgent|routine|review)|refer(?:ral)?|discharge|prescrib(?:e|ing)|start(?:ing)?|stop(?:ping)?|continue|follow.?up|review|arrange|request|monitor|titrat(?:e|ing)?|commence)\b', re.I)
+
+    # Classify sentences into sections
+    sections: dict[str, list[str]] = {
+        'PRESENTING COMPLAINT': [],
+        'HISTORY':              [],
+        'EXAMINATION':          [],
+        'INVESTIGATIONS':       [],
+        'ASSESSMENT':           [],
+        'PLAN':                 [],
+        'OTHER':                [],
+    }
+
+    vital_lower = [v.lower() for v in vitals]
+    lab_lower   = [l.lower() for l in labs]
+
+    for sent in sentences:
+        sl = sent.lower()
+        has_vital = any(v in sl for v in vital_lower)
+        has_lab   = any(l in sl for l in lab_lower)
+
+        if AS.search(sent):
+            sections['ASSESSMENT'].append(sent)
+        elif PL.search(sent) and not EX.search(sent):
+            sections['PLAN'].append(sent)
+        elif IX.search(sent) or has_lab:
+            sections['INVESTIGATIONS'].append(sent)
+        elif EX.search(sent) or has_vital:
+            sections['EXAMINATION'].append(sent)
+        elif PC.search(sent):
+            sections['PRESENTING COMPLAINT'].append(sent)
+        elif HX.search(sent):
+            sections['HISTORY'].append(sent)
+        else:
+            # Fallback: first unclassified sentence → PC; rest → History
+            if not sections['PRESENTING COMPLAINT']:
+                sections['PRESENTING COMPLAINT'].append(sent)
+            else:
+                sections['OTHER'].append(sent)
+
+    # Promote orphaned vital-containing sentences in OTHER to EXAMINATION
+    for s in list(sections['OTHER']):
+        if any(v in s.lower() for v in vital_lower) or any(l in s.lower() for l in lab_lower):
+            sections['INVESTIGATIONS' if any(l in s.lower() for l in lab_lower) else 'EXAMINATION'].append(s)
+            sections['OTHER'].remove(s)
+
+    # Build formatted output
+    now = datetime.now()
+    lines = [
+        "CLINICAL NOTE",
+        f"Date: {now.strftime('%-d %B %Y')}",
+        f"Time: {now.strftime('%H:%M')}",
+        "",
+    ]
+
+    section_order = ['PRESENTING COMPLAINT', 'HISTORY', 'EXAMINATION', 'INVESTIGATIONS', 'ASSESSMENT', 'PLAN']
+    for section in section_order:
+        sents = sections[section]
+        if sents:
+            lines.append(f"{section}:")
+            for s in sents:
+                # Capitalise first letter
+                lines.append(f"  {s[0].upper() + s[1:] if s else ''}")
+            lines.append("")
+
+    if sections['OTHER']:
+        lines.append("ADDITIONAL NOTES:")
+        for s in sections['OTHER']:
+            lines.append(f"  {s}")
+        lines.append("")
+
+    # Structured medication list (deduplicated, from NLP)
+    if meds:
+        lines.append("MEDICATIONS MENTIONED:")
+        for m in meds:
+            # Try to find associated dose immediately after the med name in text
+            idx = text.lower().find(m.lower())
+            dose_context = ""
+            if idx >= 0:
+                after = text[idx + len(m):idx + len(m) + 30]
+                dose_m = re.search(r'\s*(\d+\s*(?:mg|mcg|g|ml)\s*(?:BD|TDS|QDS|OD|PRN|once daily|twice daily)?)', after, re.I)
+                if dose_m:
+                    dose_context = f" {dose_m.group(1).strip()}"
+            lines.append(f"  - {m.title()}{dose_context}")
+        lines.append("")
+
+    # Diagnoses mentioned
+    if diags:
+        lines.append("DIAGNOSES / CONDITIONS:")
+        for d in diags:
+            lines.append(f"  - {d.title()}")
+        lines.append("")
+
+    result = '\n'.join(lines).rstrip()
+    return result
+
+
+@app.route("/voice-notes")
+def voice_notes():
+    return render_template("voice_notes.html")
+
+
+@app.route("/voice-notes/format", methods=["POST"])
+def voice_notes_format():
+    try:
+        data = request.get_json(force=True) or {}
+        transcript = data.get("transcript", "").strip()
+        if not transcript:
+            return jsonify({"ok": False, "error": "No transcript provided"}), 400
+        note = _format_clinical_note(transcript)
+        return jsonify({"ok": True, "note": note})
+    except Exception as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 500
+
+
 @app.route("/nlp-extractor")
 def nlp_extractor():
     return render_template("nlp_extractor.html")
@@ -767,6 +913,12 @@ def contact():
         flash("Something went wrong. Please email me directly at dr.neal.aggarwal@gmail.com.", "error")
 
     return redirect(url_for("about") + "#contact")
+
+
+@app.route("/sw.js")
+def service_worker():
+    from flask import send_from_directory
+    return send_from_directory(BASE / "static", "sw.js", mimetype="application/javascript")
 
 
 @app.errorhandler(404)

@@ -1,0 +1,500 @@
+{% extends "base.html" %}
+{% block title %}Voice Clinical Notes — Dr Neal Aggarwal{% endblock %}
+
+{% block extra_head %}
+<link rel="manifest" href="/static/voice-notes-manifest.json">
+<meta name="theme-color" content="#0d1117">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ClinNote">
+<style>
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+.vn-wrap {
+  max-width: 580px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+/* ── Record button ───────────────────────────────────────────────────────── */
+.record-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem auto;
+}
+.record-btn {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-family: var(--mono);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.record-btn:hover:not(:disabled) { border-color: #ff4444; }
+.record-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.record-btn.recording {
+  border-color: #ff4444;
+  background: rgba(255,68,68,0.07);
+  animation: ring-pulse 1.8s ease-in-out infinite;
+}
+@keyframes ring-pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(255,68,68,0.35); }
+  50%      { box-shadow: 0 0 0 22px rgba(255,68,68,0); }
+}
+
+.record-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ff4444;
+  transition: border-radius 0.25s, transform 0.25s;
+}
+.record-btn.recording .record-icon {
+  border-radius: 5px;
+  transform: scale(0.85);
+}
+.record-lbl {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+.record-btn.recording .record-lbl { color: #ff4444; }
+
+/* ── Status ──────────────────────────────────────────────────────────────── */
+.vn-status {
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  min-height: 1.2em;
+  margin-bottom: 1rem;
+}
+.vn-status .live-dot { color: #ff4444; }
+
+/* ── Transcript ──────────────────────────────────────────────────────────── */
+.transcript-panel {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  min-height: 120px;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+#interim-span { color: var(--text-dim); }
+.t-placeholder { color: var(--text-dim); font-style: italic; }
+
+/* ── Action buttons ──────────────────────────────────────────────────────── */
+.action-btn {
+  width: 100%;
+  padding: 0.72rem;
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  margin-bottom: 0.75rem;
+}
+.action-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.action-btn--primary {
+  background: var(--cyan);
+  color: #000;
+  border: none;
+}
+.action-btn--primary:hover:not(:disabled) { opacity: 0.85; }
+.action-btn--ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+}
+.action-btn--ghost:hover:not(:disabled) { border-color: var(--cyan); color: var(--cyan); }
+
+/* ── Formatted note ──────────────────────────────────────────────────────── */
+.note-panel {
+  background: var(--bg);
+  border: 1px solid var(--cyan);
+  border-radius: 6px;
+  padding: 1rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+/* ── Share grid ──────────────────────────────────────────────────────────── */
+.share-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.share-btn {
+  padding: 0.6rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  text-align: center;
+}
+.share-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+.share-btn--wa:hover    { border-color: #25d366; color: #25d366; }
+.share-btn--email:hover { border-color: var(--amber); color: var(--amber); }
+.share-btn--sms:hover   { border-color: #4cc9f0; color: #4cc9f0; }
+
+/* ── Copied flash ────────────────────────────────────────────────────────── */
+.copied-flash {
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--green);
+  height: 1.2em;
+  opacity: 0;
+  transition: opacity 0.25s;
+  margin-bottom: 0.4rem;
+}
+.copied-flash.show { opacity: 1; }
+
+/* ── Compat warning ──────────────────────────────────────────────────────── */
+.compat-warn {
+  display: none;
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--amber);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* ── Native app note ─────────────────────────────────────────────────────── */
+.native-note {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-align: center;
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+.native-note a { color: var(--cyan); }
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .record-btn { width: 130px; height: 130px; }
+  .share-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <header class="page-hero" style="text-align:center">
+    <h1>// voice_clinical_notes</h1>
+    <p class="subtitle">Dictate. Format. Share. One button — no friction.</p>
+  </header>
+
+  <div class="vn-wrap">
+
+    <!-- Browser compatibility warning -->
+    <div class="compat-warn" id="compat-warn">
+      ⚠ Voice recording requires Chrome, Edge, or Safari (iOS 15+).
+      Firefox is not currently supported. On iPhone or iPad, open this page in Safari.
+    </div>
+
+    <!-- Status line -->
+    <div class="vn-status" id="vn-status">// tap the button to begin dictating</div>
+
+    <!-- BIG RECORD BUTTON -->
+    <div class="record-ring">
+      <button class="record-btn" id="record-btn" aria-label="Start recording">
+        <div class="record-icon"></div>
+        <span class="record-lbl" id="record-lbl">RECORD</span>
+      </button>
+    </div>
+
+    <!-- Live transcript -->
+    <div class="transcript-panel" id="transcript-panel">
+      <span class="t-placeholder" id="t-placeholder">// your dictation will appear here in real time…</span><span id="final-span"></span><span id="interim-span"></span>
+    </div>
+
+    <!-- Format button -->
+    <button class="action-btn action-btn--primary" id="format-btn" disabled>
+      ⚡ format as clinical note
+    </button>
+
+    <!-- ── Output section (hidden until formatted) ── -->
+    <div id="output-section" style="display:none">
+
+      <div class="copied-flash" id="copied-flash">✓ copied to clipboard</div>
+
+      <!-- Formatted note -->
+      <div class="note-panel" id="note-panel"></div>
+
+      <!-- Share options -->
+      <div class="share-grid">
+        <button class="share-btn"           onclick="copyNote()">📋 copy</button>
+        <a      class="share-btn share-btn--wa"    id="wa-link"    href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+        <a      class="share-btn share-btn--email" id="email-link" href="#">✉ email</a>
+        <a      class="share-btn share-btn--sms"   id="sms-link"   href="#">📱 SMS</a>
+        <button class="share-btn" onclick="dlNote('txt')">⬇ plain text</button>
+        <button class="share-btn" onclick="dlNote('rtf')">⬇ rich text</button>
+      </div>
+
+      <!-- Reset -->
+      <button class="action-btn action-btn--ghost" onclick="resetApp()">↺ new note</button>
+
+    </div><!-- /output-section -->
+
+    <!-- Native app note -->
+    <div class="native-note">
+      Install as an app: on iOS tap <strong>Share → Add to Home Screen</strong>; on Android tap <strong>⋮ → Add to Home Screen</strong>.<br>
+      Native iOS / Android builds available via <a href="https://capacitorjs.com" target="_blank" rel="noopener">Capacitor.js</a>.
+    </div>
+
+  </div><!-- /vn-wrap -->
+
+  <!-- About terminal -->
+  <div class="terminal" style="margin-top:2rem;max-width:580px;margin-left:auto;margin-right:auto">
+    <div class="terminal__titlebar">
+      <span class="terminal__dot terminal__dot--red"></span>
+      <span class="terminal__dot terminal__dot--yellow"></span>
+      <span class="terminal__dot terminal__dot--green"></span>
+      <span class="terminal__title">how_it_works.sh</span>
+    </div>
+    <div class="terminal__body" style="font-size:0.78rem">
+      <div><span class="prompt">$ </span><span class="cmd">cat workflow.md</span></div>
+      <div class="out">1. Tap RECORD — dictate your note in natural speech.</div>
+      <div class="out">2. Tap again to stop. Words appear live as you speak.</div>
+      <div class="out">3. Tap FORMAT — NLP pipeline structures your dictation</div>
+      <div class="out">   into sections: PC / Hx / Exam / Ix / Assessment / Plan.</div>
+      <div class="out">4. Copy to clipboard or share via WhatsApp, email, SMS.</div>
+      <div class="out">   Or download as .txt / .rtf for pasting into your EHR.</div>
+      <div class="mt-1"><span class="prompt">$ </span><span class="cmd">cat privacy.md</span></div>
+      <div class="out">Speech is transcribed on-device by your browser engine.</div>
+      <div class="out">No audio leaves your device. Only the text transcript is</div>
+      <div class="out">sent to this server for clinical formatting — then deleted.</div>
+      <div class="mt-1"><span class="prompt">$ </span><a href="/post/2026-06-20-voice-clinical-notes" style="color:var(--amber)">./read_the_blog_post.sh</a></div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// ── Speech Recognition setup ──────────────────────────────────────────────────
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (!SpeechRecognition) {
+  document.getElementById('compat-warn').style.display = 'block';
+  document.getElementById('record-btn').disabled = true;
+  document.getElementById('format-btn').disabled = true;
+}
+
+let recog       = null;
+let isRec       = false;
+let finalText   = '';
+
+function buildRecog() {
+  const r = new SpeechRecognition();
+  r.continuous     = true;
+  r.interimResults = true;
+  r.lang           = 'en-GB';
+  r.maxAlternatives = 1;
+
+  r.onstart = () => setStatus('<span class="live-dot">●</span> recording — speak clearly and naturally');
+
+  r.onresult = (e) => {
+    let interim = '';
+    for (let i = e.resultIndex; i < e.results.length; i++) {
+      const t = e.results[i][0].transcript;
+      if (e.results[i].isFinal) finalText += t + ' ';
+      else interim = t;
+    }
+    document.getElementById('t-placeholder').style.display = 'none';
+    document.getElementById('final-span').textContent   = finalText;
+    document.getElementById('interim-span').textContent = interim;
+    document.getElementById('format-btn').disabled = !finalText.trim();
+  };
+
+  r.onerror = (e) => {
+    if (e.error === 'no-speech') return;
+    setStatus(`// error: ${e.error}`);
+    stopRec();
+  };
+
+  // Auto-restart to handle browser timeouts (especially on mobile)
+  r.onend = () => { if (isRec) r.start(); };
+
+  return r;
+}
+
+// ── Record toggle ─────────────────────────────────────────────────────────────
+document.getElementById('record-btn').addEventListener('click', () => {
+  isRec ? stopRec() : startRec();
+});
+
+function startRec() {
+  if (!SpeechRecognition) return;
+  // Clear previous state
+  finalText = '';
+  document.getElementById('final-span').textContent   = '';
+  document.getElementById('interim-span').textContent = '';
+  document.getElementById('t-placeholder').style.display = '';
+  document.getElementById('output-section').style.display = 'none';
+  document.getElementById('format-btn').disabled = true;
+
+  recog  = buildRecog();
+  isRec  = true;
+  recog.start();
+
+  document.getElementById('record-btn').classList.add('recording');
+  document.getElementById('record-lbl').textContent = 'STOP';
+}
+
+function stopRec() {
+  isRec = false;
+  if (recog) { try { recog.stop(); } catch(e) {} recog = null; }
+  document.getElementById('record-btn').classList.remove('recording');
+  document.getElementById('record-lbl').textContent = 'RECORD';
+  document.getElementById('interim-span').textContent = '';
+  setStatus('// dictation complete — tap Format when ready');
+  document.getElementById('format-btn').disabled = !finalText.trim();
+}
+
+// ── Format ────────────────────────────────────────────────────────────────────
+document.getElementById('format-btn').addEventListener('click', async () => {
+  const text = finalText.trim();
+  if (!text) return;
+
+  const btn = document.getElementById('format-btn');
+  btn.disabled = true;
+  btn.textContent = '⏳ formatting…';
+  setStatus('// structuring your note…');
+
+  try {
+    const res  = await fetch('/voice-notes/format', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ transcript: text })
+    });
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error || 'Format failed');
+
+    showNote(data.note);
+    setStatus('// note ready — copy or share below');
+  } catch (err) {
+    setStatus(`// error: ${err.message}`);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '⚡ format as clinical note';
+  }
+});
+
+function showNote(note) {
+  document.getElementById('note-panel').textContent = note;
+  wireShareLinks(note);
+  document.getElementById('output-section').style.display = 'block';
+  setTimeout(() => {
+    document.getElementById('output-section').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 100);
+}
+
+// ── Share ─────────────────────────────────────────────────────────────────────
+function wireShareLinks(note) {
+  const enc = encodeURIComponent(note);
+  document.getElementById('wa-link').href    = `https://wa.me/?text=${enc}`;
+  document.getElementById('email-link').href = `mailto:?subject=Clinical%20Note&body=${enc}`;
+  // SMS: works on iOS (sms:) and Android (sms:?body=)
+  document.getElementById('sms-link').href   = `sms:?body=${enc}`;
+}
+
+async function copyNote() {
+  const note = document.getElementById('note-panel').textContent;
+  try {
+    await navigator.clipboard.writeText(note);
+  } catch {
+    const ta = Object.assign(document.createElement('textarea'), { value: note });
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+  }
+  const f = document.getElementById('copied-flash');
+  f.classList.add('show');
+  setTimeout(() => f.classList.remove('show'), 2200);
+}
+
+function dlNote(fmt) {
+  const note  = document.getElementById('note-panel').textContent;
+  const d     = new Date();
+  const stamp = `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}`;
+  let content, mime, ext;
+
+  if (fmt === 'rtf') {
+    const escaped = note.replace(/\\/g,'\\\\').replace(/[{}]/g,'\\$&').replace(/\n/g,'\\line\n');
+    content = `{\\rtf1\\ansi\\deff0{\\fonttbl{\\f0\\fmodern\\fprq1\\fcharset0 Courier New;}}\\f0\\fs20 ${escaped}}`;
+    mime = 'application/rtf'; ext = 'rtf';
+  } else {
+    content = note; mime = 'text/plain'; ext = 'txt';
+  }
+
+  const a = document.createElement('a');
+  a.href     = URL.createObjectURL(new Blob([content], { type: mime }));
+  a.download = `clinical_note_${stamp}.${ext}`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function pad(n) { return String(n).padStart(2,'0'); }
+
+// ── Reset ─────────────────────────────────────────────────────────────────────
+function resetApp() {
+  if (isRec) stopRec();
+  finalText = '';
+  document.getElementById('final-span').textContent   = '';
+  document.getElementById('interim-span').textContent = '';
+  document.getElementById('t-placeholder').style.display = '';
+  document.getElementById('output-section').style.display = 'none';
+  document.getElementById('format-btn').disabled = true;
+  setStatus('// ready — tap RECORD to begin');
+}
+
+function setStatus(msg) { document.getElementById('vn-status').innerHTML = msg; }
+
+// ── PWA service worker registration ──────────────────────────────────────────
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
+</script>
+{% endblock %}
