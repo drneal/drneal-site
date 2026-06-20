@@ -1,0 +1,830 @@
+{% extends "base.html" %}
+{% block title %}LLM Agent Trace Visualiser — Dr Neal Aggarwal{% endblock %}
+
+{% block extra_head %}
+<style>
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+.trace-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .trace-layout { grid-template-columns: 1fr; }
+  .trace-sidebar { order: -1; }
+}
+
+/* ── Input panel ─────────────────────────────────────────────────────────── */
+.at-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1rem;
+}
+.at-panel__title {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+#trace-input {
+  width: 100%;
+  min-height: 180px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  line-height: 1.6;
+  padding: 0.7rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+#trace-input:focus { outline: none; border-color: var(--cyan); }
+
+.btn-row { display: flex; gap: 0.6rem; margin-top: 0.7rem; flex-wrap: wrap; }
+.run-btn {
+  flex: 1;
+  padding: 0.6rem;
+  background: var(--cyan);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  min-width: 120px;
+}
+.run-btn:hover { opacity: 0.85; }
+.run-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.preset-btn {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.preset-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+
+/* ── Metadata strip ──────────────────────────────────────────────────────── */
+#meta-strip {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 600px) { #meta-strip { grid-template-columns: repeat(2,1fr); } }
+.meta-chip {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  text-align: center;
+}
+.meta-chip__val {
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cyan);
+  display: block;
+}
+.meta-chip__lbl {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Timeline ────────────────────────────────────────────────────────────── */
+#timeline { display: none; }
+.tl-step {
+  display: flex;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.tl-step::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 36px;
+  bottom: -1rem;
+  width: 2px;
+  background: var(--border);
+}
+.tl-step:last-child::before { display: none; }
+
+.tl-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-family: var(--mono);
+  font-weight: 700;
+  flex-shrink: 0;
+  z-index: 1;
+  border: 2px solid transparent;
+}
+.tl-card {
+  flex: 1;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  min-width: 0;
+}
+.tl-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+.role-badge {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.step-num {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  margin-left: auto;
+}
+.token-badge {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  background: rgba(255,255,255,0.04);
+  padding: 0.12rem 0.4rem;
+  border-radius: 3px;
+}
+
+/* ── Role colours ────────────────────────────────────────────────────────── */
+.role-user     { background: rgba(0,212,255,0.15); color: var(--cyan); border-color: rgba(0,212,255,0.4); }
+.role-assistant{ background: rgba(0,255,136,0.12); color: var(--green); border-color: rgba(0,255,136,0.35); }
+.role-tool     { background: rgba(199,125,255,0.12); color: #c77dff; border-color: rgba(199,125,255,0.35); }
+.role-system   { background: rgba(255,190,11,0.12); color: var(--amber); border-color: rgba(255,190,11,0.35); }
+
+.icon-user     { background: rgba(0,212,255,0.12); color: var(--cyan); border-color: var(--cyan); }
+.icon-assistant{ background: rgba(0,255,136,0.1); color: var(--green); border-color: var(--green); }
+.icon-tool     { background: rgba(199,125,255,0.1); color: #c77dff; border-color: #c77dff; }
+.icon-system   { background: rgba(255,190,11,0.1); color: var(--amber); border-color: var(--amber); }
+
+/* ── Content blocks ──────────────────────────────────────────────────────── */
+.block-text, .block-thinking, .block-tool, .block-result {
+  padding: 0.65rem 0.85rem;
+  font-size: 0.8rem;
+  line-height: 1.65;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.block-text:last-child,
+.block-thinking:last-child,
+.block-tool:last-child,
+.block-result:last-child { border-bottom: none; }
+
+.block-text   { color: var(--text); }
+.block-thinking { color: var(--text-dim); font-style: italic; }
+
+.block-tool {
+  background: rgba(255,190,11,0.05);
+  border-left: 3px solid var(--amber);
+}
+.block-tool__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.tool-name-badge {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: rgba(255,190,11,0.15);
+  color: var(--amber);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+}
+.tool-id {
+  font-family: var(--mono);
+  font-size: 0.63rem;
+  color: var(--text-dim);
+}
+
+.block-result {
+  background: rgba(199,125,255,0.05);
+  border-left: 3px solid #c77dff;
+}
+.block-result__header {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: #c77dff;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.block-result--error { border-left-color: var(--red); background: rgba(255,45,45,0.05); }
+.block-result--error .block-result__header { color: var(--red); }
+
+/* ── Collapsible JSON ────────────────────────────────────────────────────── */
+.json-toggle {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.15rem 0.4rem;
+  cursor: pointer;
+  margin-bottom: 0.4rem;
+}
+.json-toggle:hover { border-color: var(--amber); color: var(--amber); }
+.json-pre {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  overflow-x: auto;
+  white-space: pre;
+  line-height: 1.5;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.result-pre {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.55rem 0.7rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 220px;
+  overflow-y: auto;
+  line-height: 1.5;
+}
+
+/* ── Thinking block label ────────────────────────────────────────────────── */
+.thinking-label {
+  font-family: var(--mono);
+  font-size: 0.63rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.3rem;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────────────────── */
+.trace-sidebar { display: none; }
+.sidebar-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.85rem;
+}
+.sidebar-section__title {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Token bars ──────────────────────────────────────────────────────────── */
+.token-bar-wrap { margin-bottom: 0.55rem; }
+.token-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  margin-bottom: 0.2rem;
+}
+.token-bar-track {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.token-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+/* ── Tool frequency ──────────────────────────────────────────────────────── */
+.tool-freq-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+.tool-freq-name { color: var(--amber); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tool-freq-n { color: var(--text); font-weight: 700; }
+
+/* ── Spinner ─────────────────────────────────────────────────────────────── */
+.spinner {
+  display: inline-block;
+  width: 13px; height: 13px;
+  border: 2px solid rgba(0,212,255,0.2);
+  border-top-color: var(--cyan);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Error ───────────────────────────────────────────────────────────────── */
+.parse-error {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--red);
+  padding: 0.75rem 1rem;
+  background: rgba(255,45,45,0.07);
+  border: 1px solid rgba(255,45,45,0.25);
+  border-radius: 4px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <header class="page-hero">
+    <h1>// agent_trace_visualiser</h1>
+    <p class="subtitle">Paste a Claude or OpenAI agent session JSON and get an interactive timeline of every message, tool call, tool result, and token count — step by step.</p>
+  </header>
+
+  <!-- ── Input ──────────────────────────────────────────────────────────── -->
+  <div class="at-panel">
+    <div class="at-panel__title">// trace_json_input</div>
+    <textarea id="trace-input" placeholder='Paste a Claude or OpenAI messages array JSON here.
+
+Accepted formats:
+  • {"messages": [...]}           — messages array with model metadata
+  • [{"role":"user","content":...}, ...]  — raw messages array
+  • Anthropic API response object
+  • OpenAI Chat Completion response
+
+Or load the sample clinical agent trace →'></textarea>
+    <div class="btn-row">
+      <button class="run-btn" id="run-btn">⚡ visualise trace</button>
+      <button class="preset-btn" id="sample-btn">Load sample trace</button>
+      <button class="preset-btn" id="clear-btn">Clear</button>
+    </div>
+  </div>
+
+  <!-- ── Metadata strip ────────────────────────────────────────────────── -->
+  <div id="meta-strip">
+    <div class="meta-chip">
+      <span class="meta-chip__val" id="meta-model">—</span>
+      <span class="meta-chip__lbl">model</span>
+    </div>
+    <div class="meta-chip">
+      <span class="meta-chip__val" id="meta-steps">—</span>
+      <span class="meta-chip__lbl">messages</span>
+    </div>
+    <div class="meta-chip">
+      <span class="meta-chip__val" id="meta-tokens">—</span>
+      <span class="meta-chip__lbl">total tokens</span>
+    </div>
+    <div class="meta-chip">
+      <span class="meta-chip__val" id="meta-tools">—</span>
+      <span class="meta-chip__lbl">tool calls</span>
+    </div>
+  </div>
+
+  <!-- ── Error ─────────────────────────────────────────────────────────── -->
+  <div id="parse-error" style="display:none;margin-bottom:1rem"></div>
+
+  <!-- ── Main layout ───────────────────────────────────────────────────── -->
+  <div class="trace-layout">
+
+    <!-- Timeline -->
+    <div>
+      <div id="timeline"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="trace-sidebar" id="sidebar">
+      <!-- Token breakdown -->
+      <div class="sidebar-section">
+        <div class="sidebar-section__title">// token_usage</div>
+        <div class="token-bar-wrap">
+          <div class="token-bar-label">
+            <span>Input</span><span id="sb-inp">0</span>
+          </div>
+          <div class="token-bar-track">
+            <div class="token-bar-fill" id="bar-inp" style="width:0%;background:var(--cyan)"></div>
+          </div>
+        </div>
+        <div class="token-bar-wrap">
+          <div class="token-bar-label">
+            <span>Output</span><span id="sb-out">0</span>
+          </div>
+          <div class="token-bar-track">
+            <div class="token-bar-fill" id="bar-out" style="width:0%;background:var(--green)"></div>
+          </div>
+        </div>
+        <div style="font-family:var(--mono);font-size:0.68rem;color:var(--text-dim);margin-top:0.5rem">
+          Total: <span id="sb-total" style="color:var(--text)">0</span> tokens
+        </div>
+      </div>
+
+      <!-- Tool frequency -->
+      <div class="sidebar-section" id="tool-freq-section" style="display:none">
+        <div class="sidebar-section__title">// tool_calls</div>
+        <div id="tool-freq-list"></div>
+      </div>
+
+      <!-- Message types -->
+      <div class="sidebar-section">
+        <div class="sidebar-section__title">// message_types</div>
+        <div id="role-breakdown"></div>
+      </div>
+    </div>
+
+  </div><!-- /trace-layout -->
+
+  <!-- Info terminal -->
+  <div class="terminal" style="margin-top:2.5rem">
+    <div class="terminal__titlebar">
+      <span class="terminal__dot terminal__dot--red"></span>
+      <span class="terminal__dot terminal__dot--yellow"></span>
+      <span class="terminal__dot terminal__dot--green"></span>
+      <span class="terminal__title">about_this_demo.sh</span>
+    </div>
+    <div class="terminal__body" style="font-size:0.8rem">
+      <div><span class="prompt">$ </span><span class="cmd">cat formats.md</span></div>
+      <div class="out">Accepts: Anthropic Messages API (input_tokens/output_tokens), OpenAI Chat</div>
+      <div class="out">Completion (prompt_tokens/completion_tokens), raw messages arrays, Claude</div>
+      <div class="out">extended thinking blocks, tool_use / tool_result pairs, and OpenAI tool_calls.</div>
+      <div class="mt-1"><span class="prompt">$ </span><span class="cmd">cat use_cases.md</span></div>
+      <div class="out">Debug why a multi-step agent looped or hallucinated a tool call. Audit token</div>
+      <div class="out">spend per step. Review the reasoning chain between a user prompt and the final</div>
+      <div class="out">response. Verify tool inputs and outputs in a clinical or agentic workflow.</div>
+      <div class="mt-1"><span class="prompt">$ </span><a href="/about#contact" style="color:var(--amber)">./discuss_agents.sh</a></div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// ── Sample clinical agent trace ───────────────────────────────────────────────
+const SAMPLE = {
+  "model": "claude-sonnet-4-6",
+  "messages": [
+    {
+      "role": "user",
+      "content": "I need you to analyse the following patient's medication list for drug interactions, then produce a structured clinical summary with recommended actions.\n\nPatient: 74-year-old male with AF, heart failure, and T2DM.\nMedications: Warfarin 5mg OD, Amiodarone 200mg OD, Digoxin 125mcg OD, Furosemide 40mg OD, Spironolactone 25mg OD, Ramipril 5mg OD, Aspirin 75mg OD, Simvastatin 40mg ON.",
+      "usage": { "input_tokens": 124, "output_tokens": 0 }
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "This is a complex polypharmacy case. I need to: (1) extract all medications, (2) check every pair for interactions, (3) synthesise a clinical summary. The combination of warfarin + amiodarone is immediately concerning — amiodarone inhibits CYP2C9. I should also flag digoxin + amiodarone (P-gp inhibition), spironolactone + ramipril (hyperkalaemia), and simvastatin + amiodarone (CYP3A4 dose limit). Let me start with the NLP extraction."
+        },
+        {
+          "type": "text",
+          "text": "I'll work through this systematically — first extracting the medications via the NLP pipeline, then checking all pairwise interactions, and finally synthesising a clinical summary with prioritised recommendations."
+        },
+        {
+          "type": "tool_use",
+          "id": "toolu_01NlpExtract",
+          "name": "nlp_extractor",
+          "input": {
+            "text": "Warfarin 5mg OD, Amiodarone 200mg OD, Digoxin 125mcg OD, Furosemide 40mg OD, Spironolactone 25mg OD, Ramipril 5mg OD, Aspirin 75mg OD, Simvastatin 40mg ON"
+          }
+        }
+      ],
+      "usage": { "input_tokens": 312, "output_tokens": 203 }
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "tool_result",
+          "tool_use_id": "toolu_01NlpExtract",
+          "content": "{\"medications\":[\"warfarin\",\"amiodarone\",\"digoxin\",\"furosemide\",\"spironolactone\",\"ramipril\",\"aspirin\",\"simvastatin\"],\"dosages\":[\"5mg\",\"200mg\",\"125mcg\",\"40mg\",\"25mg\",\"5mg\",\"75mg\",\"40mg\"],\"total_entities\":16}"
+        }
+      ],
+      "usage": { "input_tokens": 0, "output_tokens": 0 }
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "Good — 8 medications confirmed. Now checking all 28 unique pairs against the interaction database."
+        },
+        {
+          "type": "tool_use",
+          "id": "toolu_02DrugCheck",
+          "name": "drug_interaction_checker",
+          "input": {
+            "drugs": ["warfarin","amiodarone","digoxin","furosemide","spironolactone","ramipril","aspirin","simvastatin"],
+            "include_mechanism": true
+          }
+        }
+      ],
+      "usage": { "input_tokens": 489, "output_tokens": 118 }
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "tool_result",
+          "tool_use_id": "toolu_02DrugCheck",
+          "content": "{\"total_interactions\":5,\"severity_summary\":{\"MAJOR\":5,\"MODERATE\":0},\"interactions\":[{\"pair\":[\"warfarin\",\"amiodarone\"],\"severity\":\"MAJOR\",\"mechanism\":\"Amiodarone inhibits CYP2C9 — reduces warfarin clearance\",\"effect\":\"INR increase 2-3x; haemorrhage risk\",\"action\":\"Reduce warfarin 30-50%; monitor INR every 3-5 days\"},{\"pair\":[\"digoxin\",\"amiodarone\"],\"severity\":\"MAJOR\",\"mechanism\":\"P-glycoprotein inhibition — reduces digoxin renal excretion\",\"effect\":\"Digoxin toxicity: bradycardia, AV block\",\"action\":\"Reduce digoxin dose by 50%; check digoxin level\"},{\"pair\":[\"spironolactone\",\"ramipril\"],\"severity\":\"MAJOR\",\"mechanism\":\"Dual hyperkalaemia: aldosterone antagonist + ACE inhibitor\",\"effect\":\"Hyperkalaemia — arrhythmia risk\",\"action\":\"Monitor K+ at 1-2 weeks then monthly\"},{\"pair\":[\"warfarin\",\"aspirin\"],\"severity\":\"MAJOR\",\"mechanism\":\"Additive: antiplatelet + anticoagulant + GI mucosal damage\",\"effect\":\"Major GI haemorrhage\",\"action\":\"Add PPI if dual therapy essential; review indication for aspirin in AF\"},{\"pair\":[\"simvastatin\",\"amiodarone\"],\"severity\":\"MAJOR\",\"mechanism\":\"CYP3A4 inhibition raises simvastatin acid levels\",\"effect\":\"Myopathy; rhabdomyolysis\",\"action\":\"Cap simvastatin at 20mg/day or switch to pravastatin\"}]}"
+        }
+      ],
+      "usage": { "input_tokens": 0, "output_tokens": 0 }
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "thinking",
+          "thinking": "5 major interactions — all clinically significant. The warfarin + amiodarone + aspirin combination is particularly dangerous (triple haemorrhage risk). I need to prioritise my recommendations clearly. The digoxin + amiodarone interaction requires immediate dose reduction. The simvastatin dose cap is important but lower urgency. Let me structure this as an actionable clinical summary."
+        },
+        {
+          "type": "text",
+          "text": "CLINICAL INTERACTION SUMMARY\n\nDate: 20 June 2026 | Patient: 74M | Medications screened: 8 | Interactions found: 5 MAJOR\n\nPRIORITY 1 — URGENT:\n  • Warfarin + Amiodarone: Reduce warfarin dose 30–50% immediately. Check INR in 3–5 days. CYP2C9 inhibition will cause INR to rise over days to weeks.\n  • Digoxin + Amiodarone: Halve digoxin dose now. P-gp inhibition is already raising digoxin levels. Check trough digoxin level and ECG.\n\nPRIORITY 2 — WITHIN 1 WEEK:\n  • Spironolactone + Ramipril: Check K+ and renal function at 1–2 weeks then monthly. Acceptable in heart failure if eGFR >30 and baseline K+ <5.0.\n  • Warfarin + Aspirin: Review aspirin indication. In AF with anticoagulation, aspirin adds bleeding risk without stroke benefit. If dual therapy essential, add omeprazole 20mg OD.\n\nPRIORITY 3 — AT NEXT REVIEW:\n  • Simvastatin + Amiodarone: Cap simvastatin at 20mg/day or switch to pravastatin (no CYP3A4 dependence).\n\nACTION SUMMARY: 2 urgent medication changes required today. Arrange INR check in 3–5 days. Schedule renal function and electrolytes at 1–2 weeks."
+        }
+      ],
+      "usage": { "input_tokens": 823, "output_tokens": 441 }
+    }
+  ]
+};
+
+// ── Role display config ───────────────────────────────────────────────────────
+const ROLE_CFG = {
+  user:      { label: 'USER',      icon: 'U', css: 'user' },
+  assistant: { label: 'ASSISTANT', icon: 'A', css: 'assistant' },
+  tool:      { label: 'TOOL',      icon: '⚙', css: 'tool' },
+  system:    { label: 'SYSTEM',    icon: 'S', css: 'system' },
+};
+function roleCfg(role) {
+  return ROLE_CFG[role] || { label: role.toUpperCase(), icon: '?', css: 'system' };
+}
+
+// ── Controls ──────────────────────────────────────────────────────────────────
+document.getElementById('sample-btn').addEventListener('click', () => {
+  document.getElementById('trace-input').value = JSON.stringify(SAMPLE, null, 2);
+});
+document.getElementById('clear-btn').addEventListener('click', () => {
+  document.getElementById('trace-input').value = '';
+  document.getElementById('timeline').innerHTML = '';
+  document.getElementById('timeline').style.display = 'none';
+  document.getElementById('meta-strip').style.display = 'none';
+  document.getElementById('sidebar').style.display = 'none';
+  document.getElementById('parse-error').style.display = 'none';
+});
+document.getElementById('run-btn').addEventListener('click', runVis);
+
+// ── Main visualise ────────────────────────────────────────────────────────────
+async function runVis() {
+  const raw = document.getElementById('trace-input').value.trim();
+  if (!raw) return;
+
+  const btn = document.getElementById('run-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>parsing…';
+  document.getElementById('parse-error').style.display = 'none';
+
+  let parsed;
+  try { parsed = JSON.parse(raw); }
+  catch(e) {
+    showError('Invalid JSON: ' + e.message);
+    btn.disabled = false; btn.innerHTML = '⚡ visualise trace';
+    return;
+  }
+
+  try {
+    const res  = await fetch('/agent-trace/parse', {
+      method:  'POST',
+      headers: {'Content-Type':'application/json'},
+      body:    JSON.stringify({ trace: parsed }),
+    });
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error);
+    render(data);
+  } catch(err) {
+    showError('Parse error: ' + err.message);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '⚡ visualise trace';
+  }
+}
+
+function showError(msg) {
+  const el = document.getElementById('parse-error');
+  el.innerHTML = `<div class="parse-error">// ${esc(msg)}</div>`;
+  el.style.display = 'block';
+}
+
+// ── Render ────────────────────────────────────────────────────────────────────
+function render(data) {
+  renderMeta(data);
+  renderTimeline(data.steps);
+  renderSidebar(data);
+}
+
+function renderMeta(data) {
+  const totalTools = Object.values(data.tool_counts || {}).reduce((a,b)=>a+b,0);
+  document.getElementById('meta-model').textContent  = data.model || '—';
+  document.getElementById('meta-steps').textContent  = data.total_steps;
+  document.getElementById('meta-tokens').textContent = fmt(data.total_tokens);
+  document.getElementById('meta-tools').textContent  = totalTools;
+  document.getElementById('meta-strip').style.display = 'grid';
+}
+
+function renderTimeline(steps) {
+  const tl = document.getElementById('timeline');
+  tl.innerHTML = '';
+  tl.style.display = 'block';
+
+  for (const step of steps) {
+    const cfg = roleCfg(step.role);
+    const hasTokens = step.input_tokens || step.output_tokens;
+    const tokenStr  = hasTokens
+      ? `↑${step.input_tokens} ↓${step.output_tokens}`
+      : '';
+
+    const stepEl = document.createElement('div');
+    stepEl.className = 'tl-step';
+    stepEl.innerHTML = `
+      <div class="tl-icon icon-${cfg.css}">${esc(cfg.icon)}</div>
+      <div class="tl-card">
+        <div class="tl-card__header">
+          <span class="role-badge role-${cfg.css}">${cfg.label}</span>
+          ${tokenStr ? `<span class="token-badge">${tokenStr} tokens</span>` : ''}
+          <span class="step-num">#${step.index + 1}</span>
+        </div>
+        ${step.blocks.map(b => renderBlock(b)).join('')}
+      </div>`;
+    tl.appendChild(stepEl);
+  }
+}
+
+function renderBlock(block) {
+  if (block.type === 'text') {
+    if (!block.text) return '';
+    return `<div class="block-text">${esc(block.text)}</div>`;
+  }
+
+  if (block.type === 'thinking') {
+    if (!block.text) return '';
+    const id = 'th_' + Math.random().toString(36).slice(2);
+    return `<div class="block-thinking">
+      <div class="thinking-label">// extended thinking</div>
+      <div id="${id}">${esc(block.text)}</div>
+    </div>`;
+  }
+
+  if (block.type === 'tool_use') {
+    const id     = 'tu_' + Math.random().toString(36).slice(2);
+    const jsonStr = JSON.stringify(block.input, null, 2);
+    return `<div class="block-tool">
+      <div class="block-tool__header">
+        <span class="tool-name-badge">⚙ ${esc(block.name)}</span>
+        <span class="tool-id">${esc(block.id)}</span>
+      </div>
+      <button class="json-toggle" onclick="toggleEl('${id}')">▶ inputs</button>
+      <pre class="json-pre" id="${id}" style="display:none">${esc(jsonStr)}</pre>
+    </div>`;
+  }
+
+  if (block.type === 'tool_result') {
+    const isErr  = block.is_error;
+    const cls    = isErr ? 'block-result block-result--error' : 'block-result';
+    const label  = isErr ? '// tool error' : '// tool result';
+    const id     = 'tr_' + Math.random().toString(36).slice(2);
+    const content = tryFormatJSON(block.content);
+    const showToggle = block.content && block.content.length > 200;
+    return `<div class="${cls}">
+      <div class="block-result__header">${label}${block.tool_use_id ? ' · ' + esc(block.tool_use_id) : ''}</div>
+      ${showToggle ? `<button class="json-toggle" onclick="toggleEl('${id}')">▶ output</button>
+      <pre class="result-pre" id="${id}" style="display:none">${esc(content)}</pre>`
+      : `<pre class="result-pre">${esc(content)}</pre>`}
+    </div>`;
+  }
+
+  return '';
+}
+
+function renderSidebar(data) {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.style.display = 'block';
+
+  // Token bars
+  const total = data.total_tokens || 1;
+  document.getElementById('sb-inp').textContent   = fmt(data.total_input_tokens);
+  document.getElementById('sb-out').textContent   = fmt(data.total_output_tokens);
+  document.getElementById('sb-total').textContent = fmt(data.total_tokens);
+  document.getElementById('bar-inp').style.width  = ((data.total_input_tokens  / total) * 100).toFixed(1) + '%';
+  document.getElementById('bar-out').style.width  = ((data.total_output_tokens / total) * 100).toFixed(1) + '%';
+
+  // Tool frequency
+  const tc = data.tool_counts || {};
+  const tcEntries = Object.entries(tc).sort((a,b)=>b[1]-a[1]);
+  const tfSection = document.getElementById('tool-freq-section');
+  const tfList    = document.getElementById('tool-freq-list');
+  if (tcEntries.length) {
+    tfList.innerHTML = tcEntries.map(([name, n]) =>
+      `<div class="tool-freq-row">
+        <span class="tool-freq-name">⚙ ${esc(name)}</span>
+        <span class="tool-freq-n">${n}×</span>
+      </div>`
+    ).join('');
+    tfSection.style.display = 'block';
+  } else {
+    tfSection.style.display = 'none';
+  }
+
+  // Role breakdown
+  const roleCounts = {};
+  for (const step of data.steps) {
+    roleCounts[step.role] = (roleCounts[step.role] || 0) + 1;
+  }
+  const rb = document.getElementById('role-breakdown');
+  rb.innerHTML = Object.entries(roleCounts).map(([role, n]) => {
+    const cfg = roleCfg(role);
+    return `<div class="tool-freq-row">
+      <span class="role-badge role-${cfg.css}" style="font-size:0.63rem">${cfg.label}</span>
+      <span class="tool-freq-n">${n}</span>
+    </div>`;
+  }).join('');
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function toggleEl(id) {
+  const el  = document.getElementById(id);
+  const btn = el.previousElementSibling;
+  if (el.style.display === 'none') {
+    el.style.display = 'block';
+    btn.textContent  = btn.textContent.replace('▶','▼');
+  } else {
+    el.style.display = 'none';
+    btn.textContent  = btn.textContent.replace('▼','▶');
+  }
+}
+
+function tryFormatJSON(s) {
+  if (!s) return '';
+  try { return JSON.stringify(JSON.parse(s), null, 2); }
+  catch { return s; }
+}
+
+function fmt(n) {
+  if (n >= 1000) return (n/1000).toFixed(1) + 'k';
+  return String(n);
+}
+
+function esc(s) {
+  if (s === undefined || s === null) return '';
+  return String(s)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+// Auto-load sample on page load
+document.getElementById('trace-input').value = JSON.stringify(SAMPLE, null, 2);
+</script>
+{% endblock %}
