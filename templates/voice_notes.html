@@ -356,8 +356,22 @@ function buildRecog() {
     stopRec();
   };
 
-  // Auto-restart to handle browser timeouts (especially on mobile)
-  r.onend = () => { if (isRec) r.start(); };
+  // Auto-restart to handle browser timeouts.
+  // IMPORTANT: create a *new* SpeechRecognition object on each restart rather
+  // than calling r.start() on the same instance. Android Chrome replays buffered
+  // audio from the previous session into a restarted instance, producing the
+  // runaway repetition bug seen in the screenshot. A fresh object + 200 ms gap
+  // lets the audio buffer clear before the next session begins.
+  r.onend = () => {
+    if (isRec) {
+      setTimeout(() => {
+        if (isRec) {
+          recog = buildRecog();
+          recog.start();
+        }
+      }, 200);
+    }
+  };
 
   return r;
 }
