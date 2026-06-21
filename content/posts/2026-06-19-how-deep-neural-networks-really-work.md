@@ -767,6 +767,6 @@ Slide decks, mind map, and AI-generated audio overview:<br/>
 
 ---
 
-*Based on Jeremy Howard's fast.ai Practical Deep Learning for Coders 2022 · Lesson 3: Neural Net Foundations*
+*Based on Jeremy Howard's fast.ai Practical Deep Learning for Coders 2022 · Lesson 3: Neural Net Foundations · This is an example of the course materials produced by Dr Neal and used to teach students through his one-to-one AI Learners Course.*
 
 *Post by Dr. Neal Aggarwal · [drnealaggarwal.info](https://drnealaggarwal.info) · 40+ years teaching IT and AI*
