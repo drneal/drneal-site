@@ -248,8 +248,8 @@ Google NotebookLM has generated an AI-narrated audio overview of the full lesson
 <div class="guide-downloads">
 <strong>📥 Download the Learning Guide</strong><br/>
 A structured two-week study guide synthesising the Swadia tutorial, Howard's lesson, and learning science research:<br/>
-<a href="/posts/fastai-lesson3-learning-guide.pdf">PDF Version</a>
-<a href="/posts/fastai-lesson3-learning-guide.epub">EPUB Version</a>
+<a href="/static/fastai-lesson3-learning-guide.pdf">PDF Version</a>
+<a href="/static/fastai-lesson3-learning-guide.epub">EPUB Version</a>
 </div>
 
 ---
@@ -675,8 +675,8 @@ A structured two-week study plan synthesising Howard's Lesson 3, the Swadia tuto
 <div class="guide-downloads">
 <strong>📥 Fast.ai Lesson 3: Structured Learning Guide</strong><br/>
 Includes: 10 Swadia key points · Two-week study plan · Checkpoint questions · Code patterns to memorise · Learning science strategies<br/>
-<a href="/posts/fastai-lesson3-learning-guide.pdf">Download PDF</a>
-<a href="/posts/fastai-lesson3-learning-guide.epub">Download EPUB</a>
+<a href="/static/fastai-lesson3-learning-guide.pdf">Download PDF</a>
+<a href="/static/fastai-lesson3-learning-guide.epub">Download EPUB</a>
 </div>
 
 ---
