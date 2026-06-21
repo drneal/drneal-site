@@ -88,7 +88,7 @@ All slide material, mind map, and audio overviews for this lesson are available 
 <a href="https://notebooklm.google.com/notebook/8e7184c3-a0c5-47a5-8992-85e90f8b5261" target="_blank">→ Open NotebookLM Notebook (Google account required)</a>
 </div>
 
-*This article is based on Jeremy Howard's fast.ai Practical Deep Learning for Coders 2022 · Lesson 3: Neural Net Foundations*
+*This article is based on Jeremy Howard's fast.ai Practical Deep Learning for Coders 2022 · Lesson 3: Neural Net Foundations. This is an example of the course materials produced by Dr Neal and used to teach students through his one-to-one AI Learners Course.*
 
 [▶ Watch Lesson 3 on YouTube](https://www.youtube.com/watch?v=hBBOjCiFcuo&list=PLfYUBJiXbdtSvpQjSnJJ_PmDQB_VyT5iU&index=3) · [▶ Supplementary Swadia Tutorial](https://youtu.be/npQ2IORdlvU)
 
