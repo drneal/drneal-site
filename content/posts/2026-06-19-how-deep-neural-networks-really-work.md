@@ -240,9 +240,20 @@ Jeremy Howard's fast.ai Lesson 3 is, in one sense, the story of what happened be
 ---
 
 <div class="audio-section">
-<strong>🎧 Audio Overview of This Material</strong><br/>
-Google NotebookLM has generated an AI-narrated audio overview of the full lesson materials including slide content. Open the notebook, navigate to "Audio Overview" and press Play. Ideal for commute listening before or after working through the notebook.<br/>
-<a href="https://notebooklm.google.com/notebook/8e7184c3-a0c5-47a5-8992-85e90f8b5261" target="_blank">→ Listen in NotebookLM</a>
+<strong>🎧 Audio Overviews — Listen Directly</strong><br/>
+AI-narrated audio overviews of the fast.ai Lesson 3 materials, generated from the full slide decks and course notes. Ideal for commute listening before or after a session.
+
+<p style="margin:0.8em 0 0.2em;"><strong>Course Overview</strong></p>
+<audio controls style="width:100%; margin-bottom:0.8em;">
+  <source src="/static/audio/Course_Overview_audio.m4a" type="audio/mp4">
+  <a href="/static/audio/Course_Overview_audio.m4a">Download Course Overview audio</a>
+</audio>
+
+<p style="margin:0 0 0.2em;"><strong>Lesson 1 Deep Dive</strong></p>
+<audio controls style="width:100%; margin-bottom:0.4em;">
+  <source src="/static/audio/Lesson_1_audio_overview.m4a" type="audio/mp4">
+  <a href="/static/audio/Lesson_1_audio_overview.m4a">Download Lesson 1 audio</a>
+</audio>
 </div>
 
 <div class="guide-downloads">
