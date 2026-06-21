@@ -91,6 +91,7 @@ All slide material, mind map, and audio overviews for this lesson are available 
 
 ## We've Been Building This Since 1943
 
+<div>
 <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;display:block;margin:1.5em auto;background:#f8f9fa;border-radius:10px;padding:10px">
   <defs>
     <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
@@ -152,6 +153,7 @@ All slide material, mind map, and audio overviews for this lesson are available 
   <text x="400" y="28" text-anchor="middle" fill="#1a237e" font-size="15" font-weight="bold">We've Been Building This Since 1943</text>
   <text x="400" y="44" text-anchor="middle" fill="#546e7a" font-size="10">The unbroken chain from McCulloch-Pitts to modern deep learning</text>
 </svg>
+</div>
 
 In 1943, Warren McCulloch and Walter Pitts published "A Logical Calculus of the Ideas Immanent in Nervous Activity" — a mathematical model of how neurons fire. Their artificial neuron took weighted binary inputs, summed them, and fired if the total exceeded a threshold. It could not learn. It had no notion of optimisation. But it was the first time anyone had formalised the idea of computation in biological terms, and it planted a seed that eighty years of mathematics, hardware, and data have now grown into something extraordinary.
 
@@ -161,6 +163,7 @@ Jeremy Howard's fast.ai Lesson 3 is, in one sense, the story of what happened be
 
 <!-- Mind map from NotebookLM -->
 
+<div>
 <svg viewBox="0 0 760 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;display:block;margin:1.8em auto;background:#fafafa;border-radius:10px;border:1px solid #e0e0e0">
   <!-- Central node -->
   <ellipse cx="380" cy="250" rx="80" ry="36" fill="#1a237e"/>
@@ -225,6 +228,7 @@ Jeremy Howard's fast.ai Lesson 3 is, in one sense, the story of what happened be
   <!-- Caption -->
   <text x="380" y="488" text-anchor="middle" fill="#546e7a" font-size="10" font-style="italic">Mind map of fast.ai Lesson 3 concepts · Full interactive version available in NotebookLM</text>
 </svg>
+</div>
 
 *↑ Key conceptual structure of fast.ai Lesson 3. The full interactive mind map is available in the [NotebookLM notebook](https://notebooklm.google.com/notebook/8e7184c3-a0c5-47a5-8992-85e90f8b5261).*
 
@@ -265,6 +269,7 @@ Howard begins with a general quadratic:
 f(x) = a·x² + b·x + c
 ```
 
+<div>
 <svg viewBox="0 0 520 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;display:block;margin:1.2em auto;background:#fafafa;border-radius:8px;border:1px solid #e0e0e0">
   <text x="260" y="22" text-anchor="middle" fill="#1a237e" font-size="13" font-weight="bold">Parameterised Function Family</text>
   <text x="260" y="38" text-anchor="middle" fill="#546e7a" font-size="10">Same template, different parameters → different curves</text>
@@ -290,6 +295,7 @@ f(x) = a·x² + b·x + c
   <text x="385" y="98" text-anchor="middle" fill="#37474f" font-size="10">b → slope</text>
   <text x="385" y="112" text-anchor="middle" fill="#37474f" font-size="10">c → intercept</text>
 </svg>
+</div>
 
 The point is not the specific function — it is the parameterisation. By exposing three free parameters (`a`, `b`, `c`), a single function template can realise any specific quadratic by fixing those parameters. Howard demonstrates this with an interactive Jupyter widget, dragging sliders to visually minimise the distance between the curve and a randomly generated dataset.
 
@@ -356,6 +362,7 @@ for _ in range(100):
 ⚠️ <strong>The most commonly forgotten line:</strong> <code>params.grad.zero_()</code>. PyTorch accumulates gradients by default — a feature for gradient checkpointing, a footgun for a simple training loop. Howard flags this explicitly, and experienced practitioners still trip on it when switching contexts.
 </div>
 
+<div>
 <svg viewBox="0 0 540 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:540px;display:block;margin:1.2em auto;background:#fafafa;border-radius:8px;border:1px solid #e0e0e0">
   <text x="270" y="22" text-anchor="middle" fill="#1a237e" font-size="13" font-weight="bold">Gradient Descent in Loss Space</text>
   <!-- Bowl shape -->
@@ -388,6 +395,7 @@ for _ in range(100):
     </marker>
   </defs>
 </svg>
+</div>
 
 ### Learning Rate: Why Size Matters
 
@@ -411,6 +419,7 @@ Howard's answer is the ReLU:
 ReLU(x) = max(0, x)
 ```
 
+<div>
 <svg viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;display:block;margin:1.2em auto;background:#fafafa;border-radius:8px;border:1px solid #e0e0e0">
   <text x="230" y="20" text-anchor="middle" fill="#1a237e" font-size="13" font-weight="bold">ReLU: max(0, x)</text>
   <text x="230" y="36" text-anchor="middle" fill="#546e7a" font-size="10">Simple piecewise-linear · universal approximator when stacked</text>
@@ -429,6 +438,7 @@ ReLU(x) = max(0, x)
   <!-- Stacked ReLUs annotation -->
   <text x="60" y="185" fill="#546e7a" font-size="9">Two ReLUs stacked → a tent function. Millions stacked → any continuous function (universal approx. theorem)</text>
 </svg>
+</div>
 
 This function is about as simple as a nonlinear function can be. Two parameters control a shifted, scaled version: `f(x) = max(0, w·x + b)`. A single ReLU is nearly useless. But the **universal approximation theorem** guarantees that a sum of enough ReLUs can approximate any continuous function on a compact domain to arbitrary precision. Howard demonstrates this interactively by stacking two ReLUs and showing how four parameters produce a more complex shape than any single parabola could.
 
@@ -545,6 +555,7 @@ The following points synthesise the core pedagogical contributions of the Swadia
 
 ## Jeremy Howard: The Man Who Decided to Democratise AI
 
+<div>
 <svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;margin:1.5em auto;background:#e8f5e9;border-radius:8px;border:1px solid #a5d6a7">
   <text x="350" y="26" text-anchor="middle" fill="#1b5e20" font-size="13" font-weight="bold">Jeremy Howard — The fast.ai Origin Story</text>
   <!-- Timeline -->
@@ -576,6 +587,7 @@ The following points synthesise the core pedagogical contributions of the Swadia
   <text x="580" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">Nov 2024</text>
   <text x="580" y="122" text-anchor="middle" fill="#546e7a" font-size="8">applied AI lab</text>
 </svg>
+</div>
 
 Jeremy Howard did not follow a conventional path into AI research. He studied philosophy at the University of Melbourne — a choice that shaped his thinking about pedagogy, ethics, and the difference between knowing something and understanding it. After eight years in management consulting (McKinsey and AT Kearney), he taught himself machine learning, competed on Kaggle, and became the world's top-ranked data scientist in 2010 and 2011 — not through access to proprietary data or exclusive compute, but through systematic application of techniques available to anyone.
 
