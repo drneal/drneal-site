@@ -6,7 +6,7 @@ tags: clinical NLP, voice recognition, Web Speech API, PWA, Flask, medical AI, E
 level: Intermediate
 read_time: 12 min
 summary: How the Voice Clinical Notes app turns free-form dictation into a structured clinical note — PC, Hx, Exam, Ix, Assessment, Plan — using the Web Speech API, a Flask NLP formatting backend, and a Progressive Web App shell that installs on iOS and Android.
-featured: true
+featured: false
 ---
 
 *The app is live at [/voice-notes](/voice-notes). Open it in Chrome, Edge, or Safari (iOS 15+), tap Record, and dictate. Works as an installable home-screen app on both iOS and Android.*
