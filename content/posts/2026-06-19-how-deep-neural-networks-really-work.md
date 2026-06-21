@@ -12,17 +12,18 @@ featured: true
 
 <style>
 .notebooklm-banner {
+  font-size: 0.8em;
   background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
   color: white;
   padding: 1.2em 1.6em;
   border-radius: 8px;
   margin: 1.5em 0;
-  font-size: 0.97em;
   line-height: 1.6;
 }
 .notebooklm-banner a { color: #90caf9; font-weight: bold; }
 .audio-section {
-  background: #f3f4f6;
+  font-size: 0.8em;
+  background: #1a1f2e;
   border-left: 4px solid #1a237e;
   padding: 1em 1.4em;
   border-radius: 0 6px 6px 0;
@@ -30,7 +31,8 @@ featured: true
 }
 .testimonials { margin: 2em 0; }
 .testimonial {
-  background: #fafafa;
+  font-size: 0.8em;
+  background: #151922;
   border-left: 4px solid #1565c0;
   padding: 1em 1.4em;
   margin: 1.2em 0;
@@ -45,15 +47,16 @@ featured: true
   font-size: 0.9em;
 }
 .guide-downloads {
-  background: #e8f5e9;
-  border: 2px solid #2e7d32;
+  font-size: 0.8em;
+  background: #0d2018;
+  border: 2px solid #1b5e20;
   border-radius: 8px;
   padding: 1.2em 1.6em;
   margin: 1.5em 0;
 }
 .guide-downloads a {
   display: inline-block;
-  background: #2e7d32;
+  background: #1b5e20;
   color: white;
   padding: 0.4em 1em;
   border-radius: 4px;
@@ -62,6 +65,7 @@ featured: true
   font-weight: bold;
 }
 .callout {
+  font-size: 0.8em;
   background: #fff8e1;
   border-left: 4px solid #f9a825;
   padding: 0.8em 1.2em;
@@ -69,6 +73,7 @@ featured: true
   border-radius: 0 4px 4px 0;
 }
 .swadia-point {
+  font-size: 0.8em;
   background: #f3e5f5;
   border-left: 3px solid #7b1fa2;
   padding: 0.6em 1em;
@@ -92,66 +97,66 @@ All slide material, mind map, and audio overviews for this lesson are available 
 ## We've Been Building This Since 1943
 
 <div>
-<svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;display:block;margin:1.5em auto;background:#f8f9fa;border-radius:10px;padding:10px">
+<svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;display:block;margin:1.5em auto;background:#1a1f2e;border-radius:10px;padding:10px">
   <defs>
     <marker id="ah" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#1a237e"/>
+      <path d="M0,0 L0,6 L8,3 z" fill="#7986cb"/>
     </marker>
   </defs>
   <!-- Timeline spine -->
-  <line x1="40" y1="110" x2="760" y2="110" stroke="#1a237e" stroke-width="3" marker-end="url(#ah)"/>
+  <line x1="40" y1="110" x2="760" y2="110" stroke="#7986cb" stroke-width="3" marker-end="url(#ah)"/>
   <!-- Nodes -->
   <!-- 1943 -->
-  <circle cx="80" cy="110" r="22" fill="#1a237e"/>
+  <circle cx="80" cy="110" r="22" fill="#7986cb"/>
   <text x="80" y="115" text-anchor="middle" fill="white" font-size="11" font-weight="bold">1943</text>
-  <text x="80" y="80" text-anchor="middle" fill="#1a237e" font-size="10" font-weight="bold">McCulloch</text>
-  <text x="80" y="92" text-anchor="middle" fill="#1a237e" font-size="10">& Pitts</text>
-  <text x="80" y="145" text-anchor="middle" fill="#37474f" font-size="9">First math</text>
-  <text x="80" y="157" text-anchor="middle" fill="#37474f" font-size="9">neuron model</text>
+  <text x="80" y="80" text-anchor="middle" fill="#7986cb" font-size="10" font-weight="bold">McCulloch</text>
+  <text x="80" y="92" text-anchor="middle" fill="#7986cb" font-size="10">& Pitts</text>
+  <text x="80" y="145" text-anchor="middle" fill="#b0bec5" font-size="9">First math</text>
+  <text x="80" y="157" text-anchor="middle" fill="#b0bec5" font-size="9">neuron model</text>
   <!-- 1958 -->
   <circle cx="200" cy="110" r="22" fill="#283593"/>
   <text x="200" y="115" text-anchor="middle" fill="white" font-size="11" font-weight="bold">1958</text>
-  <text x="200" y="80" text-anchor="middle" fill="#1a237e" font-size="10" font-weight="bold">Rosenblatt</text>
-  <text x="200" y="92" text-anchor="middle" fill="#1a237e" font-size="10">Perceptron</text>
-  <text x="200" y="145" text-anchor="middle" fill="#37474f" font-size="9">First learning</text>
-  <text x="200" y="157" text-anchor="middle" fill="#37474f" font-size="9">algorithm</text>
+  <text x="200" y="80" text-anchor="middle" fill="#7986cb" font-size="10" font-weight="bold">Rosenblatt</text>
+  <text x="200" y="92" text-anchor="middle" fill="#7986cb" font-size="10">Perceptron</text>
+  <text x="200" y="145" text-anchor="middle" fill="#b0bec5" font-size="9">First learning</text>
+  <text x="200" y="157" text-anchor="middle" fill="#b0bec5" font-size="9">algorithm</text>
   <!-- 1986 -->
   <circle cx="350" cy="110" r="22" fill="#303f9f"/>
   <text x="350" y="115" text-anchor="middle" fill="white" font-size="11" font-weight="bold">1986</text>
-  <text x="350" y="80" text-anchor="middle" fill="#1a237e" font-size="10" font-weight="bold">Rumelhart</text>
-  <text x="350" y="92" text-anchor="middle" fill="#1a237e" font-size="10">Backprop</text>
-  <text x="350" y="145" text-anchor="middle" fill="#37474f" font-size="9">Gradient descent</text>
-  <text x="350" y="157" text-anchor="middle" fill="#37474f" font-size="9">via chain rule</text>
+  <text x="350" y="80" text-anchor="middle" fill="#7986cb" font-size="10" font-weight="bold">Rumelhart</text>
+  <text x="350" y="92" text-anchor="middle" fill="#7986cb" font-size="10">Backprop</text>
+  <text x="350" y="145" text-anchor="middle" fill="#b0bec5" font-size="9">Gradient descent</text>
+  <text x="350" y="157" text-anchor="middle" fill="#b0bec5" font-size="9">via chain rule</text>
   <!-- 2012 -->
   <circle cx="500" cy="110" r="22" fill="#3949ab"/>
   <text x="500" y="115" text-anchor="middle" fill="white" font-size="11" font-weight="bold">2012</text>
-  <text x="500" y="80" text-anchor="middle" fill="#1a237e" font-size="10" font-weight="bold">AlexNet</text>
-  <text x="500" y="92" text-anchor="middle" fill="#1a237e" font-size="10">GPU era</text>
-  <text x="500" y="145" text-anchor="middle" fill="#37474f" font-size="9">Deep learning</text>
-  <text x="500" y="157" text-anchor="middle" fill="#37474f" font-size="9">becomes practical</text>
+  <text x="500" y="80" text-anchor="middle" fill="#7986cb" font-size="10" font-weight="bold">AlexNet</text>
+  <text x="500" y="92" text-anchor="middle" fill="#7986cb" font-size="10">GPU era</text>
+  <text x="500" y="145" text-anchor="middle" fill="#b0bec5" font-size="9">Deep learning</text>
+  <text x="500" y="157" text-anchor="middle" fill="#b0bec5" font-size="9">becomes practical</text>
   <!-- 2017 -->
   <circle cx="630" cy="110" r="22" fill="#5c6bc0"/>
   <text x="630" y="115" text-anchor="middle" fill="white" font-size="11" font-weight="bold">2017</text>
-  <text x="630" y="80" text-anchor="middle" fill="#1a237e" font-size="10" font-weight="bold">Transformer</text>
-  <text x="630" y="92" text-anchor="middle" fill="#1a237e" font-size="10">Attention</text>
-  <text x="630" y="145" text-anchor="middle" fill="#37474f" font-size="9">Language models</text>
-  <text x="630" y="157" text-anchor="middle" fill="#37474f" font-size="9">at scale</text>
+  <text x="630" y="80" text-anchor="middle" fill="#7986cb" font-size="10" font-weight="bold">Transformer</text>
+  <text x="630" y="92" text-anchor="middle" fill="#7986cb" font-size="10">Attention</text>
+  <text x="630" y="145" text-anchor="middle" fill="#b0bec5" font-size="9">Language models</text>
+  <text x="630" y="157" text-anchor="middle" fill="#b0bec5" font-size="9">at scale</text>
   <!-- 2022 -->
   <circle cx="740" cy="110" r="22" fill="#7986cb"/>
   <text x="740" y="115" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Now</text>
-  <text x="740" y="80" text-anchor="middle" fill="#1a237e" font-size="10" font-weight="bold">fast.ai</text>
-  <text x="740" y="92" text-anchor="middle" fill="#1a237e" font-size="10">LLMs</text>
-  <text x="740" y="145" text-anchor="middle" fill="#37474f" font-size="9">Same core idea,</text>
-  <text x="740" y="157" text-anchor="middle" fill="#37474f" font-size="9">vast scale</text>
+  <text x="740" y="80" text-anchor="middle" fill="#7986cb" font-size="10" font-weight="bold">fast.ai</text>
+  <text x="740" y="92" text-anchor="middle" fill="#7986cb" font-size="10">LLMs</text>
+  <text x="740" y="145" text-anchor="middle" fill="#b0bec5" font-size="9">Same core idea,</text>
+  <text x="740" y="157" text-anchor="middle" fill="#b0bec5" font-size="9">vast scale</text>
   <!-- Connecting lines -->
-  <line x1="102" y1="110" x2="178" y2="110" stroke="#1a237e" stroke-width="2" stroke-dasharray="4"/>
-  <line x1="222" y1="110" x2="328" y2="110" stroke="#1a237e" stroke-width="2" stroke-dasharray="4"/>
-  <line x1="372" y1="110" x2="478" y2="110" stroke="#1a237e" stroke-width="2" stroke-dasharray="4"/>
-  <line x1="522" y1="110" x2="608" y2="110" stroke="#1a237e" stroke-width="2" stroke-dasharray="4"/>
-  <line x1="652" y1="110" x2="718" y2="110" stroke="#1a237e" stroke-width="2" stroke-dasharray="4"/>
+  <line x1="102" y1="110" x2="178" y2="110" stroke="#7986cb" stroke-width="2" stroke-dasharray="4"/>
+  <line x1="222" y1="110" x2="328" y2="110" stroke="#7986cb" stroke-width="2" stroke-dasharray="4"/>
+  <line x1="372" y1="110" x2="478" y2="110" stroke="#7986cb" stroke-width="2" stroke-dasharray="4"/>
+  <line x1="522" y1="110" x2="608" y2="110" stroke="#7986cb" stroke-width="2" stroke-dasharray="4"/>
+  <line x1="652" y1="110" x2="718" y2="110" stroke="#7986cb" stroke-width="2" stroke-dasharray="4"/>
   <!-- Title -->
-  <text x="400" y="28" text-anchor="middle" fill="#1a237e" font-size="15" font-weight="bold">We've Been Building This Since 1943</text>
-  <text x="400" y="44" text-anchor="middle" fill="#546e7a" font-size="10">The unbroken chain from McCulloch-Pitts to modern deep learning</text>
+  <text x="400" y="28" text-anchor="middle" fill="#7986cb" font-size="15" font-weight="bold">We've Been Building This Since 1943</text>
+  <text x="400" y="44" text-anchor="middle" fill="#90a4ae" font-size="10">The unbroken chain from McCulloch-Pitts to modern deep learning</text>
 </svg>
 </div>
 
@@ -164,9 +169,9 @@ Jeremy Howard's fast.ai Lesson 3 is, in one sense, the story of what happened be
 <!-- Mind map from NotebookLM -->
 
 <div>
-<svg viewBox="0 0 760 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;display:block;margin:1.8em auto;background:#fafafa;border-radius:10px;border:1px solid #e0e0e0">
+<svg viewBox="0 0 760 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:608px;display:block;margin:1.8em auto;background:#1a1f2e;border-radius:10px;border:1px solid #2a3050">
   <!-- Central node -->
-  <ellipse cx="380" cy="250" rx="80" ry="36" fill="#1a237e"/>
+  <ellipse cx="380" cy="250" rx="80" ry="36" fill="#7986cb"/>
   <text x="380" y="246" text-anchor="middle" fill="white" font-size="12" font-weight="bold">fast.ai</text>
   <text x="380" y="262" text-anchor="middle" fill="#90caf9" font-size="11">Lesson 3</text>
   <!-- Branch: Gradient Descent (top left) -->
@@ -226,7 +231,7 @@ Jeremy Howard's fast.ai Lesson 3 is, in one sense, the story of what happened be
   <text x="380" y="98" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Jeremy Howard</text>
   <text x="380" y="112" text-anchor="middle" fill="white" font-size="10">Top-down Teaching</text>
   <!-- Caption -->
-  <text x="380" y="488" text-anchor="middle" fill="#546e7a" font-size="10" font-style="italic">Mind map of fast.ai Lesson 3 concepts · Full interactive version available in NotebookLM</text>
+  <text x="380" y="488" text-anchor="middle" fill="#90a4ae" font-size="10" font-style="italic">Mind map of fast.ai Lesson 3 concepts · Full interactive version available in NotebookLM</text>
 </svg>
 </div>
 
@@ -270,30 +275,30 @@ f(x) = a·x² + b·x + c
 ```
 
 <div>
-<svg viewBox="0 0 520 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:520px;display:block;margin:1.2em auto;background:#fafafa;border-radius:8px;border:1px solid #e0e0e0">
-  <text x="260" y="22" text-anchor="middle" fill="#1a237e" font-size="13" font-weight="bold">Parameterised Function Family</text>
-  <text x="260" y="38" text-anchor="middle" fill="#546e7a" font-size="10">Same template, different parameters → different curves</text>
+<svg viewBox="0 0 520 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:416px;display:block;margin:1.2em auto;background:#1a1f2e;border-radius:8px;border:1px solid #2a3050">
+  <text x="260" y="22" text-anchor="middle" fill="#7986cb" font-size="13" font-weight="bold">Parameterised Function Family</text>
+  <text x="260" y="38" text-anchor="middle" fill="#90a4ae" font-size="10">Same template, different parameters → different curves</text>
   <!-- Axes -->
   <line x1="60" y1="200" x2="460" y2="200" stroke="#90a4ae" stroke-width="1.5"/>
   <line x1="60" y1="40" x2="60" y2="200" stroke="#90a4ae" stroke-width="1.5"/>
   <text x="462" y="204" fill="#90a4ae" font-size="10">x</text>
   <text x="50" y="38" fill="#90a4ae" font-size="10">f(x)</text>
   <!-- Curve 1: wide parabola -->
-  <polyline points="80,190 120,170 160,155 200,148 240,148 280,155 320,170 360,190 400,210" fill="none" stroke="#1a237e" stroke-width="2" stroke-dasharray="0"/>
+  <polyline points="80,190 120,170 160,155 200,148 240,148 280,155 320,170 360,190 400,210" fill="none" stroke="#7986cb" stroke-width="2" stroke-dasharray="0"/>
   <!-- Curve 2: narrow parabola -->
   <polyline points="120,195 160,158 200,128 240,110 280,128 320,158 360,195" fill="none" stroke="#7b1fa2" stroke-width="2"/>
   <!-- Curve 3: shifted parabola -->
   <polyline points="80,140 120,118 160,108 200,110 240,125 280,148 320,178 360,198" fill="none" stroke="#1b5e20" stroke-width="2"/>
   <!-- Labels -->
-  <text x="410" y="215" fill="#1a237e" font-size="10">a=0.3</text>
+  <text x="410" y="215" fill="#7986cb" font-size="10">a=0.3</text>
   <text x="370" y="188" fill="#7b1fa2" font-size="10">a=0.8</text>
   <text x="368" y="170" fill="#1b5e20" font-size="10">shifted</text>
   <!-- Parameter box -->
   <rect x="320" y="48" width="130" height="70" rx="6" fill="#e8eaf6" stroke="#3949ab" stroke-width="1"/>
-  <text x="385" y="68" text-anchor="middle" fill="#1a237e" font-size="10" font-weight="bold">Free Parameters</text>
-  <text x="385" y="84" text-anchor="middle" fill="#37474f" font-size="10">a → curvature</text>
-  <text x="385" y="98" text-anchor="middle" fill="#37474f" font-size="10">b → slope</text>
-  <text x="385" y="112" text-anchor="middle" fill="#37474f" font-size="10">c → intercept</text>
+  <text x="385" y="68" text-anchor="middle" fill="#7986cb" font-size="10" font-weight="bold">Free Parameters</text>
+  <text x="385" y="84" text-anchor="middle" fill="#b0bec5" font-size="10">a → curvature</text>
+  <text x="385" y="98" text-anchor="middle" fill="#b0bec5" font-size="10">b → slope</text>
+  <text x="385" y="112" text-anchor="middle" fill="#b0bec5" font-size="10">c → intercept</text>
 </svg>
 </div>
 
@@ -363,11 +368,11 @@ for _ in range(100):
 </div>
 
 <div>
-<svg viewBox="0 0 540 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:540px;display:block;margin:1.2em auto;background:#fafafa;border-radius:8px;border:1px solid #e0e0e0">
-  <text x="270" y="22" text-anchor="middle" fill="#1a237e" font-size="13" font-weight="bold">Gradient Descent in Loss Space</text>
+<svg viewBox="0 0 540 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:432px;display:block;margin:1.2em auto;background:#1a1f2e;border-radius:8px;border:1px solid #2a3050">
+  <text x="270" y="22" text-anchor="middle" fill="#7986cb" font-size="13" font-weight="bold">Gradient Descent in Loss Space</text>
   <!-- Bowl shape -->
   <path d="M80,60 Q270,240 460,60" fill="none" stroke="#90a4ae" stroke-width="2"/>
-  <text x="460" y="55" fill="#546e7a" font-size="10">Loss landscape</text>
+  <text x="460" y="55" fill="#90a4ae" font-size="10">Loss landscape</text>
   <!-- Steps -->
   <circle cx="150" cy="138" r="6" fill="#e53935"/>
   <circle cx="185" cy="168" r="6" fill="#e53935"/>
@@ -375,10 +380,10 @@ for _ in range(100):
   <circle cx="258" cy="205" r="6" fill="#e53935"/>
   <circle cx="295" cy="208" r="6" fill="#2e7d32"/>
   <!-- Arrows -->
-  <line x1="150" y1="138" x2="179" y2="163" stroke="#1a237e" stroke-width="1.5" marker-end="url(#ah2)"/>
-  <line x1="185" y1="168" x2="214" y2="185" stroke="#1a237e" stroke-width="1.5"/>
-  <line x1="220" y1="190" x2="252" y2="202" stroke="#1a237e" stroke-width="1.5"/>
-  <line x1="258" y1="205" x2="289" y2="207" stroke="#1a237e" stroke-width="1.5"/>
+  <line x1="150" y1="138" x2="179" y2="163" stroke="#7986cb" stroke-width="1.5" marker-end="url(#ah2)"/>
+  <line x1="185" y1="168" x2="214" y2="185" stroke="#7986cb" stroke-width="1.5"/>
+  <line x1="220" y1="190" x2="252" y2="202" stroke="#7986cb" stroke-width="1.5"/>
+  <line x1="258" y1="205" x2="289" y2="207" stroke="#7986cb" stroke-width="1.5"/>
   <!-- Labels -->
   <text x="140" y="125" fill="#e53935" font-size="10" font-weight="bold">Start</text>
   <text x="285" y="222" fill="#2e7d32" font-size="10" font-weight="bold">Minimum</text>
@@ -391,7 +396,7 @@ for _ in range(100):
   <text x="380" y="68" text-anchor="middle" fill="#f57c00" font-size="10">lr too large → overshoot</text>
   <defs>
     <marker id="ah2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L6,3 z" fill="#1a237e"/>
+      <path d="M0,0 L0,6 L6,3 z" fill="#7986cb"/>
     </marker>
   </defs>
 </svg>
@@ -420,23 +425,23 @@ ReLU(x) = max(0, x)
 ```
 
 <div>
-<svg viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;display:block;margin:1.2em auto;background:#fafafa;border-radius:8px;border:1px solid #e0e0e0">
-  <text x="230" y="20" text-anchor="middle" fill="#1a237e" font-size="13" font-weight="bold">ReLU: max(0, x)</text>
-  <text x="230" y="36" text-anchor="middle" fill="#546e7a" font-size="10">Simple piecewise-linear · universal approximator when stacked</text>
+<svg viewBox="0 0 460 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:368px;display:block;margin:1.2em auto;background:#1a1f2e;border-radius:8px;border:1px solid #2a3050">
+  <text x="230" y="20" text-anchor="middle" fill="#7986cb" font-size="13" font-weight="bold">ReLU: max(0, x)</text>
+  <text x="230" y="36" text-anchor="middle" fill="#90a4ae" font-size="10">Simple piecewise-linear · universal approximator when stacked</text>
   <!-- Axes -->
   <line x1="60" y1="160" x2="400" y2="160" stroke="#90a4ae" stroke-width="1.5"/>
   <line x1="230" y1="55" x2="230" y2="165" stroke="#90a4ae" stroke-width="1.5"/>
   <text x="402" y="164" fill="#90a4ae" font-size="10">x</text>
   <text x="218" y="52" fill="#90a4ae" font-size="10">f(x)</text>
   <!-- ReLU curve -->
-  <polyline points="60,160 230,160 400,80" fill="none" stroke="#1a237e" stroke-width="3"/>
+  <polyline points="60,160 230,160 400,80" fill="none" stroke="#7986cb" stroke-width="3"/>
   <!-- Shaded area -->
   <polygon points="230,160 400,80 400,160" fill="#e8eaf6" opacity="0.5"/>
   <!-- Labels -->
   <text x="140" y="148" fill="#7b1fa2" font-size="10">f(x) = 0 for x &lt; 0</text>
   <text x="295" y="110" fill="#1b5e20" font-size="10">f(x) = x for x ≥ 0</text>
   <!-- Stacked ReLUs annotation -->
-  <text x="60" y="185" fill="#546e7a" font-size="9">Two ReLUs stacked → a tent function. Millions stacked → any continuous function (universal approx. theorem)</text>
+  <text x="60" y="185" fill="#90a4ae" font-size="9">Two ReLUs stacked → a tent function. Millions stacked → any continuous function (universal approx. theorem)</text>
 </svg>
 </div>
 
@@ -556,7 +561,7 @@ The following points synthesise the core pedagogical contributions of the Swadia
 ## Jeremy Howard: The Man Who Decided to Democratise AI
 
 <div>
-<svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;margin:1.5em auto;background:#e8f5e9;border-radius:8px;border:1px solid #a5d6a7">
+<svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;display:block;margin:1.5em auto;background:#0d2018;border-radius:8px;border:1px solid #1b5e20">
   <text x="350" y="26" text-anchor="middle" fill="#1b5e20" font-size="13" font-weight="bold">Jeremy Howard — The fast.ai Origin Story</text>
   <!-- Timeline -->
   <line x1="40" y1="90" x2="660" y2="90" stroke="#2e7d32" stroke-width="2"/>
@@ -565,27 +570,27 @@ The following points synthesise the core pedagogical contributions of the Swadia
   <text x="80"  y="87" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Melb.</text>
   <text x="80"  y="99" text-anchor="middle" fill="white" font-size="9">Univ.</text>
   <text x="80"  y="112" text-anchor="middle" fill="#1b5e20" font-size="9">Philosophy</text>
-  <text x="80"  y="122" text-anchor="middle" fill="#546e7a" font-size="8">degree</text>
+  <text x="80"  y="122" text-anchor="middle" fill="#90a4ae" font-size="8">degree</text>
   <circle cx="190" cy="90" r="18" fill="#388e3c"/>
   <text x="190" y="87" text-anchor="middle" fill="white" font-size="9" font-weight="bold">McKinsey</text>
   <text x="190" y="99" text-anchor="middle" fill="white" font-size="9">/ AT Kearney</text>
   <text x="190" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">8 years</text>
-  <text x="190" y="122" text-anchor="middle" fill="#546e7a" font-size="8">consulting</text>
+  <text x="190" y="122" text-anchor="middle" fill="#90a4ae" font-size="8">consulting</text>
   <circle cx="320" cy="90" r="18" fill="#43a047"/>
   <text x="320" y="87" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Kaggle</text>
   <text x="320" y="99" text-anchor="middle" fill="white" font-size="9">#1 Global</text>
   <text x="320" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">2010–2011</text>
-  <text x="320" y="122" text-anchor="middle" fill="#546e7a" font-size="8">World's best</text>
+  <text x="320" y="122" text-anchor="middle" fill="#90a4ae" font-size="8">World's best</text>
   <circle cx="450" cy="90" r="18" fill="#66bb6a"/>
   <text x="450" y="87" text-anchor="middle" fill="#1b5e20" font-size="9" font-weight="bold">fast.ai</text>
   <text x="450" y="99" text-anchor="middle" fill="#1b5e20" font-size="9">founded</text>
   <text x="450" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">2016</text>
-  <text x="450" y="122" text-anchor="middle" fill="#546e7a" font-size="8">w/ R. Thomas</text>
+  <text x="450" y="122" text-anchor="middle" fill="#90a4ae" font-size="8">w/ R. Thomas</text>
   <circle cx="580" cy="90" r="18" fill="#81c784"/>
   <text x="580" y="87" text-anchor="middle" fill="#1b5e20" font-size="9" font-weight="bold">Answer</text>
   <text x="580" y="99" text-anchor="middle" fill="#1b5e20" font-size="9">.AI</text>
   <text x="580" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">Nov 2024</text>
-  <text x="580" y="122" text-anchor="middle" fill="#546e7a" font-size="8">applied AI lab</text>
+  <text x="580" y="122" text-anchor="middle" fill="#90a4ae" font-size="8">applied AI lab</text>
 </svg>
 </div>
 
