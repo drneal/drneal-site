@@ -147,7 +147,7 @@ def load_post(slug: str) -> dict | None:
     meta, body = parse_frontmatter(raw)
     html = markdown.markdown(
         body,
-        extensions=["fenced_code", "tables", "toc", "nl2br", "attr_list"],
+        extensions=["fenced_code", "tables", "toc", "attr_list"],
     )
     return {
         "slug": slug,
