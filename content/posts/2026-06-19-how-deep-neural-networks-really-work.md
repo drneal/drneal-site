@@ -1,5 +1,5 @@
 ---
-title: "How Deep Neural Networks Really Work: A Complete Guide to fast.ai Lesson 3"
+title: "Learning AI with me DrNeal"
 date: 2026-06-19
 category: Deep Learning
 tags: deep learning, neural networks, fast.ai, gradient descent, PyTorch, ReLU, Jeremy Howard, learning science, AI education
