@@ -66,7 +66,7 @@ featured: true
 }
 .callout {
   font-size: 0.8em;
-  background: #fff8e1;
+  background: #1e1a0e;
   border-left: 4px solid #f9a825;
   padding: 0.8em 1.2em;
   margin: 1.2em 0;
@@ -74,8 +74,8 @@ featured: true
 }
 .swadia-point {
   font-size: 0.8em;
-  background: #f3e5f5;
-  border-left: 3px solid #7b1fa2;
+  background: #180d1e;
+  border-left: 3px solid #ab47bc;
   padding: 0.6em 1em;
   margin: 0.6em 0;
   border-radius: 0 4px 4px 0;
