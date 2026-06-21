@@ -1,5 +1,5 @@
 ---
-title: "Learning AI with me DrNeal"
+title: "Learning With Dr Neal"
 date: 2026-06-19
 category: Deep Learning
 tags: deep learning, neural networks, fast.ai, gradient descent, PyTorch, ReLU, Jeremy Howard, learning science, AI education
