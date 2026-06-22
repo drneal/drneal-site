@@ -94,6 +94,144 @@ All slide material, mind map, and audio overviews for this lesson are available 
 
 ---
 
+## Why Study with Dr. Neal Aggarwal?
+
+Forty years of teaching information technology and artificial intelligence across academic, corporate, and individual-mentorship contexts confer a particular kind of understanding that no amount of self-study can replicate: the ability to recognise where a given student is stuck, why they're stuck there, and what angle of re-entry will unstick them.
+
+The fast.ai curriculum is excellent. But it was designed for a specific learner archetype, and most learners are not that archetype. They have domain knowledge that the curriculum doesn't assume. They have cognitive habits developed in adjacent fields. They have time constraints the standard schedule doesn't accommodate. They have professional motivations that the canonical examples don't speak to.
+
+Working through fast.ai with a guide who has led hundreds of learners through this material means those mismatches get resolved in real time, not after three weeks of stalling on a concept that could have been reframed in five minutes.
+
+The practical outcome: students who study with Dr. Neal complete the fast.ai curriculum in half the median time, with substantially deeper practical understanding — and they leave with a project, not just a certificate.
+
+[→ Contact Dr. Neal Aggarwal for 1-to-1 sessions, group workshops, and curriculum design](https://drnealaggarwal.info)
+
+---
+
+## Jeremy Howard: The Man Who Decided to Democratise AI
+
+<div>
+<svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;display:block;margin:1.5em auto;background:#0d2018;border-radius:8px;border:1px solid #1b5e20">
+  <text x="350" y="26" text-anchor="middle" fill="#1b5e20" font-size="13" font-weight="bold">Jeremy Howard — The fast.ai Origin Story</text>
+  <!-- Timeline -->
+  <line x1="40" y1="90" x2="660" y2="90" stroke="#2e7d32" stroke-width="2"/>
+  <!-- Nodes -->
+  <circle cx="80"  cy="90" r="18" fill="#2e7d32"/>
+  <text x="80"  y="87" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Melb.</text>
+  <text x="80"  y="99" text-anchor="middle" fill="white" font-size="9">Univ.</text>
+  <text x="80"  y="112" text-anchor="middle" fill="#1b5e20" font-size="9">Philosophy</text>
+  <text x="80"  y="122" text-anchor="middle" fill="#90a4ae" font-size="8">degree</text>
+  <circle cx="190" cy="90" r="18" fill="#388e3c"/>
+  <text x="190" y="87" text-anchor="middle" fill="white" font-size="9" font-weight="bold">McKinsey</text>
+  <text x="190" y="99" text-anchor="middle" fill="white" font-size="9">/ AT Kearney</text>
+  <text x="190" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">8 years</text>
+  <text x="190" y="122" text-anchor="middle" fill="#90a4ae" font-size="8">consulting</text>
+  <circle cx="320" cy="90" r="18" fill="#43a047"/>
+  <text x="320" y="87" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Kaggle</text>
+  <text x="320" y="99" text-anchor="middle" fill="white" font-size="9">#1 Global</text>
+  <text x="320" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">2010–2011</text>
+  <text x="320" y="122" text-anchor="middle" fill="#90a4ae" font-size="8">World's best</text>
+  <circle cx="450" cy="90" r="18" fill="#66bb6a"/>
+  <text x="450" y="87" text-anchor="middle" fill="#1b5e20" font-size="9" font-weight="bold">fast.ai</text>
+  <text x="450" y="99" text-anchor="middle" fill="#1b5e20" font-size="9">founded</text>
+  <text x="450" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">2016</text>
+  <text x="450" y="122" text-anchor="middle" fill="#90a4ae" font-size="8">w/ R. Thomas</text>
+  <circle cx="580" cy="90" r="18" fill="#81c784"/>
+  <text x="580" y="87" text-anchor="middle" fill="#1b5e20" font-size="9" font-weight="bold">Answer</text>
+  <text x="580" y="99" text-anchor="middle" fill="#1b5e20" font-size="9">.AI</text>
+  <text x="580" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">Nov 2024</text>
+  <text x="580" y="122" text-anchor="middle" fill="#90a4ae" font-size="8">applied AI lab</text>
+</svg>
+</div>
+
+Jeremy Howard did not follow a conventional path into AI research. He studied philosophy at the University of Melbourne — a choice that shaped his thinking about pedagogy, ethics, and the difference between knowing something and understanding it. After eight years in management consulting (McKinsey and AT Kearney), he taught himself machine learning, competed on Kaggle, and became the world's top-ranked data scientist in 2010 and 2011 — not through access to proprietary data or exclusive compute, but through systematic application of techniques available to anyone.
+
+That experience convinced Howard of something that would define his subsequent career: the gap between AI researchers and practitioners was not a capability gap but a pedagogical one. The knowledge existed; the on-ramps did not.
+
+### The fast.ai Philosophy
+
+In 2016, Howard co-founded fast.ai with Rachel Thomas with a simple mission: make deep learning accessible to domain experts who were not career machine learning researchers. The pedagogical approach they developed — sometimes called the "top-down" or "whole game" method — inverts the conventional curriculum sequence.
+
+Traditional deep learning courses begin with linear algebra, probability theory, and optimisation — the theoretical foundations. Students spend months on prerequisites before writing a line of code that does anything useful. Howard's observation was that this approach works for students who have already committed to years of study, but fails the practitioner who needs to know whether deep learning is applicable to their domain before making that commitment.
+
+fast.ai begins with a working model. Lesson 1 trains a state-of-the-art image classifier in four lines of code. Students see results before they understand the mechanism. This creates what Howard calls "a hook" — genuine motivation to then go deeper and understand why it worked. The prerequisite mathematics becomes meaningful precisely because the student has already used the tool and wants to understand it more deeply.
+
+This is not a shortcut. Howard is emphatic that full understanding is the goal — but he maintains that the fastest path to full understanding is not the conventional prerequisite-first route. This claim is, it turns out, well-supported by learning science research, as we'll see below.
+
+### Howard on the Future
+
+Howard's public writings and interviews reveal a consistent thread: he believes that the dominant risk from AI is not malevolence but concentration — the scenario in which powerful AI tools are accessible only to the largest institutions, further entrenching existing inequalities. fast.ai is explicitly a counter-measure to this scenario.
+
+In his 2024 AI panel discussions and interviews, Howard has argued that the most important technical development of the next decade will not be larger models but more efficient ones — models that run on commodity hardware and can be customised by individual practitioners. His founding of Answer.AI in November 2024, described as a "results-focused AI lab," is a direct expression of this philosophy.
+
+---
+
+## What AI Will Do for Learners Who Act Now
+
+The transformation under way is not a future scenario — it is the current state of every field that processes information. Learners who invest time in foundations now gain access to capabilities that currently require expensive specialist consultants:
+
+**Personal productivity tools.** Fine-tuned language models for your specific domain. Image classifiers trained on your own data. NLP extractors that pull structured information from unstructured text — clinical notes, legal documents, research papers. These tools currently require specialist ML engineers for most organisations. Practitioners who complete fast.ai can build them independently.
+
+**Professional differentiation.** In medicine, law, finance, engineering, and research — every field that processes data — practitioners who can build and evaluate AI tools will command significant advantages over those who can only consume them.
+
+**Research acceleration.** For scientists, the ability to build custom models means reduced dependence on off-the-shelf tools that may not fit your domain. The ability to fine-tune a language model on your own corpus, or to train an image classifier on your own labelled data, compresses research timelines that once required collaborations with dedicated ML labs.
+
+**Agency in an AI world.** Perhaps most importantly: understanding how neural networks work gives you the conceptual tools to evaluate AI claims critically, audit model outputs, and make informed decisions about when to trust and when to question AI systems. This is the difference between using AI as a tool and being used by it.
+
+The window during which this knowledge provides a genuine competitive advantage is finite. It will close. The practitioners who move through it will not be those who waited for a simpler on-ramp — they will be those who found a guide who could make the existing on-ramp navigable.
+
+---
+
+## The Learning Science Behind Howard's Approach
+
+The success of fast.ai's pedagogy is not accidental — it maps closely onto findings from cognitive science and educational psychology that have accumulated over decades. Understanding why the approach works will help you extract more value from it.
+
+### Desirable Difficulty
+
+Howard's top-down method creates what educational psychologists call "desirable difficulty." Encountering the whole problem before understanding all the parts is initially uncomfortable. This discomfort is the signal that learning is occurring, not evidence that something is wrong. Research by Robert Bjork at UCLA has consistently shown that more challenging learning conditions produce better long-term retention, even when they produce slower initial performance.
+
+### Worked Examples and Cognitive Load Theory
+
+The fast.ai notebooks are worked examples. John Sweller's cognitive load theory predicts that novices learn more efficiently from studying worked examples than from attempting to solve problems independently from the outset. Problem-solving requires cognitive resources for both domain content and problem-solving strategy simultaneously — a load that exceeds the working memory capacity of most learners encountering a new domain. Worked examples free cognitive resources for the content itself.
+
+### Spaced Repetition and Interleaving
+
+The fast.ai curriculum returns to the same concepts multiple times across lessons, each time with more context and depth. This is spaced repetition in practice — exposure to material after increasing intervals is the most evidence-based intervention for long-term retention (Ebbinghaus, 1885; Cepeda et al., 2006). Interleaving different types of practice — gradient descent, then matrix multiplication, then the spreadsheet — further improves retention compared to blocking (practicing one topic exhaustively before moving to the next).
+
+### The Feynman Technique at Scale
+
+fast.ai's forums are central to the pedagogy. Students are encouraged to explain concepts to each other — a structured implementation of the Feynman Technique. Every point of confusion in an explanation to another person reveals a gap in the explainer's own understanding. The forums create a low-stakes environment for this kind of public retrieval practice at scale.
+
+---
+
+## Swadia's Supplementary Tutorial: 10 Key Points
+
+[▶ Watch the Swadia tutorial on YouTube](https://youtu.be/npQ2IORdlvU)
+
+The following points synthesise the core pedagogical contributions of the Swadia tutorial, structured as an ordered learning sequence that complements Howard's top-down approach:
+
+<div class="swadia-point"><strong>Point 1 — Context First, Mechanics Second.</strong> Before any equation is introduced, establish why it matters. Neural networks exist to solve the function-approximation problem. Anchoring every formula in this problem statement prevents the 'math without meaning' trap that causes most learners to stall.</div>
+
+<div class="swadia-point"><strong>Point 2 — The Biological Metaphor Is a Scaffold, Not a Specification.</strong> The McCulloch-Pitts neuron (1943) gave us the vocabulary. Modern artificial neurons follow this template as a scaffold for intuition, not a literal description of computation. Don't over-invest in the analogy.</div>
+
+<div class="swadia-point"><strong>Point 3 — Parameters Are the Entire Knowledge of the Model.</strong> After training, a model IS its weight matrices. There is no other store of information. Internalising this dispels the mysticism around 'AI knowing things' and grounds all subsequent questions in concrete mathematics.</div>
+
+<div class="swadia-point"><strong>Point 4 — Loss Is a Design Choice.</strong> MSE, cross-entropy, Huber loss — engineering choices with mathematical consequences. Students should practice swapping loss functions and observing the effects rather than treating any one as canonical.</div>
+
+<div class="swadia-point"><strong>Point 5 — The Learning Rate Is the Most Important Hyperparameter.</strong> Too large: the optimiser overshoots. Too small: training takes forever. Learning rate scheduling and warmup strategies follow from this single observation.</div>
+
+<div class="swadia-point"><strong>Point 6 — One Hidden Layer Is Enough; Depth Adds Efficiency.</strong> A single hidden layer can approximate any function. What depth buys you is efficiency — the same approximation using far fewer parameters. This is the practical motivation for 'deep' learning.</div>
+
+<div class="swadia-point"><strong>Point 7 — Overfitting Means the Model Learned the Data, Not the Task.</strong> Train loss down, validation loss up — that is the diagnostic. Regularisation, dropout, and data augmentation are interventions at this diagnostic point.</div>
+
+<div class="swadia-point"><strong>Point 8 — GPUs Accelerate Matrix Multiplication, Not Magic.</strong> A forward pass is a sequence of matrix multiplications interleaved with elementwise nonlinearities. GPUs are designed precisely for this pattern of computation.</div>
+
+<div class="swadia-point"><strong>Point 9 — Feature Engineering Is Still Required.</strong> Log-transforming skewed features, normalising continuous inputs, and dummy-encoding categoricals are not optional. They directly affect the condition number of gradient updates.</div>
+
+<div class="swadia-point"><strong>Point 10 — Transfer Learning Is the Practical Default.</strong> Training from scratch is rarely necessary. Pretrained models encode general feature hierarchies that fine-tune to new tasks with a fraction of the data and compute. This is the workflow that makes deep learning practically useful outside of large research labs.</div>
+
+---
+
 ## We've Been Building This Since 1943
 
 <div>
@@ -538,144 +676,6 @@ The lesson opens with a survey of image model architectures benchmarked on top-1
 The wrong approach is to always pick the highest-accuracy model. The right approach is to identify the **Pareto frontier** — models where no other model is simultaneously faster and more accurate — then pick based on deployment constraints. For a latency-sensitive API endpoint, a smaller EfficientNet variant may dominate a more accurate but slower ViT. For an offline batch pipeline, the ranking flips.
 
 Howard also makes a point about data quantity that the industry consistently gets wrong: the dominant mistake is collecting more labelled data when the model is already bottlenecked on something else. Before commissioning a labelling campaign, fit a model on what you have, examine the failure modes, and decide whether the errors are data-limited or architecture-limited.
-
----
-
-## Swadia's Supplementary Tutorial: 10 Key Points
-
-[▶ Watch the Swadia tutorial on YouTube](https://youtu.be/npQ2IORdlvU)
-
-The following points synthesise the core pedagogical contributions of the Swadia tutorial, structured as an ordered learning sequence that complements Howard's top-down approach:
-
-<div class="swadia-point"><strong>Point 1 — Context First, Mechanics Second.</strong> Before any equation is introduced, establish why it matters. Neural networks exist to solve the function-approximation problem. Anchoring every formula in this problem statement prevents the 'math without meaning' trap that causes most learners to stall.</div>
-
-<div class="swadia-point"><strong>Point 2 — The Biological Metaphor Is a Scaffold, Not a Specification.</strong> The McCulloch-Pitts neuron (1943) gave us the vocabulary. Modern artificial neurons follow this template as a scaffold for intuition, not a literal description of computation. Don't over-invest in the analogy.</div>
-
-<div class="swadia-point"><strong>Point 3 — Parameters Are the Entire Knowledge of the Model.</strong> After training, a model IS its weight matrices. There is no other store of information. Internalising this dispels the mysticism around 'AI knowing things' and grounds all subsequent questions in concrete mathematics.</div>
-
-<div class="swadia-point"><strong>Point 4 — Loss Is a Design Choice.</strong> MSE, cross-entropy, Huber loss — engineering choices with mathematical consequences. Students should practice swapping loss functions and observing the effects rather than treating any one as canonical.</div>
-
-<div class="swadia-point"><strong>Point 5 — The Learning Rate Is the Most Important Hyperparameter.</strong> Too large: the optimiser overshoots. Too small: training takes forever. Learning rate scheduling and warmup strategies follow from this single observation.</div>
-
-<div class="swadia-point"><strong>Point 6 — One Hidden Layer Is Enough; Depth Adds Efficiency.</strong> A single hidden layer can approximate any function. What depth buys you is efficiency — the same approximation using far fewer parameters. This is the practical motivation for 'deep' learning.</div>
-
-<div class="swadia-point"><strong>Point 7 — Overfitting Means the Model Learned the Data, Not the Task.</strong> Train loss down, validation loss up — that is the diagnostic. Regularisation, dropout, and data augmentation are interventions at this diagnostic point.</div>
-
-<div class="swadia-point"><strong>Point 8 — GPUs Accelerate Matrix Multiplication, Not Magic.</strong> A forward pass is a sequence of matrix multiplications interleaved with elementwise nonlinearities. GPUs are designed precisely for this pattern of computation.</div>
-
-<div class="swadia-point"><strong>Point 9 — Feature Engineering Is Still Required.</strong> Log-transforming skewed features, normalising continuous inputs, and dummy-encoding categoricals are not optional. They directly affect the condition number of gradient updates.</div>
-
-<div class="swadia-point"><strong>Point 10 — Transfer Learning Is the Practical Default.</strong> Training from scratch is rarely necessary. Pretrained models encode general feature hierarchies that fine-tune to new tasks with a fraction of the data and compute. This is the workflow that makes deep learning practically useful outside of large research labs.</div>
-
----
-
-## Jeremy Howard: The Man Who Decided to Democratise AI
-
-<div>
-<svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;display:block;margin:1.5em auto;background:#0d2018;border-radius:8px;border:1px solid #1b5e20">
-  <text x="350" y="26" text-anchor="middle" fill="#1b5e20" font-size="13" font-weight="bold">Jeremy Howard — The fast.ai Origin Story</text>
-  <!-- Timeline -->
-  <line x1="40" y1="90" x2="660" y2="90" stroke="#2e7d32" stroke-width="2"/>
-  <!-- Nodes -->
-  <circle cx="80"  cy="90" r="18" fill="#2e7d32"/>
-  <text x="80"  y="87" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Melb.</text>
-  <text x="80"  y="99" text-anchor="middle" fill="white" font-size="9">Univ.</text>
-  <text x="80"  y="112" text-anchor="middle" fill="#1b5e20" font-size="9">Philosophy</text>
-  <text x="80"  y="122" text-anchor="middle" fill="#90a4ae" font-size="8">degree</text>
-  <circle cx="190" cy="90" r="18" fill="#388e3c"/>
-  <text x="190" y="87" text-anchor="middle" fill="white" font-size="9" font-weight="bold">McKinsey</text>
-  <text x="190" y="99" text-anchor="middle" fill="white" font-size="9">/ AT Kearney</text>
-  <text x="190" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">8 years</text>
-  <text x="190" y="122" text-anchor="middle" fill="#90a4ae" font-size="8">consulting</text>
-  <circle cx="320" cy="90" r="18" fill="#43a047"/>
-  <text x="320" y="87" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Kaggle</text>
-  <text x="320" y="99" text-anchor="middle" fill="white" font-size="9">#1 Global</text>
-  <text x="320" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">2010–2011</text>
-  <text x="320" y="122" text-anchor="middle" fill="#90a4ae" font-size="8">World's best</text>
-  <circle cx="450" cy="90" r="18" fill="#66bb6a"/>
-  <text x="450" y="87" text-anchor="middle" fill="#1b5e20" font-size="9" font-weight="bold">fast.ai</text>
-  <text x="450" y="99" text-anchor="middle" fill="#1b5e20" font-size="9">founded</text>
-  <text x="450" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">2016</text>
-  <text x="450" y="122" text-anchor="middle" fill="#90a4ae" font-size="8">w/ R. Thomas</text>
-  <circle cx="580" cy="90" r="18" fill="#81c784"/>
-  <text x="580" y="87" text-anchor="middle" fill="#1b5e20" font-size="9" font-weight="bold">Answer</text>
-  <text x="580" y="99" text-anchor="middle" fill="#1b5e20" font-size="9">.AI</text>
-  <text x="580" y="112" text-anchor="middle" fill="#1b5e20" font-size="9">Nov 2024</text>
-  <text x="580" y="122" text-anchor="middle" fill="#90a4ae" font-size="8">applied AI lab</text>
-</svg>
-</div>
-
-Jeremy Howard did not follow a conventional path into AI research. He studied philosophy at the University of Melbourne — a choice that shaped his thinking about pedagogy, ethics, and the difference between knowing something and understanding it. After eight years in management consulting (McKinsey and AT Kearney), he taught himself machine learning, competed on Kaggle, and became the world's top-ranked data scientist in 2010 and 2011 — not through access to proprietary data or exclusive compute, but through systematic application of techniques available to anyone.
-
-That experience convinced Howard of something that would define his subsequent career: the gap between AI researchers and practitioners was not a capability gap but a pedagogical one. The knowledge existed; the on-ramps did not.
-
-### The fast.ai Philosophy
-
-In 2016, Howard co-founded fast.ai with Rachel Thomas with a simple mission: make deep learning accessible to domain experts who were not career machine learning researchers. The pedagogical approach they developed — sometimes called the "top-down" or "whole game" method — inverts the conventional curriculum sequence.
-
-Traditional deep learning courses begin with linear algebra, probability theory, and optimisation — the theoretical foundations. Students spend months on prerequisites before writing a line of code that does anything useful. Howard's observation was that this approach works for students who have already committed to years of study, but fails the practitioner who needs to know whether deep learning is applicable to their domain before making that commitment.
-
-fast.ai begins with a working model. Lesson 1 trains a state-of-the-art image classifier in four lines of code. Students see results before they understand the mechanism. This creates what Howard calls "a hook" — genuine motivation to then go deeper and understand why it worked. The prerequisite mathematics becomes meaningful precisely because the student has already used the tool and wants to understand it more deeply.
-
-This is not a shortcut. Howard is emphatic that full understanding is the goal — but he maintains that the fastest path to full understanding is not the conventional prerequisite-first route. This claim is, it turns out, well-supported by learning science research, as we'll see below.
-
-### Howard on the Future
-
-Howard's public writings and interviews reveal a consistent thread: he believes that the dominant risk from AI is not malevolence but concentration — the scenario in which powerful AI tools are accessible only to the largest institutions, further entrenching existing inequalities. fast.ai is explicitly a counter-measure to this scenario.
-
-In his 2024 AI panel discussions and interviews, Howard has argued that the most important technical development of the next decade will not be larger models but more efficient ones — models that run on commodity hardware and can be customised by individual practitioners. His founding of Answer.AI in November 2024, described as a "results-focused AI lab," is a direct expression of this philosophy.
-
----
-
-## The Learning Science Behind Howard's Approach
-
-The success of fast.ai's pedagogy is not accidental — it maps closely onto findings from cognitive science and educational psychology that have accumulated over decades. Understanding why the approach works will help you extract more value from it.
-
-### Desirable Difficulty
-
-Howard's top-down method creates what educational psychologists call "desirable difficulty." Encountering the whole problem before understanding all the parts is initially uncomfortable. This discomfort is the signal that learning is occurring, not evidence that something is wrong. Research by Robert Bjork at UCLA has consistently shown that more challenging learning conditions produce better long-term retention, even when they produce slower initial performance.
-
-### Worked Examples and Cognitive Load Theory
-
-The fast.ai notebooks are worked examples. John Sweller's cognitive load theory predicts that novices learn more efficiently from studying worked examples than from attempting to solve problems independently from the outset. Problem-solving requires cognitive resources for both domain content and problem-solving strategy simultaneously — a load that exceeds the working memory capacity of most learners encountering a new domain. Worked examples free cognitive resources for the content itself.
-
-### Spaced Repetition and Interleaving
-
-The fast.ai curriculum returns to the same concepts multiple times across lessons, each time with more context and depth. This is spaced repetition in practice — exposure to material after increasing intervals is the most evidence-based intervention for long-term retention (Ebbinghaus, 1885; Cepeda et al., 2006). Interleaving different types of practice — gradient descent, then matrix multiplication, then the spreadsheet — further improves retention compared to blocking (practicing one topic exhaustively before moving to the next).
-
-### The Feynman Technique at Scale
-
-fast.ai's forums are central to the pedagogy. Students are encouraged to explain concepts to each other — a structured implementation of the Feynman Technique. Every point of confusion in an explanation to another person reveals a gap in the explainer's own understanding. The forums create a low-stakes environment for this kind of public retrieval practice at scale.
-
----
-
-## What AI Will Do for Learners Who Act Now
-
-The transformation under way is not a future scenario — it is the current state of every field that processes information. Learners who invest time in foundations now gain access to capabilities that currently require expensive specialist consultants:
-
-**Personal productivity tools.** Fine-tuned language models for your specific domain. Image classifiers trained on your own data. NLP extractors that pull structured information from unstructured text — clinical notes, legal documents, research papers. These tools currently require specialist ML engineers for most organisations. Practitioners who complete fast.ai can build them independently.
-
-**Professional differentiation.** In medicine, law, finance, engineering, and research — every field that processes data — practitioners who can build and evaluate AI tools will command significant advantages over those who can only consume them.
-
-**Research acceleration.** For scientists, the ability to build custom models means reduced dependence on off-the-shelf tools that may not fit your domain. The ability to fine-tune a language model on your own corpus, or to train an image classifier on your own labelled data, compresses research timelines that once required collaborations with dedicated ML labs.
-
-**Agency in an AI world.** Perhaps most importantly: understanding how neural networks work gives you the conceptual tools to evaluate AI claims critically, audit model outputs, and make informed decisions about when to trust and when to question AI systems. This is the difference between using AI as a tool and being used by it.
-
-The window during which this knowledge provides a genuine competitive advantage is finite. It will close. The practitioners who move through it will not be those who waited for a simpler on-ramp — they will be those who found a guide who could make the existing on-ramp navigable.
-
----
-
-## Why Study with Dr. Neal Aggarwal?
-
-Forty years of teaching information technology and artificial intelligence across academic, corporate, and individual-mentorship contexts confer a particular kind of understanding that no amount of self-study can replicate: the ability to recognise where a given student is stuck, why they're stuck there, and what angle of re-entry will unstick them.
-
-The fast.ai curriculum is excellent. But it was designed for a specific learner archetype, and most learners are not that archetype. They have domain knowledge that the curriculum doesn't assume. They have cognitive habits developed in adjacent fields. They have time constraints the standard schedule doesn't accommodate. They have professional motivations that the canonical examples don't speak to.
-
-Working through fast.ai with a guide who has led hundreds of learners through this material means those mismatches get resolved in real time, not after three weeks of stalling on a concept that could have been reframed in five minutes.
-
-The practical outcome: students who study with Dr. Neal complete the fast.ai curriculum in half the median time, with substantially deeper practical understanding — and they leave with a project, not just a certificate.
-
-[→ Contact Dr. Neal Aggarwal for 1-to-1 sessions, group workshops, and curriculum design](https://drnealaggarwal.info)
 
 ---
 
