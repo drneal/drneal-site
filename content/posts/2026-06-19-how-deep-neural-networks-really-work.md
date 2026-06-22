@@ -104,7 +104,7 @@ Working through fast.ai with a guide who has led hundreds of learners through th
 
 The practical outcome: students who study with Dr. Neal complete the fast.ai curriculum in half the median time, with substantially deeper practical understanding — and they leave with a project, not just a certificate.
 
-[→ Contact Dr. Neal Aggarwal for 1-to-1 sessions, group workshops, and curriculum design](https://drnealaggarwal.info)
+[→ Contact Dr. Neal Aggarwal for 1-to-1 sessions, group workshops, and curriculum design](/about#contact)
 
 ---
 
