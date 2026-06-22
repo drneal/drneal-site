@@ -84,6 +84,14 @@ featured: true
 
 <p style="text-align:center; font-style:italic; color:#f59e0b; font-size:1.05em; margin:1.2em auto 0.5em; max-width:780px; line-height:1.6;">The transformation under way is not a future scenario — it is the current state of every field that processes information. Learners who invest time in foundations now gain access to capabilities that currently require expensive specialist consultants.</p>
 
+<div style="text-align:center; font-style:italic; color:#f59e0b; font-size:0.97em; margin:0.5em auto 1.5em; max-width:780px; line-height:1.75;">
+<p><strong style="color:#f59e0b;">Personal productivity tools.</strong> Fine-tuned language models for your specific domain. Image classifiers trained on your own data. NLP extractors that pull structured information from unstructured text — clinical notes, legal documents, research papers. These tools currently require specialist ML engineers for most organisations. Practitioners who complete fast.ai can build them independently.</p>
+<p><strong style="color:#f59e0b;">Professional differentiation.</strong> In medicine, law, finance, engineering, and research — every field that processes data — practitioners who can build and evaluate AI tools will command significant advantages over those who can only consume them.</p>
+<p><strong style="color:#f59e0b;">Research acceleration.</strong> For scientists, the ability to build custom models means reduced dependence on off-the-shelf tools that may not fit your domain. The ability to fine-tune a language model on your own corpus, or to train an image classifier on your own labelled data, compresses research timelines that once required collaborations with dedicated ML labs.</p>
+<p><strong style="color:#f59e0b;">Agency in an AI world.</strong> Perhaps most importantly: understanding how neural networks work gives you the conceptual tools to evaluate AI claims critically, audit model outputs, and make informed decisions about when to trust and when to question AI systems. This is the difference between using AI as a tool and being used by it.</p>
+<p>The window during which this knowledge provides a genuine competitive advantage is finite. It will close. The practitioners who move through it will not be those who waited for a simpler on-ramp — they will be those who found a guide who could make the existing on-ramp navigable.</p>
+</div>
+
 <div class="notebooklm-banner">
 📚 <strong>NotebookLM companion resource for this post:</strong><br/>
 All slide material, mind map, and audio overviews for this lesson are available in the linked notebook.<br/>
