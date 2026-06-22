@@ -210,7 +210,7 @@ The fast.ai curriculum returns to the same concepts multiple times across lesson
 
 ### The Feynman Technique at Scale
 
-[fast.ai's forums](https://forums.fast.ai/) are central to the pedagogy (18,214 topics across 21 categories — joining thousands of students from complete novices to seasoned AI professionals, all able and willing to help make your learning as smooth and productive as possible). Students are encouraged to explain concepts to each other — a structured implementation of the Feynman Technique. Every point of confusion in an explanation to another person reveals a gap in the explainer's own understanding. The forums create a low-stakes environment for this kind of public retrieval practice at scale.
+[fast.ai's forums](https://forums.fast.ai/) are central to the pedagogy (18,214 topics across 21 categories — you would be joining thousands of students from complete novices to seasoned AI professionals, all able and willing to help make your learning as smooth and productive as possible). Students are encouraged to explain concepts to each other — a structured implementation of the Feynman Technique. Every point of confusion in an explanation to another person reveals a gap in the explainer's own understanding. The forums create a low-stakes environment for this kind of public retrieval practice at scale.
 
 ---
 
