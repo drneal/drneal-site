@@ -82,6 +82,8 @@ featured: true
 }
 </style>
 
+<p style="text-align:center; font-style:italic; color:#f59e0b; font-size:1.05em; margin:1.2em auto 0.5em; max-width:780px; line-height:1.6;">The transformation under way is not a future scenario — it is the current state of every field that processes information. Learners who invest time in foundations now gain access to capabilities that currently require expensive specialist consultants.</p>
+
 <div class="notebooklm-banner">
 📚 <strong>NotebookLM companion resource for this post:</strong><br/>
 All slide material, mind map, and audio overviews for this lesson are available in the linked notebook.<br/>
