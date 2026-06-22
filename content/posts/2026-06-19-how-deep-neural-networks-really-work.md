@@ -210,13 +210,15 @@ The fast.ai curriculum returns to the same concepts multiple times across lesson
 
 ### The Feynman Technique at Scale
 
-fast.ai's forums are central to the pedagogy. Students are encouraged to explain concepts to each other — a structured implementation of the Feynman Technique. Every point of confusion in an explanation to another person reveals a gap in the explainer's own understanding. The forums create a low-stakes environment for this kind of public retrieval practice at scale.
+fast.ai's forums are central to the pedagogy (18,214 topics across 21 categories — joining thousands of students from complete novices to seasoned AI professionals, all able and willing to help make your learning as smooth and productive as possible). Students are encouraged to explain concepts to each other — a structured implementation of the Feynman Technique. Every point of confusion in an explanation to another person reveals a gap in the explainer's own understanding. The forums create a low-stakes environment for this kind of public retrieval practice at scale.
 
 ---
 
 ## Swadia's Supplementary Tutorial: 10 Key Points
 
 [▶ Watch the Swadia tutorial on YouTube](https://youtu.be/npQ2IORdlvU)
+
+Swadia — an MIT graduate and former CEO turned learning strategist — distilled a decade of high-performance learning into a single 12-minute framework: the Three C Protocol (Compress, Compile, Consolidate). His central argument maps directly onto Howard's pedagogy: intelligence is no longer the differentiating variable — speed of acquisition is. Where Howard gives you the technical on-ramp, Swadia gives you the cognitive architecture to retain what you build there. Watching this before, or alongside, the fast.ai lectures will change how you take notes, how you schedule review, and how quickly the material moves from working memory into durable understanding.
 
 The following points synthesise the core pedagogical contributions of the Swadia tutorial, structured as an ordered learning sequence that complements Howard's top-down approach:
 
