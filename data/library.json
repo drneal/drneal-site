@@ -91,6 +91,15 @@
       "tags": ["backpropagation", "learning algorithms", "neuromorphic", "alternative training"]
     },
     {
+      "title": "Demis Hassabis: Future of AI, Simulating Reality, Physics and Video Games",
+      "author": "Demis Hassabis",
+      "year": "2025",
+      "type": "talk",
+      "description": "Lex Fridman Podcast #475. Hassabis covers the full frontier: AGI timelines, scaling laws, AlphaEvolve, simulating biological organisms from first principles, P vs NP, the origin of life, p(doom), consciousness, and why video games were his training ground for thinking about AI. One of his most wide-ranging interviews since the Nobel Prize.",
+      "url": "https://www.youtube.com/watch?v=-HzgcbRXUK8",
+      "tags": ["Demis Hassabis", "AGI", "AlphaEvolve", "scaling laws", "consciousness", "Lex Fridman", "DeepMind"]
+    },
+    {
       "title": "The Hardest Problem AI Ever Solved",
       "author": "Demis Hassabis",
       "year": "2024",
