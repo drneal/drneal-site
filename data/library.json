@@ -91,6 +91,15 @@
       "tags": ["backpropagation", "learning algorithms", "neuromorphic", "alternative training"]
     },
     {
+      "title": "The Hardest Problem AI Ever Solved",
+      "author": "Demis Hassabis",
+      "year": "2024",
+      "type": "talk",
+      "description": "Hassabis on AlphaFold — how DeepMind used AI to crack the 50-year-old protein-folding problem, what it means for drug discovery and biology, and why he believes it is the single most important scientific contribution AI has made so far.",
+      "url": "https://www.youtube.com/watch?v=C0gErQtnNFE",
+      "tags": ["Demis Hassabis", "AlphaFold", "protein folding", "DeepMind", "biology", "drug discovery"]
+    },
+    {
       "title": "Geoffrey Hinton — Turing Award Lecture",
       "author": "Geoffrey Hinton",
       "year": "2018",
