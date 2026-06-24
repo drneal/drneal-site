@@ -18,7 +18,7 @@ This thesis presents a two-year longitudinal field study of 183 Maasai participa
 <div style="background: linear-gradient(135deg, #0D1B2A 0%, #1a3a5c 100%); color: white; padding: 1.4em 1.8em; border-radius: 8px; margin: 1.5em 0;">
   <strong style="font-size: 1.1em;">📄 Aggarwal N. <em>Insulin Quiescence and Glycaemic Stability Under a Zero-Carbohydrate Animal-Sourced Diet: A Two-Year Longitudinal Field Study of the Maasai of Il Bissel, Kajiado District, Kenya.</em> MSc Thesis, Nairobi University School of Medicine, 2024.</strong>
   <br><br>
-  <a href="/Aggarwal_Maasai_Thesis_FINAL.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (104 KB, 30 pages)</a>
+  <a href="/static/Aggarwal_Maasai_Thesis_FINAL.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (104 KB, 30 pages)</a>
 </div>
 
 ---
