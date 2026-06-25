@@ -5,10 +5,8 @@ category: Deep Learning
 tags: deep learning, neural networks, fast.ai, gradient descent, PyTorch, ReLU, Jeremy Howard, learning science, AI education
 level: Intermediate
 read_time: 35 min
-summary: >
-  A comprehensive guide to fast.ai Lesson 3 — from the 1943 origins of neural networks through gradient descent, ReLU, and matrix multiplication — paired with Jeremy Howard's philosophy of learning, proven learning science, and a practical two-week study plan. Includes a downloadable learning guide (PDF and EPUB).
+summary: "Professional differentiation. In medicine, law, finance, engineering, and research — every field that processes data — practitioners who can build and evaluate AI tools will command significant advantages over those who can only consume them."
 featured: true
-description: "Professional differentiation. In medicine, law, finance, engineering, and research — every field that processes data — practitioners who can build and evaluate AI tools will command significant advantages over those who can only consume them."
 ---
 
 <style>
