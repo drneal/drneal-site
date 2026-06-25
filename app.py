@@ -1849,8 +1849,10 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/contact", methods=["POST"])
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
+    if request.method == "GET":
+        return redirect(url_for("about") + "#contact")
     name    = request.form.get("name", "").strip()
     email   = request.form.get("email", "").strip()
     subject = request.form.get("subject", "Message from drnealaggarwal.info").strip()
