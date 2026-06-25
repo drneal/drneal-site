@@ -5,6 +5,14 @@ tags: [nutrition, diabetes, metabolism, Maasai, ketogenic, zero-carbohydrate, in
 description: "A field study of 183 traditionally-feeding Maasai participants from Il Bissel, Kenya — 104 weeks of weekly glucose measurements, no case of type 2 diabetes, no obesity, and a hepatic gluconeogenesis rate holding mean fasting glucose at 78.8 mg/dL (4.4 mmol/L). Analysed with XGBoost, LSTM, and k-means clustering."
 ---
 
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post:</strong> Three AI entities discuss insulin quiescence, hepatic gluconeogenesis, and what the Maasai teach us about zero-carbohydrate metabolism.<br/><br/>
+  <audio controls style="width:100%; margin-top:0.4em;">
+    <source src="/static/audio/Predictive_AI_Decodes_Maasai_Zero_Carb_Metabolism.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 There is a question at the heart of modern metabolic medicine that mainstream nutritional epidemiology has largely avoided asking directly: if dietary carbohydrate is the primary driver of postprandial insulin secretion, and if chronic hyperinsulinaemia is the proximal cause of insulin resistance and type 2 diabetes, then what happens to populations who eat no carbohydrate at all? Not low-carbohydrate. Zero. What is their glycaemic profile across months and years?
 
 The Maasai of the Rift Valley provide the closest available answer to that question in any living population. They are a pastoralist people whose traditional diet consists entirely of milk, meat, blood, and fat — no vegetables, no grains, no legumes, no fruit. Their primary caloric sources are saturated and monounsaturated fat from bovine tallow and fermented whole milk, protein from meat and coagulated blood, and lactose reduced by bacterial fermentation during the preparation of *kule naoto*, their traditional soured milk. On this diet, fasting blood glucose can only originate from one source: hepatic gluconeogenesis, the liver's synthesis of glucose from non-carbohydrate precursors — amino acids, glycerol, and lactate. There is no dietary glucose to speak of.
