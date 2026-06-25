@@ -179,6 +179,12 @@ def index():
     return render_template("index.html", posts=posts, featured=featured, recent=recent)
 
 
+@app.route("/archive")
+def archive():
+    posts = load_posts()
+    return render_template("archive.html", posts=posts)
+
+
 @app.route("/post/<slug>")
 def post(slug):
     p = load_post(slug)
