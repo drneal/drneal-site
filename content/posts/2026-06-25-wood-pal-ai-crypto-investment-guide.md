@@ -5,7 +5,7 @@ category: Finance & Investing
 tags: investing, AI, cryptocurrency, Cathie Wood, Raoul Pal, ARK Invest, bitcoin, ethereum, solana, machine economy, stocks
 level: Intermediate
 read_time: 18 min
-description: "Two of the world's most consequential macro investors agree: AI and crypto are converging into the greatest wealth transfer of our lifetimes. Here is what they are buying — and why."
+summary: "The convergence of artificial intelligence and cryptocurrency will produce the largest wealth transfer in modern financial history, and the window to position for it is closing. Talk to Dr Neal about how you can invest in these opportunities and take part in this wealth transfer."
 featured: false
 ---
 
