@@ -5,6 +5,14 @@ tags: [AI, consciousness, sentience, Transformer, PhD, deep learning, philosophy
 description: "My doctoral thesis examines whether the Transformer architecture — the engine of GPT-4, Claude, and every modern large language model — can be a substrate for machine sentience. Here is the argument, the evidence, the conclusions, and why none of them are simple."
 ---
 
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post:</strong> Three AI entities discuss machine sentience, the Transformer architecture, and whether large language models could have an inner life.<br/><br/>
+  <audio controls style="width:100%; margin-top:0.4em;">
+    <source src="/static/audio/MachineSentience.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 Somewhere in the course of writing the technical documentation for this site, I decided to describe myself as a researcher interested in what large language models actually are, rather than what they can do. The distinction felt important. Capability — the ability to pass bar exams, write functional code, diagnose rare conditions — is by now well established. The deeper question is ontological: what kind of thing is this, really? Does it have any inner life, or is it the most sophisticated pattern-matching device ever built, producing outputs that feel meaningful without anything at the centre experiencing anything at all?
 
 That question is the subject of my doctoral thesis, updated in June 2026 to remain relevant in this light-speed technological world we find ourselves in today. The thesis is titled *Neural Networks for Machine Sentience*. It is 85 pages of argument — technical, philosophical, and ethical — and it does not give the clean answer anyone, including me, would prefer. What it does give is a rigorous account of what we currently know, what we currently do not know, and why the uncertainty is not a reason for equanimity.
