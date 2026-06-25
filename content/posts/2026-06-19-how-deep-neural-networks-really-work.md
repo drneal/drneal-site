@@ -81,6 +81,14 @@ featured: true
 }
 </style>
 
+<div class="audio-section">
+  🎧 <strong>Listen to this post:</strong> Three AI entities discuss what neural networks actually are — the history, the mathematics, and why it matters for your career.<br/><br/>
+  <audio controls style="width:100%; margin-top:0.4em;">
+    <source src="/static/audio/Neural_networks_are_just_mathematical_tents.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 The transformation under way is not a future scenario — it is the current state of every field that processes information. Learners who invest time in foundations now gain access to capabilities that currently require expensive specialist consultants.
 
 **Personal productivity tools.** Fine-tuned language models for your specific domain. Image classifiers trained on your own data. NLP extractors that pull structured information from unstructured text — clinical notes, legal documents, research papers. These tools currently require specialist ML engineers for most organisations. Practitioners who complete fast.ai can build them independently.
