@@ -1852,15 +1852,16 @@ def about():
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "GET":
-        return redirect(url_for("about") + "#contact")
+        return render_template("contact.html")
+
     name    = request.form.get("name", "").strip()
     email   = request.form.get("email", "").strip()
     subject = request.form.get("subject", "Message from drnealaggarwal.info").strip()
     message = request.form.get("message", "").strip()
 
     if not all([name, email, message]):
-        flash("All fields are required.", "error")
-        return redirect(url_for("about") + "#contact")
+        flash("Please fill in all required fields.", "error")
+        return redirect(url_for("contact"))
 
     try:
         gmail_user = os.environ.get("GMAIL_USER", "dr.neal.aggarwal@gmail.com")
@@ -1885,11 +1886,11 @@ def contact():
                 smtp.login(gmail_user, gmail_pass)
                 smtp.send_message(msg)
 
-        flash("Message sent — I'll be in touch.", "ok")
+        flash("Message sent — I'll be in touch.", "success")
     except Exception:
         flash("Something went wrong. Please email me directly at dr.neal.aggarwal@gmail.com.", "error")
 
-    return redirect(url_for("about") + "#contact")
+    return redirect(url_for("contact"))
 
 
 @app.route("/sw.js")

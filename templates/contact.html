@@ -1,0 +1,110 @@
+{% extends "base.html" %}{% block title %}Contact — Dr Neal Aggarwal{% endblock %}{% block content %}
+<div class="contact-page">
+  <div class="terminal-header">$ open /contact/</div>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash flash-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Get in touch</h2>
+      <p>I read every message. Response time is typically 24–48 hours.</p>
+      <ul class="contact-links">
+        <li>✉ <a href="mailto:dr.neal.aggarwal@gmail.com">dr.neal.aggarwal@gmail.com</a></li>
+        <li>🔗 <a href="https://github.com/drneal" target="_blank" rel="noopener">github.com/drneal</a></li>
+      </ul>
+      <div class="contact-note">
+        <p>Topics I'm happy to discuss:</p>
+        <ul>
+          <li>Medical AI and clinical NLP</li>
+          <li>fast.ai / deep learning curriculum</li>
+          <li>Collaborations and speaking</li>
+          <li>The Dr Detector project</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <form class="contact-form" method="POST" action="/contact">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="What's this about?">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Your message…"></textarea>
+        </div>
+        <button type="submit" class="btn-send">Send message →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+.contact-page { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+.terminal-header {
+  font-family: monospace;
+  color: #90caf9;
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  background: #0d1117;
+  border-left: 3px solid #1a237e;
+  border-radius: 0 4px 4px 0;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-info h2 { margin-top: 0; font-size: 1.3rem; color: var(--accent, #90caf9); }
+.contact-links { list-style: none; padding: 0; margin: 1.5rem 0; }
+.contact-links li { margin: 0.6rem 0; font-family: monospace; }
+.contact-links a { color: #90caf9; text-decoration: none; }
+.contact-links a:hover { text-decoration: underline; }
+.contact-note { margin-top: 2rem; font-size: 0.9rem; color: #aaa; }
+.contact-note ul { margin: 0.5rem 0; padding-left: 1.2rem; }
+.contact-note li { margin: 0.3rem 0; }
+.form-group { margin-bottom: 1.2rem; }
+.form-group label {
+  display: block; margin-bottom: 0.35rem;
+  font-size: 0.82rem; text-transform: uppercase;
+  letter-spacing: 0.05em; color: #aaa;
+}
+.form-group input, .form-group textarea {
+  width: 100%; box-sizing: border-box;
+  background: #0d1117; border: 1px solid #1e3a5f;
+  color: #e0e0e0; border-radius: 4px;
+  padding: 0.6rem 0.8rem; font-size: 0.95rem;
+  font-family: inherit; outline: none;
+  transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus { border-color: #1a237e; }
+.form-group textarea { resize: vertical; }
+.btn-send {
+  background: #1a237e; color: #e0e0e0;
+  border: none; border-radius: 4px;
+  padding: 0.7rem 1.5rem; font-size: 1rem;
+  cursor: pointer; transition: background 0.2s;
+}
+.btn-send:hover { background: #283593; }
+.flash { padding: 0.75rem 1rem; border-radius: 4px; margin-bottom: 1.5rem; font-size: 0.95rem; }
+.flash-success { background: #0d2b1a; border: 1px solid #1b5e20; color: #a5d6a7; }
+.flash-error   { background: #2b0d0d; border: 1px solid #b71c1c; color: #ef9a9a; }
+</style>
+{% endblock %}
