@@ -109,7 +109,7 @@ The exercise in this post is Jeremy Howard's recommended prelude to that chapter
 
 <div class="openoffice-box">
 📥 <strong>Download links (both are free and open source):</strong><br/><br/>
-→ <a href="https://www.libreoffice.org/download/libreoffice/" target="_blank">LibreOffice (recommended — most actively maintained)</a><br/>
+→ <a href="https://www.libreoffice.org/download/download-libreoffice/" target="_blank">LibreOffice (recommended — most actively maintained)</a><br/>
 → <a href="https://www.openoffice.org/download/" target="_blank">Apache OpenOffice</a><br/><br/>
 Both are completely free, contain no ads, and require no account or licence key. LibreOffice is the version most developers recommend today. For the purposes of this exercise, either works identically — all the commands below apply to both.
 </div>
