@@ -79,6 +79,11 @@ featured: true
 
 *This article accompanies Jeremy Howard's fast.ai Practical Deep Learning for Coders 2022 · Lesson 3, specifically the section from 1:04:30 to 1:20:47. It is part of the curriculum materials produced by Dr Neal for one-to-one AI Learners sessions.*
 
+<audio controls style="width:100%;margin:1rem 0;">
+  <source src="/static/audio/Build_a_Titanic_predictor_in_Excel.m4a" type="audio/mp4">
+  Your browser does not support the audio element.
+</audio>
+
 [▶ Watch Lesson 3 on YouTube — jump to 1:04:30](https://www.youtube.com/watch?v=hBBOjCiFcuo&t=3870s)
 
 ---
@@ -104,7 +109,7 @@ The exercise in this post is Jeremy Howard's recommended prelude to that chapter
 
 <div class="openoffice-box">
 📥 <strong>Download links (both are free and open source):</strong><br/><br/>
-→ <a href="https://www.libreoffice.org/download/download-libreoffice/" target="_blank">LibreOffice (recommended — most actively maintained)</a><br/>
+→ <a href="https://www.libreoffice.org/download/libreoffice/" target="_blank">LibreOffice (recommended — most actively maintained)</a><br/>
 → <a href="https://www.openoffice.org/download/" target="_blank">Apache OpenOffice</a><br/><br/>
 Both are completely free, contain no ads, and require no account or licence key. LibreOffice is the version most developers recommend today. For the purposes of this exercise, either works identically — all the commands below apply to both.
 </div>
@@ -129,7 +134,7 @@ Both stages are trained by **gradient descent**: a numerical optimisation that a
 
 The fast.ai course uses the Titanic dataset from Kaggle. You can download `train.csv` from [kaggle.com/c/titanic/data](https://www.kaggle.com/c/titanic/data) (free account required) or use Jeremy's course spreadsheet directly from the course repo:
 
-[▶ Download titanic.xlsx from GitHub](https://github.com/fastai/course22/raw/master/xl/titanic.xlsx)
+[▶ Download titanic-backprop.xlsx from GitHub](https://github.com/fastai/course22/raw/master/xl/titanic-backprop.xlsx)
 
 If using your own CSV, open it in Excel or LibreOffice Calc via **File → Open**.
 
