@@ -104,7 +104,7 @@ The exercise in this post is Jeremy Howard's recommended prelude to that chapter
 
 <div class="openoffice-box">
 📥 <strong>Download links (both are free and open source):</strong><br/><br/>
-→ <a href="https://www.libreoffice.org/download/libreoffice/" target="_blank">LibreOffice (recommended — most actively maintained)</a><br/>
+→ <a href="https://www.libreoffice.org/download/download-libreoffice/" target="_blank">LibreOffice (recommended — most actively maintained)</a><br/>
 → <a href="https://www.openoffice.org/download/" target="_blank">Apache OpenOffice</a><br/><br/>
 Both are completely free, contain no ads, and require no account or licence key. LibreOffice is the version most developers recommend today. For the purposes of this exercise, either works identically — all the commands below apply to both.
 </div>
@@ -129,7 +129,7 @@ Both stages are trained by **gradient descent**: a numerical optimisation that a
 
 The fast.ai course uses the Titanic dataset from Kaggle. You can download `train.csv` from [kaggle.com/c/titanic/data](https://www.kaggle.com/c/titanic/data) (free account required) or use Jeremy's course spreadsheet directly from the course repo:
 
-[▶ Download titanic-backprop.xlsx from GitHub](https://github.com/fastai/course22/raw/master/xl/titanic-backprop.xlsx)
+[▶ Download titanic.xlsx from GitHub](https://github.com/fastai/course22/raw/master/xl/titanic.xlsx)
 
 If using your own CSV, open it in Excel or LibreOffice Calc via **File → Open**.
 
