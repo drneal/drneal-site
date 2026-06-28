@@ -118,7 +118,7 @@ def load_posts(limit: int = None) -> list[dict]:
         excerpt = ""
         for chunk in excerpt_src:
             stripped = chunk.strip().lstrip("#").strip()
-            if stripped and not stripped.startswith("!["):
+            if stripped and not stripped.startswith("![") and not stripped.startswith("<"):
                 excerpt = stripped[:300]
                 if len(stripped) > 300:
                     excerpt += "…"
