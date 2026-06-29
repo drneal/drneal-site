@@ -136,7 +136,7 @@ Both stages are trained by **gradient descent**: a numerical optimisation that a
 
 The fast.ai course uses the Titanic dataset from Kaggle. You can download `train.csv` from [kaggle.com/c/titanic/data](https://www.kaggle.com/c/titanic/data) (free account required) or use Jeremy's course spreadsheet directly from the course repo:
 
-[▶ Download titanic-backprop.xlsx from GitHub](https://github.com/fastai/course22/tree/master/xl)
+[▶ Download titanic.xlsx from GitHub](https://github.com/fastai/course22/tree/master/xl)
 
 If using your own CSV, open it in Excel or LibreOffice Calc via **File → Open**.
 
