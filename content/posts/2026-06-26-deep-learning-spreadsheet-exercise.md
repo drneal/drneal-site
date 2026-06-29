@@ -157,7 +157,7 @@ Jeremy uses a small, cleaned subset. Set up your spreadsheet so that **Row 1 is 
 | G | `fare` | Ticket fare (numeric) |
 | H | `embarked` | **Convert to numeric:** S = 0, C = 1, Q = 2 |
 
-To remove rows where a column value is zero or empty, use AutoFilter:
+In OpenOffice Calc, to remove rows where a column value is zero or empty, use AutoFilter:
 
 1. Click any cell in your data range
 2. **Data → AutoFilter** — dropdown arrows appear on each column header
