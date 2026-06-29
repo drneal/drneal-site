@@ -94,6 +94,8 @@ Chapter 4 of *Deep Learning for Coders with fastai and PyTorch* is where the hai
 
 The exercise in this post is Jeremy Howard's recommended prelude to that chapter. If you can build a working neural network in a spreadsheet — and actually understand every cell — you will find Chapter 4 considerably less intimidating. The algebra is identical. The only difference is that the spreadsheet makes every intermediate value visible and touchable, whereas Python compresses it into a few lines of tensor arithmetic. If you have not yet worked through the full Lesson 3 material — gradient descent, ReLU, and how neural networks approximate any function — [read that companion post first](/post/2026-06-19-how-deep-neural-networks-really-work) before attempting the steps below.
 
+This exercise is in the video, but not in chapter 3 nor 4 in the book. It is important to follow these steps keying in the column headings, figures and formulae as in these steps so you get a real feel for how a neural network works. You will be surprised at how much easier this exercise will make reading chapter 4 and all the other technologies that come after that.
+
 <div class="callout">
 💡 <strong>Three versions of this exercise, in increasing order of ambition:</strong><br/>
 1. <strong>Excel</strong> (Windows/Mac) — follow the steps below exactly as Jeremy does in the video<br/>
