@@ -183,9 +183,10 @@ This exercise is in the video, but not in chapter 3 nor 4 in the book. It is imp
 **OpenOffice/LibreOffice Calc — identical formula:**
 
 <div class="oo-cmd">
-=IF(B2="male", 0, 1)
+=IF(B2="male"; 0; 1)
 </div>
 
+Note the seperator in Open Office is a ';' not a ',' as in Excel.
 Copy this formula down the entire column. Do the same for Embarked using nested IFs or `SWITCH`.
 
 ---
