@@ -598,8 +598,9 @@ main { flex: 1; padding: 2.5rem 0 4rem; }
   margin-bottom: 0.75rem;
 }
 
-.demo-card__badge--live   { background: rgba(16,185,129,0.15); color: var(--green); border: 1px solid var(--green-dim); }
-.demo-card__badge--coming { background: rgba(245,158,11,0.1);  color: var(--amber); border: 1px solid var(--amber-dim); }
+.demo-card__badge--live     { background: rgba(16,185,129,0.15); color: var(--green); border: 1px solid var(--green-dim); }
+.demo-card__badge--coming   { background: rgba(245,158,11,0.1);  color: var(--amber); border: 1px solid var(--amber-dim); }
+.demo-card__badge--download { background: rgba(99,179,237,0.12); color: #63b3ed;      border: 1px solid rgba(99,179,237,0.3); }
 
 .demo-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
 .demo-card p  { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; }

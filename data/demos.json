@@ -1,6 +1,13 @@
 {
   "demos": [
     {
+      "title": "DR Detector — AI Diabetic Retinopathy Screener",
+      "description": "Fully offline AI screening app for diabetic retinopathy. Attach a low-cost fundus camera adapter to any smartphone, capture a retinal image, and get a colour-coded severity grade (No DR / Mild / Moderate / Severe NPDR) with a specific clinical action recommendation — all in under five seconds. No internet. No cloud. No patient data ever leaves the device. Built on EfficientNet-B0 trained on 88,000 labelled fundus photographs; ~91% sensitivity for referable DR. Generates a formatted PDF referral report. Runs on iOS, Android, Windows, macOS, and Linux. Designed for primary care and community screening in low-resource settings.",
+      "status": "download",
+      "url": "/post/2026-07-01-dr-detector-user-guide",
+      "stack": ["React Native", "Expo", "TFLite", "ONNX Runtime", "EfficientNet-B0", "SQLite", "Electron"]
+    },
+    {
       "title": "Drug Interaction & Polypharmacy Checker",
       "description": "Enter a medication list and screen every pair against a curated database of ~90 clinically significant interactions graded contraindicated, major, or moderate. Each flagged pair shows mechanism, clinical effect, and management recommendation. Covers CYP interactions, QTc prolongation, serotonin syndrome, triple whammy AKI, opioid + benzodiazepine respiratory depression, and more.",
       "status": "live",

@@ -136,8 +136,8 @@
   <div class="demos-grid">
     {% for demo in demos %}
     <div class="card demo-card">
-      <span class="demo-card__badge demo-card__badge--{{ 'live' if demo.status == 'live' else 'coming' }}">
-        {{ '● LIVE' if demo.status == 'live' else '◌ COMING SOON' }}
+      <span class="demo-card__badge demo-card__badge--{{ 'live' if demo.status == 'live' else ('download' if demo.status == 'download' else 'coming') }}">
+        {{ '● LIVE' if demo.status == 'live' else ('⬇ DOWNLOAD' if demo.status == 'download' else '◌ COMING SOON') }}
       </span>
       <h3>{{ demo.title }}</h3>
       <p>{{ demo.description }}</p>
@@ -152,6 +152,8 @@
         {% else %}
         <a class="demo-card__cta" href="{{ demo.url }}">Launch Demo →</a>
         {% endif %}
+      {% elif demo.url and demo.status == 'download' %}
+      <a class="demo-card__cta" href="{{ demo.url }}">Get the App →</a>
       {% elif demo.status == 'coming' %}
       <span class="text-mono text-dim" style="font-size:0.78rem">In development</span>
       {% endif %}
