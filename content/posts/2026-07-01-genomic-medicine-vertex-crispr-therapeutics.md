@@ -6,7 +6,7 @@ tags: CRISPR, gene editing, Vertex Pharmaceuticals, CRISPR Therapeutics, CASGEVY
 level: Advanced
 read_time: 22 min
 summary: "CASGEVY proved CRISPR could work as medicine. Three years later the harder question is whether it can work as a business. A deep dive into Vertex Pharmaceuticals, CRISPR Therapeutics, and the genomic medicine sector — the science, the pipeline, the balance sheets, and a full year of stock chart data."
-featured: true
+featured: false
 ---
 
 <div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
