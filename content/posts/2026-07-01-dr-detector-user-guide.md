@@ -64,6 +64,8 @@ This is the one piece of hardware you need to buy. It is a small clip or lens at
 | **Peek Retina Adapter** | Android | ~$200 | Designed for low-resource settings |
 | **DIY 20D Lens Adapter** | Any phone | $50–100 | 3D-printable frame + 20-dioptre condensing lens |
 
+** In the Kenyan/East African setting I am able to provide through my robotics labs 3D printed frames and the condensing lens for a small fee lowering the cost per unit to $50 per testing unit.
+
 For most primary care or community settings, the **Peek Retina Adapter** or **Volk iNview** strike the best balance of cost and clinical quality. The DIY option is surprisingly capable if you have access to a 3D printer.
 
 ### 3. The DR Detector App Installed
