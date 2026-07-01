@@ -2,7 +2,7 @@
 title: "DR Detector: A Doctor's Complete Guide to AI-Powered Diabetic Retinopathy Screening"
 date: 2026-07-01
 tags: ["diabetic retinopathy", "AI", "clinical tools", "ophthalmology", "screening", "mobile health", "offline", "fundus photography"]
-summary: "A step-by-step, jargon-free guide for doctors and nurses who want to use DR Detector — the offline AI retinal screening app — in their clinic today. No tech background required."
+summary: "A step-by-step, jargon-free guide for doctors and nurses who want to use DR Detector — the offline AI retinal screening app — in their clinic today. No technical background required."
 ---
 
 # DR Detector: A Doctor's Complete Guide to AI-Powered Diabetic Retinopathy Screening
