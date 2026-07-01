@@ -1,0 +1,26 @@
+{
+  "name": "DR Detector",
+  "short_name": "DR Detector",
+  "description": "Offline AI diabetic retinopathy screening app",
+  "start_url": "/dr-detector",
+  "display": "standalone",
+  "background_color": "#0A0E1A",
+  "theme_color": "#0A0E1A",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/static/dr-detector-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/dr-detector-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["medical", "health", "utilities"],
+  "screenshots": []
+}

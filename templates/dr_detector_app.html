@@ -1,0 +1,868 @@
+{% extends "base.html" %}
+{% block title %}DR Detector — Retinal Screening App{% endblock %}
+
+{% block head_extra %}
+<link rel="manifest" href="/static/dr-detector-manifest.json">
+<meta name="theme-color" content="#0A0E1A">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="DR Detector">
+<style>
+  /* ── App shell ────────────────────────────────────────────────────────── */
+  #drd-app {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 0 80px;
+    font-family: 'Courier New', monospace;
+    min-height: 100vh;
+  }
+  .drd-header {
+    background: #0A0E1A;
+    border-bottom: 1px solid #2A3550;
+    padding: 12px 16px 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .drd-header h1 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #4B9FFF;
+    letter-spacing: 2px;
+    margin: 0;
+    flex: 1;
+  }
+  .drd-header .badge {
+    font-size: 0.6rem;
+    background: rgba(0,200,83,0.15);
+    color: #00C853;
+    border: 1px solid rgba(0,200,83,0.3);
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+  }
+
+  /* ── Tab bar ──────────────────────────────────────────────────────────── */
+  .drd-tabs {
+    display: flex;
+    border-bottom: 1px solid #2A3550;
+    background: #0A0E1A;
+  }
+  .drd-tab {
+    flex: 1;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    color: #8A9BC0;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'Courier New', monospace;
+  }
+  .drd-tab.active {
+    color: #4B9FFF;
+    border-bottom-color: #4B9FFF;
+  }
+
+  /* ── Screens ──────────────────────────────────────────────────────────── */
+  .drd-screen { display: none; padding: 16px; }
+  .drd-screen.active { display: block; }
+
+  /* ── Camera viewport ──────────────────────────────────────────────────── */
+  .viewport-wrap {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    border: 2px solid #2A3550;
+    aspect-ratio: 1;
+    margin-bottom: 14px;
+  }
+  #camera-feed, #photo-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .viewport-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .guide-circle {
+    width: 72%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px dashed rgba(255,255,255,0.45);
+  }
+  .guide-label {
+    position: absolute;
+    bottom: 10px;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.5px;
+  }
+  .viewport-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #0d1117;
+    color: #8A9BC0;
+    font-size: 0.8rem;
+    gap: 10px;
+  }
+  .viewport-placeholder svg { opacity: 0.4; }
+
+  /* ── Patient ID row ───────────────────────────────────────────────────── */
+  .patient-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    align-items: stretch;
+  }
+  .id-input-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #131929;
+    border: 1px solid #2A3550;
+    border-radius: 8px;
+    padding: 0 10px;
+    gap: 6px;
+  }
+  .id-input-wrap svg { opacity: 0.5; flex-shrink: 0; }
+  #patient-id {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: #F0F4FF;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    padding: 12px 0;
+    text-transform: uppercase;
+  }
+  #patient-id::placeholder { color: #8A9BC0; font-weight: 400; text-transform: none; }
+  .new-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #131929;
+    border: 1px solid #4B9FFF;
+    border-radius: 8px;
+    padding: 0 14px;
+    color: #4B9FFF;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
+  }
+  .new-btn:hover { background: rgba(75,159,255,0.1); }
+
+  /* ── Capture button ───────────────────────────────────────────────────── */
+  .capture-btn {
+    width: 100%;
+    padding: 18px;
+    background: #4B9FFF;
+    border: none;
+    border-radius: 12px;
+    color: #0A0E1A;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Courier New', monospace;
+    transition: opacity 0.15s;
+  }
+  .capture-btn:disabled { opacity: 0.6; cursor: default; }
+  .capture-btn:not(:disabled):hover { opacity: 0.9; }
+  .tip-text {
+    text-align: center;
+    color: #8A9BC0;
+    font-size: 0.65rem;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  /* ── Analysis screen ──────────────────────────────────────────────────── */
+  .analysis-image-wrap {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #2A3550;
+    margin-bottom: 14px;
+    max-height: 200px;
+  }
+  .analysis-image-wrap img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Progress phase */
+  #phase-analysing { display: none; }
+  #phase-result    { display: none; }
+  .analysis-steps {
+    background: #131929;
+    border: 1px solid #2A3550;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .step-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 0.8rem;
+    color: #8A9BC0;
+  }
+  .step-row.done { color: #00C853; }
+  .step-row.active { color: #4B9FFF; }
+  .step-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #2A3550;
+    flex-shrink: 0;
+  }
+  .step-row.done .step-dot   { background: #00C853; }
+  .step-row.active .step-dot { background: #4B9FFF; animation: pulse 0.8s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  /* Result card */
+  .result-card {
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 14px;
+    border: 2px solid;
+    text-align: center;
+  }
+  .result-card .grade-label {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    opacity: 0.8;
+  }
+  .result-card .grade-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .result-card .confidence {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 12px;
+  }
+  .result-card .action-box {
+    background: rgba(0,0,0,0.25);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .prob-bars { margin-bottom: 14px; }
+  .prob-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 0.72rem;
+  }
+  .prob-label { width: 100px; color: #8A9BC0; flex-shrink: 0; }
+  .prob-track { flex: 1; background: #2A3550; border-radius: 3px; height: 6px; overflow: hidden; }
+  .prob-fill  { height: 100%; border-radius: 3px; transition: width 0.6s ease; }
+  .prob-pct   { width: 36px; text-align: right; color: #F0F4FF; font-weight: 700; }
+
+  /* Action buttons */
+  .action-btns { display: flex; gap: 8px; margin-bottom: 8px; }
+  .btn-save, .btn-pdf, .btn-next {
+    flex: 1;
+    padding: 12px 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    transition: opacity 0.15s;
+  }
+  .btn-save { background: #131929; border: 1px solid #2A3550; color: #F0F4FF; }
+  .btn-pdf  { background: #131929; border: 1px solid #4B9FFF; color: #4B9FFF; }
+  .btn-next { background: #4B9FFF; color: #0A0E1A; }
+  .btn-save:hover, .btn-pdf:hover, .btn-next:hover { opacity: 0.85; }
+  .btn-save.saved { border-color: #00C853; color: #00C853; }
+
+  /* ── Demo notice ──────────────────────────────────────────────────────── */
+  .demo-notice {
+    background: rgba(255,214,0,0.08);
+    border: 1px solid rgba(255,214,0,0.25);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.72rem;
+    color: #FFD600;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  /* ── History screen ───────────────────────────────────────────────────── */
+  .history-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .history-filter input {
+    flex: 1;
+    background: #131929;
+    border: 1px solid #2A3550;
+    border-radius: 8px;
+    color: #F0F4FF;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+    outline: none;
+  }
+  .clear-btn {
+    background: none;
+    border: 1px solid #2A3550;
+    border-radius: 8px;
+    color: #8A9BC0;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+  }
+  .history-empty {
+    text-align: center;
+    color: #8A9BC0;
+    font-size: 0.85rem;
+    padding: 40px 0;
+  }
+  .history-card {
+    background: #131929;
+    border: 1px solid #2A3550;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .history-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .history-info { flex: 1; min-width: 0; }
+  .history-patient { font-weight: 700; color: #F0F4FF; font-size: 0.85rem; }
+  .history-meta { color: #8A9BC0; font-size: 0.7rem; margin-top: 2px; }
+  .history-grade { font-size: 0.75rem; font-weight: 700; text-align: right; }
+  .history-conf  { font-size: 0.65rem; color: #8A9BC0; text-align: right; }
+
+  /* ── Install banner ───────────────────────────────────────────────────── */
+  #install-banner {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: #131929;
+    border-top: 2px solid #4B9FFF;
+    padding: 14px 16px;
+    z-index: 100;
+    align-items: center;
+    gap: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  #install-banner p { flex: 1; color: #F0F4FF; font-size: 0.8rem; margin: 0; }
+  #install-btn {
+    background: #4B9FFF;
+    border: none;
+    border-radius: 8px;
+    color: #0A0E1A;
+    font-weight: 800;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    font-family: 'Courier New', monospace;
+  }
+  #dismiss-btn {
+    background: none;
+    border: none;
+    color: #8A9BC0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 4px;
+  }
+
+  /* ── Print styles ─────────────────────────────────────────────────────── */
+  @media print {
+    .drd-header, .drd-tabs, .drd-screen:not(#screen-analysis),
+    .action-btns, .demo-notice, #install-banner, nav, footer,
+    .terminal, .page-hero { display: none !important; }
+    #screen-analysis { display: block !important; padding: 0; }
+    body { background: white !important; color: black !important; }
+    .result-card { border-color: #ccc !important; color: black !important;
+      background: #f9f9f9 !important; }
+    .result-card .action-box { background: #eee !important; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="drd-app">
+
+  <!-- Header -->
+  <div class="drd-header">
+    <h1>DR DETECTOR</h1>
+    <span class="badge">⬇ DEMO v1.2</span>
+  </div>
+
+  <!-- Demo notice -->
+  <div style="padding: 12px 16px 0">
+    <div class="demo-notice">
+      ⚠ <strong>Demo mode:</strong> AI inference is simulated (weighted random output). All other features — camera, patient records, PDF reports — are fully functional. A real trained model will be substituted when available.
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="drd-tabs">
+    <button class="drd-tab active" onclick="showScreen('capture', this)">📷 CAPTURE</button>
+    <button class="drd-tab" onclick="showScreen('analysis', this)" id="tab-analysis" disabled style="opacity:0.4">🔬 ANALYSIS</button>
+    <button class="drd-tab" onclick="showScreen('history', this)">📋 HISTORY</button>
+  </div>
+
+  <!-- ── CAPTURE SCREEN ──────────────────────────────────────────────── -->
+  <div class="drd-screen active" id="screen-capture">
+
+    <div class="viewport-wrap">
+      <video id="camera-feed" autoplay playsinline muted style="display:none; width:100%; height:100%; object-fit:cover;"></video>
+      <canvas id="capture-canvas" style="display:none;"></canvas>
+      <div id="viewport-placeholder" class="viewport-placeholder">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 0 2-2l2-3h10l2 3a2 2 0 0 0 2 2z"/>
+          <circle cx="12" cy="13" r="4"/>
+        </svg>
+        <span>Tap below to start camera</span>
+      </div>
+      <div class="viewport-overlay" id="camera-overlay" style="display:none;">
+        <div class="guide-circle"></div>
+        <span class="guide-label">Align optic disc at centre</span>
+      </div>
+    </div>
+
+    <div class="patient-row">
+      <div class="id-input-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A9BC0" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        <input id="patient-id" type="text" placeholder="Patient ID" maxlength="20" autocomplete="off" spellcheck="false">
+      </div>
+      <button class="new-btn" onclick="newPatient()">+ NEW</button>
+    </div>
+
+    <button class="capture-btn" id="capture-btn" onclick="handleCapture()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 0 2-2l2-3h10l2 3a2 2 0 0 0 2 2z"/>
+        <circle cx="12" cy="13" r="4"/>
+      </svg>
+      <span id="capture-btn-text">START CAMERA</span>
+    </button>
+
+    <p class="tip-text">
+      Attach retinal camera adapter · Dim the room · Rest wrist on patient's cheek
+    </p>
+  </div>
+
+  <!-- ── ANALYSIS SCREEN ────────────────────────────────────────────────── -->
+  <div class="drd-screen" id="screen-analysis">
+
+    <div class="analysis-image-wrap">
+      <img id="analysis-img" src="" alt="Captured retinal image">
+    </div>
+
+    <div style="font-size:0.75rem; color:#8A9BC0; margin-bottom:10px;">
+      Patient: <strong id="analysis-patient" style="color:#F0F4FF"></strong>
+      &nbsp;|&nbsp; <span id="analysis-time"></span>
+    </div>
+
+    <!-- Phase 1: analysing -->
+    <div id="phase-analysing">
+      <div class="analysis-steps" id="steps-container">
+        <div class="step-row active" id="step-0">
+          <div class="step-dot"></div> Loading model…
+        </div>
+        <div class="step-row" id="step-1">
+          <div class="step-dot"></div> Preprocessing image
+        </div>
+        <div class="step-row" id="step-2">
+          <div class="step-dot"></div> Running inference
+        </div>
+        <div class="step-row" id="step-3">
+          <div class="step-dot"></div> Calculating confidence
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2: result -->
+    <div id="phase-result">
+      <div class="result-card" id="result-card">
+        <div class="grade-label">SEVERITY GRADE</div>
+        <div class="grade-name" id="result-grade-name"></div>
+        <div class="confidence" id="result-confidence"></div>
+        <div class="action-box" id="result-action"></div>
+      </div>
+
+      <div class="prob-bars" id="prob-bars"></div>
+
+      <div class="action-btns">
+        <button class="btn-save" id="btn-save" onclick="saveResult()">💾 SAVE</button>
+        <button class="btn-pdf" onclick="exportPDF()">📄 PDF</button>
+        <button class="btn-next" onclick="nextPatient()">NEXT →</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── HISTORY SCREEN ─────────────────────────────────────────────────── -->
+  <div class="drd-screen" id="screen-history">
+    <div class="history-filter">
+      <input type="text" id="history-search" placeholder="Filter by Patient ID…" oninput="renderHistory()">
+      <button class="clear-btn" onclick="document.getElementById('history-search').value=''; renderHistory()">✕</button>
+    </div>
+    <div id="history-list"></div>
+  </div>
+
+</div>
+
+<!-- Install banner -->
+<div id="install-banner">
+  <p>Install DR Detector on your home screen for offline use</p>
+  <button id="install-btn" onclick="installApp()">Install App</button>
+  <button id="dismiss-btn" onclick="document.getElementById('install-banner').style.display='none'">✕</button>
+</div>
+
+<script>
+// ── Constants ─────────────────────────────────────────────────────────────────
+const SEVERITY = {
+  0: { label:'No Retinopathy',    color:'#00C853', bg:'rgba(0,200,83,0.1)',    border:'rgba(0,200,83,0.4)',    action:'Routine screening — recheck in 12 months' },
+  1: { label:'Mild NPDR',         color:'#FFD600', bg:'rgba(255,214,0,0.1)',   border:'rgba(255,214,0,0.4)',   action:'Follow-up with eye care provider within 6 months' },
+  2: { label:'Moderate NPDR',     color:'#FF6D00', bg:'rgba(255,109,0,0.1)',   border:'rgba(255,109,0,0.4)',   action:'Refer to ophthalmologist within 3 months' },
+  3: { label:'Severe NPDR / PDR', color:'#D50000', bg:'rgba(213,0,0,0.12)',    border:'rgba(213,0,0,0.45)',    action:'URGENT — specialist referral required immediately' },
+};
+const PROB_LABELS = ['No DR', 'Mild NPDR', 'Moderate NPDR', 'Severe NPDR'];
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let cameraActive   = false;
+let stream         = null;
+let lastImageData  = null;
+let currentResult  = null;
+let currentPatient = null;
+let resultSaved    = false;
+let deferredPrompt = null;
+
+// ── DB (IndexedDB) ─────────────────────────────────────────────────────────────
+const DB_NAME    = 'dr-detector-db';
+const DB_VERSION = 1;
+let db = null;
+
+function openDB() {
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME, DB_VERSION);
+    req.onupgradeneeded = e => {
+      const d = e.target.result;
+      if (!d.objectStoreNames.contains('screenings')) {
+        const store = d.createObjectStore('screenings', { keyPath: 'id', autoIncrement: true });
+        store.createIndex('patientId', 'patientId', { unique: false });
+        store.createIndex('timestamp', 'timestamp', { unique: false });
+      }
+    };
+    req.onsuccess = e => { db = e.target.result; resolve(db); };
+    req.onerror   = e => reject(e.target.error);
+  });
+}
+
+function saveScreening(record) {
+  return new Promise((resolve, reject) => {
+    const tx   = db.transaction('screenings', 'readwrite');
+    const req  = tx.objectStore('screenings').add(record);
+    req.onsuccess = () => resolve(req.result);
+    req.onerror   = () => reject(req.error);
+  });
+}
+
+function getAllScreenings() {
+  return new Promise((resolve, reject) => {
+    const tx  = db.transaction('screenings', 'readonly');
+    const req = tx.objectStore('screenings').getAll();
+    req.onsuccess = () => resolve(req.result.reverse());
+    req.onerror   = () => reject(req.error);
+  });
+}
+
+// ── Screen navigation ─────────────────────────────────────────────────────────
+function showScreen(name, tabEl) {
+  document.querySelectorAll('.drd-screen').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.drd-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+  if (tabEl) tabEl.classList.add('active');
+  if (name === 'history') renderHistory();
+}
+
+// ── Camera ────────────────────────────────────────────────────────────────────
+async function startCamera() {
+  try {
+    stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: { ideal: 'environment' }, width: { ideal: 1280 }, height: { ideal: 1280 } },
+      audio: false,
+    });
+    const video = document.getElementById('camera-feed');
+    video.srcObject = stream;
+    video.style.display = 'block';
+    document.getElementById('viewport-placeholder').style.display = 'none';
+    document.getElementById('camera-overlay').style.display = 'flex';
+    cameraActive = true;
+    document.getElementById('capture-btn-text').textContent = 'CAPTURE IMAGE';
+  } catch (err) {
+    alert('Camera access denied or unavailable. Please allow camera access in your browser settings.');
+  }
+}
+
+function stopCamera() {
+  if (stream) { stream.getTracks().forEach(t => t.stop()); stream = null; }
+  cameraActive = false;
+}
+
+// ── Capture flow ──────────────────────────────────────────────────────────────
+async function handleCapture() {
+  if (!cameraActive) { await startCamera(); return; }
+
+  const pid = document.getElementById('patient-id').value.trim().toUpperCase();
+  if (!pid) { alert('Please enter a Patient ID before capturing.'); return; }
+
+  const btn = document.getElementById('capture-btn');
+  btn.disabled = true;
+  document.getElementById('capture-btn-text').textContent = 'CAPTURING…';
+
+  // Grab frame from video
+  const video  = document.getElementById('camera-feed');
+  const canvas = document.getElementById('capture-canvas');
+  canvas.width  = video.videoWidth  || 640;
+  canvas.height = video.videoHeight || 640;
+  canvas.getContext('2d').drawImage(video, 0, 0);
+  lastImageData  = canvas.toDataURL('image/jpeg', 0.9);
+  currentPatient = pid;
+  resultSaved    = false;
+
+  stopCamera();
+  video.style.display = 'none';
+  document.getElementById('viewport-placeholder').style.display = 'flex';
+  document.getElementById('camera-overlay').style.display = 'none';
+  btn.disabled = false;
+  document.getElementById('capture-btn-text').textContent = 'START CAMERA';
+
+  runAnalysis(lastImageData, pid);
+}
+
+// ── Analysis ──────────────────────────────────────────────────────────────────
+async function runAnalysis(imageData, patientId) {
+  // Switch to analysis screen
+  document.querySelectorAll('.drd-screen').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.drd-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('screen-analysis').classList.add('active');
+  document.getElementById('tab-analysis').classList.add('active');
+  document.getElementById('tab-analysis').disabled = false;
+  document.getElementById('tab-analysis').style.opacity = '1';
+
+  // Set image + patient
+  document.getElementById('analysis-img').src = imageData;
+  document.getElementById('analysis-patient').textContent = patientId;
+  document.getElementById('analysis-time').textContent = new Date().toLocaleString();
+
+  // Show analysing phase
+  document.getElementById('phase-analysing').style.display = 'block';
+  document.getElementById('phase-result').style.display = 'none';
+
+  // Reset steps
+  [0,1,2,3].forEach(i => {
+    const el = document.getElementById('step-' + i);
+    el.className = 'step-row' + (i === 0 ? ' active' : '');
+  });
+
+  const delays = [600, 700, 900, 500];
+  for (let i = 0; i < 4; i++) {
+    await sleep(delays[i]);
+    const el = document.getElementById('step-' + i);
+    el.className = 'step-row done';
+    if (i < 3) document.getElementById('step-' + (i+1)).className = 'step-row active';
+  }
+
+  await sleep(300);
+
+  // Simulate inference
+  const probs = simulateProbabilities();
+  const severity = probs.indexOf(Math.max(...probs));
+  const confidence = probs[severity];
+
+  currentResult = { patientId, severity, confidence, probs, imageData, timestamp: new Date().toISOString(), inferenceMs: delays.reduce((a,b)=>a+b,0) };
+
+  showResult(currentResult);
+}
+
+function simulateProbabilities() {
+  const weights = [0.60, 0.20, 0.12, 0.08];
+  const raw = weights.map(w => w + (Math.random() - 0.5) * 0.18);
+  const sum = raw.reduce((a,b) => a+b, 0);
+  return raw.map(v => Math.max(0.001, v / sum));
+}
+
+function showResult(r) {
+  document.getElementById('phase-analysing').style.display = 'none';
+  document.getElementById('phase-result').style.display = 'block';
+
+  const s = SEVERITY[r.severity];
+  const card = document.getElementById('result-card');
+  card.style.background     = s.bg;
+  card.style.borderColor    = s.border;
+  card.style.color          = s.color;
+  document.getElementById('result-grade-name').textContent  = s.label;
+  document.getElementById('result-confidence').textContent  = `Confidence: ${(r.confidence * 100).toFixed(1)}%  ·  ${r.inferenceMs}ms`;
+  document.getElementById('result-action').textContent      = s.action;
+
+  // Prob bars
+  const bars = document.getElementById('prob-bars');
+  bars.innerHTML = PROB_LABELS.map((lbl, i) => `
+    <div class="prob-row">
+      <span class="prob-label">${lbl}</span>
+      <div class="prob-track"><div class="prob-fill" style="width:${(r.probs[i]*100).toFixed(1)}%; background:${SEVERITY[i].color}"></div></div>
+      <span class="prob-pct">${(r.probs[i]*100).toFixed(1)}%</span>
+    </div>`).join('');
+
+  document.getElementById('btn-save').className = 'btn-save';
+  document.getElementById('btn-save').textContent = '💾 SAVE';
+  resultSaved = false;
+}
+
+// ── Save / PDF / Next ─────────────────────────────────────────────────────────
+async function saveResult() {
+  if (!currentResult || resultSaved) return;
+  await saveScreening({
+    patientId:   currentResult.patientId,
+    severity:    currentResult.severity,
+    confidence:  currentResult.confidence,
+    probs:       currentResult.probs,
+    inferenceMs: currentResult.inferenceMs,
+    timestamp:   currentResult.timestamp,
+    // Note: image not stored (IndexedDB quota); store reference only
+  });
+  resultSaved = true;
+  const btn = document.getElementById('btn-save');
+  btn.className = 'btn-save saved';
+  btn.textContent = '✓ SAVED';
+}
+
+function exportPDF() {
+  if (!currentResult) return;
+  window.print();
+}
+
+async function nextPatient() {
+  if (!resultSaved && currentResult) await saveResult();
+  currentResult = null;
+  document.getElementById('tab-analysis').disabled = true;
+  document.getElementById('tab-analysis').style.opacity = '0.4';
+  showScreen('capture', document.querySelector('.drd-tab'));
+  document.querySelector('.drd-tab').classList.add('active');
+  document.getElementById('patient-id').value = '';
+}
+
+function newPatient() {
+  const id = 'PT-' + Date.now().toString().slice(-6);
+  document.getElementById('patient-id').value = id;
+}
+
+// ── History ────────────────────────────────────────────────────────────────────
+async function renderHistory() {
+  const filter = (document.getElementById('history-search').value || '').toUpperCase();
+  const list   = document.getElementById('history-list');
+  let records  = await getAllScreenings();
+  if (filter) records = records.filter(r => r.patientId.toUpperCase().includes(filter));
+
+  if (!records.length) {
+    list.innerHTML = '<div class="history-empty">No screenings recorded yet.</div>';
+    return;
+  }
+
+  list.innerHTML = records.map(r => {
+    const s   = SEVERITY[r.severity];
+    const dt  = new Date(r.timestamp).toLocaleString();
+    return `<div class="history-card">
+      <div class="history-dot" style="background:${s.color}"></div>
+      <div class="history-info">
+        <div class="history-patient">${r.patientId}</div>
+        <div class="history-meta">${dt}</div>
+      </div>
+      <div>
+        <div class="history-grade" style="color:${s.color}">${s.label}</div>
+        <div class="history-conf">${(r.confidence*100).toFixed(1)}% conf.</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── PWA install ────────────────────────────────────────────────────────────────
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  const banner = document.getElementById('install-banner');
+  banner.style.display = 'flex';
+});
+
+async function installApp() {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  deferredPrompt = null;
+  document.getElementById('install-banner').style.display = 'none';
+}
+
+// ── Utils ──────────────────────────────────────────────────────────────────────
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// ── Init ───────────────────────────────────────────────────────────────────────
+openDB().catch(console.error);
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/static/sw.js').catch(console.error);
+}
+</script>
+{% endblock %}

@@ -1,8 +1,15 @@
-// Voice Clinical Notes — Service Worker
-// Caches the app shell for offline use; network-first for API calls.
+// drnealaggarwal.info — Service Worker
+// Caches app shells for offline use; network-first for API calls.
 
-const CACHE = 'vcn-v1';
-const SHELL = ['/voice-notes', '/static/css/style.css'];
+const CACHE = 'dna-v2';
+const SHELL = [
+  '/voice-notes',
+  '/dr-detector',
+  '/static/css/style.css',
+  '/static/dr-detector-manifest.json',
+  '/static/dr-detector-icon-192.png',
+  '/static/dr-detector-icon-512.png',
+];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
