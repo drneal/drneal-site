@@ -1893,6 +1893,11 @@ def contact():
     return redirect(url_for("contact"))
 
 
+@app.route("/dr-detector")
+def dr_detector():
+    return render_template("dr_detector_app.html")
+
+
 @app.route("/sw.js")
 def service_worker():
     from flask import send_from_directory

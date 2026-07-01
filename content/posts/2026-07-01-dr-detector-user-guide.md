@@ -5,7 +5,9 @@ tags: ["diabetic retinopathy", "AI", "clinical tools", "ophthalmology", "screeni
 summary: "A step-by-step, jargon-free guide for doctors and nurses who want to use DR Detector — the offline AI retinal screening app — in their clinic today. No technical background required."
 ---
 
-**Downloads:** &nbsp; [📋 User Manual (PDF)](/static/dr_detector_user_manual.pdf) &nbsp;|&nbsp; [🔧 Developer Manual (PDF)](/static/dr_detector_developer_manual.pdf)
+**[🚀 Launch DR Detector App](/dr-detector)** &nbsp;|&nbsp; [📋 User Manual (PDF)](/static/dr_detector_user_manual.pdf) &nbsp;|&nbsp; [🔧 Developer Manual (PDF)](/static/dr_detector_developer_manual.pdf)
+
+> **Install on Android:** Open the app in Chrome, tap the menu (⋮) → **Add to Home Screen**. DR Detector will install as a standalone app that works fully offline.
 
 ---
 
