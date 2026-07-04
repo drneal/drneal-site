@@ -141,24 +141,24 @@ I have spent forty years teaching people how to move through genuinely difficult
 
 ### References and Sources
 
-- Amodei, D. (2024). "Machines of Loving Grace." darioamodei.com/essay/machines-of-loving-grace
-- Kohs, G. (dir.) (2024). *The Thinking Game.* Google DeepMind / Roco Films. [youtu.be/d95J8yzvjbQ](https://youtu.be/d95J8yzvjbQ); thinkinggamefilm.com
-- Nobel Prize in Chemistry 2024 (Hassabis & Jumper, for protein-structure prediction). nobelprize.org/prizes/chemistry/2024
-- Isomorphic Labs. Company mission and 2026 $2.1B financing round. isomorphiclabs.com; fortune.com
-- Microsoft AI. "The Path to Medical Superintelligence." microsoft.ai/news/the-path-to-medical-superintelligence
-- Fortune. "Microsoft claims its AI tool can diagnose complex medical cases four times more accurately than doctors" (July 2025). fortune.com
-- TIME. "Microsoft's AI Is Better Than Doctors at Diagnosing Disease." time.com
-- HLTH Insights. "Microsoft AI Diagnoses Complex Medical Cases With 85% Accuracy" (2025). hlth.com
-- IntuitionLabs / Pinggy. AI Medical Imaging and FDA Clearance data, 2025–2026. intuitionlabs.ai, pinggy.io
-- Fierce Biotech / Medical Design & Outsourcing / The Robot Report / citybiz. Johns Hopkins SRT-H autonomous surgery coverage (2025). fiercebiotech.com, therobotreport.com
-- IEEE Spectrum. "Autonomous Surgical Robots Enhance Precision in the OR." spectrum.ieee.org/star-autonomous-surgical-robot
-- Anthropic. "Economic Index report: Cadences," "Learning curves," and "Labor market impacts of AI" (2026). anthropic.com/research
-- KevinMD. "Are physicians next in AI health care layoffs?" (2026). kevinmd.com
-- World Psychiatry / Bouguettaya et al. "Artificial intelligence and the problem of physician burnout: a double-edged scalpel" (2026). onlinelibrary.wiley.com
-- MIT Technology Review. "What is vibe coding, exactly?" (April 2025). technologyreview.com
-- 80,000 Hours. "Will we have AGI by 2030?" — AGI timeline forecasts synthesis. 80000hours.org
-- Dr Neal Aggarwal. "Learning With Dr Neal" (fast.ai Lesson 3: Neural Net Foundations), June 19, 2026. drnealaggarwal.info/post/2026-06-19-how-deep-neural-networks-really-work
-- Dr Neal Aggarwal. "Learning With Dr Neal" (fast.ai Lesson 3 spreadsheet exercise, prelude to Chapter 4), June 26, 2026. drnealaggarwal.info/post/2026-06-26-deep-learning-spreadsheet-exercise
-- fastbook. "Chapter 4: MNIST Basics." github.com/fastai/fastbook/blob/master/04_mnist_basics.ipynb
+- Amodei, D. (2024). "Machines of Loving Grace." [darioamodei.com/essay/machines-of-loving-grace](https://www.darioamodei.com/essay/machines-of-loving-grace)
+- Kohs, G. (dir.) (2024). *The Thinking Game.* Google DeepMind / Roco Films. [youtu.be/d95J8yzvjbQ](https://youtu.be/d95J8yzvjbQ); [thinkinggamefilm.com](https://thinkinggamefilm.com)
+- Nobel Prize in Chemistry 2024 (Hassabis & Jumper, for protein-structure prediction). [nobelprize.org/prizes/chemistry/2024](https://www.nobelprize.org/prizes/chemistry/2024/)
+- Isomorphic Labs. Company mission and 2026 $2.1B financing round. [isomorphiclabs.com](https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-b-investment-round); [fortune.com](https://fortune.com/article/demis-hassabis-deepmind-artificial-intelligence-google-alphabet-drug-discovery-isomorphic/)
+- Microsoft AI. "The Path to Medical Superintelligence." [microsoft.ai/news/the-path-to-medical-superintelligence](https://microsoft.ai/news/the-path-to-medical-superintelligence/)
+- Fortune. "Microsoft claims its AI tool can diagnose complex medical cases four times more accurately than doctors" (July 2025). [fortune.com](https://fortune.com/2025/07/03/microsoft-ai-diagnostic-orchestrator-diagnosing-complex-cases-medical-doctors/)
+- TIME. "Microsoft's AI Is Better Than Doctors at Diagnosing Disease." [time.com](https://time.com/7299314/microsoft-ai-better-than-doctors-diagnosis/)
+- HLTH Insights. "Microsoft AI Diagnoses Complex Medical Cases With 85% Accuracy" (2025). [hlth.com](https://hlth.com/insights/news/microsoft-ai-diagnoses-complex-medical-cases-with-85-accuracy-2025-07-07)
+- IntuitionLabs / Pinggy. AI Medical Imaging and FDA Clearance data, 2025–2026. [intuitionlabs.ai](https://intuitionlabs.ai), [pinggy.io](https://pinggy.io)
+- Fierce Biotech / Medical Design & Outsourcing / The Robot Report / citybiz. Johns Hopkins SRT-H autonomous surgery coverage (2025). [fiercebiotech.com](https://www.fiercebiotech.com), [therobotreport.com](https://www.therobotreport.com)
+- IEEE Spectrum. "Autonomous Surgical Robots Enhance Precision in the OR." [spectrum.ieee.org/star-autonomous-surgical-robot](https://spectrum.ieee.org/star-autonomous-surgical-robot)
+- Anthropic. "Economic Index report: Cadences," "Learning curves," and "Labor market impacts of AI" (2026). [anthropic.com/research](https://www.anthropic.com/research)
+- KevinMD. "Are physicians next in AI health care layoffs?" (2026). [kevinmd.com](https://kevinmd.com/2026/07/are-physicians-next-in-ai-health-care-layoffs.html)
+- World Psychiatry / Bouguettaya et al. "Artificial intelligence and the problem of physician burnout: a double-edged scalpel" (2026). [onlinelibrary.wiley.com](https://onlinelibrary.wiley.com)
+- MIT Technology Review. "What is vibe coding, exactly?" (April 2025). [technologyreview.com](https://www.technologyreview.com/2025/04/16/1115135/what-is-vibe-coding-exactly/)
+- 80,000 Hours. "Will we have AGI by 2030?" — AGI timeline forecasts synthesis. [80000hours.org](https://80000hours.org/ai/guide/when-will-agi-arrive/)
+- Dr Neal Aggarwal. "Learning With Dr Neal" (fast.ai Lesson 3: Neural Net Foundations), June 19, 2026. [drnealaggarwal.info/post/2026-06-19-how-deep-neural-networks-really-work](https://drnealaggarwal.info/post/2026-06-19-how-deep-neural-networks-really-work)
+- Dr Neal Aggarwal. "Learning With Dr Neal" (fast.ai Lesson 3 spreadsheet exercise, prelude to Chapter 4), June 26, 2026. [drnealaggarwal.info/post/2026-06-26-deep-learning-spreadsheet-exercise](https://drnealaggarwal.info/post/2026-06-26-deep-learning-spreadsheet-exercise)
+- fastbook. "Chapter 4: MNIST Basics." [github.com/fastai/fastbook/blob/master/04_mnist_basics.ipynb](https://github.com/fastai/fastbook/blob/master/04_mnist_basics.ipynb)
 
 *This essay reflects publicly available research and reporting as of July 2026. Forecasts regarding AGI and ASI timelines are inherently uncertain and are presented as a synthesis of stated industry expert positions, not as fact. Nothing in this essay constitutes medical, legal, financial, or regulatory advice, and no part of it should be used as the basis for clinical, employment, or practice decisions without independent verification of the underlying sources.*
