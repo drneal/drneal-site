@@ -9,6 +9,16 @@ summary: "What happens to me — the physician, the surgeon, the person who has 
 featured: true
 ---
 
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎬 <strong>Watch the companion video:</strong> <a href="/static/video/The_Compressed_Career.mp4">The Compressed Career</a> — a visual walk through the three waves, the replacement scenarios, and the retraining path.<br/><br/>
+  <video controls style="width:100%; margin-top:0.4em; border-radius:6px;">
+    <source src="/static/video/The_Compressed_Career.mp4" type="video/mp4">
+    Your browser does not support the video element.
+  </video>
+</div>
+
+**Next in this series:** [Learning With Dr Neal — the fast.ai Lesson 3 spreadsheet exercise](https://drnealaggarwal.info/post/2026-06-26-deep-learning-spreadsheet-exercise), the concrete on-ramp referenced in Part IV of this essay.
+
 In October 2024, Dario Amodei, the CEO of Anthropic, published an essay called "Machines of Loving Grace." Its central claim was narrow and enormous at the same time: if powerful AI arrives on anything like the timeline its builders expect, it will compress into five to ten years the biological and medical progress that would otherwise have taken fifty to a hundred. Amodei — who holds a PhD in biophysics from Princeton and did his postdoctoral work at Stanford's medical school — was not writing as a science-fiction futurist. He was writing as someone who has spent a career at the intersection of biology and machine learning, describing what he thinks is the modal outcome, not the optimistic tail.
 
 Amodei is not the only person making this case, and he is not the one with the strongest empirical track record behind it. In 2024 the director Greg Kohs released *The Thinking Game*, a documentary filmed over five years inside Google DeepMind, following Demis Hassabis and his team through the work that produced AlphaFold — the system that solved the fifty-year-old protein-folding problem and earned Hassabis and John Jumper the 2024 Nobel Prize in Chemistry. I raise it here, at the outset, because it is the closest thing we have to a documented, real-world proof of concept for exactly the kind of compression Amodei describes. AlphaFold did not make an existing task incrementally faster; it collapsed a problem that had resisted the entire structural-biology community for half a century into a solved one, and it did so with a general learning method rather than a hand-built, problem-specific one. When the film was released free on YouTube in late 2025 and drew north of two hundred million views, it did something an essay cannot: it showed the compression happening, in the room, rather than merely arguing that it would.
