@@ -1,0 +1,10 @@
+{
+  // Recommended extensions for authoring Markdown blog posts in this repo.
+  // VS Code will suggest installing these when the folder is opened.
+  "recommendations": [
+    "yzhang.markdown-all-in-one",
+    "eliostruyf.vscode-front-matter",
+    "davidanson.vscode-markdownlint",
+    "shd101wyy.markdown-preview-enhanced"
+  ]
+}
