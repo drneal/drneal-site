@@ -149,6 +149,10 @@ I have spent forty years teaching people how to move through genuinely difficult
 
 ---
 
+<div style="font-size:0.85em; background:linear-gradient(135deg, #1a237e 0%, #283593 100%); color:white; padding:1.2em 1.6em; border-radius:8px; margin:1.5em 0; line-height:1.6;">
+📑 <strong>The lecture version:</strong> <a href="/static/Clinical_AI_Playbook.pdf" style="color:#90caf9; font-weight:bold;">The Clinical AI Playbook (PDF)</a> — the slide deck I use to deliver the content of this essay as a lecture. I have presented this material to very many hospitals and physicians to date. If you would like it delivered at your institution, <a href="/about#contact" style="color:#90caf9; font-weight:bold;">get in touch</a>.
+</div>
+
 ### References and Sources
 
 - Amodei, D. (2024). "Machines of Loving Grace." [darioamodei.com/essay/machines-of-loving-grace](https://www.darioamodei.com/essay/machines-of-loving-grace)
