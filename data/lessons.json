@@ -27,6 +27,15 @@
       "level": "Intermediate",
       "read_time": "30 min",
       "topics": ["AI agents", "agent loop", "tool use", "permissions", "sub-agents"]
+    },
+    {
+      "number": 4,
+      "title": "Inside the Transformer",
+      "description": "The machine in the middle. How a language model turns a transcript into the next token: tokens and embeddings, why attention was the breakthrough, what a context window physically is — and a complete tiny GPT in PyTorch you can read in one sitting.",
+      "url": "/post/2026-07-10-inside-the-transformer",
+      "level": "Intermediate–Advanced",
+      "read_time": "35 min",
+      "topics": ["transformer", "attention", "embeddings", "context window", "GPT", "PyTorch"]
     }
   ]
 }

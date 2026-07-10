@@ -411,7 +411,7 @@ None of these requires a research lab. They're just good engineering, discovered
 
 ## What's next
 
-We now have both ends of the stack: neurons and gradients at the bottom (Lessons 1–2), and the agent architecture at the top (this lesson). The obvious gap is the middle — the **transformer**: how a language model actually turns a transcript into the next token, why attention was such a breakthrough, and what "context window" physically means. That's where this series goes next. We'll build one, piece by piece, small enough to train yourself.
+We now have both ends of the stack: neurons and gradients at the bottom (Lessons 1–2), and the agent architecture at the top (this lesson). The obvious gap is the middle — the **transformer**: how a language model actually turns a transcript into the next token, why attention was such a breakthrough, and what "context window" physically means. That's where this series goes next — in fact, [Lesson 4 is now live](/post/2026-07-10-inside-the-transformer). We'll build one, piece by piece, small enough to train yourself.
 
 Until then: the next time you watch an agent quietly read three files, run your tests, and fix the failure — you'll know exactly which of the six organs just fired, and in what order.
 
