@@ -224,6 +224,14 @@ def demos():
     return render_template("demos.html", demos=data.get("demos", []))
 
 
+@app.route("/lessons")
+def lessons():
+    data = load_json("lessons.json")
+    return render_template("lessons.html",
+                           lessons=data.get("lessons", []),
+                           intro=data.get("intro", ""))
+
+
 # ── Backtester ────────────────────────────────────────────────────────────────
 
 def _run_backtest(config: dict) -> dict:

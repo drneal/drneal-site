@@ -1,0 +1,32 @@
+{
+  "intro": "A structured curriculum for teaching yourself how LLMs and AI agents actually work — from first principles to advanced internals. Each lesson is a self-contained deep dive. Work through them in order.",
+  "lessons": [
+    {
+      "number": 1,
+      "title": "How Deep Neural Networks Really Work",
+      "description": "The foundations. What a neural network actually is, why stacking ReLUs can approximate any function, and how gradient descent tunes millions of parameters. Start here.",
+      "url": "/post/2026-06-19-how-deep-neural-networks-really-work",
+      "level": "Intermediate",
+      "read_time": "35 min",
+      "topics": ["neural networks", "gradient descent", "ReLU", "universal approximation"]
+    },
+    {
+      "number": 2,
+      "title": "Build a Neural Network in a Spreadsheet",
+      "description": "Theory into practice. Build a working neural network from scratch in a spreadsheet — no code, no libraries, just arithmetic you can see and touch. Train it on real Titanic passenger data.",
+      "url": "/post/2026-06-26-deep-learning-spreadsheet-exercise",
+      "level": "Beginner–Intermediate",
+      "read_time": "25 min",
+      "topics": ["hands-on exercise", "gradient descent", "spreadsheet", "loss functions"]
+    },
+    {
+      "number": 3,
+      "title": "Anatomy of an AI Coding Agent",
+      "description": "From models to agents. What separates a chatbot from an agent, the six building blocks every production coding agent shares, how a single request flows from keystroke to output, and how permission systems keep an autonomous loop safe.",
+      "url": "/post/2026-07-10-anatomy-of-an-ai-coding-agent",
+      "level": "Intermediate",
+      "read_time": "30 min",
+      "topics": ["AI agents", "agent loop", "tool use", "permissions", "sub-agents"]
+    }
+  ]
+}
