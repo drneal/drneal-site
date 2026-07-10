@@ -802,3 +802,7 @@ Slide decks, mind map, and AI-generated audio overview:<br/>
 *Based on Jeremy Howard's fast.ai Practical Deep Learning for Coders 2022 · Lesson 3: Neural Net Foundations · This is an example of the course materials produced by Dr Neal and used to teach students through his one-to-one AI Learners Course.*
 
 *Post by Dr. Neal Aggarwal · [drnealaggarwal.info](https://drnealaggarwal.info) · 40+ years teaching IT and AI*
+
+<div style="font-size:0.85em; background:linear-gradient(135deg, #1a237e 0%, #283593 100%); color:white; padding:1.2em 1.6em; border-radius:8px; margin:1.5em 0; line-height:1.6;">
+📚 <strong>Next in the series:</strong> <a href="/post/2026-06-26-deep-learning-spreadsheet-exercise" style="color:#90caf9; font-weight:bold;">Lesson 02 — Build a Neural Network in a Spreadsheet</a>. Theory into practice: a working neural network with no code and no libraries, just arithmetic you can see and touch. All lessons, in order, on the <a href="/lessons" style="color:#90caf9; font-weight:bold;">Lessons page</a>.
+</div>
