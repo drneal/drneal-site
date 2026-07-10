@@ -62,6 +62,14 @@ At the end of the last lesson I promised we'd close the gap in the middle of our
 
 That machine is the **transformer**, and it has been the architecture behind essentially every frontier language model since 2017. This lesson explains it the way I wish someone had explained it to me: not as a wall of matrix algebra, but as a small number of design decisions, each solving a specific problem — ending with working PyTorch code for a complete miniature GPT that you can read in one sitting.
 
+<div class="audio-section">
+  🎧 <strong>Listen to this post:</strong> How transformers predict the next token — the audio companion to this lesson.<br/><br/>
+  <audio controls style="width:100%; margin-top:0.4em;">
+    <source src="/static/How_Transformers_predict_the_next_token.m4a" type="audio/mp4">
+    <a href="/static/How_Transformers_predict_the_next_token.m4a">Download the audio</a>
+  </audio>
+</div>
+
 ## One job: the next token
 
 Strip away the chat interface and an LLM has exactly one skill. Given a sequence of tokens, it outputs a probability for *every token in its vocabulary* being the next one. That's it. That's the whole job.
