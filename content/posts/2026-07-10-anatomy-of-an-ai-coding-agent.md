@@ -1,11 +1,11 @@
 ---
-title: "Learning With Dr Neal"
+title: "Anatomy of an AI Coding Agent"
 date: 2026-07-10
 category: AI Agents
 tags: AI agents, agent loop, tool use, LLM, permissions, sub-agents, agentic coding, architecture
 level: Intermediate
 read_time: 30 min
-summary: "Lesson 3 — Anatomy of an AI coding agent. What separates a chatbot from an agent, the six building blocks every production agent shares, how a single request travels from your keystroke to the final answer, and how a permission system keeps an autonomous loop from wrecking your machine."
+summary: "Lesson 3 of Learning With Dr Neal. What separates a chatbot from an agent, the six building blocks every production agent shares, how a single request travels from your keystroke to the final answer, and how a permission system keeps an autonomous loop from wrecking your machine."
 featured: false
 ---
 
