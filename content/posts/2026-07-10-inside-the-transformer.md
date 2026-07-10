@@ -70,6 +70,14 @@ That machine is the **transformer**, and it has been the architecture behind ess
   </audio>
 </div>
 
+<div class="audio-section">
+  🎬 <strong>Watch the video overview:</strong> Inside the Transformer in nine minutes — the visual companion to this lesson.<br/><br/>
+  <video controls preload="metadata" style="width:100%; margin-top:0.4em; border-radius:6px;">
+    <source src="/static/Inside_the_Transformer.mp4" type="video/mp4">
+    <a href="/static/Inside_the_Transformer.mp4">Download the video</a>
+  </video>
+</div>
+
 ## One job: the next token
 
 Strip away the chat interface and an LLM has exactly one skill. Given a sequence of tokens, it outputs a probability for *every token in its vocabulary* being the next one. That's it. That's the whole job.
