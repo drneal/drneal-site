@@ -80,6 +80,14 @@ It turns out the answer is surprisingly compact. Strip away the polish and every
   </audio>
 </div>
 
+<div class="audio-section">
+  🎬 <strong>Watch the video overview:</strong> Anatomy of an AI agent in eight minutes — the visual companion to this lesson.<br/><br/>
+  <video controls preload="metadata" style="width:100%; margin-top:0.4em; border-radius:6px;">
+    <source src="/static/audio/Anatomy_of_an_AI_Agent.mp4" type="video/mp4">
+    <a href="/static/audio/Anatomy_of_an_AI_Agent.mp4">Download the video</a>
+  </video>
+</div>
+
 ## A program that writes its own instructions
 
 Start with what an agent is *not*.
