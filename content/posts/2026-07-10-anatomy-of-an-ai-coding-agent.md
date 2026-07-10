@@ -20,6 +20,14 @@ featured: false
   line-height: 1.6;
 }
 .lesson-banner a { color: #90caf9; font-weight: bold; }
+.audio-section {
+  font-size: 0.8em;
+  background: #1a1f2e;
+  border-left: 4px solid #1a237e;
+  padding: 1em 1.4em;
+  border-radius: 0 6px 6px 0;
+  margin: 1.5em 0;
+}
 .callout {
   font-size: 0.85em;
   background: #1e1a0e;
@@ -63,6 +71,14 @@ In the first two lessons we went down to the metal: what a neural network actual
 Not "how does the model work" — we covered that. The question is: what is wrapped **around** the model to turn a text predictor into something that reads your files, runs your tests, notices the tests failed, fixes the bug, and runs them again — without you touching the keyboard?
 
 It turns out the answer is surprisingly compact. Strip away the polish and every serious coding agent — and there are now several in production use — is the same small set of parts arranged the same way. Once you can see those parts, agents stop being magic and start being *engineering*. That's the goal of this lesson.
+
+<div class="audio-section">
+  🎧 <strong>Listen to this post:</strong> The six organs of an autonomous agent — an audio companion to this lesson for the commute.<br/><br/>
+  <audio controls style="width:100%; margin-top:0.4em;">
+    <source src="/static/audio/Six_organs_of_an_autonomous_agent.m4a" type="audio/mp4">
+    <a href="/static/audio/Six_organs_of_an_autonomous_agent.m4a">Download the audio</a>
+  </audio>
+</div>
 
 ## A program that writes its own instructions
 
