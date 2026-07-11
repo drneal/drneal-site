@@ -36,6 +36,15 @@
       "level": "Intermediate–Advanced",
       "read_time": "35 min",
       "topics": ["transformer", "attention", "embeddings", "context window", "GPT", "PyTorch"]
+    },
+    {
+      "number": 5,
+      "title": "Train Your Own GPT",
+      "description": "The hands-on payoff. Take the TinyGPT from Lesson 4, feed it a laptop-sized corpus, write the training loop yourself, and watch generated text condense out of randomness — from noise, to word-shaped noise, to fluent (and confidently wrong) sentences. Complete runnable script included.",
+      "url": "/post/2026-07-10-train-your-own-gpt",
+      "level": "Intermediate–Advanced",
+      "read_time": "35 min",
+      "topics": ["training", "loss curves", "self-supervision", "overfitting", "sampling", "PyTorch"]
     }
   ]
 }

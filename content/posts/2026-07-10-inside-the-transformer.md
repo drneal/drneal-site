@@ -433,7 +433,7 @@ That's the full stack, connected: gradient descent (Lessons 1–2) trains the tr
 
 ## What's next
 
-The obvious move — and the next lesson — is to stop reading and *train one*. We'll take the `TinyGPT` above, feed it a corpus small enough for a laptop, write the training loop with our own hands, and watch generated text evolve from noise, to word-shaped noise, to sentences. There is no better calibration for your intuitions about what these models are than watching one condense out of randomness in front of you.
+The obvious move — and the next lesson — is to stop reading and *train one*. In fact, [Lesson 5 is now live](/post/2026-07-10-train-your-own-gpt). We'll take the `TinyGPT` above, feed it a corpus small enough for a laptop, write the training loop with our own hands, and watch generated text evolve from noise, to word-shaped noise, to sentences. There is no better calibration for your intuitions about what these models are than watching one condense out of randomness in front of you.
 
 Until then, a self-test: next time you use an LLM, watch the streamed reply and try to see it as Figure 1 — thousands of forward passes, each one Figure 2, each block Figure 4, every token consulting the transcript by Figure 3. Once you can hold that picture, the word "transformer" stops being a brand name and becomes a machine you could sketch on a napkin.
 
