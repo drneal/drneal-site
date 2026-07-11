@@ -45,6 +45,15 @@
       "level": "Intermediate–Advanced",
       "read_time": "35 min",
       "topics": ["training", "loss curves", "self-supervision", "overfitting", "sampling", "PyTorch"]
+    },
+    {
+      "number": 6,
+      "title": "From Predictor to Assistant",
+      "description": "The shaping pass. How a raw next-token predictor becomes an assistant: instruction tuning, preference-based refinement, why the same weights can host such different behaviours — and how the post-training pipeline explains sycophancy, polished hallucination, and miscalibrated refusals in deployed clinical tools.",
+      "url": "/post/2026-07-11-from-predictor-to-assistant",
+      "level": "Intermediate–Advanced",
+      "read_time": "30 min",
+      "topics": ["post-training", "instruction tuning", "RLHF", "sycophancy", "alignment", "clinical AI"]
     }
   ]
 }

@@ -332,7 +332,7 @@ And one thing scaling does *not* change: the model that comes out of this loop �
 
 ## What's next
 
-That shaping is Lesson 6: **post-training** — how a base model becomes an assistant. Instruction tuning, feedback-based refinement, why the same weights can host such different behaviours, and what that pipeline means for the failure modes you'll meet in deployed clinical tools. The raw predictor you trained today is the "before" picture; next time we look at the "after," and at exactly what happens in between.
+That shaping is Lesson 6 — [now live](/post/2026-07-11-from-predictor-to-assistant): **post-training** — how a base model becomes an assistant. Instruction tuning, feedback-based refinement, why the same weights can host such different behaviours, and what that pipeline means for the failure modes you'll meet in deployed clinical tools. The raw predictor you trained today is the "before" picture; next time we look at the "after," and at exactly what happens in between.
 
 Until then: run the script. Change the corpus. Break the learning rate on purpose. The point of this lesson was never the 8 MB of weights you'll end up with — it's that "GPT" now names a process you have personally executed, end to end, rather than a product you consume.
 
