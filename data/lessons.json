@@ -63,6 +63,15 @@
       "level": "Intermediate–Advanced",
       "read_time": "30 min",
       "topics": ["embeddings", "vector search", "RAG", "grounding", "provenance", "clinical AI"]
+    },
+    {
+      "number": 8,
+      "title": "The Capstone: Build a Grounded Assistant",
+      "description": "Everything, assembled. Build a working retrieval assistant over a folder of your own documents — local embeddings, the twenty-line retriever, grounded answers with citations — then measure it honestly with a recall@k evaluation harness. Complete runnable script included.",
+      "url": "/post/2026-07-12-build-a-grounded-assistant",
+      "level": "Advanced",
+      "read_time": "40 min",
+      "topics": ["RAG", "evaluation", "recall@k", "chunking", "hands-on exercise", "clinical AI"]
     }
   ]
 }
