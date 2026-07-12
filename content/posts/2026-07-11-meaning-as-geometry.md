@@ -20,6 +20,14 @@ featured: false
   line-height: 1.6;
 }
 .lesson-banner a { color: #90caf9; font-weight: bold; }
+.audio-section {
+  font-size: 0.8em;
+  background: #1a1f2e;
+  border-left: 4px solid #1a237e;
+  padding: 1em 1.4em;
+  border-radius: 0 6px 6px 0;
+  margin: 1.5em 0;
+}
 .callout {
   font-size: 0.85em;
   background: #1e1a0e;
@@ -63,6 +71,22 @@ The assistant we assembled across Lessons 4–6 has a strange epistemic profile.
 You could try to fix this by retraining. For facts, that's the wrong tool: pretraining is a nine-figure industrial process, and Lesson 6's fine-tuning relocates *defaults*, not reliably-recallable knowledge. What you actually want is something more surgical: at the moment a question is asked, *find the right passages from documents you control and hand them to the model as context*. The model then does what it has always done — continue a transcript — except the transcript now contains the evidence.
 
 That is retrieval-augmented generation — **RAG** — and it rests on one genuinely beautiful idea: that meaning itself can be given coordinates.
+
+<div class="audio-section">
+  🎬 <strong>Watch:</strong> Meaning as Geometry — the video companion to this lesson.<br/><br/>
+  <video controls preload="metadata" style="width:100%; margin-top:0.4em; border-radius:6px;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/Meaning_as_Geometry.mp4" type="video/mp4">
+    <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/Meaning_as_Geometry.mp4">Download the video</a>
+  </video>
+</div>
+
+<div class="audio-section">
+  🎧 <strong>Listen to this post:</strong> How RAG prevents AI hallucinations — the audio companion to this lesson.<br/><br/>
+  <audio controls style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/How_RAG_prevents_AI_hallucinations.mp3" type="audio/mpeg">
+    <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/How_RAG_prevents_AI_hallucinations.mp3">Download the audio</a>
+  </audio>
+</div>
 
 ## Meaning as geometry
 

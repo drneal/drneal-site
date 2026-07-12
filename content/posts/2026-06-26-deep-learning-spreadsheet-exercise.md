@@ -80,7 +80,7 @@ featured: true
 *This article accompanies Jeremy Howard's fast.ai Practical Deep Learning for Coders 2022 · Lesson 3, specifically the section from 1:04:30 to 1:20:47. It is part of the curriculum materials produced by Dr Neal for one-to-one AI Learners sessions.*
 
 <audio controls style="width:100%;margin:1rem 0;">
-  <source src="/static/audio/Build_a_Titanic_predictor_in_Excel.m4a" type="audio/mp4">
+  <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Build_a_Titanic_predictor_in_Excel.m4a" type="audio/mp4">
   Your browser does not support the audio element.
 </audio>
 

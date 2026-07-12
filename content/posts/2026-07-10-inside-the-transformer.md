@@ -65,16 +65,16 @@ That machine is the **transformer**, and it has been the architecture behind ess
 <div class="audio-section">
   🎧 <strong>Listen to this post:</strong> How transformers predict the next token — the audio companion to this lesson.<br/><br/>
   <audio controls style="width:100%; margin-top:0.4em;">
-    <source src="/static/How_Transformers_predict_the_next_token.m4a" type="audio/mp4">
-    <a href="/static/How_Transformers_predict_the_next_token.m4a">Download the audio</a>
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/How_Transformers_predict_the_next_token.m4a" type="audio/mp4">
+    <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/How_Transformers_predict_the_next_token.m4a">Download the audio</a>
   </audio>
 </div>
 
 <div class="audio-section">
   🎬 <strong>Watch the video overview:</strong> Inside the Transformer in nine minutes — the visual companion to this lesson.<br/><br/>
   <video controls preload="metadata" style="width:100%; margin-top:0.4em; border-radius:6px;">
-    <source src="/static/Inside_the_Transformer.mp4" type="video/mp4">
-    <a href="/static/Inside_the_Transformer.mp4">Download the video</a>
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/Inside_the_Transformer.mp4" type="video/mp4">
+    <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/Inside_the_Transformer.mp4">Download the video</a>
   </video>
 </div>
 

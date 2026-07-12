@@ -10,9 +10,9 @@ featured: true
 ---
 
 <div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
-  🎬 <strong>Watch the companion video:</strong> <a href="/static/video/The_Compressed_Career.mp4">The Compressed Career</a> — a visual walk through the three waves, the replacement scenarios, and the retraining path.<br/><br/>
+  🎬 <strong>Watch the companion video:</strong> <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/The_Compressed_Career.mp4">The Compressed Career</a> — a visual walk through the three waves, the replacement scenarios, and the retraining path.<br/><br/>
   <video controls style="width:100%; margin-top:0.4em; border-radius:6px;">
-    <source src="/static/video/The_Compressed_Career.mp4" type="video/mp4">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/The_Compressed_Career.mp4" type="video/mp4">
     Your browser does not support the video element.
   </video>
 </div>

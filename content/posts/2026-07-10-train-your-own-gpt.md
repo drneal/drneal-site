@@ -85,8 +85,8 @@ By the end of this lesson you will have taken the `TinyGPT` we built last time, 
 <div class="audio-section">
   🎧 <strong>Listen to this post:</strong> Coding your own self-supervised GPT — the audio companion to this lesson.<br/><br/>
   <audio controls style="width:100%; margin-top:0.4em;">
-    <source src="/static/audio/Coding_Your_Own_Self-Supervised_GPT.mp3" type="audio/mpeg">
-    <a href="/static/audio/Coding_Your_Own_Self-Supervised_GPT.mp3">Download the audio</a>
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Coding_Your_Own_Self-Supervised_GPT.mp3" type="audio/mpeg">
+    <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Coding_Your_Own_Self-Supervised_GPT.mp3">Download the audio</a>
   </audio>
 </div>
 

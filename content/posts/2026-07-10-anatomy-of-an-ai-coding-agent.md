@@ -75,16 +75,16 @@ It turns out the answer is surprisingly compact. Strip away the polish and every
 <div class="audio-section">
   🎧 <strong>Listen to this post:</strong> The six organs of an autonomous agent — an audio companion to this lesson for the commute.<br/><br/>
   <audio controls style="width:100%; margin-top:0.4em;">
-    <source src="/static/audio/Six_organs_of_an_autonomous_agent.m4a" type="audio/mp4">
-    <a href="/static/audio/Six_organs_of_an_autonomous_agent.m4a">Download the audio</a>
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Six_organs_of_an_autonomous_agent.m4a" type="audio/mp4">
+    <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Six_organs_of_an_autonomous_agent.m4a">Download the audio</a>
   </audio>
 </div>
 
 <div class="audio-section">
   🎬 <strong>Watch the video overview:</strong> Anatomy of an AI agent in eight minutes — the visual companion to this lesson.<br/><br/>
   <video controls preload="metadata" style="width:100%; margin-top:0.4em; border-radius:6px;">
-    <source src="/static/audio/Anatomy_of_an_AI_Agent.mp4" type="video/mp4">
-    <a href="/static/audio/Anatomy_of_an_AI_Agent.mp4">Download the video</a>
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Anatomy_of_an_AI_Agent.mp4" type="video/mp4">
+    <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Anatomy_of_an_AI_Agent.mp4">Download the video</a>
   </video>
 </div>
 
