@@ -231,7 +231,7 @@ Now the payoff — reading deployed-tool failure modes as direct consequences of
 
 ## What's next
 
-The pipeline you now understand ends with a model that speaks well, defaults to helpfulness, and knows only what pretraining happened to teach it — nothing about *your* hospital's guidelines, *your* patient's notes, or anything published after its training data was collected. Closing that gap without retraining is the job of **embeddings and retrieval**: turning documents into geometry, searching by meaning, and grounding the model's answers in sources you control — the "RAG" you've seen mentioned in every clinical-AI product pitch, and the mechanism behind the Memory component of Lesson 3's agent. That's Lesson 7.
+The pipeline you now understand ends with a model that speaks well, defaults to helpfulness, and knows only what pretraining happened to teach it — nothing about *your* hospital's guidelines, *your* patient's notes, or anything published after its training data was collected. Closing that gap without retraining is the job of **embeddings and retrieval**: turning documents into geometry, searching by meaning, and grounding the model's answers in sources you control — the "RAG" you've seen mentioned in every clinical-AI product pitch, and the mechanism behind the Memory component of Lesson 3's agent. That's Lesson 7 — [now live](/post/2026-07-11-meaning-as-geometry).
 
 Until then, a homework you can do in any chat window: ask a deployed assistant a question in your specialty, then reply "I don't think that's right" — even when it was. What it does next is Figure 2, live, in production. You'll never read "the model was trained on human feedback" the same way again.
 

@@ -54,6 +54,15 @@
       "level": "Intermediate–Advanced",
       "read_time": "30 min",
       "topics": ["post-training", "instruction tuning", "RLHF", "sycophancy", "alignment", "clinical AI"]
+    },
+    {
+      "number": 7,
+      "title": "Meaning as Geometry: Embeddings, Retrieval, and RAG",
+      "description": "Grounding the model. How text becomes coordinates, why nearest-neighbour search finds meaning rather than keywords, the full RAG pipeline in twenty lines — and the retrieval failure modes (superseded guidance, similar-but-opposite passages) that matter most in clinical deployments.",
+      "url": "/post/2026-07-11-meaning-as-geometry",
+      "level": "Intermediate–Advanced",
+      "read_time": "30 min",
+      "topics": ["embeddings", "vector search", "RAG", "grounding", "provenance", "clinical AI"]
     }
   ]
 }
