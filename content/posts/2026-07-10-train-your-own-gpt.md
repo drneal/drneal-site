@@ -20,6 +20,14 @@ featured: false
   line-height: 1.6;
 }
 .lesson-banner a { color: #90caf9; font-weight: bold; }
+.audio-section {
+  font-size: 0.8em;
+  background: #1a1f2e;
+  border-left: 4px solid #1a237e;
+  padding: 1em 1.4em;
+  border-radius: 0 6px 6px 0;
+  margin: 1.5em 0;
+}
 .callout {
   font-size: 0.85em;
   background: #1e1a0e;
@@ -73,6 +81,14 @@ figure.diagram figcaption {
 Lesson 4 ended with a promise: stop reading and *train one*. Today we keep it.
 
 By the end of this lesson you will have taken the `TinyGPT` we built last time, pointed it at a text corpus small enough for a laptop, written the training loop with your own hands, and — this is the part I want you to actually watch, in real time, rather than take on faith — seen its output evolve from random characters, to word-shaped gibberish, to grammatical sentences in the voice of your corpus. Nothing I know of calibrates your intuitions about what these models *are* better than watching one condense out of randomness in front of you. It takes about an hour, most of which is the computer's time rather than yours.
+
+<div class="audio-section">
+  🎧 <strong>Listen to this post:</strong> Coding your own self-supervised GPT — the audio companion to this lesson.<br/><br/>
+  <audio controls style="width:100%; margin-top:0.4em;">
+    <source src="/static/audio/Coding_Your_Own_Self-Supervised_GPT.mp3" type="audio/mpeg">
+    <a href="/static/audio/Coding_Your_Own_Self-Supervised_GPT.mp3">Download the audio</a>
+  </audio>
+</div>
 
 ## What "training" actually means here
 
