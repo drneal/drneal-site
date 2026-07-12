@@ -68,8 +68,6 @@ figure.diagram figcaption {
 📚 <strong>Lessons series — #8, the capstone.</strong> This build uses everything: gradient-trained models (<a href="/post/2026-06-19-how-deep-neural-networks-really-work">1</a>–<a href="/post/2026-06-26-deep-learning-spreadsheet-exercise">2</a>), the transformer (<a href="/post/2026-07-10-inside-the-transformer">4</a>), what training produces (<a href="/post/2026-07-10-train-your-own-gpt">5</a>), what post-training shapes (<a href="/post/2026-07-11-from-predictor-to-assistant">6</a>), and retrieval (<a href="/post/2026-07-11-meaning-as-geometry">7</a>) — assembled into the pattern at the heart of <a href="/post/2026-07-10-anatomy-of-an-ai-coding-agent">Lesson 3</a>'s agent. You'll want Python, ~2 GB of disk for a local embedding model, and a folder of documents. The full curriculum lives on the <a href="/lessons">Lessons page</a>.
 </div>
 
-# The Capstone: Build a Grounded Assistant
-
 Seven lessons ago you learned what a neuron computes. Today you assemble the whole stack into the most practically useful pattern in applied AI right now: an assistant that answers questions **from your documents, with citations, on your machine** — and, crucially, an evaluation harness that tells you honestly when it fails.
 
 That last clause is the real lesson. Anyone can wire up retrieval in an afternoon (you will, below, in about sixty lines). What separates a toy from a tool — and a safe deployment from a liability — is knowing its failure rate on *your* questions over *your* corpus. By the end you'll have both the tool and the number.

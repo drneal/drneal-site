@@ -56,8 +56,6 @@ figure.diagram figcaption {
 📚 <strong>Lessons series — #4.</strong> This lesson sits between <a href="/post/2026-06-19-how-deep-neural-networks-really-work">Lesson 1</a> (what a neural network computes) and <a href="/post/2026-07-10-anatomy-of-an-ai-coding-agent">Lesson 3</a> (what's wrapped around the model to make an agent). Today we open the model itself. The full curriculum lives on the <a href="/lessons">Lessons page</a>.
 </div>
 
-# Inside the Transformer
-
 At the end of the last lesson I promised we'd close the gap in the middle of our stack. At the bottom (Lessons 1–2): neurons, weights, gradient descent. At the top (Lesson 3): the agent loop, tools, permissions. Between them sits the machine that does the actual thinking — the thing that receives a transcript and produces, of all the words it could say next, the right one.
 
 That machine is the **transformer**, and it has been the architecture behind essentially every frontier language model since 2017. This lesson explains it the way I wish someone had explained it to me: not as a wall of matrix algebra, but as a small number of design decisions, each solving a specific problem — ending with working PyTorch code for a complete miniature GPT that you can read in one sitting.

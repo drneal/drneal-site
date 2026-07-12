@@ -76,8 +76,6 @@ figure.diagram figcaption {
 📚 <strong>Lessons series — #5.</strong> This is the hands-on payoff of <a href="/post/2026-07-10-inside-the-transformer">Lesson 4</a>, and it leans on the gradient-descent foundations of <a href="/post/2026-06-19-how-deep-neural-networks-really-work">Lesson 1</a> and <a href="/post/2026-06-26-deep-learning-spreadsheet-exercise">Lesson 2</a>. You'll want a laptop with Python and PyTorch installed. The full curriculum lives on the <a href="/lessons">Lessons page</a>.
 </div>
 
-# Train Your Own GPT
-
 Lesson 4 ended with a promise: stop reading and *train one*. Today we keep it.
 
 By the end of this lesson you will have taken the `TinyGPT` we built last time, pointed it at a text corpus small enough for a laptop, written the training loop with your own hands, and — this is the part I want you to actually watch, in real time, rather than take on faith — seen its output evolve from random characters, to word-shaped gibberish, to grammatical sentences in the voice of your corpus. Nothing I know of calibrates your intuitions about what these models *are* better than watching one condense out of randomness in front of you. It takes about an hour, most of which is the computer's time rather than yours.

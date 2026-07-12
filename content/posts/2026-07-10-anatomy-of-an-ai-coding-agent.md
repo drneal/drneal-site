@@ -64,8 +64,6 @@ figure.diagram figcaption {
 📚 <strong>Lessons series — #3.</strong> This lesson assumes you understand what a neural network is and roughly how an LLM predicts text. If you don't, start with <a href="/post/2026-06-19-how-deep-neural-networks-really-work">Lesson 1</a> and <a href="/post/2026-06-26-deep-learning-spreadsheet-exercise">Lesson 2</a>, then come back. The full curriculum lives on the <a href="/lessons">Lessons page</a>.
 </div>
 
-# Anatomy of an AI Coding Agent
-
 In the first two lessons we went down to the metal: what a neural network actually computes, and how gradient descent tunes it. This lesson goes the other direction — up the stack — to answer a question I kept asking myself when I first watched a coding agent refactor one of my Flask projects on its own: *what is this thing, structurally?*
 
 Not "how does the model work" — we covered that. The question is: what is wrapped **around** the model to turn a text predictor into something that reads your files, runs your tests, notices the tests failed, fixes the bug, and runs them again — without you touching the keyboard?

@@ -68,8 +68,6 @@ figure.diagram figcaption {
 📚 <strong>Lessons series — #6.</strong> This lesson assumes you've met the transformer (<a href="/post/2026-07-10-inside-the-transformer">Lesson 4</a>) and — ideally — trained one (<a href="/post/2026-07-10-train-your-own-gpt">Lesson 5</a>). It also closes a loop opened in <a href="/post/2026-07-10-anatomy-of-an-ai-coding-agent">Lesson 3</a>, where an assistant sat at the centre of the agent loop and we took its helpfulness on faith. The full curriculum lives on the <a href="/lessons">Lessons page</a>.
 </div>
 
-# From Predictor to Assistant
-
 If you ran Lesson 5's script, you now own something valuable: a genuinely unhelpful language model. Ask your TinyGPT a question and it will not answer. It will *continue* — with more anatomy, more Edwardian prose, more of whatever statistical neighbourhood your prompt landed it in. It is a mirror of its corpus, and mirrors don't answer questions.
 
 Yet the models you use daily — the one powering the coding agent from Lesson 3, the one drafting your clinic letters — began life as exactly this kind of mirror, scaled up. Somewhere between "raw predictor trained on the internet" and "assistant that answers, follows instructions, and declines to help with the dangerous stuff," something happened. This lesson is about that something: **post-training**. It is the least understood stage of the pipeline among otherwise well-informed people, and — I'll argue by the end — the stage whose fingerprints are on the specific failure modes that matter most in clinical deployment.

@@ -64,8 +64,6 @@ figure.diagram figcaption {
 📚 <strong>Lessons series — #7.</strong> This lesson builds directly on <a href="/post/2026-07-11-from-predictor-to-assistant">Lesson 6</a> (what the assistant is) and <a href="/post/2026-07-10-inside-the-transformer">Lesson 4</a> (token embeddings, the context window), and finally explains the machinery behind the Memory component of <a href="/post/2026-07-10-anatomy-of-an-ai-coding-agent">Lesson 3</a>'s agent. The full curriculum lives on the <a href="/lessons">Lessons page</a>.
 </div>
 
-# Meaning as Geometry: Embeddings, Retrieval, and RAG
-
 The assistant we assembled across Lessons 4–6 has a strange epistemic profile. It writes beautifully, defaults to helpfulness, and knows a compressed, blurry copy of everything its pretraining corpus contained — as of the day that corpus was collected. It knows *nothing else*. Not your hospital's antimicrobial guidelines. Not the trial published last month. Not the allergy documented in the notes of the patient in front of you. And, as Lesson 6 established, it will answer questions about all of these anyway — fluently.
 
 You could try to fix this by retraining. For facts, that's the wrong tool: pretraining is a nine-figure industrial process, and Lesson 6's fine-tuning relocates *defaults*, not reliably-recallable knowledge. What you actually want is something more surgical: at the moment a question is asked, *find the right passages from documents you control and hand them to the model as context*. The model then does what it has always done — continue a transcript — except the transcript now contains the evidence.
