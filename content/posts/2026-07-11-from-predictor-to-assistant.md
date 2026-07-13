@@ -20,6 +20,14 @@ featured: false
   line-height: 1.6;
 }
 .lesson-banner a { color: #90caf9; font-weight: bold; }
+.audio-section {
+  font-size: 0.8em;
+  background: #1a1f2e;
+  border-left: 4px solid #1a237e;
+  padding: 1em 1.4em;
+  border-radius: 0 6px 6px 0;
+  margin: 1.5em 0;
+}
 .callout {
   font-size: 0.85em;
   background: #1e1a0e;
@@ -71,6 +79,22 @@ figure.diagram figcaption {
 If you ran Lesson 5's script, you now own something valuable: a genuinely unhelpful language model. Ask your TinyGPT a question and it will not answer. It will *continue* — with more anatomy, more Edwardian prose, more of whatever statistical neighbourhood your prompt landed it in. It is a mirror of its corpus, and mirrors don't answer questions.
 
 Yet the models you use daily — the one powering the coding agent from Lesson 3, the one drafting your clinic letters — began life as exactly this kind of mirror, scaled up. Somewhere between "raw predictor trained on the internet" and "assistant that answers, follows instructions, and declines to help with the dangerous stuff," something happened. This lesson is about that something: **post-training**. It is the least understood stage of the pipeline among otherwise well-informed people, and — I'll argue by the end — the stage whose fingerprints are on the specific failure modes that matter most in clinical deployment.
+
+<div class="audio-section">
+  🎧 <strong>Listen to this post:</strong> Why AI prioritises preference over truth — the audio companion to this lesson.<br/><br/>
+  <audio controls style="width:100%; margin-top:0.4em;">
+    <source src="/static/audio/Why_AI_Prioritizes_Preference_Over_Truth.m4a" type="audio/mp4">
+    <a href="/static/audio/Why_AI_Prioritizes_Preference_Over_Truth.m4a">Download the audio</a>
+  </audio>
+</div>
+
+<div class="audio-section">
+  🎬 <strong>Watch the video overview:</strong> From predictor to assistant in nine minutes — the visual companion to this lesson.<br/><br/>
+  <video controls preload="metadata" style="width:100%; margin-top:0.4em; border-radius:6px;">
+    <source src="/static/video/Predictor_to_Assistant.mp4" type="video/mp4">
+    <a href="/static/video/Predictor_to_Assistant.mp4">Download the video</a>
+  </video>
+</div>
 
 ## The problem, stated honestly
 
