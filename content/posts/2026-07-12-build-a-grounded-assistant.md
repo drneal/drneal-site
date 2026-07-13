@@ -72,6 +72,14 @@ Seven lessons ago you learned what a neuron computes. Today you assemble the who
 
 That last clause is the real lesson. Anyone can wire up retrieval in an afternoon (you will, below, in about sixty lines). What separates a toy from a tool — and a safe deployment from a liability — is knowing its failure rate on *your* questions over *your* corpus. By the end you'll have both the tool and the number.
 
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎬 <strong>Watch the video overview:</strong> Build a grounded assistant in nine minutes — the visual companion to this capstone.<br/><br/>
+  <video controls preload="metadata" style="width:100%; margin-top:0.4em; border-radius:6px;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/Build_Grounded_Assistant.mp4" type="video/mp4">
+    <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/Build_Grounded_Assistant.mp4">Download the video</a>
+  </video>
+</div>
+
 ## What we're building
 
 <figure class="diagram">
