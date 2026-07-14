@@ -6,7 +6,7 @@ tags: AI, Nobel Prize, Demis Hassabis, Paul Nurse, Alison Noble, AlphaFold, Roya
 level: Advanced
 read_time: 22 min
 summary: "A Nobel Prize laureate who built the most consequential scientific AI tool of the last decade, a cell biologist who won the Nobel for unpicking the machinery of the cell cycle, and the Oxford engineer who chaired the Royal Society's landmark report on AI in science sit down together at Carlton House Terrace. This is what they said — and what it means."
-featured: true
+featured: false
 ---
 
 The video is just over an hour long. You can [watch it here](https://youtu.be/N8LEewvzmUA).
