@@ -101,10 +101,18 @@
         <h2>Get In Touch</h2>
         <p class="text-muted" style="font-size:0.9rem;margin-bottom:1.5rem">
           Direct line: <a href="mailto:dr.neal.aggarwal@gmail.com" class="text-cyan">dr.neal.aggarwal@gmail.com</a>
-          &nbsp;·&nbsp; or use the form below.
+          &nbsp;·&nbsp; or use the form below — <span style="color:var(--amber)">do not post links; your message will be dropped.</span>
         </p>
 
         <form class="contact-form" action="/contact" method="POST">
+          <!-- anti-spam: signed render timestamp -->
+          <input type="hidden" name="fts" value="{{ fts }}">
+          <input type="hidden" name="ftok" value="{{ ftok }}">
+          <!-- anti-spam: honeypot — invisible to humans, bots auto-fill it -->
+          <div style="position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden" aria-hidden="true">
+            <label for="cf-website">Website</label>
+            <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <div class="contact-form__row">
             <div class="contact-form__field">
               <label for="cf-name" class="text-mono" style="font-size:0.8rem;color:var(--text-dim)">// name</label>

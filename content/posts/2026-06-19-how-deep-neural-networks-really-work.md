@@ -84,7 +84,7 @@ featured: true
 <div class="audio-section">
   🎧 <strong>Listen to this post:</strong> Three AI entities discuss what neural networks actually are — the history, the mathematics, and why it matters for your career.<br/><br/>
   <audio controls style="width:100%; margin-top:0.4em;">
-    <source src="/static/audio/Neural_networks_are_just_mathematical_tents.m4a" type="audio/mp4">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Neural_networks_are_just_mathematical_tents.m4a" type="audio/mp4">
     Your browser does not support the audio element.
   </audio>
 </div>
@@ -404,14 +404,14 @@ AI-narrated audio overviews of the fast.ai Lesson 3 materials, generated from th
 
 <p style="margin:0.8em 0 0.2em;"><strong>Course Overview</strong></p>
 <audio controls style="width:100%; margin-bottom:0.8em;">
-  <source src="/static/audio/Course_Overview_audio.m4a" type="audio/mp4">
-  <a href="/static/audio/Course_Overview_audio.m4a">Download Course Overview audio</a>
+  <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Course_Overview_audio.m4a" type="audio/mp4">
+  <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Course_Overview_audio.m4a">Download Course Overview audio</a>
 </audio>
 
 <p style="margin:0 0 0.2em;"><strong>Lesson 1 Deep Dive</strong></p>
 <audio controls style="width:100%; margin-bottom:0.4em;">
-  <source src="/static/audio/Lesson_1_audio_overview.m4a" type="audio/mp4">
-  <a href="/static/audio/Lesson_1_audio_overview.m4a">Download Lesson 1 audio</a>
+  <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Lesson_1_audio_overview.m4a" type="audio/mp4">
+  <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Lesson_1_audio_overview.m4a">Download Lesson 1 audio</a>
 </audio>
 </div>
 
@@ -802,3 +802,7 @@ Slide decks, mind map, and AI-generated audio overview:<br/>
 *Based on Jeremy Howard's fast.ai Practical Deep Learning for Coders 2022 · Lesson 3: Neural Net Foundations · This is an example of the course materials produced by Dr Neal and used to teach students through his one-to-one AI Learners Course.*
 
 *Post by Dr. Neal Aggarwal · [drnealaggarwal.info](https://drnealaggarwal.info) · 40+ years teaching IT and AI*
+
+<div style="font-size:0.85em; background:linear-gradient(135deg, #1a237e 0%, #283593 100%); color:white; padding:1.2em 1.6em; border-radius:8px; margin:1.5em 0; line-height:1.6;">
+📚 <strong>Next in the series:</strong> <a href="/post/2026-06-26-deep-learning-spreadsheet-exercise" style="color:#90caf9; font-weight:bold;">Lesson 02 — Build a Neural Network in a Spreadsheet</a>. Theory into practice: a working neural network with no code and no libraries, just arithmetic you can see and touch. All lessons, in order, on the <a href="/lessons" style="color:#90caf9; font-weight:bold;">Lessons page</a>.
+</div>

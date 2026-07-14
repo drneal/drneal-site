@@ -8,6 +8,9 @@ To update the library or skills: edit data/library.json or data/skills.json.
 import os
 import json
 import re
+import time
+import hmac
+import hashlib
 from pathlib import Path
 from datetime import datetime
 
@@ -222,6 +225,14 @@ def library():
 def demos():
     data = load_json("demos.json")
     return render_template("demos.html", demos=data.get("demos", []))
+
+
+@app.route("/lessons")
+def lessons():
+    data = load_json("lessons.json")
+    return render_template("lessons.html",
+                           lessons=data.get("lessons", []),
+                           intro=data.get("intro", ""))
 
 
 # ── Backtester ────────────────────────────────────────────────────────────────
@@ -1846,13 +1857,99 @@ def binaural():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    ts = str(int(time.time()))
+    return render_template("about.html", fts=ts, ftok=_contact_token(ts))
+
+
+# ── Contact-form anti-spam ────────────────────────────────────────────────────
+#
+# Layered defences, no external services or dependencies:
+#   1. Honeypot   — hidden "website" field; humans never see it, bots fill it.
+#   2. Time-trap  — form carries an HMAC-signed render timestamp. Submissions
+#                   faster than MIN_FILL_SECONDS (bots) or without a valid
+#                   token (direct POSTs that never loaded the page) are dropped.
+#   3. Rate limit — max submissions per IP per hour (in-memory).
+#   4. Content    — reject messages that are mostly Cyrillic, contain URLs or
+#                   HTML anchors, or match known spam keywords. Tune below.
+#
+# Blocked submissions are logged and shown a fake "success" so bots get no
+# signal to adapt against.
+
+MIN_FILL_SECONDS  = 4
+MAX_FORM_AGE      = 6 * 3600
+MAX_PER_IP_HOUR   = 5
+_CONTACT_HITS: dict[str, list[float]] = {}
+
+SPAM_KEYWORDS = [
+    "нарколог", "запой", "казино", "нарколога",       # RU medical/casino spam
+    "narkolog", "casino", "viagra", "cialis",
+    "backlink", "seo service", "seo ranking", "guest post",
+    "crypto profit", "investment opportunity", "loan offer",
+]
+
+URL_RE = re.compile(r"https?://|www\.|<a\s", re.IGNORECASE)
+
+
+def _contact_token(ts: str) -> str:
+    return hmac.new(app.secret_key.encode(), ts.encode(), hashlib.sha256).hexdigest()[:32]
+
+
+def _spam_reason(name: str, subject: str, message: str) -> str | None:
+    """Return a reason string if the submission looks like spam, else None."""
+    blob = f"{name} {subject} {message}".lower()
+
+    cyrillic = sum(1 for c in message if "Ѐ" <= c <= "ӿ")
+    if message and cyrillic / len(message) > 0.30:
+        return "cyrillic-heavy body"
+    if URL_RE.search(message) or URL_RE.search(subject):
+        return "contains URL/anchor"
+    for kw in SPAM_KEYWORDS:
+        if kw in blob:
+            return f"keyword: {kw}"
+    return None
+
+
+def _rate_limited(ip: str) -> bool:
+    now = time.time()
+    hits = [t for t in _CONTACT_HITS.get(ip, []) if now - t < 3600]
+    hits.append(now)
+    _CONTACT_HITS[ip] = hits
+    if len(_CONTACT_HITS) > 10_000:          # keep the map bounded
+        _CONTACT_HITS.clear()
+    return len(hits) > MAX_PER_IP_HOUR
+
+
+def _reject_silently(reason: str, ip: str):
+    """Log and pretend success — bots learn nothing."""
+    app.logger.warning("contact spam blocked (%s) from %s", reason, ip)
+    flash("Message sent — I'll be in touch.", "success")
+    return redirect(url_for("contact"))
 
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "GET":
-        return render_template("contact.html")
+        ts = str(int(time.time()))
+        return render_template("contact.html", fts=ts, ftok=_contact_token(ts))
+
+    ip = request.headers.get("X-Forwarded-For", request.remote_addr or "?").split(",")[0].strip()
+
+    # 1. Honeypot
+    if request.form.get("website", ""):
+        return _reject_silently("honeypot", ip)
+
+    # 2. Time-trap token
+    ts, tok = request.form.get("fts", ""), request.form.get("ftok", "")
+    if not ts or not hmac.compare_digest(_contact_token(ts), tok):
+        return _reject_silently("missing/invalid token", ip)
+    age = time.time() - int(ts)
+    if age < MIN_FILL_SECONDS or age > MAX_FORM_AGE:
+        return _reject_silently(f"form age {age:.1f}s", ip)
+
+    # 3. Rate limit
+    if _rate_limited(ip):
+        return _reject_silently("rate limit", ip)
+
 
     name    = request.form.get("name", "").strip()
     email   = request.form.get("email", "").strip()
@@ -1862,6 +1959,12 @@ def contact():
     if not all([name, email, message]):
         flash("Please fill in all required fields.", "error")
         return redirect(url_for("contact"))
+
+    # 4. Content filters
+    reason = _spam_reason(name, subject, message)
+    if reason:
+        return _reject_silently(reason, ip)
+
 
     try:
         gmail_user = os.environ.get("GMAIL_USER", "dr.neal.aggarwal@gmail.com")

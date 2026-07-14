@@ -1,7 +1,7 @@
 ---
 title: "The Culture: Iain M. Banks's Blueprint for the Post-AGI Future"
 date: 2026-06-20
-tags: [AI, AGI, post-scarcity, science fiction, Iain Banks, Demis Hassabis, future, philosophy]
+tags: AI, AGI, post-scarcity, science fiction, Iain Banks, Demis Hassabis, future, philosophy
 description: "Ten novels, one civilisation, and the most sophisticated imagining of a post-AGI future ever committed to fiction. Why the Culture series is the blueprint every serious thinker about AI should read — and why Demis Hassabis already has."
 ---
 

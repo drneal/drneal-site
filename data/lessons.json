@@ -1,0 +1,77 @@
+{
+  "intro": "A structured curriculum for teaching yourself how LLMs and AI agents actually work — from first principles to advanced internals. Each lesson is a self-contained deep dive. Work through them in order.",
+  "lessons": [
+    {
+      "number": 1,
+      "title": "How Deep Neural Networks Really Work",
+      "description": "The foundations. What a neural network actually is, why stacking ReLUs can approximate any function, and how gradient descent tunes millions of parameters. Start here.",
+      "url": "/post/2026-06-19-how-deep-neural-networks-really-work",
+      "level": "Intermediate",
+      "read_time": "35 min",
+      "topics": ["neural networks", "gradient descent", "ReLU", "universal approximation"]
+    },
+    {
+      "number": 2,
+      "title": "Build a Neural Network in a Spreadsheet",
+      "description": "Theory into practice. Build a working neural network from scratch in a spreadsheet — no code, no libraries, just arithmetic you can see and touch. Train it on real Titanic passenger data.",
+      "url": "/post/2026-06-26-deep-learning-spreadsheet-exercise",
+      "level": "Beginner–Intermediate",
+      "read_time": "25 min",
+      "topics": ["hands-on exercise", "gradient descent", "spreadsheet", "loss functions"]
+    },
+    {
+      "number": 3,
+      "title": "Anatomy of an AI Coding Agent",
+      "description": "From models to agents. What separates a chatbot from an agent, the six building blocks every production coding agent shares, how a single request flows from keystroke to output, and how permission systems keep an autonomous loop safe.",
+      "url": "/post/2026-07-10-anatomy-of-an-ai-coding-agent",
+      "level": "Intermediate",
+      "read_time": "30 min",
+      "topics": ["AI agents", "agent loop", "tool use", "permissions", "sub-agents"]
+    },
+    {
+      "number": 4,
+      "title": "Inside the Transformer",
+      "description": "The machine in the middle. How a language model turns a transcript into the next token: tokens and embeddings, why attention was the breakthrough, what a context window physically is — and a complete tiny GPT in PyTorch you can read in one sitting.",
+      "url": "/post/2026-07-10-inside-the-transformer",
+      "level": "Intermediate–Advanced",
+      "read_time": "35 min",
+      "topics": ["transformer", "attention", "embeddings", "context window", "GPT", "PyTorch"]
+    },
+    {
+      "number": 5,
+      "title": "Train Your Own GPT",
+      "description": "The hands-on payoff. Take the TinyGPT from Lesson 4, feed it a laptop-sized corpus, write the training loop yourself, and watch generated text condense out of randomness — from noise, to word-shaped noise, to fluent (and confidently wrong) sentences. Complete runnable script included.",
+      "url": "/post/2026-07-10-train-your-own-gpt",
+      "level": "Intermediate–Advanced",
+      "read_time": "35 min",
+      "topics": ["training", "loss curves", "self-supervision", "overfitting", "sampling", "PyTorch"]
+    },
+    {
+      "number": 6,
+      "title": "From Predictor to Assistant",
+      "description": "The shaping pass. How a raw next-token predictor becomes an assistant: instruction tuning, preference-based refinement, why the same weights can host such different behaviours — and how the post-training pipeline explains sycophancy, polished hallucination, and miscalibrated refusals in deployed clinical tools.",
+      "url": "/post/2026-07-11-from-predictor-to-assistant",
+      "level": "Intermediate–Advanced",
+      "read_time": "30 min",
+      "topics": ["post-training", "instruction tuning", "RLHF", "sycophancy", "alignment", "clinical AI"]
+    },
+    {
+      "number": 7,
+      "title": "Meaning as Geometry: Embeddings, Retrieval, and RAG",
+      "description": "Grounding the model. How text becomes coordinates, why nearest-neighbour search finds meaning rather than keywords, the full RAG pipeline in twenty lines — and the retrieval failure modes (superseded guidance, similar-but-opposite passages) that matter most in clinical deployments.",
+      "url": "/post/2026-07-11-meaning-as-geometry",
+      "level": "Intermediate–Advanced",
+      "read_time": "30 min",
+      "topics": ["embeddings", "vector search", "RAG", "grounding", "provenance", "clinical AI"]
+    },
+    {
+      "number": 8,
+      "title": "The Capstone: Build a Grounded Assistant",
+      "description": "Everything, assembled. Build a working retrieval assistant over a folder of your own documents — local embeddings, the twenty-line retriever, grounded answers with citations — then measure it honestly with a recall@k evaluation harness. Complete runnable script included.",
+      "url": "/post/2026-07-12-build-a-grounded-assistant",
+      "level": "Advanced",
+      "read_time": "40 min",
+      "topics": ["RAG", "evaluation", "recall@k", "chunking", "hands-on exercise", "clinical AI"]
+    }
+  ]
+}

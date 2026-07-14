@@ -80,7 +80,7 @@ featured: true
 *This article accompanies Jeremy Howard's fast.ai Practical Deep Learning for Coders 2022 · Lesson 3, specifically the section from 1:04:30 to 1:20:47. It is part of the curriculum materials produced by Dr Neal for one-to-one AI Learners sessions.*
 
 <audio controls style="width:100%;margin:1rem 0;">
-  <source src="/static/audio/Build_a_Titanic_predictor_in_Excel.m4a" type="audio/mp4">
+  <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Build_a_Titanic_predictor_in_Excel.m4a" type="audio/mp4">
   Your browser does not support the audio element.
 </audio>
 
@@ -478,3 +478,7 @@ The fast.ai curriculum is excellent. But it was designed for a specific learner 
 Students who study with Dr. Neal complete the fast.ai curriculum in half the median time, with substantially deeper practical understanding — and they leave with a project, not just a certificate.
 
 [→ Contact Dr. Neal Aggarwal for 1-to-1 sessions, group workshops, and curriculum design](/about#contact)
+
+<div style="font-size:0.85em; background:linear-gradient(135deg, #1a237e 0%, #283593 100%); color:white; padding:1.2em 1.6em; border-radius:8px; margin:1.5em 0; line-height:1.6;">
+📚 <strong>Next in the series:</strong> <a href="/post/2026-07-10-anatomy-of-an-ai-coding-agent" style="color:#90caf9; font-weight:bold;">Lesson 03 — Anatomy of an AI Coding Agent</a>. From models to agents: what's wrapped around an LLM to turn a text predictor into something that reads your files, runs your tests, and fixes its own mistakes. All lessons, in order, on the <a href="/lessons" style="color:#90caf9; font-weight:bold;">Lessons page</a>.
+</div>
