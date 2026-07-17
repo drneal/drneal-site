@@ -1950,6 +1950,7 @@ def contact():
     if _rate_limited(ip):
         return _reject_silently("rate limit", ip)
 
+
     name    = request.form.get("name", "").strip()
     email   = request.form.get("email", "").strip()
     subject = request.form.get("subject", "Message from drnealaggarwal.info").strip()
@@ -1963,6 +1964,7 @@ def contact():
     reason = _spam_reason(name, subject, message)
     if reason:
         return _reject_silently(reason, ip)
+
 
     try:
         gmail_user = os.environ.get("GMAIL_USER", "dr.neal.aggarwal@gmail.com")
