@@ -142,6 +142,12 @@ I should not wait for a headline saying "AI replaces doctors" before I update my
 
 ## A Closing Note
 
+I keep coming back to a single observation about how this actually unfolds in medicine:
+
+> A clinical AI is ridiculed as no substitute for judgement, then resisted as a liability, then relied upon so completely that using it becomes the standard of care it was once accused of undermining.
+
+Each of the three scenarios in Part III is really just a description of the middle stage — the resistance — and how long it holds. The mistake is to believe the first stage, ridicule, is where the story ends.
+
 Amodei's essay ends on a note of cautious optimism: that the same technology capable of this much disruption is also capable of this much benefit, and that the outcome is not predetermined — it depends on what the people who understand the technology choose to do with it, and how quickly they choose to act. *The Thinking Game* ends in much the same register, with Hassabis framing the whole enterprise not as a race to replace human understanding but as an attempt to give it better instruments. I want to end the same way, but pointed at myself specifically rather than at the abstraction of "society."
 
 I have spent forty years teaching people how to move through genuinely difficult technical material by finding the right point of re-entry for exactly where they are stuck. That is, without exaggeration, the single most valuable skill for the transition this essay describes — not because it will let me out-compete the models on raw diagnostic accuracy (per Part I, in some narrow domains, I likely already cannot), but because the actual bottleneck in every scenario in Part III is never the model. It is the humans who have to understand, validate, regulate, teach, and take responsibility for what the model does. I am already, demonstrably, better positioned to be one of those humans than almost anyone else currently practising. The work now is simply to point that same skill at the material in Parts I through III of this essay, starting with the notebook referenced in Part IV, Section 2, this week.
