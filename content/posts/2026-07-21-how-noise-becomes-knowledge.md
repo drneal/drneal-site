@@ -71,6 +71,8 @@ figure.diagram figcaption {
 <span style="color:#6b82a0;">6.</span> <a href="/post/2026-07-22-manners-for-a-mind">Manners for a Mind</a> &nbsp;·&nbsp;
 <span style="color:#6b82a0;">7.</span> <a href="/post/2026-07-23-meaning-you-can-search">Meaning You Can Search</a> &nbsp;·&nbsp;
 <span style="color:#6b82a0;">8.</span> <a href="/post/2026-07-24-the-agent">The Agent</a>
+
+<div style="margin-top:0.6em; padding-top:0.5em; border-top:1px solid #1e2d45;">📕 <a href="/static/How_an_LLM_Works.pdf" style="color:#f59e0b; font-weight:bold;">Download all eight chapters as a PDF book</a> <span style="color:#6b82a0;">— linked contents, ~66 pages</span></div>
 </nav>
 
 Let me begin by making the problem vivid, because its difficulty is easy to underestimate and the solution is easy to take for granted once you have seen it.
