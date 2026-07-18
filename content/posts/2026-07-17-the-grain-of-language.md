@@ -77,7 +77,7 @@ figure.diagram figcaption {
 <span style="color:#6b82a0;">7.</span> <a href="/post/2026-07-23-meaning-you-can-search">Meaning You Can Search</a> &nbsp;·&nbsp;
 <span style="color:#6b82a0;">8.</span> <a href="/post/2026-07-24-the-agent">The Agent</a>
 
-<div style="margin-top:0.6em; padding-top:0.5em; border-top:1px solid #1e2d45;">📕 <a href="/static/How_an_LLM_Works.pdf" style="color:#f59e0b; font-weight:bold;">Download all eight chapters as a PDF book</a> <span style="color:#6b82a0;">— linked contents, ~66 pages</span></div>
+<div style="margin-top:0.6em; padding-top:0.5em; border-top:1px solid #1e2d45;"><a href="/static/How_an_LLM_Works.pdf"><img src="/static/book_cover_icon.png" alt="How an LLM Works — book cover" style="height:2.8em; vertical-align:middle; border-radius:2px; box-shadow:0 1px 5px rgba(0,0,0,0.55); margin-right:0.55em;"></a><a href="/static/How_an_LLM_Works.pdf" style="color:#f59e0b; font-weight:bold;">Download all eight chapters as a PDF book</a> <span style="color:#6b82a0;">— linked contents, ~66 pages</span></div>
 </nav>
 
 Type a sentence into ChatGPT and press enter. In the fraction of a second before any answer begins to form, something happens that feels too mundane to matter and turns out to explain a startling amount about what these systems can and cannot do.

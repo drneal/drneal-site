@@ -71,7 +71,7 @@ figure.diagram figcaption {
 <span style="color:#6b82a0;">7.</span> <a href="/post/2026-07-23-meaning-you-can-search">Meaning You Can Search</a> &nbsp;·&nbsp;
 <span style="color:#6b82a0;">8.</span> <a href="/post/2026-07-24-the-agent">The Agent</a>
 
-<div style="margin-top:0.6em; padding-top:0.5em; border-top:1px solid #1e2d45;">📕 <a href="/static/How_an_LLM_Works.pdf" style="color:#f59e0b; font-weight:bold;">Download all eight chapters as a PDF book</a> <span style="color:#6b82a0;">— linked contents, ~66 pages</span></div>
+<div style="margin-top:0.6em; padding-top:0.5em; border-top:1px solid #1e2d45;"><a href="/static/How_an_LLM_Works.pdf"><img src="/static/book_cover_icon.png" alt="How an LLM Works — book cover" style="height:2.8em; vertical-align:middle; border-radius:2px; box-shadow:0 1px 5px rgba(0,0,0,0.55); margin-right:0.55em;"></a><a href="/static/How_an_LLM_Works.pdf" style="color:#f59e0b; font-weight:bold;">Download all eight chapters as a PDF book</a> <span style="color:#6b82a0;">— linked contents, ~66 pages</span></div>
 </nav>
 
 At the close of the last chapter we had reduced a page of writing to a row of integers — token IDs, the grain into which language had been ground so a machine could swallow it. And I was careful to insist on something that should still be nagging at you: those integers mean *nothing*. Token 5,317 is not "closer" to token 5,318 than to token 90,001. The numbers are arbitrary labels, handed out in the order the tokenizer happened to build its vocabulary. If the model is ever going to seem to understand anything, that understanding cannot come from the numbers themselves. It has to be *built*.
