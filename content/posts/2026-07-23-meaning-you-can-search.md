@@ -49,6 +49,18 @@ figure.diagram figcaption {
 
 # Meaning You Can Search: Embeddings, Retrieval, and Grounding
 
+<nav style="font-size:0.8em; background:#0d1117; border:1px solid #1e2d45; border-left:4px solid #00d4f5; border-radius:0 8px 8px 0; padding:0.9em 1.3em; margin:1.6em 0; line-height:1.95;">
+<div style="color:#00d4f5; font-family:'JetBrains Mono',monospace; font-size:0.86em; letter-spacing:0.06em; margin-bottom:0.5em;">📚 HOW AN LLM WORKS · CONTENTS</div>
+<span style="color:#6b82a0;">1.</span> <a href="/post/2026-07-17-the-grain-of-language">The Grain of Language</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">2.</span> <a href="/post/2026-07-18-the-prediction-game">The Prediction Game</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">3.</span> <a href="/post/2026-07-19-reading-the-room">Reading the Room</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">4.</span> <a href="/post/2026-07-20-the-tower">The Tower</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">5.</span> <a href="/post/2026-07-21-how-noise-becomes-knowledge">How Noise Becomes Knowledge</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">6.</span> <a href="/post/2026-07-22-manners-for-a-mind">Manners for a Mind</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">7.</span> <strong style="color:#f59e0b;">Meaning You Can Search</strong> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">8.</span> <a href="/post/2026-07-24-the-agent">The Agent</a>
+</nav>
+
 The assistant we finished in the last chapter has a strange and specific kind of ignorance, and it is worth stating precisely, because the whole of this chapter is a response to it.
 
 It is not that the assistant knows too little. It knows an extraordinary amount — a compressed, blurry impression of a large fraction of everything ever written, up to the day its training data was collected. The problem is threefold and exact. It knows nothing that was written *after* that day. It knows nothing that was never *public* — not your hospital's formulary, not the protocol your department agreed last month, not the notes of the patient in front of you. And, as Chapter Six established, when it does not know, it has been trained to produce a confident, well-mannered answer regardless, sometimes complete with a citation that corresponds to no real source. It is a brilliant mind, sealed inside a moment, with a trained disposition to bluff.

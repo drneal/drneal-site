@@ -61,6 +61,18 @@ figure.diagram figcaption {
 
 # Manners for a Mind: From Predictor to Assistant
 
+<nav style="font-size:0.8em; background:#0d1117; border:1px solid #1e2d45; border-left:4px solid #00d4f5; border-radius:0 8px 8px 0; padding:0.9em 1.3em; margin:1.6em 0; line-height:1.95;">
+<div style="color:#00d4f5; font-family:'JetBrains Mono',monospace; font-size:0.86em; letter-spacing:0.06em; margin-bottom:0.5em;">📚 HOW AN LLM WORKS · CONTENTS</div>
+<span style="color:#6b82a0;">1.</span> <a href="/post/2026-07-17-the-grain-of-language">The Grain of Language</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">2.</span> <a href="/post/2026-07-18-the-prediction-game">The Prediction Game</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">3.</span> <a href="/post/2026-07-19-reading-the-room">Reading the Room</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">4.</span> <a href="/post/2026-07-20-the-tower">The Tower</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">5.</span> <a href="/post/2026-07-21-how-noise-becomes-knowledge">How Noise Becomes Knowledge</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">6.</span> <strong style="color:#f59e0b;">Manners for a Mind</strong> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">7.</span> <a href="/post/2026-07-23-meaning-you-can-search">Meaning You Can Search</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">8.</span> <a href="/post/2026-07-24-the-agent">The Agent</a>
+</nav>
+
 If you built and trained everything in the last five chapters — ground text into tokens, gave them meaning, built attention, stacked the tower, and ran the long descent until the loss flattened — you would hold in your hands one of the more remarkable artefacts humans have made: a base model. It has read a large fraction of everything ever written. It is fluent in dozens of languages, apparently knowledgeable across most of human endeavour, able to continue any text with uncanny plausibility.
 
 And it would be almost useless to you.

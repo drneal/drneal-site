@@ -60,6 +60,18 @@ figure.diagram figcaption {
 
 # Reading the Room: The Idea at the Heart of Every Language Model
 
+<nav style="font-size:0.8em; background:#0d1117; border:1px solid #1e2d45; border-left:4px solid #00d4f5; border-radius:0 8px 8px 0; padding:0.9em 1.3em; margin:1.6em 0; line-height:1.95;">
+<div style="color:#00d4f5; font-family:'JetBrains Mono',monospace; font-size:0.86em; letter-spacing:0.06em; margin-bottom:0.5em;">📚 HOW AN LLM WORKS · CONTENTS</div>
+<span style="color:#6b82a0;">1.</span> <a href="/post/2026-07-17-the-grain-of-language">The Grain of Language</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">2.</span> <a href="/post/2026-07-18-the-prediction-game">The Prediction Game</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">3.</span> <strong style="color:#f59e0b;">Reading the Room</strong> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">4.</span> <a href="/post/2026-07-20-the-tower">The Tower</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">5.</span> <a href="/post/2026-07-21-how-noise-becomes-knowledge">How Noise Becomes Knowledge</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">6.</span> <a href="/post/2026-07-22-manners-for-a-mind">Manners for a Mind</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">7.</span> <a href="/post/2026-07-23-meaning-you-can-search">Meaning You Can Search</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">8.</span> <a href="/post/2026-07-24-the-agent">The Agent</a>
+</nav>
+
 Let me put the last chapter's unfinished business back on the table, because everything here grows out of it.
 
 We had given every token a vector — a location in a vast space where nearness means similarity of meaning. It was a real achievement: the model could now generalise, treating `ramipril` sensibly on first sight because it lives near `lisinopril`. But the vector was *fixed*. The embedding table hands over the same coordinates for `bank` whether the sentence is about a river or a cheque. And I argued that this is fatal, because meaning in language is not a property of words in isolation. It is a property of words *in company*. The single most important token for the sense of a sentence often arrives wearing a blank mask, and the mask is identical in situations that mean opposite things.

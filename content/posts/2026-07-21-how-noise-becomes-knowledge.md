@@ -61,6 +61,18 @@ figure.diagram figcaption {
 
 # How Noise Becomes Knowledge: Training a Language Model
 
+<nav style="font-size:0.8em; background:#0d1117; border:1px solid #1e2d45; border-left:4px solid #00d4f5; border-radius:0 8px 8px 0; padding:0.9em 1.3em; margin:1.6em 0; line-height:1.95;">
+<div style="color:#00d4f5; font-family:'JetBrains Mono',monospace; font-size:0.86em; letter-spacing:0.06em; margin-bottom:0.5em;">📚 HOW AN LLM WORKS · CONTENTS</div>
+<span style="color:#6b82a0;">1.</span> <a href="/post/2026-07-17-the-grain-of-language">The Grain of Language</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">2.</span> <a href="/post/2026-07-18-the-prediction-game">The Prediction Game</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">3.</span> <a href="/post/2026-07-19-reading-the-room">Reading the Room</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">4.</span> <a href="/post/2026-07-20-the-tower">The Tower</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">5.</span> <strong style="color:#f59e0b;">How Noise Becomes Knowledge</strong> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">6.</span> <a href="/post/2026-07-22-manners-for-a-mind">Manners for a Mind</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">7.</span> <a href="/post/2026-07-23-meaning-you-can-search">Meaning You Can Search</a> &nbsp;·&nbsp;
+<span style="color:#6b82a0;">8.</span> <a href="/post/2026-07-24-the-agent">The Agent</a>
+</nav>
+
 Let me begin by making the problem vivid, because its difficulty is easy to underestimate and the solution is easy to take for granted once you have seen it.
 
 At the end of the last chapter we had assembled a complete transformer — the embedding table, the attention heads with their query, key, and value projections, the feed-forward layers, the residual stream, the whole tower, and the final projection that reads a prediction off the top. It is an engine of real intricacy. And I told you the uncomfortable truth: if you built it today and ran a sentence through it, it would produce *gibberish*. Every one of its parameters — and there may be billions of them — begins life as a random number. The embedding that we later admired for placing `aspirin` near `ibuprofen` starts as buckshot. The attention heads that we said track pronouns start attending to nothing in particular. The feed-forward layers that hold the model's knowledge start holding noise.
