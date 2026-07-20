@@ -88,20 +88,20 @@ How does it learn to do that? By training on contrast, at scale — shown millio
   <!-- anticoag cluster -->
   <ellipse cx="180" cy="160" rx="135" ry="76" fill="#0a4a5c" opacity="0.32"/>
   <text x="180" y="104" text-anchor="middle" fill="#00d4f5" font-family="sans-serif" font-size="11" font-weight="bold">anticoagulation</text>
-  <circle cx="140" cy="150" r="4" fill="#00d4f5"/><text x="148" y="147" fill="#9fdcec" font-family="monospace" font-size="9">“hold apixaban 48h pre-op”</text>
-  <circle cx="150" cy="180" r="4" fill="#00d4f5"/><text x="158" y="192" fill="#9fdcec" font-family="monospace" font-size="9">“warfarin INR target 2–3”</text>
+  <circle cx="100" cy="147" r="4" fill="#00d4f5"/><text x="180" y="150" text-anchor="middle" fill="#9fdcec" font-family="monospace" font-size="9">“hold apixaban 48h pre-op”</text>
+  <circle cx="103" cy="175" r="4" fill="#00d4f5"/><text x="180" y="178" text-anchor="middle" fill="#9fdcec" font-family="monospace" font-size="9">“warfarin INR target 2–3”</text>
 
   <!-- allergy cluster -->
   <ellipse cx="545" cy="160" rx="140" ry="76" fill="#053d28" opacity="0.34"/>
   <text x="545" y="104" text-anchor="middle" fill="#10b981" font-family="sans-serif" font-size="11" font-weight="bold">drug allergy</text>
-  <circle cx="500" cy="150" r="4" fill="#10b981"/><text x="508" y="147" fill="#8fd8b8" font-family="monospace" font-size="9">“urticaria after amoxicillin”</text>
-  <circle cx="560" cy="182" r="4" fill="#10b981"/><text x="568" y="194" fill="#8fd8b8" font-family="monospace" font-size="9">“penicillin allergy”</text>
+  <circle cx="457" cy="147" r="4" fill="#10b981"/><text x="545" y="150" text-anchor="middle" fill="#8fd8b8" font-family="monospace" font-size="9">“urticaria after amoxicillin”</text>
+  <circle cx="481" cy="175" r="4" fill="#10b981"/><text x="545" y="178" text-anchor="middle" fill="#8fd8b8" font-family="monospace" font-size="9">“penicillin allergy”</text>
 
   <!-- lipids cluster -->
   <ellipse cx="360" cy="360" rx="140" ry="68" fill="#2e1e5e" opacity="0.4"/>
   <text x="360" y="312" text-anchor="middle" fill="#a78bfa" font-family="sans-serif" font-size="11" font-weight="bold">lipid management</text>
-  <circle cx="315" cy="352" r="4" fill="#a78bfa"/><text x="323" y="349" fill="#c9b8f5" font-family="monospace" font-size="9">“rash resolved off the statin”</text>
-  <circle cx="360" cy="384" r="4" fill="#a78bfa"/><text x="368" y="381" fill="#c9b8f5" font-family="monospace" font-size="9">“LDL target post-MI”</text>
+  <circle cx="269" cy="349" r="4" fill="#a78bfa"/><text x="360" y="352" text-anchor="middle" fill="#c9b8f5" font-family="monospace" font-size="9">“rash resolved off the statin”</text>
+  <circle cx="296" cy="379" r="4" fill="#a78bfa"/><text x="360" y="382" text-anchor="middle" fill="#c9b8f5" font-family="monospace" font-size="9">“LDL target post-MI”</text>
 
   <!-- query -->
   <circle cx="510" cy="220" r="8" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
@@ -157,7 +157,7 @@ The second lane runs *every time a question is asked*. Embed the question with t
   <path d="M535,258 L535,274" stroke="#6b82a0" stroke-width="2" marker-end="url(#ra7)"/>
 
   <!-- context window -->
-  <rect x="150" y="360" width="420" height="62" rx="9" fill="#4a3000" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="115" y="360" width="490" height="62" rx="9" fill="#4a3000" stroke="#f59e0b" stroke-width="2"/>
   <text x="360" y="384" text-anchor="middle" fill="#fdeccd" font-family="sans-serif" font-size="12" font-weight="bold">context window: question + retrieved passages + instruction</text>
   <text x="360" y="404" text-anchor="middle" fill="#f0c987" font-family="sans-serif" font-size="9.5">“Answer only from the passages below. Cite each claim. Say so if they don't contain the answer.”</text>
   <path d="M535,278 Q535,340 470,360" stroke="#6b82a0" stroke-width="2" fill="none" marker-end="url(#ra7)"/>
@@ -224,9 +224,9 @@ Retrieval is the best answer we have to grounding, which is exactly why you must
   <ellipse cx="360" cy="168" rx="300" ry="94" fill="#0a4a5c" opacity="0.28"/>
   <text x="360" y="86" text-anchor="middle" fill="#00d4f5" font-family="sans-serif" font-size="11" font-weight="bold">“metformin + contrast imaging” neighbourhood — everything here embeds close together</text>
 
-  <circle cx="175" cy="150" r="6" fill="#10b981"/><text x="188" y="146" fill="#d3f5e6" font-family="sans-serif" font-size="10.5">“continue metformin if eGFR ≥ 30, standard contrast” — current</text>
-  <circle cx="200" cy="196" r="6" fill="#f87171"/><text x="213" y="200" fill="#fde2e2" font-family="sans-serif" font-size="10.5">“withhold metformin 48h post-contrast” — superseded 2019 policy, never purged</text>
-  <circle cx="470" cy="232" r="6" fill="#f87171"/><text x="360" y="252" fill="#fde2e2" font-family="sans-serif" font-size="10.5">“metformin contraindicated” — from a paediatric protocol</text>
+  <circle cx="185" cy="147" r="6" fill="#10b981"/><text x="360" y="151" text-anchor="middle" fill="#d3f5e6" font-family="sans-serif" font-size="10.5">“continue metformin if eGFR ≥ 30, standard contrast” — current</text>
+  <circle cx="148" cy="191" r="6" fill="#f87171"/><text x="360" y="195" text-anchor="middle" fill="#fde2e2" font-family="sans-serif" font-size="10.5">“withhold metformin 48h post-contrast” — superseded 2019 policy, never purged</text>
+  <circle cx="203" cy="233" r="6" fill="#f87171"/><text x="360" y="237" text-anchor="middle" fill="#fde2e2" font-family="sans-serif" font-size="10.5">“metformin contraindicated” — from a paediatric protocol</text>
 
   <circle cx="520" cy="132" r="8" fill="none" stroke="#f59e0b" stroke-width="2.5"/><circle cx="520" cy="132" r="3" fill="#f59e0b"/>
   <text x="410" y="118" fill="#f59e0b" font-family="sans-serif" font-size="10.5" font-weight="bold">query: “hold metformin before CT contrast?”</text>

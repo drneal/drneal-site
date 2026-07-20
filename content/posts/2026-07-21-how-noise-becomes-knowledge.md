@@ -205,11 +205,11 @@ The solution is an algorithm called **backpropagation**, and its essential idea 
 
   <!-- forward arrows (left) -->
   <path d="M250,380 L250,85" stroke="#00d4f5" stroke-width="2" marker-end="url(#up5)"/>
-  <text x="205" y="240" fill="#00d4f5" font-family="sans-serif" font-size="10" transform="rotate(-90 205 240)">forward: text → prediction → loss</text>
+  <text x="205" y="232" text-anchor="middle" fill="#00d4f5" font-family="sans-serif" font-size="10" transform="rotate(-90 205 232)">forward: text → prediction → loss</text>
 
   <!-- backward arrows (right) -->
   <path d="M470,85 L470,380" stroke="#f87171" stroke-width="2" marker-end="url(#dn5)"/>
-  <text x="512" y="240" fill="#f87171" font-family="sans-serif" font-size="10" transform="rotate(90 512 240)">backward: blame → every weight</text>
+  <text x="512" y="232" text-anchor="middle" fill="#f87171" font-family="sans-serif" font-size="10" transform="rotate(90 512 232)">backward: blame → every weight</text>
 
   <!-- notes -->
   <text x="600" y="130" fill="#e2a0a0" font-family="sans-serif" font-size="9.5">“nudge −”</text>
