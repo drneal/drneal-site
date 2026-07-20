@@ -123,9 +123,9 @@ Each of these three is produced from the token's embedding by its own learned pr
   <path d="M320,112 L200,150" stroke="#6b82a0" stroke-width="1.5" marker-end="url(#qa1)"/>
   <path d="M360,112 L360,150" stroke="#6b82a0" stroke-width="1.5" marker-end="url(#qa1)"/>
   <path d="M400,112 L520,150" stroke="#6b82a0" stroke-width="1.5" marker-end="url(#qa1)"/>
-  <text x="245" y="140" fill="#6b82a0" font-family="monospace" font-size="9">×W_Q</text>
-  <text x="372" y="140" fill="#6b82a0" font-family="monospace" font-size="9">×W_K</text>
-  <text x="470" y="140" fill="#6b82a0" font-family="monospace" font-size="9">×W_V</text>
+  <text x="214" y="134" fill="#6b82a0" font-family="monospace" font-size="9">×W_Q</text>
+  <text x="374" y="127" fill="#6b82a0" font-family="monospace" font-size="9">×W_K</text>
+  <text x="492" y="134" fill="#6b82a0" font-family="monospace" font-size="9">×W_V</text>
 
   <rect x="60" y="156" width="220" height="82" rx="10" fill="#4a3000" stroke="#f59e0b" stroke-width="1.5"/>
   <text x="170" y="182" text-anchor="middle" fill="#fdeccd" font-family="sans-serif" font-size="13" font-weight="bold">QUERY</text>

@@ -300,13 +300,13 @@ The word `bank` means something utterly different in each — a muddy riverside 
   <rect x="40" y="70" width="250" height="44" rx="8" fill="#0a4a5c" stroke="#00d4f5" stroke-width="1.5"/>
   <text x="165" y="89" text-anchor="middle" fill="#d8f6fd" font-family="sans-serif" font-size="10.5">“…the bank of the river…”</text>
   <text x="165" y="104" text-anchor="middle" fill="#9fdcec" font-family="sans-serif" font-size="10">needs: riverside</text>
-  <path d="M290,100 Q330,130 342,150" stroke="#6b82a0" stroke-width="1.5" fill="none" marker-end="url(#ga)"/>
+  <path d="M290,100 Q350,120 350,148" stroke="#6b82a0" stroke-width="1.5" fill="none" marker-end="url(#ga)"/>
 
   <!-- sentence 2 -->
   <rect x="430" y="70" width="250" height="44" rx="8" fill="#053d28" stroke="#10b981" stroke-width="1.5"/>
   <text x="555" y="89" text-anchor="middle" fill="#d3f5e6" font-family="sans-serif" font-size="10.5">“…deposited it at the bank…”</text>
   <text x="555" y="104" text-anchor="middle" fill="#8fd8b8" font-family="sans-serif" font-size="10">needs: institution</text>
-  <path d="M430,100 Q390,130 378,150" stroke="#6b82a0" stroke-width="1.5" fill="none" marker-end="url(#ga)"/>
+  <path d="M430,100 Q370,120 370,148" stroke="#6b82a0" stroke-width="1.5" fill="none" marker-end="url(#ga)"/>
 
   <text x="360" y="240" text-anchor="middle" fill="#f87171" font-family="sans-serif" font-size="12" font-weight="bold">The same mask arrives for two opposite meanings.</text>
   <text x="360" y="266" text-anchor="middle" fill="#c9d6e8" font-family="sans-serif" font-size="11.5">The only cure: let the token <tspan font-style="italic">look at its neighbours</tspan> — “river”, “deposited” — and</text>

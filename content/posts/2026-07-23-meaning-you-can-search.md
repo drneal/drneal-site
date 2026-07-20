@@ -224,12 +224,12 @@ Retrieval is the best answer we have to grounding, which is exactly why you must
   <ellipse cx="360" cy="168" rx="300" ry="94" fill="#0a4a5c" opacity="0.28"/>
   <text x="360" y="86" text-anchor="middle" fill="#00d4f5" font-family="sans-serif" font-size="11" font-weight="bold">“metformin + contrast imaging” neighbourhood — everything here embeds close together</text>
 
-  <circle cx="185" cy="147" r="6" fill="#10b981"/><text x="360" y="151" text-anchor="middle" fill="#d3f5e6" font-family="sans-serif" font-size="10.5">“continue metformin if eGFR ≥ 30, standard contrast” — current</text>
-  <circle cx="148" cy="191" r="6" fill="#f87171"/><text x="360" y="195" text-anchor="middle" fill="#fde2e2" font-family="sans-serif" font-size="10.5">“withhold metformin 48h post-contrast” — superseded 2019 policy, never purged</text>
-  <circle cx="203" cy="233" r="6" fill="#f87171"/><text x="360" y="237" text-anchor="middle" fill="#fde2e2" font-family="sans-serif" font-size="10.5">“metformin contraindicated” — from a paediatric protocol</text>
+  <circle cx="176" cy="147" r="6" fill="#10b981"/><text x="360" y="151" text-anchor="middle" fill="#d3f5e6" font-family="sans-serif" font-size="10.5">“continue metformin if eGFR ≥ 30, standard contrast” — current</text>
+  <circle cx="131" cy="191" r="6" fill="#f87171"/><text x="360" y="195" text-anchor="middle" fill="#fde2e2" font-family="sans-serif" font-size="10.5">“withhold metformin 48h post-contrast” — superseded 2019 policy, never purged</text>
+  <circle cx="194" cy="233" r="6" fill="#f87171"/><text x="360" y="237" text-anchor="middle" fill="#fde2e2" font-family="sans-serif" font-size="10.5">“metformin contraindicated” — from a paediatric protocol</text>
 
-  <circle cx="520" cy="132" r="8" fill="none" stroke="#f59e0b" stroke-width="2.5"/><circle cx="520" cy="132" r="3" fill="#f59e0b"/>
-  <text x="410" y="118" fill="#f59e0b" font-family="sans-serif" font-size="10.5" font-weight="bold">query: “hold metformin before CT contrast?”</text>
+  <circle cx="505" cy="132" r="8" fill="none" stroke="#f59e0b" stroke-width="2.5"/><circle cx="505" cy="132" r="3" fill="#f59e0b"/>
+  <text x="345" y="118" fill="#f59e0b" font-family="sans-serif" font-size="10.5" font-weight="bold">query: “hold metformin before CT contrast?”</text>
 
   <text x="360" y="296" text-anchor="middle" fill="#6b82a0" font-family="sans-serif" font-size="11">All three passages sit near the query. Embeddings measure <tspan font-style="italic">topical closeness</tspan> — they cannot tell current from</text>
   <text x="360" y="314" text-anchor="middle" fill="#6b82a0" font-family="sans-serif" font-size="11">superseded, adult from paediatric, or “do” from “don't.” Those distinctions are invisible to the geometry.</text>
