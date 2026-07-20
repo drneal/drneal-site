@@ -1,6 +1,6 @@
 ---
 title: "When the Spare Part No Longer Exists: Reverse-Engineering a Medical Machine Back to Life"
-date: 2026-07-20
+date: 2026-07-25
 category: Engineering
 tags: reverse engineering, 3D printing, medical devices, spare parts, obsolescence, FreeCAD, build123d, CAD, PETG, right to repair, biomedical engineering
 level: All readers
