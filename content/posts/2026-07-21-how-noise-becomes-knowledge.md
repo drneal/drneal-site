@@ -217,7 +217,8 @@ The solution is an algorithm called **backpropagation**, and its essential idea 
   <text x="600" y="270" fill="#e2a0a0" font-family="sans-serif" font-size="9.5">“nudge −”</text>
   <text x="600" y="330" fill="#e2a0a0" font-family="sans-serif" font-size="9.5">“barely move”</text>
 
-  <text x="360" y="424" text-anchor="middle" fill="#6b82a0" font-family="sans-serif" font-size="10.5">One forward pass to make the guess and measure the loss; one backward pass to apportion the blame to every weight. Then step, and repeat.</text>
+  <text x="360" y="414" text-anchor="middle" fill="#6b82a0" font-family="sans-serif" font-size="10.5">One forward pass to make the guess and measure the loss;</text>
+  <text x="360" y="431" text-anchor="middle" fill="#6b82a0" font-family="sans-serif" font-size="10.5">one backward pass to apportion the blame to every weight. Then step, and repeat.</text>
 </svg>
 <figcaption><strong>Figure 3.</strong> Backpropagation. Text flows <em>up</em> the tower to produce a prediction and a loss (blue). Then the blame flows <em>down</em> (red): the error is traced backward, layer by layer, until every weight in the entire model — billions of them — has received a precise, individual instruction for how to change. What sounds impossible is, mechanically, just the chain rule applied with ruthless bookkeeping, and it costs only about one extra pass through the network.</figcaption>
 </figure>

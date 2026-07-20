@@ -249,7 +249,7 @@ So we are caught between two pressures, and naming them precisely is the key to 
     <text x="540" y="212" text-anchor="middle" fill="#f87171" font-family="sans-serif" font-size="10.5">but rare tokens starve, params balloon</text>
   </g>
 
-  <rect x="255" y="286" width="210" height="40" rx="10" fill="#053d28" stroke="#10b981" stroke-width="2"/>
+  <rect x="205" y="286" width="310" height="40" rx="10" fill="#053d28" stroke="#10b981" stroke-width="2"/>
   <text x="360" y="311" text-anchor="middle" fill="#d3f5e6" font-family="sans-serif" font-size="12" font-weight="bold">The goal: a learned middle (~100k)</text>
 </svg>
 <figcaption><strong>Figure 3.</strong> Every tokenizer is a chosen point on this seesaw. Modern models land near a vocabulary of one to two hundred thousand symbols — the empirically-discovered sweet spot where sequences are short enough to be affordable and the vocabulary is small enough that every symbol still appears often enough to be learned well.</figcaption>
@@ -316,11 +316,11 @@ Then we do it again. With "th" now a single symbol, perhaps the most common adja
 
   <path d="M360,326 L360,344" stroke="#f59e0b" stroke-width="2" marker-end="url(#dm)"/>
 
-  <rect x="120" y="352" width="480" height="90" rx="10" fill="#111827" stroke="#2a3f5f" stroke-width="1.5"/>
+  <rect x="70" y="352" width="580" height="90" rx="10" fill="#111827" stroke="#2a3f5f" stroke-width="1.5"/>
   <text x="360" y="378" text-anchor="middle" fill="#c9d6e8" font-family="sans-serif" font-size="12.5" font-weight="bold">…repeat tens of thousands of times</text>
   <text x="360" y="400" text-anchor="middle" fill="#8fd8b8" font-family="sans-serif" font-size="11">Common words become single symbols. Rare words remain in pieces.</text>
   <text x="360" y="418" text-anchor="middle" fill="#8fd8b8" font-family="sans-serif" font-size="11">The final vocabulary — for GPT-4, about 100,000 symbols — is the model's alphabet.</text>
-  <text x="360" y="434" text-anchor="middle" fill="#6b82a0" font-family="sans-serif" font-size="10.5">Note “ the” with its leading space would become its own symbol too — spaces travel with words.</text>
+  <text x="360" y="434" text-anchor="middle" fill="#6b82a0" font-family="sans-serif" font-size="10">Note “ the” with its leading space would become its own symbol too — spaces travel with words.</text>
 </svg>
 <figcaption><strong>Figure 4.</strong> BPE in motion. Notice the direction of travel: we do not chop words up, we <em>build symbols up</em> from bytes, guided entirely by frequency. The words you use constantly collapse into single tokens; the words you rarely use stay fragmented. The vocabulary is a fossil record of how the training corpus was actually written.</figcaption>
 </figure>

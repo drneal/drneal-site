@@ -150,9 +150,9 @@ The model does not output *a* token. It outputs a *probability for every token i
   <rect x="470" y="196" width="200" height="52" rx="10" fill="#4a3000" stroke="#f59e0b" stroke-width="1.5"/>
   <text x="570" y="218" text-anchor="middle" fill="#fdeccd" font-family="sans-serif" font-size="12" font-weight="bold">draw ONE token</text>
   <text x="570" y="236" text-anchor="middle" fill="#f0c987" font-family="monospace" font-size="10.5">weighted by probability</text>
-  <path d="M365,174 Q470,180 476,194" stroke="#f59e0b" stroke-width="1.5" fill="none" marker-end="url(#pa)"/>
+  <path d="M362,174 Q445,182 468,206" stroke="#f59e0b" stroke-width="1.5" fill="none" marker-end="url(#pa)"/>
 
-  <path d="M570,248 L570,300 Q570,330 350,330 L200,330 Q120,330 120,110" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#pa)"/>
+  <path d="M570,248 L570,318 Q570,326 300,326 L40,326 Q28,326 28,110 L28,96 Q28,84 42,84" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#pa)"/>
   <text x="360" y="352" text-anchor="middle" fill="#f59e0b" font-family="sans-serif" font-size="11">append the drawn token to the context, and run the whole thing again — forever</text>
 
   <text x="360" y="398" text-anchor="middle" fill="#6b82a0" font-family="sans-serif" font-size="11">“Generating text” is this loop. A thousand-word reply is a thousand forecasts, each conditioned on the last.</text>
@@ -184,28 +184,28 @@ Now, why on earth would coordinates be better than a number? Because coordinates
 
   <!-- drug cluster -->
   <ellipse cx="185" cy="150" rx="130" ry="72" fill="#0a4a5c" opacity="0.30"/>
-  <text x="185" y="96" text-anchor="middle" fill="#00d4f5" font-family="sans-serif" font-size="11" font-weight="bold">medications</text>
-  <circle cx="150" cy="140" r="4" fill="#00d4f5"/><text x="158" y="137" fill="#9fdcec" font-family="monospace" font-size="10">lisinopril</text>
-  <circle cx="150" cy="168" r="4" fill="#00d4f5"/><text x="158" y="165" fill="#9fdcec" font-family="monospace" font-size="10">aspirin</text>
-  <circle cx="220" cy="155" r="4" fill="#00d4f5"/><text x="228" y="152" fill="#9fdcec" font-family="monospace" font-size="10">metformin</text>
+  <text x="185" y="100" text-anchor="middle" fill="#00d4f5" font-family="sans-serif" font-size="11" font-weight="bold">medications</text>
+  <circle cx="146" cy="128" r="4" fill="#00d4f5"/><text x="185" y="132" text-anchor="middle" fill="#9fdcec" font-family="monospace" font-size="10">lisinopril</text>
+  <circle cx="155" cy="152" r="4" fill="#00d4f5"/><text x="185" y="156" text-anchor="middle" fill="#9fdcec" font-family="monospace" font-size="10">aspirin</text>
+  <circle cx="149" cy="176" r="4" fill="#00d4f5"/><text x="185" y="180" text-anchor="middle" fill="#9fdcec" font-family="monospace" font-size="10">metformin</text>
 
   <!-- symptom cluster -->
   <ellipse cx="540" cy="150" rx="130" ry="72" fill="#053d28" opacity="0.32"/>
-  <text x="540" y="96" text-anchor="middle" fill="#10b981" font-family="sans-serif" font-size="11" font-weight="bold">symptoms</text>
-  <circle cx="505" cy="140" r="4" fill="#10b981"/><text x="513" y="137" fill="#8fd8b8" font-family="monospace" font-size="10">dyspnoea</text>
-  <circle cx="505" cy="168" r="4" fill="#10b981"/><text x="513" y="165" fill="#8fd8b8" font-family="monospace" font-size="10">oedema</text>
-  <circle cx="575" cy="155" r="4" fill="#10b981"/><text x="583" y="152" fill="#8fd8b8" font-family="monospace" font-size="10">fatigue</text>
+  <text x="540" y="100" text-anchor="middle" fill="#10b981" font-family="sans-serif" font-size="11" font-weight="bold">symptoms</text>
+  <circle cx="507" cy="128" r="4" fill="#10b981"/><text x="540" y="132" text-anchor="middle" fill="#8fd8b8" font-family="monospace" font-size="10">dyspnoea</text>
+  <circle cx="513" cy="152" r="4" fill="#10b981"/><text x="540" y="156" text-anchor="middle" fill="#8fd8b8" font-family="monospace" font-size="10">oedema</text>
+  <circle cx="510" cy="176" r="4" fill="#10b981"/><text x="540" y="180" text-anchor="middle" fill="#8fd8b8" font-family="monospace" font-size="10">fatigue</text>
 
   <!-- procedure cluster -->
   <ellipse cx="360" cy="360" rx="140" ry="66" fill="#2e1e5e" opacity="0.38"/>
-  <text x="360" y="312" text-anchor="middle" fill="#a78bfa" font-family="sans-serif" font-size="11" font-weight="bold">procedures</text>
-  <circle cx="315" cy="352" r="4" fill="#a78bfa"/><text x="323" y="349" fill="#c9b8f5" font-family="monospace" font-size="10">angiography</text>
-  <circle cx="330" cy="384" r="4" fill="#a78bfa"/><text x="338" y="381" fill="#c9b8f5" font-family="monospace" font-size="10">echocardiogram</text>
-  <circle cx="430" cy="360" r="4" fill="#a78bfa"/><text x="438" y="357" fill="#c9b8f5" font-family="monospace" font-size="10">dialysis</text>
+  <text x="360" y="326" text-anchor="middle" fill="#a78bfa" font-family="sans-serif" font-size="11" font-weight="bold">procedures</text>
+  <circle cx="318" cy="350" r="4" fill="#a78bfa"/><text x="360" y="354" text-anchor="middle" fill="#c9b8f5" font-family="monospace" font-size="10">angiography</text>
+  <circle cx="309" cy="370" r="4" fill="#a78bfa"/><text x="360" y="374" text-anchor="middle" fill="#c9b8f5" font-family="monospace" font-size="10">echocardiogram</text>
+  <circle cx="327" cy="390" r="4" fill="#a78bfa"/><text x="360" y="394" text-anchor="middle" fill="#c9b8f5" font-family="monospace" font-size="10">dialysis</text>
 
-  <!-- relationship arrows: drug -> its class, parallel -->
-  <line x1="150" y1="168" x2="150" y2="140" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#ra2)"/>
+  <!-- relationship arrow: a consistent 'bearing' inside a cluster -->
   <defs><marker id="ra2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L7,4 L0,8 z" fill="#f59e0b"/></marker></defs>
+  <line x1="128" y1="178" x2="128" y2="126" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#ra2)"/>
 
   <text x="360" y="440" text-anchor="middle" fill="#f0c987" font-family="sans-serif" font-size="11">Not only do similar things cluster — the <tspan font-style="italic">direction</tspan> from a drug to its class is roughly the same everywhere,</text>
   <text x="360" y="457" text-anchor="middle" fill="#f0c987" font-family="sans-serif" font-size="11">so relationships themselves become fixed compass bearings the model can follow.</text>
@@ -248,9 +248,9 @@ And then the prediction game begins. The model is shown ocean after ocean of rea
   <circle cx="100" cy="180" r="4" fill="#a78bfa"/><circle cx="220" cy="255" r="4" fill="#10b981"/>
   <text x="175" y="272" text-anchor="middle" fill="#6b82a0" font-family="sans-serif" font-size="10">no clusters · every token an island</text>
 
-  <path d="M330,170 L390,170" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#ta)"/>
-  <text x="360" y="160" text-anchor="middle" fill="#f0c987" font-family="sans-serif" font-size="10">billions of</text>
-  <text x="360" y="190" text-anchor="middle" fill="#f0c987" font-family="sans-serif" font-size="10">predictions</text>
+  <path d="M325,172 L395,172" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#ta)"/>
+  <text x="360" y="150" text-anchor="middle" fill="#f0c987" font-family="sans-serif" font-size="10">billions of</text>
+  <text x="360" y="206" text-anchor="middle" fill="#f0c987" font-family="sans-serif" font-size="10">predictions</text>
 
   <!-- after -->
   <rect x="410" y="60" width="270" height="220" rx="10" fill="#0d1117" stroke="#053d28" stroke-width="1.5"/>

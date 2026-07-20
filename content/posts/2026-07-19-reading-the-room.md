@@ -161,39 +161,39 @@ Raw scores, though, are awkward to use directly. They can be any size, positive 
   <text x="360" y="50" text-anchor="middle" fill="#6b82a0" font-family="sans-serif" font-size="10.5">sentence: “he sat on the bank of the river”</text>
 
   <!-- query chip -->
-  <rect x="40" y="72" width="150" height="40" rx="8" fill="#4a3000" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="115" y="92" text-anchor="middle" fill="#fdeccd" font-family="monospace" font-size="12" font-weight="bold">query( bank )</text>
-  <text x="115" y="107" text-anchor="middle" fill="#f0c987" font-family="sans-serif" font-size="9">dotted against every key ↓</text>
+  <rect x="75" y="72" width="150" height="40" rx="8" fill="#4a3000" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="150" y="92" text-anchor="middle" fill="#fdeccd" font-family="monospace" font-size="12" font-weight="bold">query( bank )</text>
+  <text x="150" y="107" text-anchor="middle" fill="#f0c987" font-family="sans-serif" font-size="9">dotted against every key ↓</text>
 
   <!-- table of tokens with raw score and weight bars -->
   <g font-family="monospace" font-size="11">
     <!-- headers -->
-    <text x="230" y="140" fill="#6b82a0">token (its key)</text>
-    <text x="430" y="140" fill="#6b82a0">raw score</text>
-    <text x="545" y="140" fill="#6b82a0">attention weight (softmax)</text>
+    <text x="130" y="140" fill="#6b82a0">token (its key)</text>
+    <text x="330" y="140" fill="#6b82a0">raw score</text>
+    <text x="445" y="140" fill="#6b82a0">attention weight (softmax)</text>
 
     <!-- river -->
-    <text x="230" y="168" fill="#d8f6fd">river</text>
-    <text x="450" y="168" fill="#9fdcec">8.9</text>
-    <rect x="545" y="157" width="150" height="15" rx="3" fill="#10b981"/><text x="545" y="188" fill="#8fd8b8" font-size="9">0.62</text>
+    <text x="130" y="168" fill="#d8f6fd">river</text>
+    <text x="350" y="168" fill="#9fdcec">8.9</text>
+    <rect x="445" y="157" width="150" height="15" rx="3" fill="#10b981"/><text x="445" y="188" fill="#8fd8b8" font-size="9">0.62</text>
 
-    <text x="230" y="200" fill="#d8f6fd">current*</text>
-    <text x="450" y="200" fill="#9fdcec">6.1</text>
-    <rect x="545" y="189" width="70" height="15" rx="3" fill="#00d4f5"/><text x="545" y="220" fill="#8fd8b8" font-size="9">0.21</text>
+    <text x="130" y="200" fill="#d8f6fd">current*</text>
+    <text x="350" y="200" fill="#9fdcec">6.1</text>
+    <rect x="445" y="189" width="70" height="15" rx="3" fill="#00d4f5"/><text x="445" y="220" fill="#8fd8b8" font-size="9">0.21</text>
 
-    <text x="230" y="232" fill="#c9d6e8">sat</text>
-    <text x="450" y="232" fill="#6b82a0">3.0</text>
-    <rect x="545" y="221" width="28" height="15" rx="3" fill="#a78bfa"/><text x="545" y="252" fill="#8fd8b8" font-size="9">0.09</text>
+    <text x="130" y="232" fill="#c9d6e8">sat</text>
+    <text x="350" y="232" fill="#6b82a0">3.0</text>
+    <rect x="445" y="221" width="28" height="15" rx="3" fill="#a78bfa"/><text x="445" y="252" fill="#8fd8b8" font-size="9">0.09</text>
 
-    <text x="230" y="264" fill="#c9d6e8">the</text>
-    <text x="450" y="264" fill="#6b82a0">1.2</text>
-    <rect x="545" y="253" width="12" height="15" rx="3" fill="#6b82a0"/><text x="545" y="284" fill="#8fd8b8" font-size="9">0.04</text>
+    <text x="130" y="264" fill="#c9d6e8">the</text>
+    <text x="350" y="264" fill="#6b82a0">1.2</text>
+    <rect x="445" y="253" width="12" height="15" rx="3" fill="#6b82a0"/><text x="445" y="284" fill="#8fd8b8" font-size="9">0.04</text>
 
-    <text x="230" y="296" fill="#c9d6e8">of</text>
-    <text x="450" y="296" fill="#6b82a0">0.8</text>
-    <rect x="545" y="285" width="10" height="15" rx="3" fill="#6b82a0"/><text x="545" y="316" fill="#8fd8b8" font-size="9">0.04</text>
+    <text x="130" y="296" fill="#c9d6e8">of</text>
+    <text x="350" y="296" fill="#6b82a0">0.8</text>
+    <rect x="445" y="285" width="10" height="15" rx="3" fill="#6b82a0"/><text x="445" y="316" fill="#8fd8b8" font-size="9">0.04</text>
   </g>
-  <text x="230" y="336" fill="#6b82a0" font-family="sans-serif" font-size="9">*for a token appearing later, see Part V on why the future is hidden</text>
+  <text x="130" y="336" fill="#6b82a0" font-family="sans-serif" font-size="9">*for a token appearing later, see Part V on why the future is hidden</text>
 
   <rect x="150" y="356" width="420" height="44" rx="10" fill="#111827" stroke="#2a3f5f"/>
   <text x="360" y="376" text-anchor="middle" fill="#c9d6e8" font-family="sans-serif" font-size="11" font-weight="bold">the weights sum to 1.00 — a spotlight of fixed brightness</text>

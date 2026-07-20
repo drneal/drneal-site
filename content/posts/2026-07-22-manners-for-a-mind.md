@@ -97,15 +97,15 @@ Pretraining optimised one objective: *continue the text the way this corpus woul
   <circle cx="285" cy="180" r="105" fill="#0a4a5c" opacity="0.45" stroke="#00d4f5" stroke-width="1.5"/>
   <circle cx="435" cy="180" r="105" fill="#053d28" opacity="0.45" stroke="#10b981" stroke-width="1.5"/>
 
-  <text x="215" y="150" text-anchor="middle" fill="#d8f6fd" font-family="sans-serif" font-size="12" font-weight="bold">continue</text>
-  <text x="215" y="168" text-anchor="middle" fill="#9fdcec" font-family="sans-serif" font-size="10.5">the text</text>
-  <text x="215" y="200" text-anchor="middle" fill="#9fdcec" font-family="sans-serif" font-size="9.5">(what pretraining</text>
-  <text x="215" y="214" text-anchor="middle" fill="#9fdcec" font-family="sans-serif" font-size="9.5">optimised)</text>
+  <text x="245" y="150" text-anchor="middle" fill="#d8f6fd" font-family="sans-serif" font-size="12" font-weight="bold">continue</text>
+  <text x="245" y="168" text-anchor="middle" fill="#9fdcec" font-family="sans-serif" font-size="10.5">the text</text>
+  <text x="245" y="200" text-anchor="middle" fill="#9fdcec" font-family="sans-serif" font-size="9.5">(what pretraining</text>
+  <text x="245" y="214" text-anchor="middle" fill="#9fdcec" font-family="sans-serif" font-size="9.5">optimised)</text>
 
-  <text x="505" y="150" text-anchor="middle" fill="#d3f5e6" font-family="sans-serif" font-size="12" font-weight="bold">help the</text>
-  <text x="505" y="168" text-anchor="middle" fill="#8fd8b8" font-family="sans-serif" font-size="10.5">person</text>
-  <text x="505" y="200" text-anchor="middle" fill="#8fd8b8" font-family="sans-serif" font-size="9.5">(what we actually</text>
-  <text x="505" y="214" text-anchor="middle" fill="#8fd8b8" font-family="sans-serif" font-size="9.5">want)</text>
+  <text x="475" y="150" text-anchor="middle" fill="#d3f5e6" font-family="sans-serif" font-size="12" font-weight="bold">help the</text>
+  <text x="475" y="168" text-anchor="middle" fill="#8fd8b8" font-family="sans-serif" font-size="10.5">person</text>
+  <text x="475" y="200" text-anchor="middle" fill="#8fd8b8" font-family="sans-serif" font-size="9.5">(what we actually</text>
+  <text x="475" y="214" text-anchor="middle" fill="#8fd8b8" font-family="sans-serif" font-size="9.5">want)</text>
 
   <text x="360" y="176" text-anchor="middle" fill="#fdeccd" font-family="sans-serif" font-size="10.5" font-weight="bold">overlap</text>
   <text x="360" y="192" text-anchor="middle" fill="#f0c987" font-family="sans-serif" font-size="9">helpful text</text>
