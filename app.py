@@ -24,6 +24,23 @@ from flask import Flask, render_template, abort, request, redirect, url_for, fla
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-neal-site-2026")
 
+
+@app.after_request
+def _no_cache_html(resp):
+    """Stop the host/CDN edge from serving stale HTML.
+
+    Dynamic pages (blog listings, individual posts) are rendered from Markdown
+    on every request and must always reflect the latest content, so we forbid
+    caching them. Static assets (images, CSS, JS) are not text/html and keep
+    their normal long-lived caching.
+    """
+    if resp.headers.get("Content-Type", "").startswith("text/html"):
+        resp.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0"
+        resp.headers["Pragma"] = "no-cache"
+        resp.headers["Expires"] = "0"
+    return resp
+
+
 TAG_URLS = {
     "Claude API":           "https://www.anthropic.com/api",
     "OpenAI":               "https://en.wikipedia.org/wiki/OpenAI",
