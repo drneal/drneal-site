@@ -11,6 +11,8 @@ featured: false
 
 <div style="font-size:0.9em; background:linear-gradient(135deg,#0f3d2e 0%,#14532d 100%); color:#eafff4; padding:1.2em 1.6em; border-radius:8px; margin:1.5em 0; line-height:1.6;">
 🛠️ <strong>A service for medical institutions.</strong> When an otherwise-healthy machine is sidelined by one small part that is no longer manufactured, I can reverse-engineer that part, generate parametric CAD code and an STL, and 3D-print a working replacement. This post walks through the whole process using one real component.
+
+When I was a medical student at Kenyatta National Hospital I repaired dozens of machines from simple fuse swaps in incubators, to heating elements, to thermostats to full blown motherboards on CAT Scanners. Here is an example of the kind of process I used then and still use today albeit heavily augmented by AI and modern microcontroller (Arduino, Beagle Bone Black and Raspbery Pi) availability.
 </div>
 
 <figure style="margin:1.8em 0; text-align:center;">
