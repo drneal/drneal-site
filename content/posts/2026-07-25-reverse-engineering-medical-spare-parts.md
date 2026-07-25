@@ -22,7 +22,7 @@ When I was a medical student at Kenyatta National Hospital I repaired dozens of 
 
 ## The problem: an obsolete part, not an obsolete machine
 
-A great deal of medical equipment outlives the supply chain that supports it. The instrument on the bench is mechanically sound, calibrated, and trusted — and then a single moulded plastic component fatigues, cracks, or wears through, and the whole machine stops. When the manufacturer has discontinued the model, or simply no longer stocks that part, the institution is left with an expensive, functional machine and no legitimate way to bring it back.
+A great deal of medical equipment outlives the supply chain that supports it. The instrument on the bench is mechanically sound, calibrated, and trusted — and then a single moulded plastic component fatigues, cracks, or wears through, or a capacitor on a motherboard fails and the whole machine stops. When the manufacturer has discontinued the model, or simply no longer stocks that part, the institution is left with an expensive, functional machine and no legitimate way to bring it back.
 
 That is the gap I work in. The part shown above is a small **filter cap** — a moulded retainer that seats a filter into its housing with a bayonet twist. The original (right, in black) had worn and split at the hub. It is trivial in isolation, and impossible to buy. Without it, the machine it belonged to was finished.
 
