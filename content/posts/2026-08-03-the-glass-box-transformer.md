@@ -61,7 +61,7 @@ I want to be clear that this is not a complaint about PyTorch. PyTorch is superb
 
 This article is about what is on the far side.
 
-What follows is a complete walk through `tinygpt.py` — a decoder-only transformer written in NumPy, in which every gradient is derived by hand and verified numerically. It has a byte-pair tokeniser, learned positional embeddings, causal multi-head attention, layer normalisation, a residual stream, Adam with bias correction, and temperature and nucleus sampling. Nothing has been omitted. Everything has simply been made small enough to see.
+What follows is a complete walk through **[`tinygpt.py`](/static/tinygpt.py)** — open it in a second tab and read along — a decoder-only transformer written in NumPy, in which every gradient is derived by hand and verified numerically. It has a byte-pair tokeniser, learned positional embeddings, causal multi-head attention, layer normalisation, a residual stream, Adam with bias correction, and temperature and nucleus sampling. Nothing has been omitted. Everything has simply been made small enough to see.
 
 I have laid it out in the order the file executes, which is also the order in which the ideas depend on one another. Follow it to the end and you will have seen the complete lifecycle of a language model with no gaps papered over: text into numbers, numbers into a prediction, a prediction into a single measure of error, that one number into tens of thousands of individual corrections, and finally corrected numbers back into text.
 
@@ -484,7 +484,7 @@ The glass box is not a metaphor for the black box. It *is* the black box, at a s
 *— Neal*
 
 <div class="callout">
-💾 <strong>The code.</strong> <code>tinygpt.py</code> is a single self-contained file; NumPy is the only dependency. <code>python tinygpt.py check</code> runs the numerical gradient verification; <code>python tinygpt.py train</code> trains on a toy corpus and samples from it. Both the file and the derivations discussed here are in <a href="https://github.com/drneal/how-llms-work-study">how-llms-work-study</a>.
+💾 <strong>The code.</strong> <a href="/static/tinygpt.py"><code>tinygpt.py</code></a> is a single self-contained file; NumPy is the only dependency. <code>python tinygpt.py check</code> runs the numerical gradient verification; <code>python tinygpt.py train</code> trains on a toy corpus and samples from it. The derivations discussed here, and the file itself, are also in <a href="https://github.com/drneal/how-llms-work-study">how-llms-work-study</a>.
 <br><br>
 <strong>Provenance.</strong> I wrote this NumPy port, and the hand-derived backward pass and gradient check that go with it, while working through CJ Reynolds' <a href="https://www.youtube.com/watch?v=YmLp8qe87A0">I Built an LLM from Scratch</a> (Syntax), in which the same model is built in TypeScript. The architecture itself is from the literature — Vaswani et al. (2017), Radford et al. (2018), Ba et al. (2016), Kingma &amp; Ba (2014), Glorot &amp; Bengio (2010), Holtzman et al. (2019) — but the debt for the route through it is his.
 </div>
