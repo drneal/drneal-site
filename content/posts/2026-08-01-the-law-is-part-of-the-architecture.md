@@ -13,6 +13,14 @@ featured: false
 ⚕️ <strong>A service for medical institutions.</strong> I design and build clinical software for Kenyan care homes, retirement homes and small non-surgical hospitals — systems that are legally deployable here, certifiable by the Digital Health Agency, and actually used by the staff they are built for. This post is about what that takes, and why so much health software never survives contact with either the regulator or the night shift.
 </div>
 
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post:</strong> A deep dive into this article — the four instruments that govern Kenyan health software, what data residency and the 72-hour breach clock do to your architecture, and why compliant systems still fail on the night shift.<br/><br/>
+  <audio controls style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Building_Clinical_Software_For_Kenya_Health_Laws.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 I have been writing specifications for a care-home management system — the kind of thing a fifty-bed facility runs on: residents, medications, staff, tasks, inventory, the lot. I wrote what I thought was a thorough one. Roles, subscription tiers, voice input, offline working, an AI assistant, audit trails, hosting, the whole surface.
 
 Then I stopped and asked a question that most people building health software in this country never ask early enough, and often never ask at all.
