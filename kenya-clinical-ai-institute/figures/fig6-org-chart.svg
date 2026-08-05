@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 680" width="1180" height="680">
+<defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#66787E"/>
+    </marker>
+    <marker id="arrowteal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B4F4A"/>
+    </marker>
+  </defs>
+<rect x="0" y="0" width="1180" height="680" fill="#FFFFFF"/>
+<text x="590" y="32" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#66787E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.4">FIGURE 6 — ORGANISATIONAL STRUCTURE AT STEADY STATE</text>
+<text x="590" y="54" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Figures in the coloured tags are full-time-equivalent posts. Total core establishment: 70 FTE.</text>
+<rect x="420" y="74" width="340" height="58" rx="6" fill="#EEF1F2" fill-opacity="1" stroke="#12262B" stroke-width="1.5"/>
+<rect x="420" y="74" width="340" height="5" rx="0" fill="#12262B" fill-opacity="1" stroke="#12262B" stroke-width="0"/>
+<text x="606.0" y="101" font-family="Helvetica, Arial, sans-serif" font-size="11.2" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.4">INDEPENDENT GOVERNING BOARD</text>
+<text x="606.0" y="118.0" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Chair · councils · patient representative · academia · ethics</text>
+<line x1="590" y1="132" x2="590" y2="158" stroke="#66787E" stroke-width="1.2" stroke-linecap="round"/>
+<rect x="460" y="158" width="260" height="62" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#A63A2B" stroke-width="1.5"/>
+<rect x="460" y="158" width="260" height="5" rx="0" fill="#A63A2B" fill-opacity="1" stroke="#A63A2B" stroke-width="0"/>
+<text x="606.0" y="185" font-family="Helvetica, Arial, sans-serif" font-size="11.2" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.4">CHIEF EXECUTIVE / DIRECTOR</text>
+<text x="606.0" y="202.0" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Clinician. Accountable to the Board.</text>
+<rect x="470" y="173" width="32" height="16" rx="8" fill="#A63A2B" fill-opacity="1" stroke="#A63A2B" stroke-width="0"/>
+<text x="486" y="185" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#FFFFFF" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">1</text>
+<rect x="50" y="158" width="270" height="62" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#B5822A" stroke-width="1.5"/>
+<rect x="50" y="158" width="270" height="5" rx="0" fill="#B5822A" fill-opacity="1" stroke="#B5822A" stroke-width="0"/>
+<text x="201.0" y="185" font-family="Helvetica, Arial, sans-serif" font-size="11.2" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.4">OFFICE OF QUALITY &amp; EVALUATION</text>
+<text x="201.0" y="202.0" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Reports to the Board, not the CEO</text>
+<rect x="60" y="173" width="32" height="16" rx="8" fill="#B5822A" fill-opacity="1" stroke="#B5822A" stroke-width="0"/>
+<text x="76" y="185" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#FFFFFF" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">6</text>
+<line x1="320" y1="189" x2="460" y2="189" stroke="#B5822A" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="4,3"/>
+<rect x="860" y="158" width="270" height="62" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#66787E" stroke-width="1.5"/>
+<rect x="860" y="158" width="270" height="5" rx="0" fill="#66787E" fill-opacity="1" stroke="#66787E" stroke-width="0"/>
+<text x="1011.0" y="185" font-family="Helvetica, Arial, sans-serif" font-size="11.2" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.4">ETHICS &amp; DATA GOVERNANCE</text>
+<text x="1011.0" y="202.0" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Standing committee + secretariat</text>
+<rect x="870" y="173" width="32" height="16" rx="8" fill="#66787E" fill-opacity="1" stroke="#66787E" stroke-width="0"/>
+<text x="886" y="185" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#FFFFFF" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">3</text>
+<line x1="720" y1="189" x2="860" y2="189" stroke="#66787E" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="4,3"/>
+<line x1="590" y1="220" x2="590" y2="262" stroke="#66787E" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="150" y1="262" x2="1030" y2="262" stroke="#66787E" stroke-width="1.2" stroke-linecap="round"/>
+<line x1="151.0" y1="262" x2="151.0" y2="296" stroke="#66787E" stroke-width="1.2" stroke-linecap="round"/>
+<rect x="50" y="296" width="202" height="66" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#0B4F4A" stroke-width="1.6"/>
+<rect x="50" y="296" width="202" height="5" rx="0" fill="#0B4F4A" fill-opacity="1" stroke="#0B4F4A" stroke-width="0"/>
+<rect x="58" y="306" width="30" height="16" rx="8" fill="#0B4F4A" fill-opacity="1" stroke="#0B4F4A" stroke-width="0"/>
+<text x="73" y="318" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#FFFFFF" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">14</text>
+<text x="165.0" y="322" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.3">CURRICULUM &amp;</text>
+<text x="165.0" y="336" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.3">PEDAGOGY</text>
+<rect x="50" y="372" width="202" height="82" rx="6" fill="#EEF1F2" fill-opacity="1" stroke="#0B4F4A" stroke-width="0.9"/>
+<text x="62" y="393" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Instructional designers 4</text>
+<text x="62" y="408" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Clinical content leads 6</text>
+<text x="62" y="423" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Assessment psychometrician 1</text>
+<text x="62" y="438" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Medical editor / translator 3</text>
+<line x1="371.0" y1="262" x2="371.0" y2="296" stroke="#66787E" stroke-width="1.2" stroke-linecap="round"/>
+<rect x="270" y="296" width="202" height="66" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#177A6E" stroke-width="1.6"/>
+<rect x="270" y="296" width="202" height="5" rx="0" fill="#177A6E" fill-opacity="1" stroke="#177A6E" stroke-width="0"/>
+<rect x="278" y="306" width="30" height="16" rx="8" fill="#177A6E" fill-opacity="1" stroke="#177A6E" stroke-width="0"/>
+<text x="293" y="318" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#FFFFFF" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">18</text>
+<text x="385.0" y="322" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.3">FACULTY &amp;</text>
+<text x="385.0" y="336" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.3">DELIVERY</text>
+<rect x="270" y="372" width="202" height="82" rx="6" fill="#EEF1F2" fill-opacity="1" stroke="#177A6E" stroke-width="0.9"/>
+<text x="282" y="393" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Track leads 5</text>
+<text x="282" y="408" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Certified instructors 10</text>
+<text x="282" y="423" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Simulation faculty 2</text>
+<text x="282" y="438" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Programme manager 1</text>
+<line x1="591.0" y1="262" x2="591.0" y2="296" stroke="#66787E" stroke-width="1.2" stroke-linecap="round"/>
+<rect x="490" y="296" width="202" height="66" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#B5822A" stroke-width="1.6"/>
+<rect x="490" y="296" width="202" height="5" rx="0" fill="#B5822A" fill-opacity="1" stroke="#B5822A" stroke-width="0"/>
+<rect x="498" y="306" width="30" height="16" rx="8" fill="#B5822A" fill-opacity="1" stroke="#B5822A" stroke-width="0"/>
+<text x="513" y="318" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#FFFFFF" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">13</text>
+<text x="605.0" y="322" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.3">ENGINEERING &amp;</text>
+<text x="605.0" y="336" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.3">PLATFORM</text>
+<rect x="490" y="372" width="202" height="112" rx="6" fill="#EEF1F2" fill-opacity="1" stroke="#B5822A" stroke-width="0.9"/>
+<text x="502" y="393" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Head of engineering 1</text>
+<text x="502" y="408" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Full-stack developers 5</text>
+<text x="502" y="423" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">ML / eval engineers 3</text>
+<text x="502" y="438" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Data engineer 2</text>
+<text x="502" y="453" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">DevSecOps 1</text>
+<text x="502" y="468" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">QA engineer 1</text>
+<line x1="811.0" y1="262" x2="811.0" y2="296" stroke="#66787E" stroke-width="1.2" stroke-linecap="round"/>
+<rect x="710" y="296" width="202" height="66" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#A63A2B" stroke-width="1.6"/>
+<rect x="710" y="296" width="202" height="5" rx="0" fill="#A63A2B" fill-opacity="1" stroke="#A63A2B" stroke-width="0"/>
+<rect x="718" y="306" width="30" height="16" rx="8" fill="#A63A2B" fill-opacity="1" stroke="#A63A2B" stroke-width="0"/>
+<text x="733" y="318" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#FFFFFF" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">7</text>
+<text x="825.0" y="322" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.3">SIMULATION &amp;</text>
+<text x="825.0" y="336" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.3">CLINICAL LABS</text>
+<rect x="710" y="372" width="202" height="82" rx="6" fill="#EEF1F2" fill-opacity="1" stroke="#A63A2B" stroke-width="0.9"/>
+<text x="722" y="393" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Sim centre director 1</text>
+<text x="722" y="408" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Sim technicians 3</text>
+<text x="722" y="423" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Standardised-patient lead 1</text>
+<text x="722" y="438" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Clinical skills tutors 2</text>
+<line x1="1031.0" y1="262" x2="1031.0" y2="296" stroke="#66787E" stroke-width="1.2" stroke-linecap="round"/>
+<rect x="930" y="296" width="202" height="66" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#66787E" stroke-width="1.6"/>
+<rect x="930" y="296" width="202" height="5" rx="0" fill="#66787E" fill-opacity="1" stroke="#66787E" stroke-width="0"/>
+<rect x="938" y="306" width="30" height="16" rx="8" fill="#66787E" fill-opacity="1" stroke="#66787E" stroke-width="0"/>
+<text x="953" y="318" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#FFFFFF" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">8</text>
+<text x="1045.0" y="322" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.3">OPERATIONS &amp;</text>
+<text x="1045.0" y="336" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.3">REGISTRY</text>
+<rect x="930" y="372" width="202" height="112" rx="6" fill="#EEF1F2" fill-opacity="1" stroke="#66787E" stroke-width="0.9"/>
+<text x="942" y="393" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Registrar / records 2</text>
+<text x="942" y="408" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Finance &amp; procurement 2</text>
+<text x="942" y="423" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Partnerships 1</text>
+<text x="942" y="438" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Communications 1</text>
+<text x="942" y="453" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M&amp;E officer 1</text>
+<text x="942" y="468" font-family="Helvetica, Arial, sans-serif" font-size="8.9" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Administration 1</text>
+<rect x="50" y="546" width="1080" height="96" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#66787E" stroke-width="1.4" stroke-dasharray="5,4"/>
+<text x="590" y="570" font-family="Helvetica, Arial, sans-serif" font-size="10.6" fill="#66787E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">AFFILIATED AND SESSIONAL — not counted in the 70 FTE core establishment</text>
+<text x="84" y="596" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">Clinical Champions</text>
+<text x="84" y="611" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">2 per participating hospital,</text>
+<text x="84" y="624" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">0.2 FTE sessional</text>
+<text x="352" y="596" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">Visiting Faculty</text>
+<text x="352" y="611" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">International and regional,</text>
+<text x="352" y="624" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">short-course delivery</text>
+<text x="620" y="596" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">Fellows</text>
+<text x="620" y="611" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">8 per annual cohort —</text>
+<text x="620" y="624" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">teach as they learn</text>
+<text x="888" y="596" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">Patient &amp; Public Panel</text>
+<text x="888" y="611" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">12 lay members,</text>
+<text x="888" y="624" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">curriculum and ethics review</text>
+</svg>

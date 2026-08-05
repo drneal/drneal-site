@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 648" width="1000" height="648">
+<defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#66787E"/>
+    </marker>
+    <marker id="arrowteal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B4F4A"/>
+    </marker>
+  </defs>
+<rect x="0" y="0" width="1000" height="648" fill="#FFFFFF"/>
+<text x="500" y="34" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#66787E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.6">FIGURE 2 — THE CLINICAL 4Ds</text>
+<text x="500" y="58" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">The 4D AI-Fluency Framework (Dakan &amp; Feller) translated into clinical acts</text>
+<rect x="60" y="84" width="430" height="232" rx="8" fill="#E6F0EE" fill-opacity="1" stroke="#0B4F4A" stroke-width="1.6"/>
+<rect x="60" y="84" width="430" height="6" rx="0" fill="#0B4F4A" fill-opacity="1" stroke="#0B4F4A" stroke-width="0"/>
+<text x="84" y="120" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#0B4F4A" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="1.4">DELEGATION</text>
+<text x="84" y="144" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#12262B" text-anchor="start" font-weight="normal" font-style="italic" letter-spacing="0">What may I hand over — and what must never leave my hands?</text>
+<line x1="84" y1="158" x2="466" y2="158" stroke="#0B4F4A" stroke-width="0.8" stroke-linecap="round"/>
+<text x="84" y="180" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Triage the task, not the patient</text>
+<text x="84" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— A named non-delegable list: consent, breaking</text>
+<text x="98" y="214.5" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">bad news, the decision to operate, the final</text>
+<text x="98" y="230.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">diagnosis, the signature</text>
+<text x="84" y="249.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Distinguish automation / augmentation / agency</text>
+<text x="84" y="268.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Ask: would I delegate this to an intern I have</text>
+<text x="98" y="283.5" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">never met?</text>
+<rect x="510" y="84" width="430" height="232" rx="8" fill="#FAF3E4" fill-opacity="1" stroke="#B5822A" stroke-width="1.6"/>
+<rect x="510" y="84" width="430" height="6" rx="0" fill="#B5822A" fill-opacity="1" stroke="#B5822A" stroke-width="0"/>
+<text x="534" y="120" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#B5822A" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="1.4">DESCRIPTION</text>
+<text x="534" y="144" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#12262B" text-anchor="start" font-weight="normal" font-style="italic" letter-spacing="0">How do I state a clinical problem so the answer is worth reading?</text>
+<line x1="534" y1="158" x2="916" y2="158" stroke="#B5822A" stroke-width="0.8" stroke-linecap="round"/>
+<text x="534" y="180" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Structured clinical context: setting, level of</text>
+<text x="548" y="195.5" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">facility, formulary, what tests actually exist</text>
+<text x="534" y="214.5" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Local epidemiology stated explicitly</text>
+<text x="534" y="233.5" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Ask for reasoning, differentials and the case</text>
+<text x="548" y="249.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">against — not just an answer</text>
+<text x="534" y="268.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Never paste identifiable patient data</text>
+<text x="534" y="287.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Prompt as a clinical handover, not a search</text>
+<rect x="60" y="372" width="430" height="232" rx="8" fill="#F7EAE7" fill-opacity="1" stroke="#A63A2B" stroke-width="1.6"/>
+<rect x="60" y="372" width="430" height="6" rx="0" fill="#A63A2B" fill-opacity="1" stroke="#A63A2B" stroke-width="0"/>
+<text x="84" y="408" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#A63A2B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="1.4">DISCERNMENT</text>
+<text x="84" y="432" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#12262B" text-anchor="start" font-weight="normal" font-style="italic" letter-spacing="0">How do I judge what comes back — before it reaches a patient?</text>
+<line x1="84" y1="446" x2="466" y2="446" stroke="#A63A2B" stroke-width="0.8" stroke-linecap="round"/>
+<text x="84" y="468" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Read the reasoning before the conclusion</text>
+<text x="84" y="487.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Independent-verification discipline: form your</text>
+<text x="98" y="502.5" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">own impression before you look at the output</text>
+<text x="84" y="521.5" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Recognise plausible-but-wrong output</text>
+<text x="84" y="540.5" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Detect training-data bias against African</text>
+<text x="98" y="556.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">presentations, skin tones, local drug names</text>
+<text x="84" y="575.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Calibrated trust — see Figure 8</text>
+<rect x="510" y="372" width="430" height="232" rx="8" fill="#E6F0EE" fill-opacity="1" stroke="#177A6E" stroke-width="1.6"/>
+<rect x="510" y="372" width="430" height="6" rx="0" fill="#177A6E" fill-opacity="1" stroke="#177A6E" stroke-width="0"/>
+<text x="534" y="408" font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#177A6E" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="1.4">DILIGENCE</text>
+<text x="534" y="432" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#12262B" text-anchor="start" font-weight="normal" font-style="italic" letter-spacing="0">How do I own the result and remain accountable?</text>
+<line x1="534" y1="446" x2="916" y2="446" stroke="#177A6E" stroke-width="0.8" stroke-linecap="round"/>
+<text x="534" y="468" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Documentation: what was AI-assisted, and how</text>
+<text x="534" y="487.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Disclosure to patients and to colleagues</text>
+<text x="534" y="506.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Data protection and consent under Kenyan law</text>
+<text x="534" y="525.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Incident reporting when AI contributes to harm</text>
+<text x="534" y="544.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— Guarding your own skills against decay</text>
+<text x="534" y="563.0" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">— The signature — and the liability — is yours</text>
+<circle cx="500" cy="350" r="46" fill="#FFFFFF" stroke="#12262B" stroke-width="1.6"/>
+<text x="500" y="344" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#66787E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.4">THE</text>
+<text x="500" y="358" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">PATIENT</text>
+<text x="500" y="628" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="italic" letter-spacing="0">Every module in every track is blueprinted against one or more of these four competencies.</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 700" width="940" height="700">
+<defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#66787E"/>
+    </marker>
+    <marker id="arrowteal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B4F4A"/>
+    </marker>
+  </defs>
+<rect x="0" y="0" width="940" height="700" fill="#FFFFFF"/>
+<text x="470" y="32" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#66787E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.6">FIGURE 5 — THE QUALITY LOOP</text>
+<text x="470" y="55" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="italic" letter-spacing="0">Nothing is taught that is not measured; nothing is measured that does not change what is taught.</text>
+<circle cx="470.0" cy="162.0" r="30" fill="#FFFFFF" stroke="#0B4F4A" stroke-width="2"/>
+<text x="470.0" y="168.0" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#0B4F4A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">1</text>
+<text x="470.0" y="84.0" font-family="Helvetica, Arial, sans-serif" font-size="11.2" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.5">STANDARD SET</text>
+<text x="470.0" y="99.0" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Competency standards agreed with</text>
+<text x="470.0" y="110.616" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">councils, faculties and the</text>
+<text x="470.0" y="122.232" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">hospital</text>
+<path d="M 506.6 199.7 A 184 184 0 0 1 571.7 226.6" fill="none" stroke="#66787E" stroke-width="1.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<circle cx="624.1" cy="225.9" r="30" fill="#FFFFFF" stroke="#177A6E" stroke-width="2"/>
+<text x="624.1492782986674" y="231.85072170133265" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#177A6E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">2</text>
+<text x="664.1492782986674" y="170.69639276878195" font-family="Helvetica, Arial, sans-serif" font-size="11.2" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0.5">BLUEPRINT</text>
+<text x="664.1492782986674" y="185.69639276878195" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Every module mapped to a standard</text>
+<text x="664.1492782986674" y="197.31239276878196" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">and an assessment before it is</text>
+<text x="664.1492782986674" y="208.92839276878195" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">written</text>
+<path d="M 623.4 278.3 A 184 184 0 0 1 650.3 343.4" fill="none" stroke="#66787E" stroke-width="1.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<circle cx="688.0" cy="380.0" r="30" fill="#FFFFFF" stroke="#B5822A" stroke-width="2"/>
+<text x="688.0" y="386.0" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#B5822A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">3</text>
+<text x="728.0" y="380.0" font-family="Helvetica, Arial, sans-serif" font-size="11.2" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0.5">BUILD</text>
+<text x="728.0" y="395.0" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Content authored by a</text>
+<text x="728.0" y="406.616" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">clinician–educator pair; peer-</text>
+<text x="728.0" y="418.232" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">reviewed; version-controlled</text>
+<path d="M 650.3 416.6 A 184 184 0 0 1 623.4 481.7" fill="none" stroke="#66787E" stroke-width="1.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<circle cx="624.1" cy="534.1" r="30" fill="#FFFFFF" stroke="#A63A2B" stroke-width="2"/>
+<text x="624.1492782986674" y="540.1492782986674" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#A63A2B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">4</text>
+<text x="664.1492782986674" y="589.303607231218" font-family="Helvetica, Arial, sans-serif" font-size="11.2" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0.5">PILOT</text>
+<text x="664.1492782986674" y="604.303607231218" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Every new module run against a</text>
+<text x="664.1492782986674" y="615.919607231218" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">pilot cohort with think-aloud</text>
+<text x="664.1492782986674" y="627.535607231218" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">observation</text>
+<path d="M 571.7 533.4 A 184 184 0 0 1 506.6 560.3" fill="none" stroke="#66787E" stroke-width="1.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<circle cx="470.0" cy="598.0" r="30" fill="#FFFFFF" stroke="#0B4F4A" stroke-width="2"/>
+<text x="470.0" y="604.0" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#0B4F4A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">5</text>
+<text x="470.0" y="650.0" font-family="Helvetica, Arial, sans-serif" font-size="11.2" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.5">DELIVER</text>
+<text x="470.0" y="665.0" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Only by certified instructors;</text>
+<text x="470.0" y="676.616" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">sessions sampled and observed</text>
+<path d="M 433.4 560.3 A 184 184 0 0 1 368.3 533.4" fill="none" stroke="#66787E" stroke-width="1.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<circle cx="315.9" cy="534.1" r="30" fill="#FFFFFF" stroke="#177A6E" stroke-width="2"/>
+<text x="315.85072170133265" y="540.1492782986674" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#177A6E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">6</text>
+<text x="275.85072170133265" y="589.303607231218" font-family="Helvetica, Arial, sans-serif" font-size="11.2" fill="#12262B" text-anchor="end" font-weight="bold" font-style="normal" letter-spacing="0.5">ASSESS</text>
+<text x="275.85072170133265" y="604.303607231218" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="end" font-weight="normal" font-style="normal" letter-spacing="0">Psychometric monitoring of every</text>
+<text x="275.85072170133265" y="615.919607231218" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="end" font-weight="normal" font-style="normal" letter-spacing="0">item; standard-setting by Angoff</text>
+<text x="275.85072170133265" y="627.535607231218" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="end" font-weight="normal" font-style="normal" letter-spacing="0">panel</text>
+<path d="M 316.6 481.7 A 184 184 0 0 1 289.7 416.6" fill="none" stroke="#66787E" stroke-width="1.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<circle cx="252.0" cy="380.0" r="30" fill="#FFFFFF" stroke="#B5822A" stroke-width="2"/>
+<text x="252.0" y="386.0" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#B5822A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">7</text>
+<text x="212.0" y="380.00000000000006" font-family="Helvetica, Arial, sans-serif" font-size="11.2" fill="#12262B" text-anchor="end" font-weight="bold" font-style="normal" letter-spacing="0.5">AUDIT</text>
+<text x="212.0" y="395.00000000000006" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="end" font-weight="normal" font-style="normal" letter-spacing="0">Workplace practice audited at 3</text>
+<text x="212.0" y="406.61600000000004" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="end" font-weight="normal" font-style="normal" letter-spacing="0">and 12 months; incidents reviewed</text>
+<path d="M 289.7 343.4 A 184 184 0 0 1 316.6 278.3" fill="none" stroke="#66787E" stroke-width="1.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<circle cx="315.9" cy="225.9" r="30" fill="#FFFFFF" stroke="#A63A2B" stroke-width="2"/>
+<text x="315.85072170133265" y="231.85072170133265" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#A63A2B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">8</text>
+<text x="275.85072170133265" y="170.69639276878195" font-family="Helvetica, Arial, sans-serif" font-size="11.2" fill="#12262B" text-anchor="end" font-weight="bold" font-style="normal" letter-spacing="0.5">REPORT &amp; REVISE</text>
+<text x="275.85072170133265" y="185.69639276878195" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="end" font-weight="normal" font-style="normal" letter-spacing="0">Outcomes published annually;</text>
+<text x="275.85072170133265" y="197.31239276878196" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="end" font-weight="normal" font-style="normal" letter-spacing="0">failing modules retired, not</text>
+<text x="275.85072170133265" y="208.92839276878195" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="end" font-weight="normal" font-style="normal" letter-spacing="0">defended</text>
+<path d="M 368.3 226.6 A 184 184 0 0 1 433.4 199.7" fill="none" stroke="#66787E" stroke-width="1.3" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<circle cx="470" cy="380" r="96" fill="#E6F0EE" stroke="#0B4F4A" stroke-width="1.6"/>
+<text x="470" y="362" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#0B4F4A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.6">QUALITY</text>
+<text x="470" y="379" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#0B4F4A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.8">OF DELIVERABLES</text>
+<text x="470" y="402" font-family="Helvetica, Arial, sans-serif" font-size="9.2" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Owned by an office</text>
+<text x="470" y="415" font-family="Helvetica, Arial, sans-serif" font-size="9.2" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">that does not report</text>
+<text x="470" y="428" font-family="Helvetica, Arial, sans-serif" font-size="9.2" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">to the trainers</text>
+</svg>

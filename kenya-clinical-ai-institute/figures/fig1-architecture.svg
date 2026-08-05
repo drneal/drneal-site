@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 552" width="1000" height="552">
+<defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#66787E"/>
+    </marker>
+    <marker id="arrowteal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B4F4A"/>
+    </marker>
+  </defs>
+<rect x="0" y="0" width="1000" height="552" fill="#FFFFFF"/>
+<text x="500" y="34" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#66787E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.6">FIGURE 1 — INSTITUTIONAL ARCHITECTURE</text>
+<rect x="60" y="56" width="880" height="74" rx="8" fill="#E6F0EE" fill-opacity="1" stroke="#0B4F4A" stroke-width="1.6"/>
+<text x="500" y="84" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#0B4F4A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="2">MANDATE</text>
+<text x="500" y="108" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Every clinician in Kenya can use AI safely, sceptically and to the patient's benefit — and can prove it.</text>
+<rect x="60.0" y="158" width="163.2" height="254" rx="8" fill="#FFFFFF" fill-opacity="1" stroke="#0B4F4A" stroke-width="1.6"/>
+<rect x="60.0" y="158" width="163.2" height="6" rx="0" fill="#0B4F4A" fill-opacity="1" stroke="#0B4F4A" stroke-width="0"/>
+<text x="141.6" y="194" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#0B4F4A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">01</text>
+<text x="141.6" y="218" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">TEACHING</text>
+<line x1="82.0" y1="241" x2="201.2" y2="241" stroke="#0B4F4A" stroke-width="0.8" stroke-linecap="round"/>
+<text x="141.6" y="261" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Tiered curriculum, five</text>
+<text x="141.6" y="276" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">professional tracks</text>
+<text x="141.6" y="291" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Ladder: Foundation to Fellow</text>
+<text x="141.6" y="306" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Residential, hybrid, mobile</text>
+<rect x="239.2" y="158" width="163.2" height="254" rx="8" fill="#FFFFFF" fill-opacity="1" stroke="#B5822A" stroke-width="1.6"/>
+<rect x="239.2" y="158" width="163.2" height="6" rx="0" fill="#B5822A" fill-opacity="1" stroke="#B5822A" stroke-width="0"/>
+<text x="320.79999999999995" y="194" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#B5822A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">02</text>
+<text x="320.79999999999995" y="218" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">ASSESSMENT</text>
+<text x="320.79999999999995" y="233" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">&amp; CERTIFICATION</text>
+<line x1="261.2" y1="256" x2="380.4" y2="256" stroke="#B5822A" stroke-width="0.8" stroke-linecap="round"/>
+<text x="320.79999999999995" y="276" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Blueprinted, psychometric</text>
+<text x="320.79999999999995" y="291" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">item banks</text>
+<text x="320.79999999999995" y="306" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Simulation-based OSCE-style</text>
+<text x="320.79999999999995" y="321" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">exams (AI-OSCE)</text>
+<text x="320.79999999999995" y="336" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Council-recognised CPD</text>
+<rect x="418.4" y="158" width="163.2" height="254" rx="8" fill="#FFFFFF" fill-opacity="1" stroke="#A63A2B" stroke-width="1.6"/>
+<rect x="418.4" y="158" width="163.2" height="6" rx="0" fill="#A63A2B" fill-opacity="1" stroke="#A63A2B" stroke-width="0"/>
+<text x="500.0" y="194" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#A63A2B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">03</text>
+<text x="500.0" y="218" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">SIMULATION</text>
+<text x="500.0" y="233" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">&amp; SANDBOX</text>
+<line x1="440.4" y1="256" x2="559.5999999999999" y2="256" stroke="#A63A2B" stroke-width="0.8" stroke-linecap="round"/>
+<text x="500.0" y="276" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Synthetic-patient environment</text>
+<text x="500.0" y="291" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">De-identified Kenyan case</text>
+<text x="500.0" y="306" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">corpus</text>
+<text x="500.0" y="321" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Failure-injection rigs</text>
+<rect x="597.5999999999999" y="158" width="163.2" height="254" rx="8" fill="#FFFFFF" fill-opacity="1" stroke="#177A6E" stroke-width="1.6"/>
+<rect x="597.5999999999999" y="158" width="163.2" height="6" rx="0" fill="#177A6E" fill-opacity="1" stroke="#177A6E" stroke-width="0"/>
+<text x="679.1999999999999" y="194" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#177A6E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">04</text>
+<text x="679.1999999999999" y="218" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">EVALUATION</text>
+<text x="679.1999999999999" y="233" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">&amp; RESEARCH</text>
+<line x1="619.5999999999999" y1="256" x2="738.8" y2="256" stroke="#177A6E" stroke-width="0.8" stroke-linecap="round"/>
+<text x="679.1999999999999" y="276" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Model evaluation against</text>
+<text x="679.1999999999999" y="291" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Kenyan case mix</text>
+<text x="679.1999999999999" y="306" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Outcome studies, Kirkpatrick 3-4</text>
+<text x="679.1999999999999" y="321" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Publication and open data</text>
+<rect x="776.8" y="158" width="163.2" height="254" rx="8" fill="#FFFFFF" fill-opacity="1" stroke="#66787E" stroke-width="1.6"/>
+<rect x="776.8" y="158" width="163.2" height="6" rx="0" fill="#66787E" fill-opacity="1" stroke="#66787E" stroke-width="0"/>
+<text x="858.4" y="194" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#66787E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">05</text>
+<text x="858.4" y="218" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">STANDARDS</text>
+<text x="858.4" y="233" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">&amp; ADVISORY</text>
+<line x1="798.8" y1="256" x2="918.0" y2="256" stroke="#66787E" stroke-width="0.8" stroke-linecap="round"/>
+<text x="858.4" y="276" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Competency standards for</text>
+<text x="858.4" y="291" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">councils and faculties</text>
+<text x="858.4" y="306" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Procurement and deployment</text>
+<text x="858.4" y="321" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">guidance</text>
+<text x="858.4" y="336" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Incident review</text>
+<line x1="141.6" y1="130" x2="141.6" y2="158" stroke="#66787E" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="3,3"/>
+<line x1="141.6" y1="412" x2="141.6" y2="438" stroke="#66787E" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="3,3"/>
+<line x1="320.79999999999995" y1="130" x2="320.79999999999995" y2="158" stroke="#66787E" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="3,3"/>
+<line x1="320.79999999999995" y1="412" x2="320.79999999999995" y2="438" stroke="#66787E" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="3,3"/>
+<line x1="500.0" y1="130" x2="500.0" y2="158" stroke="#66787E" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="3,3"/>
+<line x1="500.0" y1="412" x2="500.0" y2="438" stroke="#66787E" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="3,3"/>
+<line x1="679.1999999999999" y1="130" x2="679.1999999999999" y2="158" stroke="#66787E" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="3,3"/>
+<line x1="679.1999999999999" y1="412" x2="679.1999999999999" y2="438" stroke="#66787E" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="3,3"/>
+<line x1="858.4" y1="130" x2="858.4" y2="158" stroke="#66787E" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="3,3"/>
+<line x1="858.4" y1="412" x2="858.4" y2="438" stroke="#66787E" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="3,3"/>
+<rect x="60" y="438" width="880" height="82" rx="8" fill="#EEF1F2" fill-opacity="1" stroke="#66787E" stroke-width="1.4"/>
+<text x="500" y="462" font-family="Helvetica, Arial, sans-serif" font-size="10.5" fill="#66787E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="2">FOUNDATION</text>
+<text x="500" y="485" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Clinical governance  ·  Data protection and patient consent  ·  Faculty development  ·  Digital infrastructure and connectivity</text>
+<text x="500" y="505" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Independence from vendors  ·  Public reporting of outcomes  ·  Council and university accreditation</text>
+</svg>

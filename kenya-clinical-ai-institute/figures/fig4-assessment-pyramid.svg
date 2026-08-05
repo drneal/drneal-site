@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560">
+<defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#66787E"/>
+    </marker>
+    <marker id="arrowteal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B4F4A"/>
+    </marker>
+  </defs>
+<rect x="0" y="0" width="1000" height="560" fill="#FFFFFF"/>
+<text x="500" y="32" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#66787E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.2">FIGURE 4 — ASSESSMENT BLUEPRINT: MILLER'S PYRAMID APPLIED TO AI COMPETENCE</text>
+<path d="M 206.2 76 L 317.8 76 L 361.2 162 L 162.8 162 Z" fill="#0B4F4A" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+<text x="262" y="118.0" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#FFFFFF" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.2">DOES</text>
+<text x="262" y="136.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Level 4</text>
+<rect x="500" y="80" width="460" height="78" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#0B4F4A" stroke-width="1.2"/>
+<rect x="500" y="80" width="4" height="78" rx="0" fill="#0B4F4A" fill-opacity="1" stroke="#0B4F4A" stroke-width="0"/>
+<text x="516" y="100" font-family="Helvetica, Arial, sans-serif" font-size="10.6" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">Uses AI appropriately in real practice, unobserved</text>
+<text x="516" y="118.0" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Workplace-based assessment · countersigned logbook · chart audit ·</text>
+<text x="516" y="130.40800000000002" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">patient-outcome review</text>
+<text x="948" y="100" font-family="Helvetica, Arial, sans-serif" font-size="8.6" fill="#0B4F4A" text-anchor="end" font-weight="bold" font-style="normal" letter-spacing="0">Kirkpatrick 3–4</text>
+<line x1="504" y1="80" x2="464" y2="80" stroke="#FFFFFF" stroke-width="0" stroke-linecap="round"/>
+<line x1="339.5" y1="119.0" x2="494" y2="119.0" stroke="#0B4F4A" stroke-width="1" stroke-linecap="round" stroke-dasharray="2,3"/>
+<path d="M 162.8 168 L 361.2 168 L 404.6 254 L 119.4 254 Z" fill="#177A6E" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+<text x="262" y="210.0" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#FFFFFF" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.2">SHOWS HOW</text>
+<text x="262" y="228.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Level 3</text>
+<rect x="500" y="172" width="460" height="78" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#177A6E" stroke-width="1.2"/>
+<rect x="500" y="172" width="4" height="78" rx="0" fill="#177A6E" fill-opacity="1" stroke="#177A6E" stroke-width="0"/>
+<text x="516" y="192" font-family="Helvetica, Arial, sans-serif" font-size="10.6" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">Demonstrates safe use in a simulated encounter</text>
+<text x="516" y="210.0" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">AI-OSCE: simulated consultation with a seeded-error AI · structured</text>
+<text x="516" y="222.40800000000002" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">examiner rubric</text>
+<text x="948" y="192" font-family="Helvetica, Arial, sans-serif" font-size="8.6" fill="#177A6E" text-anchor="end" font-weight="bold" font-style="normal" letter-spacing="0">Kirkpatrick 3</text>
+<line x1="504" y1="172" x2="464" y2="172" stroke="#FFFFFF" stroke-width="0" stroke-linecap="round"/>
+<line x1="382.9" y1="211.0" x2="494" y2="211.0" stroke="#177A6E" stroke-width="1" stroke-linecap="round" stroke-dasharray="2,3"/>
+<path d="M 119.4 260 L 404.6 260 L 448.0 346 L 76.00000000000003 346 Z" fill="#B5822A" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+<text x="262" y="302.0" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#FFFFFF" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.2">KNOWS HOW</text>
+<text x="262" y="320.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Level 2</text>
+<rect x="500" y="264" width="460" height="78" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#B5822A" stroke-width="1.2"/>
+<rect x="500" y="264" width="4" height="78" rx="0" fill="#B5822A" fill-opacity="1" stroke="#B5822A" stroke-width="0"/>
+<text x="516" y="284" font-family="Helvetica, Arial, sans-serif" font-size="10.6" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">Applies knowledge to a clinical vignette</text>
+<text x="516" y="302.0" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Extended-matching questions · script-concordance test · written critique</text>
+<text x="516" y="314.408" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">of an AI output</text>
+<text x="948" y="284" font-family="Helvetica, Arial, sans-serif" font-size="8.6" fill="#B5822A" text-anchor="end" font-weight="bold" font-style="normal" letter-spacing="0">Kirkpatrick 2</text>
+<line x1="504" y1="264" x2="464" y2="264" stroke="#FFFFFF" stroke-width="0" stroke-linecap="round"/>
+<line x1="426.29999999999995" y1="303.0" x2="494" y2="303.0" stroke="#B5822A" stroke-width="1" stroke-linecap="round" stroke-dasharray="2,3"/>
+<path d="M 76.00000000000003 352 L 448.0 352 L 491.4 438 L 32.60000000000002 438 Z" fill="#66787E" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+<text x="262" y="394.0" font-family="Helvetica, Arial, sans-serif" font-size="13.5" fill="#FFFFFF" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.2">KNOWS</text>
+<text x="262" y="412.0" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#FFFFFF" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Level 1</text>
+<rect x="500" y="356" width="460" height="78" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#66787E" stroke-width="1.2"/>
+<rect x="500" y="356" width="4" height="78" rx="0" fill="#66787E" fill-opacity="1" stroke="#66787E" stroke-width="0"/>
+<text x="516" y="376" font-family="Helvetica, Arial, sans-serif" font-size="10.6" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">Recalls facts about capability, limitation and law</text>
+<text x="516" y="394.0" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">MCQ from a blueprinted, psychometrically monitored item bank</text>
+<text x="948" y="376" font-family="Helvetica, Arial, sans-serif" font-size="8.6" fill="#66787E" text-anchor="end" font-weight="bold" font-style="normal" letter-spacing="0">Kirkpatrick 2</text>
+<line x1="504" y1="356" x2="464" y2="356" stroke="#FFFFFF" stroke-width="0" stroke-linecap="round"/>
+<line x1="469.69999999999993" y1="395.0" x2="494" y2="395.0" stroke="#66787E" stroke-width="1" stroke-linecap="round" stroke-dasharray="2,3"/>
+<rect x="50" y="456" width="900" height="52" rx="6" fill="#E6F0EE" fill-opacity="1" stroke="#0B4F4A" stroke-width="1.2"/>
+<text x="500" y="478" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#0B4F4A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">No certificate is issued on 'KNOWS' alone.</text>
+<text x="500" y="497" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">A pass at every level of this pyramid — including a countersigned workplace logbook — is required before any award is made.</text>
+</svg>

@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 616" width="1040" height="616">
+<defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#66787E"/>
+    </marker>
+    <marker id="arrowteal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B4F4A"/>
+    </marker>
+  </defs>
+<rect x="0" y="0" width="1040" height="616" fill="#FFFFFF"/>
+<text x="520" y="30" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#66787E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.4">FIGURE 3 — CURRICULUM MATRIX: FIVE TRACKS, FIVE LEVELS</text>
+<rect x="194.0" y="40" width="154.0" height="48" rx="6" fill="#EEF1F2" fill-opacity="1" stroke="#66787E" stroke-width="1"/>
+<text x="271.0" y="57.0" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">TRACK A</text>
+<text x="271.0" y="69.5" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Physicians</text>
+<rect x="356.0" y="40" width="154.0" height="48" rx="6" fill="#EEF1F2" fill-opacity="1" stroke="#66787E" stroke-width="1"/>
+<text x="433.0" y="57.0" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">TRACK B</text>
+<text x="433.0" y="69.5" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Surgeons &amp;</text>
+<text x="433.0" y="82.0" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Proceduralists</text>
+<rect x="518.0" y="40" width="154.0" height="48" rx="6" fill="#EEF1F2" fill-opacity="1" stroke="#66787E" stroke-width="1"/>
+<text x="595.0" y="57.0" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">TRACK C</text>
+<text x="595.0" y="69.5" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Nursing &amp;</text>
+<text x="595.0" y="82.0" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Midwifery</text>
+<rect x="680.0" y="40" width="154.0" height="48" rx="6" fill="#EEF1F2" fill-opacity="1" stroke="#66787E" stroke-width="1"/>
+<text x="757.0" y="57.0" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">TRACK D</text>
+<text x="757.0" y="69.5" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Administrators &amp;</text>
+<text x="757.0" y="82.0" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Managers</text>
+<rect x="842.0" y="40" width="154.0" height="48" rx="6" fill="#EEF1F2" fill-opacity="1" stroke="#66787E" stroke-width="1"/>
+<text x="919.0" y="57.0" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">TRACK E</text>
+<text x="919.0" y="69.5" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Health</text>
+<text x="919.0" y="82.0" font-family="Helvetica, Arial, sans-serif" font-size="9.6" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Informaticians</text>
+<rect x="20" y="100" width="158" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#A63A2B" stroke-width="1.4"/>
+<rect x="20" y="100" width="5" height="80" rx="0" fill="#A63A2B" fill-opacity="1" stroke="#A63A2B" stroke-width="0"/>
+<text x="38" y="124" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#A63A2B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">L5</text>
+<text x="72" y="124" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0.5">FELLOW</text>
+<text x="38" y="143.0" font-family="Helvetica, Arial, sans-serif" font-size="9.2" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Clinical AI Fellowship — 12</text>
+<text x="38" y="155.144" font-family="Helvetica, Arial, sans-serif" font-size="9.2" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">months, full time</text>
+<rect x="194.0" y="100" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#A63A2B" stroke-width="1.1"/>
+<text x="271.0" y="126" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="356.0" y="100" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#A63A2B" stroke-width="1.1"/>
+<text x="433.0" y="126" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="518.0" y="100" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#A63A2B" stroke-width="1.1"/>
+<text x="595.0" y="126" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="680.0" y="100" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#A63A2B" stroke-width="1.1"/>
+<text x="757.0" y="126" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="842.0" y="100" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#A63A2B" stroke-width="1.1"/>
+<text x="919.0" y="126" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="20" y="188" width="158" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#B5822A" stroke-width="1.4"/>
+<rect x="20" y="188" width="5" height="80" rx="0" fill="#B5822A" fill-opacity="1" stroke="#B5822A" stroke-width="0"/>
+<text x="38" y="212" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#B5822A" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">L4</text>
+<text x="72" y="212" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0.5">FACULTY</text>
+<text x="38" y="231.0" font-family="Helvetica, Arial, sans-serif" font-size="9.2" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Certified Instructor / Train-</text>
+<text x="38" y="243.144" font-family="Helvetica, Arial, sans-serif" font-size="9.2" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">the-Trainer</text>
+<rect x="194.0" y="188" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#B5822A" stroke-width="1.1"/>
+<text x="271.0" y="214" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="356.0" y="188" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#B5822A" stroke-width="1.1"/>
+<text x="433.0" y="214" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="518.0" y="188" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#B5822A" stroke-width="1.1"/>
+<text x="595.0" y="214" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="680.0" y="188" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#B5822A" stroke-width="1.1"/>
+<text x="757.0" y="214" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="842.0" y="188" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#B5822A" stroke-width="1.1"/>
+<text x="919.0" y="214" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="20" y="276" width="158" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#177A6E" stroke-width="1.4"/>
+<rect x="20" y="276" width="5" height="80" rx="0" fill="#177A6E" fill-opacity="1" stroke="#177A6E" stroke-width="0"/>
+<text x="38" y="300" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#177A6E" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">L3</text>
+<text x="72" y="300" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0.5">ADVANCED</text>
+<text x="38" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="9.2" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Specialty-specific deep</text>
+<text x="38" y="331.144" font-family="Helvetica, Arial, sans-serif" font-size="9.2" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">practice</text>
+<rect x="194.0" y="276" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#177A6E" stroke-width="1.1"/>
+<text x="271.0" y="302" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="356.0" y="276" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#177A6E" stroke-width="1.1"/>
+<text x="433.0" y="302" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="518.0" y="276" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#177A6E" stroke-width="1.1"/>
+<text x="595.0" y="302" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="680.0" y="276" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#177A6E" stroke-width="1.1"/>
+<text x="757.0" y="302" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="842.0" y="276" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#177A6E" stroke-width="1.1"/>
+<text x="919.0" y="302" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="20" y="364" width="158" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#0B4F4A" stroke-width="1.4"/>
+<rect x="20" y="364" width="5" height="80" rx="0" fill="#0B4F4A" fill-opacity="1" stroke="#0B4F4A" stroke-width="0"/>
+<text x="38" y="388" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#0B4F4A" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">L2</text>
+<text x="72" y="388" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0.5">PRACTITIONER</text>
+<text x="38" y="407.0" font-family="Helvetica, Arial, sans-serif" font-size="9.2" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Supervised workplace</text>
+<text x="38" y="419.144" font-family="Helvetica, Arial, sans-serif" font-size="9.2" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">application</text>
+<rect x="194.0" y="364" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#0B4F4A" stroke-width="1.1"/>
+<text x="271.0" y="390" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="356.0" y="364" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#0B4F4A" stroke-width="1.1"/>
+<text x="433.0" y="390" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="518.0" y="364" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#0B4F4A" stroke-width="1.1"/>
+<text x="595.0" y="390" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="680.0" y="364" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#0B4F4A" stroke-width="1.1"/>
+<text x="757.0" y="390" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="842.0" y="364" width="154.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#0B4F4A" stroke-width="1.1"/>
+<text x="919.0" y="390" font-family="Helvetica, Arial, sans-serif" font-size="9" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0"></text>
+<rect x="20" y="452" width="158" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#66787E" stroke-width="1.4"/>
+<rect x="20" y="452" width="5" height="80" rx="0" fill="#66787E" fill-opacity="1" stroke="#66787E" stroke-width="0"/>
+<text x="38" y="476" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#66787E" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0">L1</text>
+<text x="72" y="476" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="start" font-weight="bold" font-style="normal" letter-spacing="0.5">FOUNDATION</text>
+<text x="38" y="495.0" font-family="Helvetica, Arial, sans-serif" font-size="9.2" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Common core — the Clinical 4Ds</text>
+<rect x="194" y="452" width="802.0" height="80" rx="6" fill="#EEF1F2" fill-opacity="1" stroke="#66787E" stroke-width="1.2"/>
+<text x="595.0" y="482" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">SHARED COMMON CORE — identical for every cadre</text>
+<text x="595.0" y="502" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">12 h  ·  What these systems are and are not  ·  The 4Ds  ·  Law, consent, documentation  ·  First supervised use</text>
+<rect x="194" y="100" width="802.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#A63A2B" stroke-width="1.2"/>
+<text x="595.0" y="130" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">Clinical AI Fellowship — one cohort, all cadres, 12 months</text>
+<text x="595.0" y="150" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Deep specialisation, original evaluation work, one publishable output, and a commitment to teach.</text>
+<rect x="194" y="188" width="802.0" height="80" rx="6" fill="#FFFFFF" fill-opacity="1" stroke="#B5822A" stroke-width="1.2"/>
+<text x="595.0" y="218" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#12262B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">Instructor certification — common pedagogy core + track-specific practicum</text>
+<text x="595.0" y="238" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">No one teaches on this programme without being certified to teach on this programme.</text>
+<text x="271.0" y="300" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Diagnostic</text>
+<text x="271.0" y="313" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">reasoning under</text>
+<text x="271.0" y="326" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">uncertainty;</text>
+<text x="271.0" y="339" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">specialty deep-dives</text>
+<text x="433.0" y="300" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Peri-operative</text>
+<text x="433.0" y="313" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">planning; imaging;</text>
+<text x="433.0" y="326" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">intra-op decision</text>
+<text x="433.0" y="339" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">support; robotics</text>
+<text x="595.0" y="300" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Triage &amp;</text>
+<text x="595.0" y="313" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">early-warning</text>
+<text x="595.0" y="326" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">scores; handover;</text>
+<text x="595.0" y="339" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">documentation</text>
+<text x="757.0" y="300" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Procurement,</text>
+<text x="757.0" y="313" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">evaluation,</text>
+<text x="757.0" y="326" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">deployment</text>
+<text x="757.0" y="339" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">governance</text>
+<text x="919.0" y="300" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Model evaluation,</text>
+<text x="919.0" y="313" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">integration,</text>
+<text x="919.0" y="326" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">monitoring,</text>
+<text x="919.0" y="339" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">local validation</text>
+<text x="271.0" y="388" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Supervised</text>
+<text x="271.0" y="401" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">clinic use;</text>
+<text x="271.0" y="414" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">logbook of</text>
+<text x="271.0" y="427" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">20 encounters</text>
+<text x="433.0" y="388" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Supervised</text>
+<text x="433.0" y="401" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">pre-op use;</text>
+<text x="433.0" y="414" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">logbook of</text>
+<text x="433.0" y="427" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">20 cases</text>
+<text x="595.0" y="388" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Supervised ward</text>
+<text x="595.0" y="401" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">use; logbook of</text>
+<text x="595.0" y="414" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">20 shifts</text>
+<text x="757.0" y="388" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Supervised</text>
+<text x="757.0" y="401" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">service-level</text>
+<text x="757.0" y="414" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">project</text>
+<text x="919.0" y="388" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Supervised</text>
+<text x="919.0" y="401" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">evaluation</text>
+<text x="919.0" y="414" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">of one</text>
+<text x="919.0" y="427" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#12262B" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">deployed model</text>
+<text x="520" y="566" font-family="Helvetica, Arial, sans-serif" font-size="10.4" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="italic" letter-spacing="0">Progression is gated, not automatic: each level requires a passed assessment and a countersigned workplace logbook before the next may be attempted.</text>
+</svg>

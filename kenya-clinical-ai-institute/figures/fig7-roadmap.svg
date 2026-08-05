@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 640" width="1080" height="640">
+<defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#66787E"/>
+    </marker>
+    <marker id="arrowteal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B4F4A"/>
+    </marker>
+  </defs>
+<rect x="0" y="0" width="1080" height="640" fill="#FFFFFF"/>
+<text x="540" y="32" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#66787E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="1.4">FIGURE 7 — PHASED ROADMAP, MONTHS 0–36</text>
+<text x="540" y="54" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">Headcount shown is cumulative core establishment at the end of each phase.</text>
+<line x1="250" y1="94" x2="1040" y2="94" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<line x1="250.0" y1="90" x2="250.0" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="250.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M0</text>
+<line x1="315.8333333333333" y1="90" x2="315.8333333333333" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="315.8333333333333" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M3</text>
+<line x1="381.66666666666663" y1="90" x2="381.66666666666663" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="381.66666666666663" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M6</text>
+<line x1="447.5" y1="90" x2="447.5" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="447.5" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M9</text>
+<line x1="513.3333333333333" y1="90" x2="513.3333333333333" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="513.3333333333333" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M12</text>
+<line x1="579.1666666666667" y1="90" x2="579.1666666666667" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="579.1666666666667" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M15</text>
+<line x1="645.0" y1="90" x2="645.0" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="645.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M18</text>
+<line x1="710.8333333333333" y1="90" x2="710.8333333333333" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="710.8333333333333" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M21</text>
+<line x1="776.6666666666666" y1="90" x2="776.6666666666666" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="776.6666666666666" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M24</text>
+<line x1="842.5" y1="90" x2="842.5" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="842.5" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M27</text>
+<line x1="908.3333333333334" y1="90" x2="908.3333333333334" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="908.3333333333334" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M30</text>
+<line x1="974.1666666666666" y1="90" x2="974.1666666666666" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="974.1666666666666" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M33</text>
+<line x1="1040.0" y1="90" x2="1040.0" y2="98" stroke="#66787E" stroke-width="1" stroke-linecap="round"/>
+<text x="1040.0" y="84" font-family="Helvetica, Arial, sans-serif" font-size="8.8" fill="#66787E" text-anchor="middle" font-weight="normal" font-style="normal" letter-spacing="0">M36</text>
+<rect x="250.0" y="104" width="131.66666666666663" height="26" rx="4" fill="#0B4F4A" fill-opacity="0.14" stroke="#0B4F4A" stroke-width="0"/>
+<text x="315.8333333333333" y="121" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#0B4F4A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">PHASE 0 — FOUNDING</text>
+<text x="315.8333333333333" y="596" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#0B4F4A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">9 FTE</text>
+<line x1="381.66666666666663" y1="104" x2="381.66666666666663" y2="578" stroke="#0B4F4A" stroke-width="0.8" stroke-linecap="round" stroke-dasharray="3,4"/>
+<rect x="381.66666666666663" y="104" width="197.5000000000001" height="26" rx="4" fill="#177A6E" fill-opacity="0.14" stroke="#177A6E" stroke-width="0"/>
+<text x="480.4166666666667" y="121" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#177A6E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">PHASE 1 — PROVE IT</text>
+<text x="480.4166666666667" y="596" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#177A6E" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">26 FTE</text>
+<line x1="579.1666666666667" y1="104" x2="579.1666666666667" y2="578" stroke="#177A6E" stroke-width="0.8" stroke-linecap="round" stroke-dasharray="3,4"/>
+<rect x="579.1666666666667" y="104" width="263.33333333333326" height="26" rx="4" fill="#B5822A" fill-opacity="0.14" stroke="#B5822A" stroke-width="0"/>
+<text x="710.8333333333334" y="121" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#B5822A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">PHASE 2 — SCALE</text>
+<text x="710.8333333333334" y="596" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#B5822A" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">50 FTE</text>
+<line x1="842.5" y1="104" x2="842.5" y2="578" stroke="#B5822A" stroke-width="0.8" stroke-linecap="round" stroke-dasharray="3,4"/>
+<rect x="842.5" y="104" width="197.5" height="26" rx="4" fill="#A63A2B" fill-opacity="0.14" stroke="#A63A2B" stroke-width="0"/>
+<text x="941.25" y="121" font-family="Helvetica, Arial, sans-serif" font-size="9.4" fill="#A63A2B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0.6">PHASE 3 — INSTITUTIONALISE</text>
+<text x="941.25" y="596" font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#A63A2B" text-anchor="middle" font-weight="bold" font-style="normal" letter-spacing="0">70 FTE</text>
+<line x1="1040.0" y1="104" x2="1040.0" y2="578" stroke="#A63A2B" stroke-width="0.8" stroke-linecap="round" stroke-dasharray="3,4"/>
+<rect x="20" y="138" width="1020" height="23" rx="3" fill="#EEF1F2" fill-opacity="0.55" stroke="#EEF1F2" stroke-width="0"/>
+<text x="30" y="154" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Governance, legal form, Board appointed</text>
+<rect x="250.0" y="144" width="109.72222222222223" height="15" rx="7" fill="#0B4F4A" fill-opacity="0.88" stroke="#0B4F4A" stroke-width="0"/>
+<text x="367.72222222222223" y="154" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M0–5</text>
+<text x="30" y="181" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Founding team recruited (9 FTE)</text>
+<rect x="250.0" y="171" width="131.66666666666663" height="15" rx="7" fill="#0B4F4A" fill-opacity="0.88" stroke="#0B4F4A" stroke-width="0"/>
+<text x="389.66666666666663" y="181" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M0–6</text>
+<rect x="20" y="192" width="1020" height="23" rx="3" fill="#EEF1F2" fill-opacity="0.55" stroke="#EEF1F2" stroke-width="0"/>
+<text x="30" y="208" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Competency standards agreed with councils</text>
+<rect x="293.8888888888889" y="198" width="153.6111111111111" height="15" rx="7" fill="#0B4F4A" fill-opacity="0.88" stroke="#0B4F4A" stroke-width="0"/>
+<text x="455.5" y="208" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M2–9</text>
+<text x="30" y="235" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Common core (L1) written and peer-reviewed</text>
+<rect x="315.8333333333333" y="225" width="131.66666666666669" height="15" rx="7" fill="#0B4F4A" fill-opacity="0.88" stroke="#0B4F4A" stroke-width="0"/>
+<text x="455.5" y="235" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M3–9</text>
+<rect x="20" y="246" width="1020" height="23" rx="3" fill="#EEF1F2" fill-opacity="0.55" stroke="#EEF1F2" stroke-width="0"/>
+<text x="30" y="262" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Sandbox + de-identified case corpus built</text>
+<rect x="337.77777777777777" y="252" width="175.5555555555555" height="15" rx="7" fill="#177A6E" fill-opacity="0.88" stroke="#177A6E" stroke-width="0"/>
+<text x="521.3333333333333" y="262" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M4–12</text>
+<text x="30" y="289" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Instructor certification (L4) first cohort</text>
+<rect x="403.6111111111111" y="279" width="87.77777777777783" height="15" rx="7" fill="#177A6E" fill-opacity="0.88" stroke="#177A6E" stroke-width="0"/>
+<text x="499.3888888888889" y="289" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M7–11</text>
+<rect x="20" y="300" width="1020" height="23" rx="3" fill="#EEF1F2" fill-opacity="0.55" stroke="#EEF1F2" stroke-width="0"/>
+<text x="30" y="316" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Pilot: 120 learners, one teaching hospital</text>
+<rect x="447.5" y="306" width="131.66666666666674" height="15" rx="7" fill="#177A6E" fill-opacity="0.88" stroke="#177A6E" stroke-width="0"/>
+<text x="587.1666666666667" y="316" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M9–15</text>
+<text x="30" y="343" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Independent evaluation of pilot published</text>
+<rect x="535.2777777777778" y="333" width="87.77777777777771" height="15" rx="7" fill="#177A6E" fill-opacity="0.88" stroke="#177A6E" stroke-width="0"/>
+<text x="631.0555555555555" y="343" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M13–17</text>
+<rect x="20" y="354" width="1020" height="23" rx="3" fill="#EEF1F2" fill-opacity="0.55" stroke="#EEF1F2" stroke-width="0"/>
+<text x="30" y="370" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Tracks A–C at L2/L3 in full delivery</text>
+<rect x="579.1666666666667" y="360" width="329.16666666666663" height="15" rx="7" fill="#B5822A" fill-opacity="0.88" stroke="#B5822A" stroke-width="0"/>
+<text x="916.3333333333334" y="370" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M15–30</text>
+<text x="30" y="397" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Tracks D–E launched</text>
+<rect x="623.0555555555555" y="387" width="219.44444444444446" height="15" rx="7" fill="#B5822A" fill-opacity="0.88" stroke="#B5822A" stroke-width="0"/>
+<text x="850.5" y="397" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M17–27</text>
+<rect x="20" y="408" width="1020" height="23" rx="3" fill="#EEF1F2" fill-opacity="0.55" stroke="#EEF1F2" stroke-width="0"/>
+<text x="30" y="424" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Simulation centre and AI-OSCE operational</text>
+<rect x="579.1666666666667" y="414" width="153.6111111111111" height="15" rx="7" fill="#B5822A" fill-opacity="0.88" stroke="#B5822A" stroke-width="0"/>
+<text x="740.7777777777778" y="424" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M15–22</text>
+<text x="30" y="451" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Mobile/hybrid delivery to county hospitals</text>
+<rect x="666.9444444444445" y="441" width="329.16666666666663" height="15" rx="7" fill="#B5822A" fill-opacity="0.88" stroke="#B5822A" stroke-width="0"/>
+<text x="658.9444444444445" y="451" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="end" font-weight="normal" font-style="normal" letter-spacing="0">M19–34</text>
+<rect x="20" y="462" width="1020" height="23" rx="3" fill="#EEF1F2" fill-opacity="0.55" stroke="#EEF1F2" stroke-width="0"/>
+<text x="30" y="478" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Clinical AI Fellowship — first cohort of 8</text>
+<rect x="732.7777777777778" y="468" width="263.33333333333326" height="15" rx="7" fill="#A63A2B" fill-opacity="0.88" stroke="#A63A2B" stroke-width="0"/>
+<text x="724.7777777777778" y="478" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="end" font-weight="normal" font-style="normal" letter-spacing="0">M22–34</text>
+<text x="30" y="505" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Council-recognised CPD accreditation secured</text>
+<rect x="688.8888888888889" y="495" width="131.66666666666663" height="15" rx="7" fill="#A63A2B" fill-opacity="0.88" stroke="#A63A2B" stroke-width="0"/>
+<text x="828.5555555555555" y="505" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">M20–26</text>
+<rect x="20" y="516" width="1020" height="23" rx="3" fill="#EEF1F2" fill-opacity="0.55" stroke="#EEF1F2" stroke-width="0"/>
+<text x="30" y="532" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">Regional (EAC) faculty exchange opens</text>
+<rect x="842.5" y="522" width="197.5" height="15" rx="7" fill="#A63A2B" fill-opacity="0.88" stroke="#A63A2B" stroke-width="0"/>
+<text x="834.5" y="532" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="end" font-weight="normal" font-style="normal" letter-spacing="0">M27–36</text>
+<text x="30" y="559" font-family="Helvetica, Arial, sans-serif" font-size="9.8" fill="#12262B" text-anchor="start" font-weight="normal" font-style="normal" letter-spacing="0">First annual public outcomes report</text>
+<rect x="908.3333333333334" y="549" width="65.83333333333326" height="15" rx="7" fill="#A63A2B" fill-opacity="0.88" stroke="#A63A2B" stroke-width="0"/>
+<text x="900.3333333333334" y="559" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#66787E" text-anchor="end" font-weight="normal" font-style="normal" letter-spacing="0">M30–33</text>
+</svg>
