@@ -6,7 +6,7 @@ tags: deep learning, neural networks, fast.ai, gradient descent, PyTorch, ReLU, 
 level: Intermediate
 read_time: 35 min
 summary: "Professional differentiation. In medicine, law, finance, engineering, and research — every field that processes data — practitioners who can build and evaluate AI tools will command significant advantages over those who can only consume them."
-featured: true
+featured: false
 ---
 
 <style>

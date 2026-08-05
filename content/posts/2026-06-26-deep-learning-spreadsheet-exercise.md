@@ -6,7 +6,7 @@ tags: deep learning, neural networks, fast.ai, gradient descent, spreadsheet, Ex
 level: Beginner–Intermediate
 read_time: 25 min
 summary: "Before Chapter 4 throws you into the deep end, build a working neural network from scratch — in a spreadsheet. No code. No libraries. Just arithmetic you can see and touch."
-featured: true
+featured: false
 ---
 
 <style>

@@ -6,7 +6,7 @@ tags: AI in medicine, AGI, ASI, AlphaFold, Demis Hassabis, Dario Amodei, surgica
 level: Advanced
 read_time: 32 min
 summary: "What happens to me — the physician, the surgeon, the person who has spent forty years inside the system — while AI compresses a century of medical progress into a decade? A terrain map, in the spirit of Dario Amodei's 'Machines of Loving Grace' and drawing on the DeepMind documentary 'The Thinking Game.'"
-featured: true
+featured: false
 ---
 
 <div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">

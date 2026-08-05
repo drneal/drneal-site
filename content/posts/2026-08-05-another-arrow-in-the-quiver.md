@@ -6,7 +6,7 @@ tags: clinical AI, medical education, Kenya, AI fluency, automation bias, compet
 level: All readers
 read_time: 32 min
 summary: "AI arrived in Kenyan clinical practice ahead of any plan for teaching clinicians how to use it. A 2025 randomised trial found that physicians who had already completed twenty hours of AI-literacy training still deferred to deliberately erroneous model output — which means the obvious curriculum is the wrong curriculum. This is my blueprint for a permanent national institution that would train and certify the clinical AI competence of an entire country's health workforce: five professional tracks, five gated levels, assessment by simulation and workplace observation rather than attendance, seventy core posts specified by qualification, and outcomes published whether or not they flatter us. No such institution exists anywhere in the world."
-featured: false
+featured: true
 ---
 
 <a href="/static/img/kenya-clinical-ai/fig-01.png" target="_blank" rel="noopener"><img src="/static/img/kenya-clinical-ai/fig-01.png" alt="The institutional architecture — five functions, one mandate, one foundation" style="display:block; width:100%; height:auto; border-radius:10px; margin:0.4em 0 1.8em; box-shadow:0 2px 12px rgba(0,0,0,0.35);"></a>
