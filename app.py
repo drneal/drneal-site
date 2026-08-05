@@ -194,8 +194,13 @@ def load_json(filename: str) -> dict | list:
 @app.route("/")
 def index():
     posts = load_posts()
+    # Only the newest post flagged `featured` is pinned. Exclude just that one
+    # from the recent list — not every post carrying the flag — so a stale
+    # `featured: true` left on an older post can't make it vanish from the
+    # homepage entirely (neither pinned nor listed).
     featured = [p for p in posts if p["featured"]][:1]
-    recent = [p for p in posts if not p["featured"]][:8]
+    pinned = {p["slug"] for p in featured}
+    recent = [p for p in posts if p["slug"] not in pinned][:8]
     return render_template("index.html", posts=posts, featured=featured, recent=recent)
 
 
