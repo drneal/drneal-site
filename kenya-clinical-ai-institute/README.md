@@ -14,6 +14,8 @@ Published as the blog post `content/posts/2026-08-05-another-arrow-in-the-quiver
 | `figures.py` | Generates all eight figures as SVG, in two palettes. |
 | `build_pdf.py` | Markdown → HTML → typeset A4 PDF (cover, contents with page numbers, running heads). |
 | `figures/*.svg` | Print-palette figures, consumed by the PDF build. |
+| `make_print.py` | Turns any figure into wall-printable sheets. |
+| `print/*` | Print sheets for the quality loop (Figure 5) — notice-board copies. |
 | `Kenya-Institute-for-Clinical-AI-Blueprint.pdf` | The built PDF, 44 pages. |
 
 ## Rebuilding
@@ -38,6 +40,19 @@ PNG and cleans up its intermediate SVGs.
 `build_pdf.py` writes the PDF twice: once here, once to
 `../static/Kenya_Institute_for_Clinical_AI_Blueprint.pdf`, which is the copy the blog
 post links to. Rebuild it and the download link is current.
+
+## Printing a figure
+
+```bash
+python3 make_print.py                      # default: fig5-quality-loop
+python3 make_print.py fig2-clinical-4d     # any stem from ./figures
+```
+
+Produces vector PDFs at A4 and A3 landscape plus a 300 dpi PNG, into `print/`.
+
+**Use A3 for a wall.** These figures are drawn for a page inside a document, so on
+A4 the smallest station labels land around 6.5 pt — fine at reading distance,
+too small for a notice board. A3 puts them near 9 pt.
 
 ## Notes on the build
 
