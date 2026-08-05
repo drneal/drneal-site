@@ -51,6 +51,14 @@ featured: true
 ⚕️ <strong>What this is.</strong> A blueprint for a national institution that would teach and certify clinical AI competence across Kenya's entire health workforce — doctors, surgeons, nurses and midwives, hospital administrators, health informaticians. Not a course. An institution, with the legal capacity to withhold a certificate. If you run a teaching hospital, a professional council, a school of medicine or nursing, or a training programme, and any of this is useful to you, take it and use it.
 </div>
 
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post:</strong> A deep dive into the blueprint — why the variable that decides whether clinical AI helps or harms a patient is the training of the clinician rather than the model, the 2025 trial showing that AI literacy alone leaves physicians deferring to answers that are confidently wrong, and what it takes to certify judgement instead of attendance.<br/><br/>
+  <audio controls style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Kenya_s_National_Blueprint_for_Clinical_AI.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 <div style="font-size:0.85em; background:#111827; border-left:4px solid #6b82a0; padding:0.9em 1.3em; border-radius:0 6px 6px 0; margin:1.5em 0; color:#9fb3cc;">
 <em>I write here in a personal capacity.</em>
 </div>
