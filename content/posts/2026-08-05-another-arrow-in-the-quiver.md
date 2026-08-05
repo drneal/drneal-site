@@ -511,7 +511,7 @@ I would like to build it here.
 <div style="background: linear-gradient(135deg, #14532d 0%, #0f3d2e 100%); color: white; padding: 1.4em 1.8em; border-radius: 8px; margin: 2em 0;">
   <strong style="font-size: 1.05em;">📊 The slide deck</strong> — the same argument compressed for a room: the case, the institutional architecture, the five tracks, the quality system and the thirty-six month sequence. For anyone who has to present this to a board, a faculty or a council rather than read it.
   <br><br>
-  <a href="/static/Kenya_Clinical_AI_National_Blueprint.pdf" style="background: white; color: #14532d; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download slides (14 MB, 15 slides)</a>
+  <a href="/static/Slidedeck_Kenya_Clinical_AI_National_Blueprint.pdf" style="background: white; color: #14532d; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download slide deck (14 MB, 15 slides)</a>
 </div>
 
 ---
