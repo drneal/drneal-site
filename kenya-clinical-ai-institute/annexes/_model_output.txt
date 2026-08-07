@@ -1,0 +1,62 @@
+==============================================================================
+ESTABLISHMENT
+==============================================================================
+  Executive                  1 posts   $   96,000 gross
+  Quality & Evaluation       6 posts   $  200,000 gross
+  Ethics & Data Gov.         3 posts   $  110,000 gross
+  Curriculum & Pedagogy     15 posts   $  650,000 gross
+  Faculty & Delivery        18 posts   $  700,000 gross
+  Engineering & Platform    13 posts   $  522,000 gross
+  Simulation & Labs          7 posts   $  196,000 gross
+  Operations & Registry      8 posts   $  194,000 gross
+  TOTAL                     71 posts   $2,668,000 gross
+  incl. on-costs @26%                  $3,361,680 fully loaded
+  per post average                     $   47,348
+
+==============================================================================
+FIVE-YEAR OPERATING MODEL (USD)
+==============================================================================
+                                              Y1          Y2          Y3          Y4          Y5
+
+  EXPENDITURE
+  Payroll (incl. on-costs)               757,562   1,690,310   3,132,044   3,891,565   4,086,143
+  Recurrent non-pay                      149,100     287,018     465,751     797,604     837,484
+  Capital                              1,030,000     260,000           0           0           0
+  Total expenditure                    1,936,662   2,237,327   3,597,795   4,689,168   4,923,627
+
+  INCOME
+  Course fees                                  0     118,650     425,675     800,729   1,142,333
+  Institutional contracts and advisory           0     180,000     520,000     900,000   1,250,000
+  Total earned income                          0     298,650     945,675   1,700,729   2,392,333
+
+  POSITION
+  Subsidy required (grant/endowment)   1,936,662   1,938,677   2,652,120   2,988,439   2,531,294
+  Earned-income cover %                       0%         13%         26%         36%         49%
+
+==============================================================================
+UNIT COSTS AND TOTALS
+==============================================================================
+  Learners certificated                      120       1,390       4,280       6,908       9,048
+  Cost per learner (all-in, USD)          16,139       1,610         841         679         544
+
+  Five-year expenditure          USD   17,384,579   (KES   2,260 m)
+  Five-year earned income        USD    5,337,387   (KES     694 m)
+  Five-year subsidy required     USD   12,047,192   (KES   1,566 m)
+  Learners certificated                    21,746
+  Blended cost per learner       USD          799
+  Subsidy per learner            USD          554
+  Y5 earned-income cover                      49%
+
+==============================================================================
+SENSITIVITY — Y5 subsidy requirement (USD)
+==============================================================================
+  Base case                                       2,531,294
+  Payroll bands 20% higher than assumed           3,348,523
+  Payroll bands 20% lower than assumed            1,714,065
+  Throughput 30% below plan                       2,873,994
+  Throughput 30% above plan                       2,188,594
+  Contracts fail to materialise                   3,781,294
+  Fees held at half the assumed rate              3,102,460
+
+  Break-even on earned income requires Y5 income of USD 4,923,627
+  — i.e. 2.1x the modelled Y5 earned income.
