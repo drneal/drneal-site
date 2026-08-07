@@ -516,6 +516,10 @@ I would like to build it here.
 
 ---
 
+## Further studies and documentation
+
+I have worked on detailed competency standards, the business case (from detailed cost-benefit anaylsis and year by year costing outlays to student fee structures), and the Common Core Level 1 course materials class by class. I am more than willing to share these documented ideas with any person(s) I deem (at my sole discretion) to be one or more that will align with me and commit to building this dream of mine. Contact me if you feel you might be one of those people and let's explore our mutual aims in creating such a centre for excellence in Clinical AI.
+
 ## Sources and attribution
 
 The full reference list — seventy-one sources with links, covering Kenyan law and policy, health workforce data, WHO guidance, the automation-bias and clinical-AI evidence base, AI competency frameworks in medical education, comparator programmes, and assessment theory — is in the PDF. The principal sources for the argument above:
