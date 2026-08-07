@@ -5,7 +5,7 @@ category: AI & Medicine
 tags: clinical AI, medical education, Kenya, AI fluency, automation bias, competency-based education, assessment, simulation, nursing education, surgery, CPD, health workforce, KMPDC, Digital Health Act
 level: All readers
 read_time: 32 min
-summary: "AI arrived in Kenyan clinical practice ahead of any plan for teaching clinicians how to use it. A 2025 randomised trial found that physicians who had already completed twenty hours of AI-literacy training still deferred to deliberately erroneous model output — which means the obvious curriculum is the wrong curriculum. This is my blueprint for a permanent national institution that would train and certify the clinical AI competence of an entire country's health workforce: five professional tracks, five gated levels, assessment by simulation and workplace observation rather than attendance, seventy core posts specified by qualification, and outcomes published whether or not they flatter us. No such institution exists anywhere in the world."
+summary: "AI arrived in Kenyan clinical practice ahead of any plan for teaching clinicians how to use it. A 2025 randomised trial found that physicians who had already completed twenty hours of AI-literacy training still deferred to deliberately erroneous model output — which means the obvious curriculum is the wrong curriculum. This is my blueprint for a permanent national institution that would train and certify the clinical AI competence of an entire country's health workforce: five professional tracks, five gated levels, assessment by simulation and workplace observation rather than attendance, seventy-one core posts specified by qualification, and outcomes published whether or not they flatter us. No such institution exists anywhere in the world."
 featured: true
 ---
 
@@ -369,8 +369,8 @@ Plus an **external examiner** — a senior clinician-educator from outside Kenya
 I cannot build this alone, and I would not want to.
 
 <figure class="kcai-fig">
-  <a href="/static/img/kenya-clinical-ai/fig-06.png" target="_blank" rel="noopener"><img src="/static/img/kenya-clinical-ai/fig-06.png" alt="Organisational structure at steady state — seventy core posts across eight units"></a>
-  <figcaption>Seventy core posts. The Office of Quality and Evaluation reports to the board, not to the chief executive — deliberately.</figcaption>
+  <a href="/static/img/kenya-clinical-ai/fig-06.png" target="_blank" rel="noopener"><img src="/static/img/kenya-clinical-ai/fig-06.png" alt="Organisational structure at steady state — seventy-one core posts across eight units"></a>
+  <figcaption>Seventy-one core posts. The Office of Quality and Evaluation reports to the board, not to the chief executive — deliberately.</figcaption>
 </figure>
 
 ### Why I am uniquely positioned to lead this
@@ -407,19 +407,19 @@ But it also means I know exactly what I am not. I am not a psychometrician, I am
 | 8 | **Head of Quality and Evaluation** | MPH, epidemiology or evaluation; independent-minded by disposition | Must be appointed at founding, not retrofitted. Reports to the board |
 | 9 | **Operations and Partnerships Manager** | Senior programme management in health or education; regulatory navigation | Everything above fails without someone running it |
 
-### Steady state — seventy posts
+### Steady state — seventy-one posts
 
 | Unit | Posts | Composition |
 |---|---|---|
 | Executive | 1 | Director / CEO |
 | Office of Quality and Evaluation *(reports to the board)* | 6 | Head (1); evaluation officers (2); data analyst (1); observation and audit officers (2) |
 | Ethics and Data Governance | 3 | Ethics and governance lead (1); data protection officer (1, certified); research ethics coordinator (1) |
-| Curriculum and Pedagogy | 14 | Director (1); instructional designers (4); clinical content leads (6); assessment psychometrician (1); medical editors and translators (3, incl. Kiswahili) |
+| Curriculum and Pedagogy | 15 | Director (1); instructional designers (4); clinical content leads (6); assessment psychometrician (1); medical editors and translators (3, incl. Kiswahili) |
 | Faculty and Delivery | 18 | Track leads (5); certified instructors (10); simulation faculty (2); programme manager (1) |
 | Engineering and Platform | 13 | Head (1); full-stack developers (5); ML and evaluation engineers (3); data engineers (2); DevSecOps (1); QA (1) |
 | Simulation and Clinical Labs | 7 | Sim centre director (1); technicians (3); standardised-patient lead (1); clinical skills tutors (2) |
 | Operations and Registry | 8 | Registrar and records (2); finance and procurement (2); partnerships (1); communications (1); M&E (1); admin (1) |
-| **Total core establishment** | **70** | |
+| **Total core establishment** | **71** | |
 
 Plus, not counted in the establishment: **clinical champions** (two per participating hospital, ~0.2 FTE sessional — without a champion on site, transfer to practice collapses within a month); visiting faculty; fellows who teach as they learn; and the patient and public panel.
 
@@ -452,7 +452,7 @@ I would not proceed to Phase 2 without that evaluation. If the pilot shows the t
 
 **Phase 2 — Scale (months 15–27, 50 FTE).** Tracks A–C at Levels 2 and 3 in full delivery. Tracks D and E launched. Simulation centre and AI-OSCE operational. Mobile delivery to county facilities begins. Council CPD accreditation secured.
 
-**Phase 3 — Institutionalise (months 27–36, 70 FTE).** First fellowship cohort. Regional satellites. East African Community faculty exchange opens. First annual public outcomes report.
+**Phase 3 — Institutionalise (months 27–36, 71 FTE).** First fellowship cohort. Regional satellites. East African Community faculty exchange opens. First annual public outcomes report.
 
 A note on the mobile unit, because it is the thing most likely to be cut: a vehicle, a generator, a satellite uplink, a set of laptops and two instructors. A substantial fraction of the workforce we most need to reach works at Level 3 and Level 4 facilities they cannot leave for a week. If the Institute becomes a thing that happens in Nairobi to people who can afford to come to Nairobi, it will have failed at its actual purpose while appearing to succeed. The metric I would watch hardest is not enrolment. It is the geographic and cadre distribution of enrolment.
 

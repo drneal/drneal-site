@@ -474,19 +474,19 @@ These are the first nine people. Every one of them is load-bearing.
 | 8 | **Head of Quality and Evaluation** | Master's in public health, epidemiology or evaluation; programme evaluation experience; independent-minded by disposition | Must be appointed at the founding, not retrofitted. Reports to the board |
 | 9 | **Operations and Partnerships Manager** | Bachelor's minimum; senior programme management in a health or education setting; regulatory navigation experience | Everything above fails without someone running it |
 
-### 6.3 Steady-state establishment — 70 posts
+### 6.3 Steady-state establishment — 71 posts
 
 | Unit | Posts | Composition and qualifications |
 |---|---|---|
 | **Executive** | 1 | Director / CEO |
 | **Office of Quality and Evaluation** *(reports to the board)* | 6 | Head of Quality and Evaluation (1); evaluation officers (2, MPH or equivalent); data analyst (1, statistics or biostatistics); observation and audit officers (2, clinician-educators, may be part-seconded) |
 | **Ethics and Data Governance** | 3 | Ethics and governance lead (1, bioethics qualification); data protection officer (1, certified, familiar with the Data Protection Act 2019 and Digital Health Act 2023); research ethics coordinator (1) |
-| **Curriculum and Pedagogy** | 14 | Director (1); instructional designers (4, master's in instructional design or health professions education); clinical content leads (6 — medicine, surgery, nursing, obstetrics, paediatrics, emergency and critical care; all consultant or senior-practitioner grade); assessment psychometrician (1); medical editors and translators (3, including Kiswahili working competence) |
+| **Curriculum and Pedagogy** | 15 | Director (1); instructional designers (4, master's in instructional design or health professions education); clinical content leads (6 — medicine, surgery, nursing, obstetrics, paediatrics, emergency and critical care; all consultant or senior-practitioner grade); assessment psychometrician (1); medical editors and translators (3, including Kiswahili working competence) |
 | **Faculty and Delivery** | 18 | Track leads (5, one per track, senior clinicians in cadre); certified instructors (10, Level 4 certified, drawn substantially from graduates of the programme); simulation faculty (2, simulation-education qualification); programme manager (1) |
 | **Engineering and Platform** | 13 | Head of engineering (1); full-stack developers (5, degree in computing or demonstrated equivalent, minimum 3 years); ML and evaluation engineers (3, master's-level or strong applied track record in model evaluation); data engineers (2); DevSecOps engineer (1, security-focused, health data experience); QA engineer (1) |
 | **Simulation and Clinical Labs** | 7 | Simulation centre director (1, clinician with simulation-education credential); simulation technicians (3); standardised-patient programme lead (1); clinical skills tutors (2) |
 | **Operations and Registry** | 8 | Registrar and records (2 — certification records must be auditable and defensible); finance and procurement (2); partnerships (1); communications (1); monitoring and evaluation officer (1); administration (1) |
-| **Total core establishment** | **70** | |
+| **Total core establishment** | **71** | |
 
 ### 6.4 Affiliated, sessional and not counted in the establishment
 
@@ -544,7 +544,7 @@ I would not proceed to Phase 2 without that evaluation. If the pilot shows the t
 
 **Phase 2 — Scale (months 15–27, 50 FTE).** Tracks A–C at Levels 2 and 3 in full delivery. Tracks D and E launched. Simulation centre and the AI-OSCE operational. Mobile delivery to county facilities begins. Council CPD accreditation secured.
 
-**Phase 3 — Institutionalise (months 27–36, 70 FTE).** First fellowship cohort. Regional satellites. East African Community faculty exchange opens. First annual public outcomes report.
+**Phase 3 — Institutionalise (months 27–36, 71 FTE).** First fellowship cohort. Regional satellites. East African Community faculty exchange opens. First annual public outcomes report.
 
 ---
 

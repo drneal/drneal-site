@@ -465,7 +465,7 @@ def fig6():
     W, H = 1180, 680
     b = []
     b.append(txt(590, 32, "FIGURE 6 — ORGANISATIONAL STRUCTURE AT STEADY STATE", 12, GREY, weight="bold", ls="1.4"))
-    b.append(txt(590, 54, "Figures in the coloured tags are full-time-equivalent posts. Total core establishment: 70 FTE.", 11, GREY))
+    b.append(txt(590, 54, "Figures in the coloured tags are full-time-equivalent posts. Total core establishment: 71 FTE.", 11, GREY))
 
     def box(x, y, w, h, title, sub, col, fte=None, fill=WHITE):
         o = [rect(x, y, w, h, fill, col, 1.5, 6), rect(x, y, w, 5, col, col, 0, 0)]
@@ -495,7 +495,7 @@ def fig6():
     b.append(line(150, 262, 1030, 262, GREY, 1.2))
 
     depts = [
-        ("CURRICULUM &\nPEDAGOGY", TEAL, "14", ["Instructional designers 4", "Clinical content leads 6", "Assessment psychometrician 1", "Medical editor / translator 3"]),
+        ("CURRICULUM &\nPEDAGOGY", TEAL, "15", ["Director 1", "Instructional designers 4", "Clinical content leads 6", "Assessment psychometrician 1", "Medical editor / translator 3"]),
         ("FACULTY &\nDELIVERY", TEAL2, "18", ["Track leads 5", "Certified instructors 10", "Simulation faculty 2", "Programme manager 1"]),
         ("ENGINEERING &\nPLATFORM", GOLD, "13", ["Head of engineering 1", "Full-stack developers 5", "ML / eval engineers 3", "Data engineer 2", "DevSecOps 1", "QA engineer 1"]),
         ("SIMULATION &\nCLINICAL LABS", BRICK, "7", ["Sim centre director 1", "Sim technicians 3", "Standardised-patient lead 1", "Clinical skills tutors 2"]),
@@ -517,7 +517,7 @@ def fig6():
 
     # affiliated
     b.append(rect(50, 546, 1080, 96, WHITE, GREY, 1.4, 6, dash="5,4"))
-    b.append(txt(590, 570, "AFFILIATED AND SESSIONAL — not counted in the 70 FTE core establishment", 10.6, GREY, weight="bold", ls="0.6"))
+    b.append(txt(590, 570, "AFFILIATED AND SESSIONAL — not counted in the 71 FTE core establishment", 10.6, GREY, weight="bold", ls="0.6"))
     aff = [
         ("Clinical Champions", "2 per participating hospital,", "0.2 FTE sessional"),
         ("Visiting Faculty", "International and regional,", "short-course delivery"),
@@ -557,7 +557,7 @@ def fig7():
         (0, 6, "PHASE 0 — FOUNDING", TEAL, "9 FTE"),
         (6, 15, "PHASE 1 — PROVE IT", TEAL2, "26 FTE"),
         (15, 27, "PHASE 2 — SCALE", GOLD, "50 FTE"),
-        (27, 36, "PHASE 3 — INSTITUTIONALISE", BRICK, "70 FTE"),
+        (27, 36, "PHASE 3 — INSTITUTIONALISE", BRICK, "71 FTE"),
     ]
     for s, e, name, col, hc in phases:
         b.append(rect(mx(s), top - 12, mx(e) - mx(s), 26, col, col, 0, 4, op=0.14))
