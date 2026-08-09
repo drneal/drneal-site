@@ -518,7 +518,120 @@ I would like to build it here.
 
 ## Further studies and documentation
 
-I have worked on detailed competency standards, the business case (from detailed cost-benefit anaylsis and year by year costing outlays to student fee structures), and the Common Core Level 1 course materials class by class. I am more than willing to share these documented ideas with any person(s) I deem (at my sole discretion) to be one or more that will align with me and commit to building this dream of mine. Contact me if you feel you might be one of those people and let's explore our mutual aims in creating such a centre for excellence in Clinical AI.
+The blueprint above is the argument. Underneath it sit three working documents — a business case, a set of competency standards, and the Level 1 curriculum written out class by class. Each is published here in full, with the slide deck that summarises it.
+
+They are drafts, and I would rather they were argued with than admired.
+
+<style>
+.kcai-doc { display:flex; flex-wrap:wrap; gap:1.5em; align-items:center; margin:2em 0; }
+.kcai-doc .thumb { flex:0 0 auto; }
+.kcai-doc .thumb img { width:150px; height:auto; display:block; border-radius:6px;
+  box-shadow:0 4px 18px rgba(0,0,0,0.45); border:1px solid #1e2d45; }
+.kcai-doc .card { flex:1 1 320px; }
+.kcai-slide { display:block; margin:1.6em 0 0.6em; }
+.kcai-slide img { width:100%; height:auto; border-radius:8px;
+  box-shadow:0 3px 16px rgba(0,0,0,0.4); border:1px solid #1e2d45; }
+.kcai-slide-cap { font-size:0.82em; color:#6b82a0; font-style:italic; margin:0 0 1.4em; }
+</style>
+
+### Annex A — The Business Case
+
+The business case costs the whole thing, year by year, and reaches an uncomfortable conclusion that I have put at the top rather than the bottom: **it does not wash its own face, and it is not designed to.**
+
+Over five years the Institute spends **USD 17.38 m** and earns **USD 5.34 m**, leaving a subsidy requirement of **USD 12.05 m**. Earned income covers 49% of cost by Year 5. Full cost recovery would need 2.1 times the modelled income — achievable only by roughly doubling fees, which would price out the county-level nursing and clinical-officer cadres the Institute exists to reach. I am not proposing that. I am proposing a subsidised public good with a rising earned-income share, and an obligation to publish that share every year.
+
+What the money buys, per unit: **21,746 clinicians certificated over five years at a blended all-in cost of USD 799 each**, falling to USD 544 by Year 5 as throughput rises against a largely fixed cost base. That is roughly a single day of specialist locum cover.
+
+The document is built around three decision gates rather than one approval. Decision 1 commits USD 1.94 m for twelve months. Decision 2, at month 15, is an independent evaluation of a 120-learner pilot, published whatever it shows. Decision 3 is whether to scale — and that is where the money gets large, because 89% of the five-year spend sits after that gate. Every figure comes from a financial model that ships with the document; the assumptions, not the outputs, are the thing to argue with. The salary bands are the weakest input and are flagged as such.
+
+<div class="kcai-doc">
+  <a class="thumb" href="/static/A-business-case.pdf" target="_blank" rel="noopener"><img src="/static/img/kenya-clinical-ai/cover-business-case.png" alt="Cover of Annex A — The Business Case"></a>
+  <div class="card">
+    <div style="background: linear-gradient(135deg, #0D1B2A 0%, #14384f 100%); color: white; padding: 1.2em 1.6em; border-radius: 8px;">
+      <strong style="font-size:1.05em;">📄 Annex A — The Business Case</strong><br/>
+      Five-year P&amp;L, capital and recurrent costs, fee structure, throughput, unit costs, sensitivity analysis, financing mix and risk register.
+      <br><br>
+      <a href="/static/A-business-case.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (89 KB, 15 pages)</a>
+    </div>
+  </div>
+</div>
+
+<a class="kcai-slide" href="/static/Kenya_Clinical_AI_Strategic_Case.pdf" target="_blank" rel="noopener"><img src="/static/img/kenya-clinical-ai/slide-strategic-case.png" alt="Slide from the Strategic Case deck — the Institute's five functions on the host institution's foundation, annotated with the 71 FTE establishment"></a>
+<p class="kcai-slide-cap">From the Strategic Case deck — click to open all fourteen slides.</p>
+
+The deck is the version for a room rather than a reading chair. It takes the same fourteen-page argument and reorders it for how a board actually decides.
+
+The slide above is the one I would spend longest on. It shows the five functions sitting on the host institution's foundation, and it annotates the three places where the money is genuinely contested: the engineering unit, which must be paid against technology-sector rates rather than health-sector ones or the posts will not fill; the assessment psychometrician, a scarce regional skill whose deferral would hollow out the certification before anyone noticed; and the Office of Quality, which reports to the Board rather than to the chief executive, deliberately.
+
+The rest of the deck follows the shape of the decision. A metrics slide puts the four headline numbers where nobody can miss them. A gate diagram shows the three valves and what each one commits. A sensitivity chart shows payroll bands and contract income spanning roughly USD 2.1 m of Year 5 variance — which is the slide that should stop anyone treating the base case as a forecast. And a financing slide breaks the subsidy into host contribution, philanthropic funding, CPD income and research grants, with an honest note that the 45% philanthropic share is the piece that cannot credibly be approached until Decision 1 has been taken.
+
+### Annex B — Competency Standards
+
+The standards are drafted so that either the Kenya Medical Practitioners and Dentists Council or the Nursing Council of Kenya could adopt them whole, in part, or as a starting point for their own drafting. They exist because of a specific gap: registrants are already using these systems, and no Council currently states what competent use looks like — so no registrant can be held to a standard, no employer can specify one, and no training provider can be held to account for producing it.
+
+Four domains, derived from the AI Fluency Framework: Delegation, Description, Discernment, Diligence. Each carries numbered performance criteria at three tiers — Foundation for every registrant, Practitioner for those using AI in direct patient care, Advanced for those who supervise, teach, procure or evaluate.
+
+Two criteria are **conjunctive**, meaning they cannot be compensated by strong performance elsewhere: entering identifiable patient data into a system the registrant does not control, and failing to detect seeded clinical error at the standard-set threshold. The precedent is ordinary — a candidate does not pass a conventional OSCE by offsetting a fatal drug error with excellent communication.
+
+The document also proposes six clauses of regulatory wording, a phased implementation that does not impose a competency requirement before training capacity exists to meet it, and an eighteen-month review cycle. One cell is deliberately left blank: published sources disagree on the Nursing Council's annual CPD points requirement, and I would rather leave a gap than fill it with a number I cannot stand behind.
+
+<div class="kcai-doc">
+  <a class="thumb" href="/static/B-competency-standards.pdf" target="_blank" rel="noopener"><img src="/static/img/kenya-clinical-ai/cover-competency-standards.png" alt="Cover of Annex B — Competency Standards in Clinical Artificial Intelligence"></a>
+  <div class="card">
+    <div style="background: linear-gradient(135deg, #14213d 0%, #1E3A5F 100%); color: white; padding: 1.2em 1.6em; border-radius: 8px;">
+      <strong style="font-size:1.05em;">📋 Annex B — Competency Standards</strong><br/>
+      Four domains, three tiers, numbered performance criteria, assessment specification, CPD mapping and draft regulatory wording.
+      <br><br>
+      <a href="/static/B-competency-standards.pdf" style="background: white; color: #14213d; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (73 KB, 12 pages)</a>
+    </div>
+  </div>
+</div>
+
+<a class="kcai-slide" href="/static/Kenya_Clinical_AI_Standards.pdf" target="_blank" rel="noopener"><img src="/static/img/kenya-clinical-ai/slide-standards.png" alt="Slide from the Standards deck — defining the regulatory boundary between systems in scope and out of scope"></a>
+<p class="kcai-slide-cap">From the Standards deck — click to open all fourteen slides.</p>
+
+The slide above answers the question a regulator asks first: *what exactly are we regulating?*
+
+The standard's scope turns on a single technical distinction. Any system whose output is **not** fully determined by an explicit, inspectable rule set falls inside it — which deliberately captures the general-purpose conversational tools clinicians are already using informally on personal phones, because that is where most current unregulated use actually sits. Deterministic calculators and rule-based alerts fall outside, because existing standards of practice already cover them.
+
+That boundary is the whole reason the standard regulates the practitioner rather than the software. Software changes every few months and a regulator cannot chase it. What a registrant must be able to do is stable, and it survives the replacement of any particular system.
+
+The remainder of the deck walks each domain in turn — the non-delegable list, the query-as-handover structure, the independent-impression stop-gate, the accountability pillars — before arriving at the two conjunctive failures and the six clauses of proposed regulatory text. The closing slides cover phased implementation and the review cycle, which matter more than they look: a competency requirement imposed before providers exist to meet it brings the standard into disrepute.
+
+### Annex C — The Level 1 Common Core
+
+This is the teaching material itself, written so a certified instructor can run it from the page: twelve contact hours across seven units, each with learning outcomes mapped to the competency codes in Annex B, a timed session plan, facilitator notes, learner activities, cases, and specimen assessment items with answer rationales.
+
+The design decisions are stated up front because they are contestable. The course is taught **mixed-cadre and deliberately so** — the consultant surgeon and the ward nurse in the same room for all twelve hours, because the failure modes this course exists to prevent live in the space between cadres. Groups of 16 to 24. Two facilitators, one leading and one observing. The unit order is fixed.
+
+Unit 1.5 is the reason the other ten hours exist. It opens with the 2025 trial finding, stated plainly, and the facilitator is instructed to say directly: *the training you are receiving today does not, on its own, protect you.* Then it drills the independent-impression rule and runs seeded-error exercises where roughly one case in three contains a fault of the kind these systems actually produce — a dose wrong for renal impairment, a differential that omits tuberculosis in a Kenyan patient, a citation in perfect format to a paper that does not exist.
+
+The document ends with a section headed *what we do not yet know about this course*, because a facilitator teaching it deserves to know which design claims are thin. It is marked version 0.1 and has not been piloted. Under the Institute's own rules, no module enters delivery until it has.
+
+<div class="kcai-doc">
+  <a class="thumb" href="/static/C-level-1-common-core.pdf" target="_blank" rel="noopener"><img src="/static/img/kenya-clinical-ai/cover-common-core.png" alt="Cover of Annex C — Level 1, The Common Core"></a>
+  <div class="card">
+    <div style="background: linear-gradient(135deg, #4a2c0f 0%, #7A4A18 100%); color: white; padding: 1.2em 1.6em; border-radius: 8px;">
+      <strong style="font-size:1.05em;">🎓 Annex C — Level 1, The Common Core</strong><br/>
+      Twelve hours across seven units. Session plans, facilitator notes, case packs, the seeded-error exercise and the full assessment specification.
+      <br><br>
+      <a href="/static/C-level-1-common-core.pdf" style="background: white; color: #4a2c0f; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (99 KB, 21 pages)</a>
+    </div>
+  </div>
+</div>
+
+<a class="kcai-slide" href="/static/Clinical_AI_Foundations_Blueprint.pdf" target="_blank" rel="noopener"><img src="/static/img/kenya-clinical-ai/slide-foundations.png" alt="Slide from the Foundations deck — the twelve-hour curriculum architecture showing all seven units and their durations"></a>
+<p class="kcai-slide-cap">From the Foundations deck — click to open all thirteen slides.</p>
+
+The slide above is the twelve hours laid out end to end, which is the view a facilitator or a curriculum committee wants before they read a word of the material.
+
+What it makes visible is the weighting. Unit 1.5 — discernment and the independent-impression rule — sits at the centre and takes two of the twelve hours, and the assessment blueprint gives 40% of the knowledge paper to that single domain. That is not an accident of drafting. It is the whole pedagogical claim of the programme expressed as a timetable: if AI literacy alone does not stop clinicians deferring to wrong answers, then the hours have to go into the reflex of checking rather than into familiarity with the tools.
+
+The deck then walks each unit as a single slide — the three modalities, the two loops, the reversibility test that determines what may be delegated, the query-as-handover, the stop-gate drill, the law and documentation session, and the personal AI policy each learner writes and takes away. It closes on the assessment architecture, including the two conjunctive failures that will fail a candidate regardless of aggregate score.
+
+---
+
+If any of this is useful to you, take it and use it. And if you run a teaching hospital, a professional council, a school of medicine or nursing, or a training programme — and you think this should exist — I would like to hear from you.
 
 ## Sources and attribution
 

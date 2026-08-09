@@ -299,6 +299,18 @@ That buys: the governing board constituted and the independence instruments exec
 
 At which point the Board decides whether any of this works.
 
+### 11.1 A declaration, and a proposal on my own remuneration
+
+I am a candidate for the Director post. The Board should read this document as a proposal from an interested party, and should discount it accordingly.
+
+The establishment table includes a Director / Chief Executive line at USD 96,000. That figure is a planning assumption I wrote, carrying the same health warning as every other band in §5.2 — it is not a benchmarked market rate and should not be defended as one. It represents 4.9% of five-year payroll, 1.33 times the next-highest post and 2.82 times the median post.
+
+I propose that **the Board sets the Director's remuneration itself, against an external benchmark of comparable director-level appointments, and that the post-holder takes no part in that determination.** If I hold the post, I will not be present for the discussion and will accept what is set.
+
+I make the proposal for a practical reason as well as a proper one. Approving Phase 2 commits roughly USD 15.4 m of the USD 17.4 m five-year total — 89% of the spend sits after the month-15 gate. A Board weighing a commitment of that size should not have to wonder whether the person recommending it has an undeclared interest in the answer. Removing my own pay from my own paper removes the easiest available objection to the whole proposal.
+
+The Board may reasonably go further and separate the roles: founding architect and interim Director through Phases 0–1, with the permanent appointment made competitively at gate 2. I would not resist that. It would mean the decision to commit the larger sum and the decision about who leads the institution are taken separately, which is the cleaner sequence.
+
 ---
 
 ## 12. Annex — full establishment
