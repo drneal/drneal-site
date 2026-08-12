@@ -53,7 +53,7 @@ This is the teaching material for the twelve-hour Foundation course, written so 
 
 | Instrument | Covers | Weight |
 |---|---|---|
-| Invigilated MCQ, 40 items from the blueprinted bank | D1.F1–F4, D2.F1–F4, D3.F1–F5, D4.F1–F4 | Pass/fail, standard set by modified Angoff |
+| Invigilated MCQ, 40 items from the blueprinted bank | D1.F1–F4, D2.F1–F4, D3.F1–F5, D4.F1–F4 | Pass/fail, standard set by modified Angoff with reality check |
 | Observed simulated encounter, one station | D2.F1, D3.F1, D3.F3 | Pass/fail, conjunctive |
 | Personal AI policy, written | D1.F2, D4.F1, D4.F4 | Satisfactory / not yet satisfactory |
 
@@ -398,7 +398,7 @@ A 45-year-old with newly diagnosed type 2 diabetes, no complications. Output giv
 
 The 40% weighting on Discernment is deliberate and should not be traded away for a more even distribution. It reflects where the evidence says the risk sits.
 
-**Standard setting** by modified Angoff, panel of not fewer than eight practising clinicians spanning the cadres in the cohort. Never an arbitrary 50%; never a pass rate agreed in advance.
+**Standard setting** by modified Angoff with reality check, panel of not fewer than eight practising clinicians spanning the cadres in the cohort. Judges estimate independently, are shown observed item difficulty only after the first round, then re-estimate. Never an arbitrary 50%; never a pass rate agreed in advance. The full procedure is in Annex B §8.3.
 
 **Item analysis after every sitting.** Difficulty index, discrimination index, distractor analysis. Items with negative discrimination are withdrawn immediately and affected candidates' scores recalculated. Reliability reported and published.
 

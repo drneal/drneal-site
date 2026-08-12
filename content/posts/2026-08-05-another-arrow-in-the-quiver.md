@@ -227,6 +227,11 @@ Three specific irritants, built in deliberately, because an institution that is 
 
 ## The pedagogy I would insist on
 
+<figure class="kcai-fig">
+  <a href="/static/img/kenya-clinical-ai/fig-ten-commitments.png" target="_blank" rel="noopener"><img src="/static/img/kenya-clinical-ai/fig-ten-commitments.png" alt="The ten pedagogical commitments arranged in four colour-coded clusters — what we teach, how we teach, what counts as proof, and how we know it worked — each with a numbered card, a glyph and a one-line gist"></a>
+  <figcaption>Ten loose commitments sit right at the edge of working memory; four groups do not. Read the coloured phrases along the bottom as one sentence: <em>teach judgement · in Kenyan cases, safely, together · prove it or it did not happen · and measure whether it held.</em></figcaption>
+</figure>
+
 This is the part I care about most and would be least willing to compromise on. Ten commitments, which I would want written into the founding documents so that a future director has to argue publicly to abandon them:
 
 1. **We teach judgement, not tools.** Test every module against one question: *if the vendor disappeared overnight, would this teaching still be worth anything?* If no, it is training, not education, and it belongs in a vendor manual.
@@ -326,7 +331,7 @@ A few of the specifics that matter most:
 
 **Nothing goes live unpiloted**, with think-aloud observation, and pilot data goes to the Office of Quality, not to the authors. Modules that fail pilot are rebuilt, not launched with a note about improvements to follow.
 
-**Psychometrics, not vibes.** Item analysis after every sitting — difficulty, discrimination, distractor analysis. Items with negative discrimination pulled immediately and affected candidates' scores recalculated. Standard setting by [modified Angoff panel](/post/2026-08-12-the-angoff-panel-for-testing-clinicians) for knowledge assessments, borderline regression for performance assessments. Never an arbitrary 50%, and never a pass rate decided in advance. Reliability reported and published.
+**Psychometrics, not vibes.** Item analysis after every sitting — difficulty, discrimination, distractor analysis. Items with negative discrimination pulled immediately and affected candidates' scores recalculated. Standard setting by [modified Angoff panel with reality check](/post/2026-08-12-the-angoff-panel-for-testing-clinicians) for knowledge assessments, borderline regression for performance assessments. Never an arbitrary 50%, and never a pass rate decided in advance. Reliability reported and published.
 
 ### The assessment blueprint
 
