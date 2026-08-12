@@ -244,7 +244,7 @@ This is the part I care about most and would be least willing to compromise on. 
 
 I would not invent a competency framework from scratch. There is a good one, it is well constructed, it is open, and reinventing it would be vanity.
 
-The **AI Fluency Framework** — and its four core competencies, Delegation, Description, Discernment and Diligence — was developed by Professor Rick Dakan of Ringling College of Art and Design and Professor Joseph Feller of Cork University Business School, University College Cork, and elaborated into a course series in partnership with Anthropic, with support from Ireland's Higher Education Authority.
+The [**AI Fluency Framework**](/post/2026-08-10-borrowed-from-an-art-school) — and its four core competencies, Delegation, Description, Discernment and Diligence — was developed by Professor Rick Dakan of Ringling College of Art and Design and Professor Joseph Feller of Cork University Business School, University College Cork, and elaborated into a course series in partnership with Anthropic, with support from Ireland's Higher Education Authority.
 
 <div class="kcai-warn">
 <strong>A licensing point worth knowing before you build on it.</strong> The two artefacts carry different licences. The open <em>course materials</em>, including video, are released under Creative Commons <strong>BY-NC-SA 4.0</strong> — attribution, non-commercial, share-alike — which permits adaptation provided you credit the authors and release your derivative on the same terms. The authors' <em>Framework for AI Fluency (Practical Summary Document)</em>, v1.1, is released under Creative Commons <strong>BY-NC-ND 4.0</strong> — NoDerivatives — which permits redistribution but not adaptation. In practice: you may build a clinical adaptation from the course materials, and you must cite rather than remix the summary document. Building an institution about diligence on a careless reading of somebody else's licence would be an unpromising start.
@@ -326,7 +326,7 @@ A few of the specifics that matter most:
 
 **Nothing goes live unpiloted**, with think-aloud observation, and pilot data goes to the Office of Quality, not to the authors. Modules that fail pilot are rebuilt, not launched with a note about improvements to follow.
 
-**Psychometrics, not vibes.** Item analysis after every sitting — difficulty, discrimination, distractor analysis. Items with negative discrimination pulled immediately and affected candidates' scores recalculated. Standard setting by modified Angoff panel for knowledge assessments, borderline regression for performance assessments. Never an arbitrary 50%, and never a pass rate decided in advance. Reliability reported and published.
+**Psychometrics, not vibes.** Item analysis after every sitting — difficulty, discrimination, distractor analysis. Items with negative discrimination pulled immediately and affected candidates' scores recalculated. Standard setting by [modified Angoff panel](/post/2026-08-12-the-angoff-panel-for-testing-clinicians) for knowledge assessments, borderline regression for performance assessments. Never an arbitrary 50%, and never a pass rate decided in advance. Reliability reported and published.
 
 ### The assessment blueprint
 
@@ -335,7 +335,7 @@ A few of the specifics that matter most:
   <figcaption>No certificate is issued on 'KNOWS' alone. A pass at every level — including a countersigned workplace logbook — is required before any award is made.</figcaption>
 </figure>
 
-The **AI-OSCE** deserves specific description, because I believe it would be the first assessment instrument of its kind. A candidate enters a simulated consultation with a standardised patient. They have access to an AI system in the sandbox. Unknown to them, some stations seed a clinical error into the AI's output. They are scored across four domains: appropriate delegation; quality of description; **detection and correction of error**; and documentation and disclosure.
+The [**AI-OSCE**](/post/2026-08-11-one-hidden-error) deserves specific description, because I believe it would be the first assessment instrument of its kind. A candidate enters a simulated consultation with a standardised patient. They have access to an AI system in the sandbox. Unknown to them, some stations seed a clinical error into the AI's output. They are scored across four domains: appropriate delegation; quality of description; **detection and correction of error**; and documentation and disclosure.
 
 The error-detection domain is a **conjunctive** requirement — you cannot compensate for failing it with strong performance elsewhere, in exactly the way that a candidate cannot compensate for a fatal drug error in a conventional OSCE with excellent communication skills.
 
