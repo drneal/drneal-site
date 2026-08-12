@@ -11,12 +11,13 @@ Published as the blog post `content/posts/2026-08-05-another-arrow-in-the-quiver
 | File | What it is |
 |---|---|
 | `kenya-clinical-ai-institute.md` | The document itself — the single source of truth. Edit this. |
-| `figures.py` | Generates all eight figures as SVG, in two palettes. |
+| `figures.py` | Generates Figures 1–8 as SVG, in two palettes. |
+| `fig_two_loops.py` | Generates Figure 9 (the two loops), same two palettes. |
 | `build_pdf.py` | Markdown → HTML → typeset A4 PDF (cover, contents with page numbers, running heads). |
 | `figures/*.svg` | Print-palette figures, consumed by the PDF build. |
 | `make_print.py` | Turns any figure into wall-printable sheets. |
 | `print/*` | Print sheets for the quality loop (Figure 5) — notice-board copies. |
-| `Kenya-Institute-for-Clinical-AI-Blueprint.pdf` | The built PDF, 44 pages. |
+| `Kenya-Institute-for-Clinical-AI-Blueprint.pdf` | The built PDF, 45 pages. |
 
 ## Rebuilding
 

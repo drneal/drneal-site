@@ -77,12 +77,12 @@ This post sets out what I would build to close that gap, and — more importantl
 
 ## Download the full blueprint
 
-The complete document is forty-four pages: the case, the institutional architecture, the pedagogy, the curriculum across five professional tracks and five gated levels, the quality system, the team specified post by post, a thirty-six month sequence, a risk register, and seventy-one references. This post is the argument. The PDF is the plan.
+The complete document is forty-five pages: the case, the institutional architecture, the pedagogy, the curriculum across five professional tracks and five gated levels, the quality system, the team specified post by post, a thirty-six month sequence, a risk register, and seventy-one references. This post is the argument. The PDF is the plan.
 
 <div style="background: linear-gradient(135deg, #0D1B2A 0%, #14384f 100%); color: white; padding: 1.4em 1.8em; border-radius: 8px; margin: 1.5em 0;">
   <strong style="font-size: 1.08em;">📄 Aggarwal N. <em>Another Arrow in the Quiver: What I Would Build to Teach Clinical Artificial Intelligence to Kenya's Doctors, Surgeons and Nurses — and How I Would Make Sure It Works.</em> 2026.</strong>
   <br><br>
-  <a href="/static/Kenya_Institute_for_Clinical_AI_Blueprint.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (376 KB, 44 pages, 8 figures)</a>
+  <a href="/static/Kenya_Institute_for_Clinical_AI_Blueprint.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (398 KB, 45 pages, 9 figures)</a>
 </div>
 
 ---
@@ -508,9 +508,9 @@ A doctor who cannot use these systems is, today, offering less than they could. 
 I would like to build it here.
 
 <div style="background: linear-gradient(135deg, #0D1B2A 0%, #14384f 100%); color: white; padding: 1.4em 1.8em; border-radius: 8px; margin: 2em 0;">
-  <strong style="font-size: 1.05em;">📄 The full forty-four page blueprint</strong> — curriculum module tables, the complete quality system, the team specified post by post, the risk register, and seventy-one references with links.
+  <strong style="font-size: 1.05em;">📄 The full forty-five page blueprint</strong> — curriculum module tables, the complete quality system, the team specified post by post, the risk register, and seventy-one references with links.
   <br><br>
-  <a href="/static/Kenya_Institute_for_Clinical_AI_Blueprint.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (376 KB, 44 pages)</a>
+  <a href="/static/Kenya_Institute_for_Clinical_AI_Blueprint.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (398 KB, 45 pages)</a>
 </div>
 
 <div style="background: linear-gradient(135deg, #14532d 0%, #0f3d2e 100%); color: white; padding: 1.4em 1.8em; border-radius: 8px; margin: 2em 0;">

@@ -1,27 +1,47 @@
 #!/usr/bin/env python3
 """The two loops: Delegation/Diligence outside, Description/Discernment inside.
 
-Draft for review — not yet referenced by any post.
+Theme-switched exactly as figures.py is:
 
-Colours are kept consistent with fig_4d_structure.py so the same competency is
-the same colour everywhere on the site: Delegation cyan, Description amber,
-Discernment red, Diligence green.
+    python3 fig_two_loops.py                 # light / print -> ./figures/fig9-two-loops.svg
+    FIGTHEME=dark python3 fig_two_loops.py   # dark / web    -> ../static/img/.../fig-two-loops.png
 
-Writes ../static/img/kenya-clinical-ai/fig-two-loops.png
+In the dark web palette the competencies keep the colours they carry elsewhere
+on the site (Delegation cyan, Description amber, Discernment red, Diligence
+green). In the light print palette the outer loop is the teal family and the
+inner loop the warm family, which makes the two-loop grouping legible in a
+document that will also be read in monochrome.
 """
 import math
 import os
 
-import cairosvg
-
+THEME = os.environ.get("FIGTHEME", "light")
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(os.path.dirname(HERE), "static", "img", "kenya-clinical-ai")
-os.makedirs(OUT, exist_ok=True)
-
-BG, CARD = "#080d16", "#0d1424"
-INK, GREY, FAINT, LINE = "#c9d6e8", "#7f94b0", "#9AA9AE", "#1e2d45"
-CY, GO, RD, GR = "#00d4f5", "#f59e0b", "#f87171", "#10b981"
+SITE = os.path.dirname(HERE)
 FONT = "Helvetica, Arial, sans-serif"
+
+if THEME == "dark":
+    OUT = os.path.join(SITE, "static", "img", "kenya-clinical-ai")
+    BG, CARD = "#080d16", "#0d1424"
+    INK, GREY, FAINT, LINE = "#c9d6e8", "#7f94b0", "#9AA9AE", "#1e2d45"
+    CY, GO, RD, GR = "#00d4f5", "#f59e0b", "#f87171", "#10b981"
+    TINT = {"CY": "#06202b", "GO": "#1a1408", "RD": "#1c1114", "GR": "#06140f"}
+    PANEL = "#101a2e"
+    TITLE = "THE FOUR COMPETENCIES ARE NOT A LIST — THEY ARE TWO LOOPS"
+    FS = 1.0
+else:
+    OUT = os.path.join(HERE, "figures")
+    BG, CARD = "#FFFFFF", "#FFFFFF"
+    INK, GREY, FAINT, LINE = "#12262B", "#66787E", "#8A979C", "#D9E1E3"
+    CY, GO, RD, GR = "#0B4F4A", "#B5822A", "#A63A2B", "#177A6E"
+    TINT = {"CY": "#E6F0EE", "GO": "#FAF3E4", "RD": "#F7EAE7", "GR": "#E9F3F0"}
+    PANEL = "#F5F8F8"
+    TITLE = "FIGURE 9 — THE FOUR COMPETENCIES ARE NOT A LIST: THEY ARE TWO LOOPS"
+    # the print figure is reproduced at ~170mm, so 1px of the viewBox is
+    # ~0.13mm; without this the smallest labels land near 3.5pt on paper
+    FS = 1.25
+
+os.makedirs(OUT, exist_ok=True)
 
 
 def esc(s):
@@ -30,7 +50,7 @@ def esc(s):
 
 def t(x, y, s, size=12, fill=INK, anchor="start", weight="normal",
       style="normal", ls="0", op=1.0):
-    return (f'<text x="{x:.1f}" y="{y:.1f}" font-family="{FONT}" font-size="{size}" '
+    return (f'<text x="{x:.1f}" y="{y:.1f}" font-family="{FONT}" font-size="{size*FS:.2f}" '
             f'fill="{fill}" text-anchor="{anchor}" font-weight="{weight}" '
             f'font-style="{style}" letter-spacing="{ls}" '
             f'fill-opacity="{op}">{esc(s)}</text>')
@@ -87,17 +107,18 @@ ROWS = [
 
 
 def main():
-    W, H = 1320, 940
+    W, H = 1320, 960
     o = [f'<rect x="0" y="0" width="{W}" height="{H}" fill="{BG}"/>']
 
-    o.append(t(W / 2, 46, "THE FOUR COMPETENCIES ARE NOT A LIST — THEY ARE TWO LOOPS",
-               14, INK, "middle", "bold", ls="2.4"))
+    o.append(t(W / 2, 46, TITLE, 14, INK if THEME == "dark" else GREY,
+               "middle", "bold", ls="2.4"))
     o.append(t(W / 2, 72, "Consent-and-audit on the outside. History-and-examination on "
                "the inside.", 12, GREY, "middle"))
 
     cx, cy = 470, 500
-    R1, W1 = 268, 28          # outer loop
-    R2, W2 = 130, 24          # inner loop
+    R1, W1 = 280, 28          # outer loop
+    R2, W2 = 122, 24          # inner loop — annulus widened so the inner
+                              # labels still fit once type is scaled for print
 
     # faint guide ring so the annulus reads as a single field
     o.append(f'<circle cx="{cx}" cy="{cy}" r="{(R1+R2)/2:.0f}" fill="none" '
@@ -144,7 +165,7 @@ def main():
     # ---- the dynamic that matters: the inner loop turns many times
     bx, by = cx + 132, cy - 200
     o.append(f'<rect x="{bx}" y="{by}" width="188" height="46" rx="23" '
-             f'fill="#1a1408" stroke="{GO}" stroke-width="1.5"/>')
+             f'fill="{TINT["GO"]}" stroke="{GO}" stroke-width="1.5"/>')
     o.append(t(bx + 94, by + 20, "INNER LOOP TURNS", 9.4, GO, "middle", "bold", ls="1.2"))
     o.append(t(bx + 94, by + 36, "many times per encounter", 10.4, INK, "middle"))
     o.append(f'<path d="M {bx+16} {by+46} L {cx+46} {cy-96}" stroke="{GO}" '
@@ -152,7 +173,7 @@ def main():
 
     ox, oy = cx - 320, cy + 196
     o.append(f'<rect x="{ox}" y="{oy}" width="188" height="46" rx="23" '
-             f'fill="#06140f" stroke="{GR}" stroke-width="1.5"/>')
+             f'fill="{TINT["GR"]}" stroke="{GR}" stroke-width="1.5"/>')
     o.append(t(ox + 94, oy + 20, "OUTER LOOP TURNS", 9.4, GR, "middle", "bold", ls="1.2"))
     o.append(t(ox + 94, oy + 36, "once per encounter", 10.4, INK, "middle"))
     o.append(f'<path d="M {ox+172} {oy} L {cx-186} {cy+152}" stroke="{GR}" '
@@ -169,9 +190,10 @@ def main():
             o.append(t(kx + kw, ky, gloss, 10.0, GREY, "end", style="italic"))
             ky += 34
             continue
+        tint = TINT[{CY: "CY", GO: "GO", RD: "RD", GR: "GR"}[col]]
         o.append(f'<rect x="{kx}" y="{ky - 14}" width="{kw}" height="84" rx="8" '
-                 f'fill="{CARD}" stroke="{col}" stroke-width="1.2" '
-                 f'stroke-opacity="0.5"/>')
+                 f'fill="{CARD if THEME == "dark" else tint}" stroke="{col}" '
+                 f'stroke-width="1.2" stroke-opacity="0.5"/>')
         o.append(f'<rect x="{kx}" y="{ky - 14}" width="5" height="84" rx="2.5" '
                  f'fill="{col}"/>')
         o.append(t(kx + 20, ky + 8, name, 13.2, col, "start", "bold", ls="1.2"))
@@ -199,7 +221,7 @@ def main():
     # ---- footer
     fy = H - 86
     o.append(f'<rect x="30" y="{fy}" width="{W-60}" height="52" rx="8" '
-             f'fill="#101a2e" stroke="{LINE}" stroke-width="1"/>')
+             f'fill="{PANEL}" stroke="{LINE}" stroke-width="1"/>')
     o.append(t(W/2, fy + 22, "A clinician recognises the shape immediately. You take "
                "consent once and you audit once; you ask and judge, ask and judge, "
                "many times in between.", 11.4, INK, "middle"))
@@ -213,11 +235,20 @@ def main():
 
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
            f'width="{W}" height="{H}">\n' + "\n".join(o) + "\n</svg>\n")
-    p = os.path.join(OUT, "fig-two-loops")
-    open(p + ".svg", "w").write(svg)
-    cairosvg.svg2png(url=p + ".svg", write_to=p + ".png", scale=1.5)
-    os.remove(p + ".svg")
-    print(f"  wrote {p}.png  {os.path.getsize(p + '.png')//1024} KB")
+
+    if THEME == "dark":
+        import cairosvg
+        p = os.path.join(OUT, "fig-two-loops")
+        open(p + ".svg", "w").write(svg)
+        cairosvg.svg2png(url=p + ".svg", write_to=p + ".png", scale=1.5)
+        os.remove(p + ".svg")
+        print(f"  wrote {p}.png  {os.path.getsize(p + '.png')//1024} KB")
+    else:
+        # WeasyPrint renders the SVG directly, as it does for every other
+        # figure in the blueprint — no rasterisation step
+        p = os.path.join(OUT, "fig9-two-loops.svg")
+        open(p, "w").write(svg)
+        print(f"  wrote {p}  {os.path.getsize(p)//1024} KB")
 
 
 if __name__ == "__main__":

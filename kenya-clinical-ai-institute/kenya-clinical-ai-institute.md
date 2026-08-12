@@ -195,6 +195,10 @@ Teaching clinicians to name which modality they are in — before they act — i
 
 The framework's teaching course adds one further structural idea that I would take wholesale, because it maps onto clinical work almost too neatly. The four competencies are not a list; they are two **loops**. Delegation and Diligence form the outer loop — what you decide to hand over, and what you take responsibility for afterwards. Description and Discernment form the inner loop — how you ask, and how you judge what comes back — and it turns round many times within a single encounter. A clinician will recognise the shape immediately: it is the same relationship as consent-and-audit on the outside, history-and-examination on the inside. I would teach it in exactly that language.
 
+![Figure 9](figures/fig9-two-loops.svg)
+
+The dynamic matters as much as the shape. The outer loop turns **once** per encounter; the inner loop turns **many times** inside it. The failure this curriculum exists to prevent is a clinician running the inner loop with great fluency — asking well, judging well, iterating — having never closed the outer one.
+
 That is exactly the move I want to make for clinicians. Our constraints are: a duty of care, a regulator, a coroner, an unforgiving error cost, a patient in front of us who did not consent to be an experiment, and a working environment where the AI tool is competing for attention with a queue of forty people. Those are not noise. They are the design brief.
 
 So I would adapt the 4Ds into what I would call the **Clinical 4Ds**, and I would credit their authors prominently and permanently.

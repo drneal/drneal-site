@@ -230,7 +230,7 @@ cover = """
     </div>
   </div>
   <div class="cover-foot">
-    Written in a personal capacity &nbsp;·&nbsp; Eight figures &nbsp;·&nbsp; Seventy-one references &nbsp;·&nbsp; Draft for review
+    Written in a personal capacity &nbsp;·&nbsp; Nine figures &nbsp;·&nbsp; Seventy-one references &nbsp;·&nbsp; Draft for review
   </div>
 </div>
 """
