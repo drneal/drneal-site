@@ -224,7 +224,43 @@ Competence is inferred from performance, not from attendance. No award should be
 
 ### 8.3 Standard setting
 
-Pass standards should be set by a formal method — modified Angoff for knowledge assessment, borderline regression for performance assessment — by a panel of practising registrants, and published. A pass mark set at an arbitrary percentage, or a pass rate decided in advance, is not acceptable.
+Pass standards should be set by a formal, criterion-referenced method, by a panel of practising registrants, and published together with the standard itself. A pass mark set at an arbitrary percentage, or a pass rate decided in advance, is not acceptable.
+
+The method differs by instrument, because the two instruments produce different kinds of evidence.
+
+#### 8.3.1 Knowledge assessment — modified Angoff with reality check
+
+**Panel.** Not fewer than eight practising registrants, spanning the cadres represented in the cohort. Composition is published with the standard. A panel drawn from one cadre sets that cadre's standard for everyone.
+
+**Construct.** Before any item is rated, the panel agrees and records in writing a description of the **borderline candidate** — the registrant at the boundary of acceptable practice, who could reasonably go either way — and each judge keeps that description in front of them throughout.
+
+**Round 1.** Each judge independently estimates, for every item, the proportion of borderline candidates who would answer it correctly. No discussion.
+
+**Reality check.** After Round 1 and not before, judges are shown the distribution of the panel's own estimates and, where an item has been used previously, its observed difficulty. This calibrates a matter of fact on which judges are demonstrably inaccurate; it is not a target. A judge who simply adopts the observed values has stopped applying a criterion.
+
+**Round 2.** The items on which the panel most diverged are discussed, and each judge then re-estimates independently. No judge is required to converge.
+
+**Publication.** The cut score for each round, the between-judge standard deviation for each round, the panel composition and the agreed borderline description are published with the result.
+
+**Failure of the panel.** If the between-judge standard deviation does not fall between rounds, the panel has not established a shared construct, and its standard should not be adopted without further work. The mean of a disagreement is not a standard.
+
+The reality check is specified here rather than left optional on the evidence of a 2025 systematic review and meta-analysis of 91 studies in health professions education, which found modified Angoff **with** a reality check the most reliable member of the Angoff family (inter-rater reliability *r* = 0.917) and the Yes/No variant the least (*r* = 0.536). The same review found each additional judge associated with a small increase in the cut score, which is a further reason to fix panel size by policy and disclose it rather than let it vary with availability.
+
+#### 8.3.2 Performance assessment — borderline regression
+
+Angoff cannot be applied to a performance assessment. It requires items with correct answers, and a simulated encounter is a continuous, multi-dimensional performance scored with partial credit; the question "what proportion of borderline candidates would get this station right" is not well formed.
+
+Each examiner therefore records, for every candidate at every station, **both** a checklist score **and** a separate global judgement (clear fail / borderline / clear pass / good / excellent). The checklist score is regressed on the global rating, and the fitted value at *borderline* is the cut score for that station.
+
+R² is reported for each station. A low value indicates that the checklist is not measuring what experienced examiners actually respond to, and the station or its rubric should be rebuilt rather than the result explained away. Where a cohort is too small for a stable regression, the alternative method must be pre-specified rather than selected once the results are known.
+
+#### 8.3.3 Decisions that must be taken before any candidate sits
+
+- Whether the cut score is adjusted for measurement error, in which direction, and by how much.
+- Whether the outcome is bounded by a compromise method, and if so within what limits.
+- The appeals route, and what evidence a candidate is entitled to see.
+
+A standard renegotiated after the pass rate is known is not a standard.
 
 ### 8.4 Conjunctive requirements
 
@@ -310,6 +346,13 @@ Phase 4 should not commence until the Councils are satisfied that accredited pro
 
 This standard should be reviewed **not less often than every eighteen months**. A standard in this field that has not been reviewed in two years should be presumed out of date.
 
+### 12.1 Record of amendments
+
+| Version | Date | Change |
+|---|---|---|
+| 0.1 | August 2026 | First draft issued for comment |
+| 0.2 | 12 August 2026 | §8.3 rewritten. The knowledge-assessment method is now specified as modified Angoff **with reality check**, with panel composition, the two-round procedure, the publication requirements and a stated failure condition for the panel. Borderline regression for performance assessment is specified in equivalent detail, and §8.3.3 adds the decisions that must be taken before candidates sit. The amendment follows the 2025 meta-analysis cited in §14 |
+
 Review should be informed by published outcome data from accredited providers, including error-catch rates and any incidents in which a certificated registrant's use of AI contributed to harm.
 
 ---
@@ -333,11 +376,17 @@ This draft adapts from the former and cites the latter. Any Council adopting thi
 
 The single most important source behind this standard is:
 
-*Automation Bias in Large Language Model–Assisted Diagnostic Reasoning among Physicians Trained in AI Literacy — A Randomized Clinical Trial*, NEJM AI, 2025.
+[*Automation Bias in Large Language Model–Assisted Diagnostic Reasoning among Physicians Trained in AI Literacy — A Randomized Clinical Trial*](https://ai.nejm.org/doi/full/10.1056/AIoa2501001), NEJM AI, 2025.
 
 Its finding — that prior AI-literacy training did not prevent deference to erroneous output — is the reason this standard makes error detection conjunctive rather than compensatable, and the reason it specifies the independent-impression rule as an assessable behaviour rather than an exhortation.
 
 Councils considering adoption should read it directly rather than relying on my summary of it.
+
+The standard-setting requirements in §8.3 rest on a second source:
+
+[*Angoff methods in standard setting in health professional education: a systematic review and meta-analysis*](https://doi.org/10.1186/s12909-025-08300-6), **BMC Medical Education**, 2025;25:1727.
+
+Its central finding is that Angoff is not one method but a family whose variants produce materially different standards and materially different reliability, so that choosing a variant is choosing a level of stringency whether or not the choice is made consciously. That is why §8.3 names a specific variant rather than referring to "Angoff" in general.
 
 ---
 

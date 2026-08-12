@@ -582,7 +582,7 @@ The document also proposes six clauses of regulatory wording, a phased implement
       <strong style="font-size:1.05em;">📋 Annex B — Competency Standards</strong><br/>
       Four domains, three tiers, numbered performance criteria, assessment specification, CPD mapping and draft regulatory wording.
       <br><br>
-      <a href="/static/B-competency-standards.pdf" style="background: white; color: #14213d; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (73 KB, 12 pages)</a>
+      <a href="/static/B-competency-standards.pdf" style="background: white; color: #14213d; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (82 KB, 13 pages)</a>
     </div>
   </div>
 </div>
