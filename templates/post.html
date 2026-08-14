@@ -3,6 +3,18 @@
 {% block title %}{{ post.title }} — Dr Neal Aggarwal{% endblock %}
 {% block description %}{{ post.summary }}{% endblock %}
 
+{# KaTeX loads only for posts that actually contain maths, so the other
+   posts pay nothing for it. See protect_math() in app.py. #}
+{% block extra_head %}
+{% if post.has_math %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.4/dist/katex.min.css" integrity="sha384-u1zONI5gPXUx0UKI62c75/zww972y0v2rSK5ZYlVdS6xEuWDeZWUI66v6t1gvlXJ" crossorigin="anonymous">
+<style>
+  .post-body .katex { font-size: 1.05em; }
+  .post-body .katex-display { margin: 1.4em 0; overflow-x: auto; overflow-y: hidden; padding: 0.2em 0; }
+</style>
+{% endif %}
+{% endblock %}
+
 {% block content %}
 <div class="container--narrow">
 
@@ -59,4 +71,20 @@
   </nav>
 
 </div>
+{% endblock %}
+
+{% block extra_scripts %}
+{% if post.has_math %}
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.4/dist/katex.min.js" integrity="sha384-ykMNcWQhhTUb0YV9SPpPUFURHZ+tWmubkakGBP+OgNK/UXdO2gtzglWx0Rj9hnO3" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.4/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"
+  onload="renderMathInElement(document.querySelector('.post-body'), {
+            delimiters: [
+              {left: '$$',  right: '$$',  display: true},
+              {left: '\\[', right: '\\]', display: true},
+              {left: '\\(', right: '\\)', display: false}
+            ],
+            ignoredTags: ['script','noscript','style','textarea','pre','code','option'],
+            throwOnError: false
+          });"></script>
+{% endif %}
 {% endblock %}

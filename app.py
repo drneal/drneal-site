@@ -159,17 +159,56 @@ def load_posts(limit: int = None) -> list[dict]:
     return posts
 
 
+# ── maths ────────────────────────────────────────────────────────────────────
+# Markdown treats _ and * as emphasis, so LaTeX like w_1 or a*b is mangled
+# before it ever reaches the browser. Lift every maths span out, run Markdown
+# over what's left, then put the spans back untouched. KaTeX renders them
+# client-side (see templates/post.html).
+#
+# Deliberately NO single-$ delimiter: dozens of existing posts quote prices
+# like $52.98, and treating those as maths would wreck them. Inline maths is
+# \( ... \); display maths is $$ ... $$ or \[ ... \].
+_MATH_SPAN = re.compile(r"(?s)(\$\$.+?\$\$|\\\[.+?\\\]|\\\(.+?\\\))")
+_CODE_FENCE = re.compile(r"(?ms)^```.*?^```")
+
+
+def protect_math(text: str) -> tuple[str, list[str]]:
+    """Replace maths spans with inert tokens. Fenced code is left alone."""
+    store: list[str] = []
+
+    def stash(m: "re.Match[str]") -> str:
+        store.append(m.group(0))
+        return f"MATHSPAN{len(store) - 1}XMATH"
+
+    out, last = [], 0
+    for fence in _CODE_FENCE.finditer(text):
+        out.append(_MATH_SPAN.sub(stash, text[last:fence.start()]))
+        out.append(fence.group(0))
+        last = fence.end()
+    out.append(_MATH_SPAN.sub(stash, text[last:]))
+    return "".join(out), store
+
+
+def restore_math(html: str, store: list[str]) -> str:
+    for i, raw in enumerate(store):
+        html = html.replace(f"MATHSPAN{i}XMATH", raw)
+    return html
+
+
 def load_post(slug: str) -> dict | None:
     path = POSTS_DIR / f"{slug}.md"
     if not path.exists():
         return None
     raw = path.read_text(encoding="utf-8")
     meta, body = parse_frontmatter(raw)
+    body, math_store = protect_math(body)
     html = markdown.markdown(
         body,
         extensions=["fenced_code", "tables", "toc", "attr_list"],
     )
+    html = restore_math(html, math_store)
     return {
+        "has_math": bool(math_store),
         "slug": slug,
         "title": meta.get("title", slug.replace("-", " ").title()),
         "date": meta.get("date", ""),
