@@ -6,7 +6,7 @@ tags: Kirkpatrick, programme evaluation, medical education, workplace-based asse
 level: All readers — no teaching background assumed
 read_time: 41 min
 summary: "The tenth of the Institute's ten pedagogical commitments is one sentence long: we measure at Kirkpatrick 3 and 4, or we admit we do not know. This is the fourth companion to the blueprint, and it unpacks that sentence completely — starting from zero, for a reader who has never planned a course in their life. What the four levels are and why almost every training programme stops at the second one. What 'behaviour' means when the behaviour in question is a habit of mind. How you would actually observe, audit and log a student-clinician at three and twelve months without fooling yourself. Why the independent-impression rule is my candidate for the fastest-decaying thing we teach, and what would refute that. What a stepped-wedge design buys you, what it costs, and what to do when you cannot run one. And a working catalogue of the other pedagogical instruments — Miller, entrustment, programmatic assessment, Angoff, retrospective pre-post, logic models, audit and feedback — with notes on how each would be used here."
-featured: true
+featured: false
 ---
 
 <div style="font-size:0.85em; background:#111827; border-left:4px solid #6b82a0; padding:0.9em 1.3em; border-radius:0 6px 6px 0; margin:1.5em 0; color:#9fb3cc;">
