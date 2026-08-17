@@ -346,7 +346,7 @@ The error-detection domain is a **conjunctive** requirement — you cannot compe
 
 ### Measuring what actually matters
 
-Kirkpatrick Level 1 (reaction) we collect and largely ignore. The two that matter:
+Kirkpatrick Level 1 (reaction) we collect and largely ignore. The two that matter — and the whole apparatus underneath them, from mini-CEX sampling to stepped-wedge design, is unpacked in the companion post [**Measuring What Actually Matters**](/post/2026-08-17-measuring-what-actually-matters):
 
 **Level 3 — behaviour.** At three and twelve months post-training: workplace-based assessment by a trained observer; chart audit for documentation of AI-assisted decisions; and, with consent and appropriate governance, sandbox interaction logs showing whether the independent-impression rule survived contact with real work. My working hypothesis — which I would want tested and would not be surprised to see refuted — is that the independent-impression discipline decays fastest and needs the earliest booster.
 

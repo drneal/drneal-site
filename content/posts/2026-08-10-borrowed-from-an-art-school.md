@@ -12,7 +12,7 @@ featured: false
 <a href="/static/img/ai-fluency/fig-4d-structure.png" target="_blank" rel="noopener"><img src="/static/img/ai-fluency/fig-4d-structure.png" alt="The internal structure of the 4D AI Fluency Framework — four competencies, each with three subcategories" style="display:block; width:100%; height:auto; border-radius:10px; margin:0.4em 0 1.8em; box-shadow:0 2px 12px rgba(0,0,0,0.35);"></a>
 
 <div style="font-size:0.85em; background:#111827; border-left:4px solid #6b82a0; padding:0.9em 1.3em; border-radius:0 6px 6px 0; margin:1.5em 0; color:#9fb3cc;">
-<em>I write here in a personal capacity. This post is a companion to <a href="/post/2026-08-05-another-arrow-in-the-quiver" style="color:#00d4f5;">Another Arrow in the Quiver</a>, which sets out the blueprint the framework sits underneath.</em>
+<em>I write here in a personal capacity. This post is a companion to <a href="/post/2026-08-05-another-arrow-in-the-quiver" style="color:#00d4f5;">Another Arrow in the Quiver</a>, which sets out the blueprint the framework sits underneath. Three further companions follow: <a href="/post/2026-08-11-one-hidden-error" style="color:#00d4f5;">One Hidden Error</a> on the OSCE and the AI-OSCE, <a href="/post/2026-08-12-the-angoff-panel-for-testing-clinicians" style="color:#00d4f5;">The Angoff Panel</a> on where the pass mark comes from, and <a href="/post/2026-08-17-measuring-what-actually-matters" style="color:#00d4f5;">Measuring What Actually Matters</a> on Kirkpatrick levels 3 and 4.</em>
 </div>
 
 When I published the blueprint for a national clinical AI institute last week, the competency framework underneath it carried an attribution line that most readers will have skimmed past:
