@@ -156,7 +156,9 @@ def load_posts(limit: int = None) -> list[dict]:
             "tags": [t.strip() for t in meta.get("tags", "").split(",") if t.strip()],
             "level": meta.get("level", ""),
             "read_time": meta.get("read_time", ""),
-            "summary": meta.get("summary", excerpt),
+            # `summary` is the convention, but four early posts used `description`.
+            # Accept either rather than silently falling through to the excerpt.
+            "summary": meta.get("summary") or meta.get("description") or excerpt,
             "featured": meta.get("featured", "false").lower() == "true",
         })
     if limit:
@@ -221,7 +223,7 @@ def load_post(slug: str) -> dict | None:
         "tags": [t.strip() for t in meta.get("tags", "").split(",") if t.strip()],
         "level": meta.get("level", ""),
         "read_time": meta.get("read_time", ""),
-        "summary": meta.get("summary", ""),
+        "summary": meta.get("summary") or meta.get("description") or "",
         "content": html,
     }
 

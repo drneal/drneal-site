@@ -3,7 +3,7 @@ title: "The Culture: Iain M. Banks's Blueprint for the Post-AGI Future"
 date: 2026-06-20
 category: AI
 tags: AI, AGI, post-scarcity, science fiction, Iain Banks, Demis Hassabis, future, philosophy
-description: "Ten novels, one civilisation, and the most sophisticated imagining of a post-AGI future ever committed to fiction. Why the Culture series is the blueprint every serious thinker about AI should read — and why Demis Hassabis already has."
+summary: "Ten novels, one civilisation, and the most sophisticated imagining of a post-AGI future ever committed to fiction. Why the Culture series is the blueprint every serious thinker about AI should read — and why Demis Hassabis already has."
 ---
 
 Sometime in the early 1990s, a teenage programmer in London was grinding through the development of a Theme Park game when he needed a cheat code. He chose "Horza." In 2018, he explained why: he had recently finished Iain M. Banks's *Consider Phlebas*, the first novel of the Culture series, and the shapeshifting protagonist — a man who fights on the wrong side of a galactic war against a civilisation run by benevolent superintelligent AIs — had lodged in his imagination as no other character had. The programmer was Demis Hassabis. He would go on to co-found DeepMind, lead the team that cracked protein folding, collect a Nobel Prize in Chemistry, and become the most consequential AI researcher alive. The cheat code was a private tribute to the fiction he had never stopped thinking about.

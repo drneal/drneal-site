@@ -3,7 +3,7 @@ title: "The Infinity Machine: Demis Hassabis, DeepMind, and the Architecture of 
 date: 2026-06-20
 category: AI
 tags: AI, AGI, DeepMind, AlphaFold, AlphaGo, post-scarcity, future, science
-description: "A deep look at the arc from AlphaGo's Move 37 to AlphaFold's Nobel Prize — and what the evidence suggests about the civilisational future Hassabis is trying to build."
+summary: "A deep look at the arc from AlphaGo's Move 37 to AlphaFold's Nobel Prize — and what the evidence suggests about the civilisational future Hassabis is trying to build."
 ---
 
 There is a scene in the *AlphaGo* documentary — the 2017 film by Greg Kohs — that stops almost everyone who watches it. It is game two of the 2016 DeepMind Challenge Match in Seoul, and AlphaGo has just played Move 37. The move places a black stone on the fifth line of the board in a position that, according to the probability calculations running inside the program itself, no human player would choose once in ten thousand attempts. The stadium's Korean commentators fall silent. Lee Sedol, eighteen-time world Go champion, gets up and leaves the playing room. When he returns, he spends nearly a quarter of an hour staring at the board before responding.
