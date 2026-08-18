@@ -129,6 +129,10 @@ def parse_frontmatter(text: str) -> tuple[dict, str]:
     return meta, body
 
 
+# A post with no `category:` in its frontmatter used to fall through to "AI",
+# which silently filed clinical and non-technical posts under a category they
+# never claimed. The fallback is now visibly wrong, so the omission gets fixed
+# in the post rather than hidden by the loader.
 def load_posts(limit: int = None) -> list[dict]:
     posts = []
     for path in sorted(POSTS_DIR.glob("*.md"), reverse=True):
@@ -148,7 +152,7 @@ def load_posts(limit: int = None) -> list[dict]:
             "slug": path.stem,
             "title": meta.get("title", path.stem.replace("-", " ").title()),
             "date": meta.get("date", ""),
-            "category": meta.get("category", "AI"),
+            "category": meta.get("category", "Uncategorised"),
             "tags": [t.strip() for t in meta.get("tags", "").split(",") if t.strip()],
             "level": meta.get("level", ""),
             "read_time": meta.get("read_time", ""),
@@ -213,7 +217,7 @@ def load_post(slug: str) -> dict | None:
         "slug": slug,
         "title": meta.get("title", slug.replace("-", " ").title()),
         "date": meta.get("date", ""),
-        "category": meta.get("category", "AI"),
+        "category": meta.get("category", "Uncategorised"),
         "tags": [t.strip() for t in meta.get("tags", "").split(",") if t.strip()],
         "level": meta.get("level", ""),
         "read_time": meta.get("read_time", ""),

@@ -1,6 +1,7 @@
 ---
 title: "The Infinity Machine: Demis Hassabis, DeepMind, and the Architecture of What Comes Next"
 date: 2026-06-20
+category: AI
 tags: AI, AGI, DeepMind, AlphaFold, AlphaGo, post-scarcity, future, science
 description: "A deep look at the arc from AlphaGo's Move 37 to AlphaFold's Nobel Prize — and what the evidence suggests about the civilisational future Hassabis is trying to build."
 ---
