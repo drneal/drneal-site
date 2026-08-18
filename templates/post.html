@@ -21,7 +21,7 @@
   <!-- ── Post header ─────────────────────────────────────────────────── -->
   <header class="post-header">
     <div class="post-card__meta" style="margin-bottom:1rem">
-      <a class="badge badge--cat" href="/?cat={{ post.category }}" style="text-decoration:none">{{ post.category }}</a>
+      <a class="badge badge--cat" href="/archive?cat={{ post.category | urlencode }}" style="text-decoration:none">{{ post.category }}</a>
       {% if post.level %}<span class="badge badge--level">{{ post.level }}</span>{% endif %}
       {% if post.read_time %}
       <span class="text-mono text-dim" style="font-size:0.75rem">⏱ {{ post.read_time }}</span>

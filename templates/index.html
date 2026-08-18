@@ -29,7 +29,7 @@
   {% set fp = featured[0] %}
   <div class="featured-post mt-4">
     <div class="post-card__meta" style="margin-bottom:0.75rem">
-      <span class="badge badge--cat">{{ fp.category }}</span>
+      <a class="badge badge--cat" href="/archive?cat={{ fp.category | urlencode }}" style="text-decoration:none">{{ fp.category }}</a>
       {% if fp.level %}<span class="badge badge--level">{{ fp.level }}</span>{% endif %}
       {% if fp.read_time %}<span class="text-mono text-dim" style="font-size:0.72rem">⏱ {{ fp.read_time }}</span>{% endif %}
       <span class="post-date">{{ fp.date }}</span>
@@ -52,7 +52,7 @@
     {% for p in recent %}
     <article class="card post-card">
       <div class="post-card__meta">
-        <span class="badge badge--cat">{{ p.category }}</span>
+        <a class="badge badge--cat" href="/archive?cat={{ p.category | urlencode }}" style="text-decoration:none">{{ p.category }}</a>
         {% if p.level %}<span class="badge badge--level">{{ p.level }}</span>{% endif %}
         {% for tag in p.tags[:2] %}<span class="badge badge--tag">{{ tag }}</span>{% endfor %}
         <span class="post-date">{{ p.date }}</span>

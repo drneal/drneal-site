@@ -13,6 +13,7 @@ import hmac
 import hashlib
 from pathlib import Path
 from datetime import datetime
+from collections import Counter
 
 import smtplib
 from email.mime.text import MIMEText
@@ -246,7 +247,16 @@ def index():
 @app.route("/archive")
 def archive():
     posts = load_posts()
-    return render_template("archive.html", posts=posts)
+    # Counts are taken over the FULL set before filtering, so the filter row
+    # shows the same numbers whichever category is selected. Ordered by count
+    # descending, then alphabetically, so the row is stable as posts are added.
+    counts = Counter(p["category"] for p in posts)
+    categories = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0].lower()))
+    category = request.args.get("cat", "all")
+    if category != "all":
+        posts = [p for p in posts if p["category"] == category]
+    return render_template("archive.html", posts=posts, categories=categories,
+                           current_cat=category, total=sum(counts.values()))
 
 
 @app.route("/post/<slug>")
