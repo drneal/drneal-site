@@ -989,3 +989,52 @@ main { flex: 1; padding: 2.5rem 0 4rem; }
   .institute-note { padding: 0.95rem 1rem; }
   .institute-note p { font-size: 0.86rem; }
 }
+
+/* ── Work-in-progress panel (document shot + note) ───────────────────────── */
+.wip-panel {
+  display: flex;
+  gap: 1.6rem;
+  align-items: flex-start;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--amber);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.6rem;
+  margin: 2rem 0;
+}
+.wip-panel__shot {
+  flex: 0 0 210px;
+  display: block;
+  line-height: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-hi);
+  transition: border-color var(--transition), transform var(--transition);
+}
+.wip-panel__shot:hover { border-color: var(--amber); transform: translateY(-2px); }
+.wip-panel__shot img { width: 100%; height: auto; display: block; }
+.wip-panel__text { flex: 1 1 auto; min-width: 0; }
+.wip-panel__label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--amber);
+  margin-bottom: 0.6rem;
+}
+.wip-panel__text p {
+  margin: 0 0 0.7rem;
+  font-size: 0.9rem;
+  line-height: 1.62;
+  color: var(--text-muted);
+}
+.wip-panel__foot {
+  font-family: var(--mono);
+  font-size: 0.74rem !important;
+  color: var(--text-dim) !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 640px) {
+  .wip-panel { flex-direction: column; gap: 1.1rem; padding: 1.1rem 1.2rem; }
+  .wip-panel__shot { flex: 0 0 auto; max-width: 200px; align-self: center; }
+}

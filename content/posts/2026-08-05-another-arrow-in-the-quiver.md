@@ -115,6 +115,27 @@ That is the case for this institution in a single sentence.
 <strong>The variable that determines whether clinical AI helps or harms a Kenyan patient is not the model. It is the training of the clinician sitting in front of it.</strong>
 </div>
 
+<!-- ── Work in progress: the baseline survey ───────────────────────────── -->
+<div class="wip-panel">
+  <a class="wip-panel__shot" href="/static/img/survey/protocol-p1.png" target="_blank" rel="noopener">
+    <img src="/static/img/survey/protocol-p1.png"
+         alt="First page of the draft protocol: Clinical AI Use, Reliance and Error Detection Among Kenyan Health Workers">
+  </a>
+  <div class="wip-panel__text">
+    <div class="wip-panel__label">IN PROGRESS &nbsp;·&nbsp; BASELINE SURVEY</div>
+    <p>Everything above argues from other people's evidence. I am now designing the study that would supply
+    our own: a cross-sectional survey of what Kenyan clinicians &mdash; doctors, clinical officers, nurses,
+    pharmacists and laboratory staff &mdash; are <em>actually</em> doing with AI right now. Which tools, for
+    which tasks, on whose device, with what training, and whether patient-identifying information is finding
+    its way into consumer chatbots.</p>
+    <p>It carries an embedded error-detection task, so the headline number is behavioural rather than
+    self-reported: shown fluent AI output containing one clinically significant error, how many clinicians
+    catch it? That figure does not exist for Kenya. Until it does, the case on this page rests on a Nairobi
+    study I did not run and a randomised trial conducted somewhere else.</p>
+    <p class="wip-panel__foot">Protocol v0.1 drafted &middot; ethics submission next</p>
+  </div>
+</div>
+
 ---
 
 ## The finding that should change how we teach this
