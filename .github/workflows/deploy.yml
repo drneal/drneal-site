@@ -1,0 +1,76 @@
+name: Deploy to Render
+
+# Render's native GitHub integration stopped firing when the repository was
+# deleted and recreated in August 2026 — the service kept the right repo name
+# but never received another push event, so the site silently went stale while
+# the dashboard looked healthy. This workflow does the notifying instead, by
+# calling the service's Deploy Hook. It fails loudly in the Actions tab, which
+# is the property the native integration lacked.
+#
+# Setup (once):
+#   1. Render → service → Settings → Deploy → Regenerate hook, then copy it.
+#   2. GitHub → repo → Settings → Secrets and variables → Actions → New
+#      repository secret, named RENDER_DEPLOY_HOOK, value = that URL.
+# The hook is a secret: anyone holding it can trigger deploys. It must never be
+# committed, pasted into an issue, or appear in a screenshot.
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:        # lets you deploy from the Actions tab by hand
+
+concurrency:
+  group: render-deploy      # two quick pushes shouldn't race two deploys
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Trigger Render deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Call the Render deploy hook
+        env:
+          HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${HOOK:-}" ]; then
+            echo "::error::RENDER_DEPLOY_HOOK is not set. Add it under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+
+          echo "Triggering deploy for commit ${GITHUB_SHA:0:7} on ${GITHUB_REF_NAME}"
+
+          code=$(curl -sS --max-time 30 -o response.json -w '%{http_code}' -X POST "$HOOK" || echo "000")
+          echo "Render responded HTTP ${code}"
+
+          if [ -s response.json ]; then
+            echo "--- response ---"
+            cat response.json
+            echo
+          fi
+
+          case "$code" in
+            200|201)
+              echo "::notice::Render accepted the deploy request for ${GITHUB_SHA:0:7}."
+              ;;
+            000)
+              echo "::error::Could not reach Render (network error or timeout)."
+              exit 1
+              ;;
+            401|403)
+              echo "::error::Render rejected the hook (HTTP ${code}). The URL is probably stale — regenerate it in Render and update the RENDER_DEPLOY_HOOK secret."
+              exit 1
+              ;;
+            *)
+              echo "::error::Unexpected response from Render (HTTP ${code})."
+              exit 1
+              ;;
+          esac
+
+      - name: Where to check
+        if: always()
+        run: |
+          echo "Deploy progress: https://dashboard.render.com/web/srv-d8qfeimq1p3s739og2vg"
+          echo "Live site:       https://drnealaggarwal.info"
