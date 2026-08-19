@@ -331,7 +331,14 @@ def library():
 @app.route("/demos")
 def demos():
     data = load_json("demos.json")
-    return render_template("demos.html", demos=data.get("demos", []))
+    items = data.get("demos", [])
+    # The clinical tools are evidence — they are what a funder or a council
+    # reads as proof that the Institute proposal comes from someone who ships
+    # working software into clinics. Keeping them in one undifferentiated grid
+    # beside a binaural beat generator threw that away.
+    clinical = [x for x in items if x.get("group") == "clinical"]
+    other = [x for x in items if x.get("group") != "clinical"]
+    return render_template("demos.html", demos=items, clinical=clinical, other=other)
 
 
 @app.route("/lessons")

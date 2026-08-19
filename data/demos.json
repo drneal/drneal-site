@@ -5,56 +5,116 @@
       "description": "Fully offline AI screening app for diabetic retinopathy. Attach a low-cost fundus camera adapter to any smartphone, capture a retinal image, and get a colour-coded severity grade (No DR / Mild / Moderate / Severe NPDR) with a specific clinical action recommendation — all in under five seconds. No internet. No cloud. No patient data ever leaves the device. Built on EfficientNet-B0 trained on 88,000 labelled fundus photographs; ~91% sensitivity for referable DR. Generates a formatted PDF referral report. Runs on iOS, Android, Windows, macOS, and Linux. Designed for primary care and community screening in low-resource settings.",
       "status": "live",
       "url": "/dr-detector",
-      "stack": ["React Native", "Expo", "TFLite", "ONNX Runtime", "EfficientNet-B0", "SQLite", "Electron"]
+      "stack": [
+        "React Native",
+        "Expo",
+        "TFLite",
+        "ONNX Runtime",
+        "EfficientNet-B0",
+        "SQLite",
+        "Electron"
+      ],
+      "group": "clinical"
     },
     {
       "title": "Drug Interaction & Polypharmacy Checker",
       "description": "Enter a medication list and screen every pair against a curated database of ~90 clinically significant interactions graded contraindicated, major, or moderate. Each flagged pair shows mechanism, clinical effect, and management recommendation. Covers CYP interactions, QTc prolongation, serotonin syndrome, triple whammy AKI, opioid + benzodiazepine respiratory depression, and more.",
       "status": "live",
       "url": "/drug-checker",
-      "stack": ["Python", "Flask", "pharmacology", "CYP enzymes", "RxNorm", "FHIR"]
+      "stack": [
+        "Python",
+        "Flask",
+        "pharmacology",
+        "CYP enzymes",
+        "RxNorm",
+        "FHIR"
+      ],
+      "group": "clinical"
     },
     {
       "title": "Voice Clinical Notes",
       "description": "One-tap voice dictation that auto-formats your spoken note into a structured clinical record (PC / Hx / Exam / Ix / Assessment / Plan) and puts it on the clipboard in one tap. Share via WhatsApp, email, SMS, or download as .txt or .rtf. Works in Safari and Chrome; installable as a home-screen app on iOS and Android.",
       "status": "live",
       "url": "/voice-notes",
-      "stack": ["Web Speech API", "Flask", "PWA", "Capacitor.js", "JavaScript"]
+      "stack": [
+        "Web Speech API",
+        "Flask",
+        "PWA",
+        "Capacitor.js",
+        "JavaScript"
+      ],
+      "group": "clinical"
     },
     {
       "title": "Clinical Text NLP Extractor",
       "description": "Paste clinical notes and extract structured entities: diagnoses, medications, dosages, lab values, vital signs, and dates — highlighted and tabulated in real time. Rule-based pipeline; production system uses fine-tuned BioBERT with FHIR R4 output.",
       "status": "live",
       "url": "/nlp-extractor",
-      "stack": ["Python", "Flask", "regex", "spaCy", "BioBERT", "FHIR"]
+      "stack": [
+        "Python",
+        "Flask",
+        "regex",
+        "spaCy",
+        "BioBERT",
+        "FHIR"
+      ],
+      "group": "clinical"
     },
     {
       "title": "LLM Agent Trace Visualiser",
       "description": "Paste a Claude or OpenAI agent session JSON and get an interactive step-by-step timeline of every message, tool call, tool result, and token count. Accepts Anthropic and OpenAI formats, extended thinking blocks, and tool_use/tool_result pairs. Useful for debugging multi-step agents and auditing token spend per reasoning step.",
       "status": "live",
       "url": "/agent-trace",
-      "stack": ["Flask", "JavaScript", "Claude API", "OpenAI API", "JSON"]
+      "stack": [
+        "Flask",
+        "JavaScript",
+        "Claude API",
+        "OpenAI API",
+        "JSON"
+      ],
+      "group": "other"
     },
     {
       "title": "Algorithmic Trading Backtester",
       "description": "A minimal Python backtesting harness for ML-based trading signals. Input a feature set and a model; get equity curve, drawdown, and Sharpe ratio. Logistic Regression, Random Forest, and Gradient Boosting supported.",
       "status": "live",
       "url": "/backtester",
-      "stack": ["Python", "pandas", "scikit-learn", "numpy", "Chart.js"]
+      "stack": [
+        "Python",
+        "pandas",
+        "scikit-learn",
+        "numpy",
+        "Chart.js"
+      ],
+      "group": "other"
     },
     {
       "title": "DiMSAR LoRa Network Map",
       "description": "Live map of the DiMSAR Kenya LoRa mesh radio network — nodes, signal strength, and last heartbeat. Part of my disaster management / search-and-rescue infrastructure work for the Radio Society of Kenya.",
       "status": "coming",
       "url": null,
-      "stack": ["LoRa", "Raspberry Pi", "Python", "Leaflet.js", "MQTT"]
+      "stack": [
+        "LoRa",
+        "Raspberry Pi",
+        "Python",
+        "Leaflet.js",
+        "MQTT"
+      ],
+      "group": "other"
     },
     {
       "title": "Binaural Beat Generator",
       "description": "Browser-based binaural beat generator built with the Web Audio API. Two pure tones — one per ear — with a small frequency difference your brain perceives as a rhythmic pulse. Five brainwave presets (Delta, Theta, Alpha, Beta, Gamma), four waveforms, real-time oscilloscope visualiser, and WAV export via OfflineAudioContext. Use headphones.",
       "status": "live",
       "url": "/binaural",
-      "stack": ["Web Audio API", "JavaScript", "DSP", "OfflineAudioContext", "WAV encoding"]
+      "stack": [
+        "Web Audio API",
+        "JavaScript",
+        "DSP",
+        "OfflineAudioContext",
+        "WAV encoding"
+      ],
+      "group": "other"
     }
   ]
 }

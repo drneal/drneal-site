@@ -6,8 +6,37 @@
 
   <header class="page-hero">
     <h1>// ai_demos &amp; tools</h1>
-    <p class="subtitle">Working prototypes and interactive experiments. Proof of concept beats proof of paper.</p>
+    <p class="subtitle">Working software, not slideware. The clinical tools come first &mdash; built to run in a
+    consulting room, offline where connectivity cannot be assumed. Everything else I have built for the fun of it
+    follows underneath.</p>
   </header>
+
+  <!-- ── Featured: DR Detector ────────────────────────────────────────────── -->
+  <div class="featured-demo" style="margin-bottom:1.5rem">
+    <div class="featured-demo__badge">
+      <span style="color:var(--green);font-size:0.7rem">●</span> FEATURED &nbsp;·&nbsp; LIVE NOW
+    </div>
+    <h2 class="featured-demo__title">DR Detector &mdash; AI Diabetic Retinopathy Screening</h2>
+    <p class="featured-demo__body">
+      Diabetic retinopathy is a leading cause of preventable blindness, and screening it normally requires an
+      ophthalmologist and a machine that costs more than a rural clinic earns in a year. DR Detector puts the
+      screening step on a phone. Clip a low-cost fundus adapter to any smartphone camera, capture a retinal image,
+      and get a graded result &mdash; No DR, Mild, Moderate, or Severe NPDR &mdash; with a specific clinical action,
+      in under five seconds.
+    </p>
+    <p class="featured-demo__body" style="margin-top:0.75rem">
+      It runs <strong>fully offline</strong>. No internet, no cloud, no patient image ever leaving the handset,
+      which is both a privacy property and a practical one where connectivity is not a given. The model is an
+      EfficientNet-B0 trained on 88,000 labelled fundus photographs, at roughly 91% sensitivity for referable
+      disease, and it generates a formatted PDF referral for the patient to carry.
+    </p>
+    <p class="featured-demo__body" style="margin-top:0.75rem">
+      It is also the standard I would hold the <a href="/institute" style="color:var(--cyan)">Clinical AI
+      Institute</a> to: a tool a nurse can actually operate, on hardware a clinic actually owns, in conditions a
+      clinic actually has.
+    </p>
+    <a class="featured-demo__cta" href="/dr-detector">Open DR Detector &rarr;</a>
+  </div>
 
   <!-- ── Featured: Voice Clinical Notes ───────────────────────────────────── -->
   <div class="featured-demo" style="margin-bottom:1.5rem">
@@ -48,24 +77,6 @@
     <a class="featured-demo__cta" href="/nlp-extractor">Open the NLP Extractor →</a>
   </div>
 
-  <!-- ── Featured: LLM Agent Trace Visualiser ─────────────────────────────── -->
-  <div class="featured-demo" style="margin-bottom:1.5rem">
-    <div class="featured-demo__badge">
-      <span style="color:var(--green);font-size:0.7rem">●</span> FEATURED &nbsp;·&nbsp; LIVE NOW
-    </div>
-    <h2 class="featured-demo__title">LLM Agent Trace Visualiser</h2>
-    <p class="featured-demo__body">
-      Paste any Claude or OpenAI agent session JSON and get an interactive step-by-step timeline of every message, tool call, tool result, and token count.
-      Accepts the Anthropic Messages API format, OpenAI Chat Completion responses, Claude extended thinking blocks, raw messages arrays, and the <code>tool_calls</code> / <code>tool_result</code> pair structure used by both APIs.
-      A metadata strip shows total tokens, message count, model name, and number of tool invocations at a glance.
-    </p>
-    <p class="featured-demo__body" style="margin-top:0.75rem">
-      The sample trace shows a six-step clinical agent session: a user query triggers NLP entity extraction, then drug interaction checking, then synthesis of a prioritised clinical summary — with extended thinking blocks and token accounting at each step.
-      Useful for debugging why a multi-step agent looped, auditing token spend per reasoning step, or reviewing tool call inputs and outputs before deploying an agent to production.
-    </p>
-    <a class="featured-demo__cta" href="/agent-trace">Open the Trace Visualiser →</a>
-  </div>
-
   <!-- ── Featured: Drug Interaction Checker ──────────────────────────────── -->
   <div class="featured-demo" style="margin-bottom:1.5rem">
     <div class="featured-demo__badge">
@@ -83,6 +94,63 @@
       the ACE inhibitor + NSAID + diuretic triple whammy; opioid + benzodiazepine respiratory depression; methotrexate toxicity from NSAIDs and antifolates; and more.
     </p>
     <a class="featured-demo__cta" href="/drug-checker">Open the Drug Checker →</a>
+  </div>
+
+  <h2 class="text-mono" style="color:var(--cyan);margin-top:3rem;margin-bottom:0.4rem">// clinical_tools</h2>
+  <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0">Built for use in a clinic, by clinicians, on
+  equipment clinics have.</p>
+
+  <div class="demos-grid">
+    {% for demo in clinical %}
+    <div class="card demo-card">
+      <span class="demo-card__badge demo-card__badge--{{ 'live' if demo.status == 'live' else ('download' if demo.status == 'download' else 'coming') }}">
+        {{ '● LIVE' if demo.status == 'live' else ('⬇ DOWNLOAD' if demo.status == 'download' else '◌ COMING SOON') }}
+      </span>
+      <h3>{{ demo.title }}</h3>
+      <p>{{ demo.description }}</p>
+      <div class="demo-tech-stack">
+        {% for tech in demo.stack %}
+        <span class="skill-tag">{{ tech }}</span>
+        {% endfor %}
+      </div>
+      {% if demo.url and demo.status == 'live' %}
+        {% if demo.url.startswith('http') %}
+        <a class="demo-card__cta" href="{{ demo.url }}" target="_blank" rel="noopener">Launch Demo →</a>
+        {% else %}
+        <a class="demo-card__cta" href="{{ demo.url }}">Launch Demo →</a>
+        {% endif %}
+      {% elif demo.url and demo.status == 'download' %}
+      <a class="demo-card__cta" href="{{ demo.url }}">Get the App →</a>
+      {% elif demo.status == 'coming' %}
+      <span class="text-mono text-dim" style="font-size:0.78rem">In development</span>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2 class="text-mono" style="color:var(--cyan);margin-top:3rem;margin-bottom:0.4rem">// engineering_and_other_builds</h2>
+  <p style="font-size:0.9rem;color:var(--text-muted);margin-top:0">Tooling, instrumentation, and things built
+  because they were interesting.</p>
+
+  <!-- ── Featured: Algorithmic Trading Backtester ──────────────────────────── -->
+  <div class="featured-demo" style="margin-bottom:2.5rem">
+    <div class="featured-demo__badge">
+      <span style="color:var(--green);font-size:0.7rem">●</span> FEATURED &nbsp;·&nbsp; LIVE NOW
+    </div>
+    <h2 class="featured-demo__title">Algorithmic Trading Backtester</h2>
+    <p class="featured-demo__body">
+      This tool lets you run a complete ML-based trading strategy backtest directly in your browser — no data download, no setup, no Python environment required.
+      You select a machine learning model (Logistic Regression, Random Forest, or Gradient Boosting), tick the technical features you want it trained on
+      (SMA crossover, RSI, momentum, MACD, volatility), set your starting capital and simulation length, then hit <em>Run</em>.
+      Within a few seconds you get a full equity curve plotted against a buy-and-hold benchmark, a drawdown chart, and eight risk/performance metrics including
+      annualised Sharpe ratio, maximum drawdown, signal accuracy, win rate, and alpha versus the passive baseline.
+    </p>
+    <p class="featured-demo__body" style="margin-top:0.75rem">
+      The backtest runs on a synthetic geometric random-walk price series — the same statistical structure as real OHLCV data, but without any dependency on a live market feed.
+      This makes it ideal for experimenting with feature engineering and model selection: change one variable at a time and observe the effect on Sharpe and drawdown immediately.
+      Practitioners can use it as a rapid sanity-check harness before porting a signal to a real data pipeline or an MQL5 strategy on MetaTrader.
+    </p>
+    <a class="featured-demo__cta" href="/backtester">Open the Backtester →</a>
   </div>
 
   <!-- ── Featured: Binaural Beat Generator ───────────────────────────────── -->
@@ -112,29 +180,9 @@
     <a class="featured-demo__cta" href="/binaural">Open the Binaural Beat Generator →</a>
   </div>
 
-  <!-- ── Featured: Algorithmic Trading Backtester ──────────────────────────── -->
-  <div class="featured-demo" style="margin-bottom:2.5rem">
-    <div class="featured-demo__badge">
-      <span style="color:var(--green);font-size:0.7rem">●</span> FEATURED &nbsp;·&nbsp; LIVE NOW
-    </div>
-    <h2 class="featured-demo__title">Algorithmic Trading Backtester</h2>
-    <p class="featured-demo__body">
-      This tool lets you run a complete ML-based trading strategy backtest directly in your browser — no data download, no setup, no Python environment required.
-      You select a machine learning model (Logistic Regression, Random Forest, or Gradient Boosting), tick the technical features you want it trained on
-      (SMA crossover, RSI, momentum, MACD, volatility), set your starting capital and simulation length, then hit <em>Run</em>.
-      Within a few seconds you get a full equity curve plotted against a buy-and-hold benchmark, a drawdown chart, and eight risk/performance metrics including
-      annualised Sharpe ratio, maximum drawdown, signal accuracy, win rate, and alpha versus the passive baseline.
-    </p>
-    <p class="featured-demo__body" style="margin-top:0.75rem">
-      The backtest runs on a synthetic geometric random-walk price series — the same statistical structure as real OHLCV data, but without any dependency on a live market feed.
-      This makes it ideal for experimenting with feature engineering and model selection: change one variable at a time and observe the effect on Sharpe and drawdown immediately.
-      Practitioners can use it as a rapid sanity-check harness before porting a signal to a real data pipeline or an MQL5 strategy on MetaTrader.
-    </p>
-    <a class="featured-demo__cta" href="/backtester">Open the Backtester →</a>
-  </div>
 
   <div class="demos-grid">
-    {% for demo in demos %}
+    {% for demo in other %}
     <div class="card demo-card">
       <span class="demo-card__badge demo-card__badge--{{ 'live' if demo.status == 'live' else ('download' if demo.status == 'download' else 'coming') }}">
         {{ '● LIVE' if demo.status == 'live' else ('⬇ DOWNLOAD' if demo.status == 'download' else '◌ COMING SOON') }}
