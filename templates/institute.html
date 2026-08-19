@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% block title %}Kenya Institute for Clinical AI — a proposal{% endblock %}
+{% block description %}A proposal for a national institution to teach clinical artificial intelligence to Kenya's doctors, surgeons and nurses — with the curriculum, the assessment, the five-year financial model, and the evaluation design published in full.{% endblock %}
+{% block content %}
+<div class="container">
+
+  <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+  <header class="page-hero">
+    <h1>// kenya_institute_for_clinical_ai</h1>
+    <p class="subtitle">A proposal for the institution that teaches Kenya's doctors, surgeons and nurses to use clinical AI — and that measures whether the teaching worked.</p>
+  </header>
+
+  <div class="terminal mt-4">
+    <div class="terminal__titlebar">
+      <span class="terminal__dot terminal__dot--red"></span>
+      <span class="terminal__dot terminal__dot--yellow"></span>
+      <span class="terminal__dot terminal__dot--green"></span>
+      <span class="terminal__title">neal@nairobi ~ proposal</span>
+    </div>
+    <div class="terminal__body">
+      <div class="mt-1"><span class="prompt">$ </span><span class="cmd">cat ask.txt</span></div>
+      <div class="out">Approve Phase 0 &mdash; USD 1.94 m over months 0&ndash;12. Nine founding posts, the
+      simulation centre and sandbox build, and negotiation of competency standards with the two
+      professional councils. It is the only decision that commits capital.</div>
+    </div>
+  </div>
+
+  <!-- ── The case ─────────────────────────────────────────────────────── -->
+  <h2 class="text-mono" style="color:var(--cyan);margin-top:3rem">// the_case</h2>
+
+  <p style="line-height:1.7">In 2025, a study across fifteen primary-care clinics in Nairobi examined nearly 40,000 patient
+  visits in which clinicians had AI decision support in the electronic record. It reported a <strong>16% relative
+  reduction in diagnostic errors</strong> and a 13% relative reduction in treatment errors among clinicians who
+  engaged with the tool. That signal was generated here, on our case mix, by our clinicians.</p>
+
+  <p style="line-height:1.7">Read the same work carefully and a second finding sits alongside the first. The benefit
+  was concentrated among the clinicians who used the tool <em>well</em>. The technology did not distribute its
+  benefit evenly &mdash; it distributed it to the people who knew how to use it.</p>
+
+  <div style="border-left:4px solid var(--cyan);background:var(--bg-raised);padding:1.1em 1.4em;border-radius:0 6px 6px 0;margin:1.6em 0;line-height:1.7">
+    <strong style="color:var(--text)">The variable that determines whether clinical AI helps or harms a Kenyan
+    patient is not the model. It is the training of the clinician sitting in front of it.</strong>
+  </div>
+
+  <p style="line-height:1.7">And the obvious response is not sufficient. A randomised trial published in 2025 took
+  physicians who had <em>already completed twenty hours of AI-literacy training</em>, gave them clinical cases, and
+  exposed half of them to deliberately erroneous model output. They deferred to it. Prior literacy training did not
+  protect them: confidence in the tool had been raised, scepticism had not. Teaching clinicians what AI can do,
+  without rigorously training the reflex of doubt, produces a clinician <strong>more dangerous than the one you
+  started with</strong>.</p>
+
+  <!-- ── What is being built ──────────────────────────────────────────── -->
+  <h2 class="text-mono" style="color:var(--cyan);margin-top:3rem">// what_is_being_built</h2>
+
+  <div class="post-grid mt-2">
+    <article class="card">
+      <h3 style="margin:0 0 .5rem;color:var(--cyan);font-size:1rem">A tiered curriculum</h3>
+      <p style="font-size:.9rem;color:var(--text-muted);margin:0;line-height:1.6">Foundation through Practitioner and
+      specialist tracks, across every clinical cadre &mdash; not a single course for doctors only.</p>
+    </article>
+    <article class="card">
+      <h3 style="margin:0 0 .5rem;color:var(--cyan);font-size:1rem">An assessment that can fail people</h3>
+      <p style="font-size:.9rem;color:var(--text-muted);margin:0;line-height:1.6">An AI-OSCE built around one hidden
+      error, with the pass mark set by a modified Angoff panel rather than an arbitrary 50%.</p>
+    </article>
+    <article class="card">
+      <h3 style="margin:0 0 .5rem;color:var(--cyan);font-size:1rem">A sandbox and simulation centre</h3>
+      <p style="font-size:.9rem;color:var(--text-muted);margin:0;line-height:1.6">Where clinicians meet erroneous
+      model output under supervision, before they meet it on a ward round.</p>
+    </article>
+    <article class="card">
+      <h3 style="margin:0 0 .5rem;color:var(--cyan);font-size:1rem">An evaluation programme</h3>
+      <p style="font-size:.9rem;color:var(--text-muted);margin:0;line-height:1.6">Kirkpatrick levels 3 and 4 &mdash;
+      behaviour and patient outcome &mdash; published whatever they find, or we admit we do not know.</p>
+    </article>
+  </div>
+
+  <!-- ── The numbers ──────────────────────────────────────────────────── -->
+  <h2 class="text-mono" style="color:var(--cyan);margin-top:3rem">// the_numbers</h2>
+  <p style="font-size:.9rem;color:var(--text-muted)">Five-year model. Every figure computed from a published
+  assumption register, not typed into a table by hand.</p>
+
+  <table style="width:100%;border-collapse:collapse;margin:1.2rem 0;font-size:.92rem">
+    <tbody>
+      <tr><td style="padding:.55em .8em;border-bottom:1px solid var(--border)">Five-year expenditure</td><td style="padding:.55em .8em;border-bottom:1px solid var(--border);text-align:right;font-family:var(--mono)">USD 17.37 m</td></tr>
+      <tr><td style="padding:.55em .8em;border-bottom:1px solid var(--border)">Five-year earned income</td><td style="padding:.55em .8em;border-bottom:1px solid var(--border);text-align:right;font-family:var(--mono)">USD 5.34 m</td></tr>
+      <tr><td style="padding:.55em .8em;border-bottom:1px solid var(--border)">Five-year subsidy required</td><td style="padding:.55em .8em;border-bottom:1px solid var(--border);text-align:right;font-family:var(--mono)">USD 12.03 m</td></tr>
+      <tr><td style="padding:.55em .8em;border-bottom:1px solid var(--border)">Learners certificated</td><td style="padding:.55em .8em;border-bottom:1px solid var(--border);text-align:right;font-family:var(--mono)">21,746</td></tr>
+      <tr><td style="padding:.55em .8em;border-bottom:1px solid var(--border)">Blended cost per learner</td><td style="padding:.55em .8em;border-bottom:1px solid var(--border);text-align:right;font-family:var(--mono)">USD 799</td></tr>
+      <tr><td style="padding:.55em .8em;border-bottom:1px solid var(--border)">Subsidy per learner</td><td style="padding:.55em .8em;border-bottom:1px solid var(--border);text-align:right;font-family:var(--mono)">USD 554</td></tr>
+      <tr><td style="padding:.55em .8em;border-bottom:1px solid var(--border)">Earned-income cover, Year 5</td><td style="padding:.55em .8em;border-bottom:1px solid var(--border);text-align:right;font-family:var(--mono)">49%</td></tr>
+      <tr><td style="padding:.55em .8em">Core establishment at steady state</td><td style="padding:.55em .8em;text-align:right;font-family:var(--mono)">71 FTE</td></tr>
+    </tbody>
+  </table>
+
+  <div style="border-left:4px solid var(--amber);background:var(--bg-raised);padding:1.1em 1.4em;border-radius:0 6px 6px 0;margin:1.6em 0;line-height:1.7">
+    <strong style="color:var(--amber)">The honest headline: this does not wash its own face, and it is not designed
+    to.</strong><br>
+    <span style="color:var(--text-muted);font-size:.94rem">At fee levels Kenyan clinicians can actually pay, earned
+    income reaches 49% of cost by Year 5. Full recovery would need 2.1&times; the modelled income. The Institute is a
+    subsidised public good with a substantial and growing earned-income component &mdash; not a business. That is the
+    argument to accept or reject. Everything else is detail.</span>
+  </div>
+
+  <!-- ── Documents ────────────────────────────────────────────────────── -->
+  <h2 class="text-mono" style="color:var(--cyan);margin-top:3rem">// the_documents</h2>
+
+  <div class="library-filters mt-2">
+    <a class="filter-btn" href="/static/Kenya_Institute_for_Clinical_AI_Blueprint.pdf">Blueprint <span class="text-dim">45 pp</span></a>
+    <a class="filter-btn" href="/static/A-business-case.pdf">Annex A &mdash; Business case</a>
+    <a class="filter-btn" href="/static/B-competency-standards.pdf">Annex B &mdash; Competency standards</a>
+    <a class="filter-btn" href="/static/C-level-1-common-core.pdf">Annex C &mdash; Level 1 common core</a>
+    <a class="filter-btn" href="/static/Clinical_AI_Foundations_Blueprint.pdf">Facilitator deck</a>
+  </div>
+
+  <!-- ── The essays ───────────────────────────────────────────────────── -->
+  <h2 class="text-mono" style="color:var(--cyan);margin-top:3rem">// the_argument_in_order</h2>
+  <p style="font-size:.9rem;color:var(--text-muted)">The blueprint is the proposal. These five essays are the
+  reasoning underneath it &mdash; read the first, then whichever of the four you most want to argue with.</p>
+
+  {% for item in series %}
+  <div style="margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--border)">
+    <div class="post-card__meta" style="margin-bottom:.4rem">
+      <span class="badge badge--cat">{{ loop.index }}</span>
+      {% if item.post.read_time %}<span class="text-mono text-dim" style="font-size:.72rem">&#9201; {{ item.post.read_time }}</span>{% endif %}
+      <span class="post-date">{{ item.post.date }}</span>
+    </div>
+    <h3 style="margin:.2rem 0 .35rem;font-size:1.05rem">
+      <a href="/post/{{ item.post.slug }}" style="color:var(--text);text-decoration:none">{{ item.post.title }}</a>
+    </h3>
+    <p style="font-size:.9rem;color:var(--text-muted);margin:0 0 .4rem;line-height:1.55">{{ item.why }}</p>
+    <a class="read-more" href="/post/{{ item.post.slug }}">Read &rarr;</a>
+  </div>
+  {% endfor %}
+
+  <!-- ── Who ──────────────────────────────────────────────────────────── -->
+  <h2 class="text-mono" style="color:var(--cyan);margin-top:3rem">// who_is_proposing_this</h2>
+
+  <p style="line-height:1.7"><strong>Dr Neal Aggarwal</strong> is a physician and data scientist based in Nairobi. He
+  has trained <strong>more than 600 AI practitioners</strong> &mdash; from medical doctors to school leavers &mdash;
+  to build and deploy real machine learning systems, and founded <strong>CyberCollege, the first online college in
+  Africa</strong>, pioneering the flipped classroom there before the word MOOC existed. His work applies machine
+  learning to medical diagnostics, clinical NLP and health-system process engineering.</p>
+
+  <p style="line-height:1.7">The clinical tools on this site are built, not sketched: <a href="/dr-detector" style="color:var(--cyan)">DR
+  Detector</a> performs offline diabetic-retinopathy screening on a smartphone with no connectivity and no patient
+  data leaving the device. That is the standard the Institute's teaching is meant to hold.</p>
+
+  <p style="line-height:1.7">This proposal is written in a personal capacity. It is published in full &mdash;
+  including the parts that are uncomfortable &mdash; because a proposal that cannot survive being read is not worth
+  funding.</p>
+
+  <!-- ── CTA ──────────────────────────────────────────────────────────── -->
+  <div class="card mt-4" style="text-align:center;padding:2rem">
+    <h3 style="margin:0 0 .6rem;color:var(--cyan)">Interested institutionally?</h3>
+    <p style="color:var(--text-muted);margin:0 0 1.2rem;line-height:1.6">Host institutions, professional councils,
+    funders and ministries &mdash; I would rather this were argued with than admired.</p>
+    <a class="read-more" href="/contact">Start a conversation &rarr;</a>
+  </div>
+
+</div>
+{% endblock %}

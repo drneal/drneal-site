@@ -277,6 +277,36 @@ def post(slug):
     return render_template("post.html", post=p, prev_post=prev_post, next_post=next_post)
 
 
+# The Kenya Institute for Clinical AI proposal. The five companion essays are
+# looked up from the posts themselves rather than restated here, so titles, dates
+# and read times can never drift out of sync with the posts.
+INSTITUTE_SERIES = [
+    ("2026-08-05-another-arrow-in-the-quiver",
+     "The proposal itself: the case, the institution, the curriculum, the sequence, "
+     "and what could go wrong. Start here."),
+    ("2026-08-10-borrowed-from-an-art-school",
+     "Where the competency framework came from, and why its provenance outside "
+     "medicine is the reason it transfers to clinical work."),
+    ("2026-08-11-one-hidden-error",
+     "What an OSCE is, and what an AI-OSCE would be — the examination the whole "
+     "blueprint rests on."),
+    ("2026-08-12-the-angoff-panel-for-testing-clinicians",
+     "Where the pass mark comes from, and why an arbitrary 50% cannot be defended "
+     "when a certificate is a safety claim."),
+    ("2026-08-17-measuring-what-actually-matters",
+     "Kirkpatrick levels 3 and 4: how you find out whether any of it changed "
+     "behaviour or helped a patient."),
+]
+
+
+@app.route("/institute")
+def institute():
+    by_slug = {p["slug"]: p for p in load_posts()}
+    series = [{"post": by_slug[slug], "why": why}
+              for slug, why in INSTITUTE_SERIES if slug in by_slug]
+    return render_template("institute.html", series=series)
+
+
 @app.route("/skills")
 def skills():
     data = load_json("skills.json")
