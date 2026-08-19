@@ -42,6 +42,30 @@ def _no_cache_html(resp):
     return resp
 
 
+@app.context_processor
+def _asset_version():
+    """Cache-busting for static assets.
+
+    HTML is served no-cache above, but static files keep Flask's twelve-hour
+    default — so a CSS change can sit invisible in a browser for half a day.
+    That is exactly what happened when the work-in-progress panel shipped: the
+    markup was live and the stylesheet was live, and the browser was still
+    holding the previous revision, so the panel rendered unstyled.
+
+    Stamping each asset URL with the file's mtime gives every revision its own
+    URL. The long cache becomes a benefit rather than a trap: unchanged files
+    stay cached, changed ones are fetched immediately.
+    """
+    def versioned(filename: str) -> str:
+        try:
+            stamp = int((Path(app.static_folder) / filename).stat().st_mtime)
+        except OSError:
+            stamp = 0
+        return f"{url_for('static', filename=filename)}?v={stamp}"
+
+    return {"versioned": versioned}
+
+
 TAG_URLS = {
     "Claude API":           "https://www.anthropic.com/api",
     "OpenAI":               "https://en.wikipedia.org/wiki/OpenAI",
