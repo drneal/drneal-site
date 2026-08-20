@@ -1,13 +1,34 @@
 {
   "items": [
     {
+      "title": "Top Scientist REVEALS: We Invented Heaven, God Is A Human Invention! | Prof Brian Greene",
+      "author": "Prof Brian Greene · The Diary Of A CEO",
+      "year": "2026",
+      "type": "video",
+      "description": "The Columbia string theorist in long-form conversation on cosmology, entropy, consciousness and where meaning comes from — including his view that religious belief is something humans built rather than something the universe contains. The headline is the channel's framing, not Greene's: what is actually here is a physicist working carefully through the questions physics cannot settle, and being candid about where his own answers stop. Worth watching as much for how he holds a line under sensational packaging as for the cosmology.",
+      "url": "https://www.youtube.com/watch?v=Qifsxitq_q4",
+      "tags": [
+        "physics",
+        "cosmology",
+        "consciousness",
+        "meaning",
+        "science communication",
+        "long-form interview"
+      ]
+    },
+    {
       "title": "Machines of Loving Grace",
       "author": "Dario Amodei",
       "year": "2024",
       "type": "post",
       "description": "Amodei's long-form vision of how transformative AI could compress decades of scientific progress into a few years — covering biology, neuroscience, mental health, economic development and more. Essential reading on AI's potential upside.",
       "url": "https://darioamodei.com/machines-of-loving-grace",
-      "tags": ["AI futures", "biology", "AGI", "economic development"]
+      "tags": [
+        "AI futures",
+        "biology",
+        "AGI",
+        "economic development"
+      ]
     },
     {
       "title": "On the Importance of AI Safety Research",
@@ -16,7 +37,11 @@
       "type": "post",
       "description": "Anthropic's CEO on why safety and capability research must proceed together, not in sequence. The clearest articulation of the 'race to the top' philosophy from inside the frontier lab.",
       "url": "https://www.anthropic.com/research",
-      "tags": ["AI safety", "alignment", "Anthropic"]
+      "tags": [
+        "AI safety",
+        "alignment",
+        "Anthropic"
+      ]
     },
     {
       "title": "Claude's Model Spec (Constitutional AI)",
@@ -25,7 +50,12 @@
       "type": "paper",
       "description": "The specification document that defines how Claude is trained to be helpful, harmless, and honest. A remarkable piece of AI alignment engineering made public.",
       "url": "https://www.anthropic.com/transparency",
-      "tags": ["alignment", "RLHF", "Constitutional AI", "safety"]
+      "tags": [
+        "alignment",
+        "RLHF",
+        "Constitutional AI",
+        "safety"
+      ]
     },
     {
       "title": "Planning for AGI and Beyond",
@@ -34,7 +64,12 @@
       "type": "post",
       "description": "OpenAI's CEO lays out the organisation's transition plan for when AGI arrives — governance structures, iterative deployment, and why 'slow is impossible'. Candid and worth reading critically.",
       "url": "https://openai.com/index/planning-for-agi-and-beyond/",
-      "tags": ["AGI", "governance", "OpenAI", "deployment"]
+      "tags": [
+        "AGI",
+        "governance",
+        "OpenAI",
+        "deployment"
+      ]
     },
     {
       "title": "The Intelligence Age",
@@ -43,7 +78,11 @@
       "type": "post",
       "description": "Altman's argument that we're entering a new era of human prosperity driven by AI tools accessible to everyone — optimistic, controversial, and impossible to ignore.",
       "url": "https://ia.samaltman.com/",
-      "tags": ["AI futures", "prosperity", "superintelligence"]
+      "tags": [
+        "AI futures",
+        "prosperity",
+        "superintelligence"
+      ]
     },
     {
       "title": "Intro to Large Language Models (lecture)",
@@ -52,7 +91,13 @@
       "type": "video",
       "description": "One of the clearest technical explanations of LLMs ever recorded. Karpathy walks from tokenisation through attention to RLHF. Mandatory viewing for anyone working in this space.",
       "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
-      "tags": ["LLMs", "transformers", "attention", "RLHF", "tutorial"]
+      "tags": [
+        "LLMs",
+        "transformers",
+        "attention",
+        "RLHF",
+        "tutorial"
+      ]
     },
     {
       "title": "Let's Build GPT from Scratch",
@@ -61,7 +106,13 @@
       "type": "video",
       "description": "Karpathy builds a GPT implementation in ~2 hours of live coding. The single best way to understand what a transformer actually is. Code is clear, explanations are exceptional.",
       "url": "https://www.youtube.com/watch?v=kCc8FmEb1nY",
-      "tags": ["GPT", "transformer", "PyTorch", "tutorial", "from scratch"]
+      "tags": [
+        "GPT",
+        "transformer",
+        "PyTorch",
+        "tutorial",
+        "from scratch"
+      ]
     },
     {
       "title": "The Spelled-Out Intro to Neural Networks & Backprop",
@@ -70,7 +121,12 @@
       "type": "video",
       "description": "Micrograd: building autograd from scratch with pure Python. The deepest, most rigorous treatment of backpropagation I've seen in video format. Essential before you touch PyTorch.",
       "url": "https://www.youtube.com/watch?v=VMj-3S1tku0",
-      "tags": ["backpropagation", "autograd", "neural networks", "tutorial"]
+      "tags": [
+        "backpropagation",
+        "autograd",
+        "neural networks",
+        "tutorial"
+      ]
     },
     {
       "title": "Software 2.0",
@@ -79,7 +135,12 @@
       "type": "post",
       "description": "Karpathy's prescient argument that neural networks are not just a tool but a new programming paradigm — one where the programmer specifies desired behaviour, not explicit logic. Reads even better today.",
       "url": "https://karpathy.medium.com/software-2-0-a64152b37c35",
-      "tags": ["paradigm shift", "neural networks", "programming", "prediction"]
+      "tags": [
+        "paradigm shift",
+        "neural networks",
+        "programming",
+        "prediction"
+      ]
     },
     {
       "title": "The Forward-Forward Algorithm (2022)",
@@ -88,7 +149,12 @@
       "type": "paper",
       "description": "Hinton's alternative to backpropagation — training neural networks using only local, positive and negative data without ever computing a global gradient. Potentially significant for neuromorphic and on-device learning.",
       "url": "https://arxiv.org/abs/2212.13345",
-      "tags": ["backpropagation", "learning algorithms", "neuromorphic", "alternative training"]
+      "tags": [
+        "backpropagation",
+        "learning algorithms",
+        "neuromorphic",
+        "alternative training"
+      ]
     },
     {
       "title": "Demis Hassabis: Future of AI, Simulating Reality, Physics and Video Games",
@@ -97,7 +163,15 @@
       "type": "talk",
       "description": "Lex Fridman Podcast #475. Hassabis covers the full frontier: AGI timelines, scaling laws, AlphaEvolve, simulating biological organisms from first principles, P vs NP, the origin of life, p(doom), consciousness, and why video games were his training ground for thinking about AI. One of his most wide-ranging interviews since the Nobel Prize.",
       "url": "https://www.youtube.com/watch?v=-HzgcbRXUK8",
-      "tags": ["Demis Hassabis", "AGI", "AlphaEvolve", "scaling laws", "consciousness", "Lex Fridman", "DeepMind"]
+      "tags": [
+        "Demis Hassabis",
+        "AGI",
+        "AlphaEvolve",
+        "scaling laws",
+        "consciousness",
+        "Lex Fridman",
+        "DeepMind"
+      ]
     },
     {
       "title": "The Hardest Problem AI Ever Solved",
@@ -106,7 +180,14 @@
       "type": "talk",
       "description": "Hassabis on AlphaFold — how DeepMind used AI to crack the 50-year-old protein-folding problem, what it means for drug discovery and biology, and why he believes it is the single most important scientific contribution AI has made so far.",
       "url": "https://www.youtube.com/watch?v=C0gErQtnNFE",
-      "tags": ["Demis Hassabis", "AlphaFold", "protein folding", "DeepMind", "biology", "drug discovery"]
+      "tags": [
+        "Demis Hassabis",
+        "AlphaFold",
+        "protein folding",
+        "DeepMind",
+        "biology",
+        "drug discovery"
+      ]
     },
     {
       "title": "Geoffrey Hinton — Turing Award Lecture",
@@ -115,7 +196,12 @@
       "type": "talk",
       "description": "Hinton's lecture on the development of deep learning, from the early days of backpropagation through the ImageNet moment. A first-hand account of the long AI winter and what it took to survive it.",
       "url": "https://www.youtube.com/watch?v=VsnQf7exv5I",
-      "tags": ["deep learning history", "backpropagation", "Turing Award", "ImageNet"]
+      "tags": [
+        "deep learning history",
+        "backpropagation",
+        "Turing Award",
+        "ImageNet"
+      ]
     },
     {
       "title": "Will Digital Intelligence Replace Biological Intelligence?",
@@ -124,7 +210,12 @@
       "type": "talk",
       "description": "Hinton's talk following his departure from Google — the 'Godfather of AI' explains why he changed his mind on AI risk, and what he now believes we should be worried about.",
       "url": "https://www.youtube.com/watch?v=N1TEjTeQeg0",
-      "tags": ["AI risk", "existential safety", "digital intelligence", "AGI"]
+      "tags": [
+        "AI risk",
+        "existential safety",
+        "digital intelligence",
+        "AGI"
+      ]
     },
     {
       "title": "Attention Is All You Need",
@@ -133,7 +224,13 @@
       "type": "paper",
       "description": "The paper that changed everything. The transformer architecture introduced here is the foundation of every major language model in existence. If you work in AI, you must have read this.",
       "url": "https://arxiv.org/abs/1706.03762",
-      "tags": ["transformer", "attention", "NLP", "foundational", "seminal"]
+      "tags": [
+        "transformer",
+        "attention",
+        "NLP",
+        "foundational",
+        "seminal"
+      ]
     },
     {
       "title": "Scaling Laws for Neural Language Models",
@@ -142,7 +239,12 @@
       "type": "paper",
       "description": "The empirical laws governing how model performance scales with compute, data, and parameters. The theoretical backbone behind the scaling hypothesis that has driven frontier AI for five years.",
       "url": "https://arxiv.org/abs/2001.08361",
-      "tags": ["scaling laws", "language models", "compute", "empirical ML"]
+      "tags": [
+        "scaling laws",
+        "language models",
+        "compute",
+        "empirical ML"
+      ]
     },
     {
       "title": "Constitutional AI: Harmlessness from AI Feedback",
@@ -151,7 +253,13 @@
       "type": "paper",
       "description": "The research paper behind Claude's training methodology. Describes how a set of principles ('constitution') guides RLHF without requiring human labellers for every harmful output.",
       "url": "https://arxiv.org/abs/2212.08073",
-      "tags": ["Constitutional AI", "RLHF", "alignment", "Anthropic", "safety"]
+      "tags": [
+        "Constitutional AI",
+        "RLHF",
+        "alignment",
+        "Anthropic",
+        "safety"
+      ]
     },
     {
       "title": "Deep Learning (textbook)",
@@ -160,7 +268,12 @@
       "type": "paper",
       "description": "The canonical deep learning textbook — freely available online. Chapter 6 onwards remains the most rigorous treatment of feedforward nets, regularisation, and optimisation available.",
       "url": "https://www.deeplearningbook.org/",
-      "tags": ["textbook", "deep learning", "foundational", "Bengio"]
+      "tags": [
+        "textbook",
+        "deep learning",
+        "foundational",
+        "Bengio"
+      ]
     }
   ]
 }
