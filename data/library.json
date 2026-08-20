@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "title": "The Adolescence of Technology",
+      "author": "Dario Amodei",
+      "year": "2026",
+      "type": "post",
+      "description": "Anthropic's CEO on the stretch he thinks we are living through: capability arriving faster than the institutions meant to hold it. He organises the danger into four kinds — systems that behave in ways nobody intended, individuals enabled to cause mass casualties, states using AI to entrench power permanently, and labour displacement outrunning the economy's ability to absorb it — and pairs each with specific mitigations rather than letting the alarm stand alone. Worth reading as much for its position as its argument: it is written by someone with a direct commercial interest in continuing to build what he is warning about, and it insists throughout that the bad outcomes are contingent rather than fated.",
+      "url": "https://darioamodei.com/essay/the-adolescence-of-technology",
+      "tags": [
+        "AI safety",
+        "AI policy",
+        "interpretability",
+        "biosecurity",
+        "concentration of power",
+        "labour markets"
+      ]
+    },
+    {
       "title": "Top Scientist REVEALS: We Invented Heaven, God Is A Human Invention! | Prof Brian Greene",
       "author": "Prof Brian Greene · The Diary Of A CEO",
       "year": "2026",
