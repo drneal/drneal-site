@@ -34,6 +34,18 @@ Most of the time that distinction does not matter, because most of the time the 
 
 That gap is the thing I have been building against. This post is the whole design, in plain English, with no mathematics in it.
 
+<a href="/static/img/medlattice-blueprint.png" target="_blank" rel="noopener"><img src="/static/img/medlattice-blueprint.png" alt="MedLattice: Beyond Hiding — a blueprint for patient privacy. Five panels: the rule-based illusion of conventional records; the four pillars of MedLattice security, showing a record split into separately locked drawers and envelopes; role-based access showing what a receptionist, a consultant and a pharmacist each receive; the shared append-only logbook held by hospital, laboratory and regulator; and the emergency break-glass protocol with its transparency counter." style="display:block; width:100%; height:auto; border-radius:10px; margin:1.6em 0 1em; box-shadow:0 2px 12px rgba(0,0,0,0.35);"></a>
+
+The whole argument on one sheet. On the left, the problem: a single container guarded by software permissions, which is worth nothing on the day the software is wrong, and worth less than nothing to somebody who copies the ciphertext today and waits for a quantum computer. In the middle, the answer: a record broken into separately locked drawers and then into individually locked envelopes, so that what a person cannot see is decided by the keys they hold rather than by a rule somebody wrote. On the right, what that produces in practice — a receptionist who gets a name and a date, a consultant who gets the clinical record but only for patients they are actually treating, a pharmacist who gets the drugs and the kidney function and nothing else, a patient who can restrict a category or dismiss a clinician outright, and an IT department locked out by arithmetic rather than by policy. Along the bottom, the shared logbook that records every look and every refusal, and the break-glass protocol that is deliberately easy to use and impossible to hide.
+
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post:</strong> A deep dive into the design &mdash; why &ldquo;not shown&rdquo; is not the same as locked, how a key tree turns need-to-know into arithmetic, what the shared logbook is actually for, and why the encryption had to be chosen for the length of a human life rather than the length of a procurement cycle.<br/><br/>
+  <audio controls preload="none" style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Mathematical_locks_for_quantum-proof_medical_records.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 ## What I am building, in one page
 
 MedLattice is an electronic patient record built on a simple inversion: **lock every piece of the record separately, and hand out only the keys a person actually needs.**
