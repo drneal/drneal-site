@@ -416,13 +416,13 @@ The specification closes with fourteen decisions awaiting a signature. Most are 
 
 Everything in this post is the plain-English account. Underneath it sits the technical document it was written from — the one with the mathematics in it, where every claim made above is stated precisely enough to be checked and, where it is uncertain, said to be uncertain.
 
-**Here is that specification in full, at version 1.0.**
+**Here is that specification in full, at version 1.1.**
 
 <div style="font-size:0.92em; background:#101a2e; border-left:4px solid #f59e0b; padding:1em 1.3em; margin:1.4em 0; border-radius:0 4px 4px 0;">
-📄 <a href="/static/MedLattice_Specification_v1.0.pdf" style="color:#f59e0b; font-weight:bold;">MedLattice Technical Specification v1.0 (PDF)</a> <span style="color:#6b82a0;">&mdash; 40 pages: the architecture, the cryptographic parameters and the reasoning behind each one, the threat model with its residual risks, the regulatory analysis across four jurisdictions, the complete source of the three ledger programs, and the transcripts of the test suite and the working demonstration.</span>
+📄 <a href="/static/MedLattice_Specification_v1.1.pdf" style="color:#f59e0b; font-weight:bold;">MedLattice Technical Specification v1.1 (PDF)</a> <span style="color:#6b82a0;">&mdash; 45 pages: the architecture, the cryptographic parameters and the reasoning behind each one, the threat model with its residual risks, the regulatory analysis across four jurisdictions, the complete source of the three ledger programs, and the transcripts of the test suite and the working demonstration. Version 1.1 adds §7, <em>Artificial intelligence as a principal</em>, and the <a href="/static/MedLattice_Specification_v1.0.pdf" style="color:#6b82a0;">first release</a> remains available for anyone already citing it.</span>
 </div>
 
-Version 1.0 means exactly what it says. It is a complete document, not a finished one — open to discussion, correction and refinement, and I would far rather it were read that way than treated as settled. Fourteen of its decisions are still awaiting a signature, and at least two of those are judgements I should not be making on my own.
+Version 1.0 means exactly what it says. It is a complete document, not a finished one — open to discussion, correction and refinement, and I would far rather it were read that way than treated as settled. Eighteen of its decisions are still awaiting a signature, and at least two of those are judgements I should not be making on my own.
 
 So if you read it, [get in touch](/contact). Clinicians, informaticians, regulators, security researchers, anybody with a reason to take it apart. I am particularly interested in hearing from anybody who thinks a part of it is wrong, because that is considerably more useful to me than agreement.
 
