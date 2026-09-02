@@ -29,7 +29,7 @@ featured: false
 }
 </style>
 
-Commitment ten, in the [blueprint](/post/2026-08-05-another-arrow-in-the-quiver), is one sentence:
+[Commitment ten](/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on), in the [blueprint](/post/2026-08-05-another-arrow-in-the-quiver), is one sentence:
 
 > **We measure at Kirkpatrick 3 and 4, or we admit we do not know.** Satisfaction scores are close to worthless.
 
@@ -400,7 +400,7 @@ So why use it? Because it is a shared vocabulary that a hospital board, a profes
 
 Two adaptations are standard in health professions education and both improve on the original for our purposes.
 
-**Barr, Freeth and Hammick's split levels**, developed for interprofessional education, subdivide two of the four: Level 2a (modification of attitudes and perceptions) and 2b (acquisition of knowledge and skills); Level 4a (change in organisational practice) and 4b (benefit to patients). Given commitment eight — [interprofessional wherever the work is interprofessional](/post/2026-08-05-another-arrow-in-the-quiver) — this split is the one I would actually adopt. Attitude towards AI and skill with AI are different things and they can move in opposite directions. So can organisational practice and patient benefit.
+**Barr, Freeth and Hammick's split levels**, developed for interprofessional education, subdivide two of the four: Level 2a (modification of attitudes and perceptions) and 2b (acquisition of knowledge and skills); Level 4a (change in organisational practice) and 4b (benefit to patients). Given commitment eight — [interprofessional wherever the work is interprofessional](/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on) — this split is the one I would actually adopt. Attitude towards AI and skill with AI are different things and they can move in opposite directions. So can organisational practice and patient benefit.
 
 **[Moore's expanded outcomes framework](https://www.tandfonline.com/doi/full/10.1080/10401334.2021.1950540)** stretches the four into seven for continuing medical education: participation, satisfaction, learning (declarative and procedural), competence, performance, patient health, community health. Its virtue is the explicit gap it opens between **competence** (level 5's neighbour — can do, in a controlled setting) and **performance** (does do, in practice). That gap is exactly where the AI-OSCE ends and workplace assessment begins, and CPD frameworks in several jurisdictions are built on it.
 
@@ -446,7 +446,7 @@ The Institute's Level 2 evidence has three components:
 
 **An AI-OSCE**, in which the candidate consults with a standardised patient while an AI system is available in the sandbox, and in which some stations seed a clinical error into the AI's output. Scored on delegation, description, error detection and correction, and documentation and disclosure. Error detection is a **conjunctive** requirement — you cannot pass by compensating elsewhere, in the same way a candidate cannot compensate for a fatal drug error with excellent communication. This establishes *shows how*.
 
-**A countersigned portfolio product** — a logbook, a critique of a real AI-assisted decision, a taught session — read and signed by a named senior person, per commitment seven.
+**A countersigned portfolio product** — a logbook, a critique of a real AI-assisted decision, a taught session — read and signed by a named senior person, per [commitment seven](/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on).
 
 <div class="kp-key">
 <strong>What a Level 2 pass entitles us to say:</strong> this candidate, on a specified day, in a simulated encounter, in the knowledge that they were being assessed, detected a seeded error and documented it appropriately.<br><br>
@@ -576,7 +576,7 @@ That last finding is the one I would generalise from, cautiously. If skills deca
 - **Case mix.** A straightforward case gives the trainee no reason to consult a model at all, and therefore no opportunity to demonstrate B1. The sampling frame has to specify diagnostic-uncertainty encounters, or the instrument measures nothing.
 
 <div class="kp-note">
-<strong>Operational note.</strong> I would specify: minimum eight observed encounters across the twelve months, at least four different assessors, at least six encounters flagged in advance as involving diagnostic uncertainty, all assessors having completed the faculty certification of commitment nine and having had at least one of their own observations observed. Assessor-level score distributions published internally each quarter, so that a systematically lenient or harsh assessor is visible without anyone having to make an accusation.
+<strong>Operational note.</strong> I would specify: minimum eight observed encounters across the twelve months, at least four different assessors, at least six encounters flagged in advance as involving diagnostic uncertainty, all assessors having completed the faculty certification of <a href="/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on" style="color:#00d4f5;">commitment nine</a> and having had at least one of their own observations observed. Assessor-level score distributions published internally each quarter, so that a systematically lenient or harsh assessor is visible without anyone having to make an accusation.
 </div>
 
 ### 3.4 Data source two — chart audit
@@ -937,7 +937,7 @@ Kirkpatrick is a frame for asking questions. It contains no instruments. Everyth
 
 **What it is.** George Miller's 1990 framework describes four levels of what an assessment is evidence of: **knows** (facts), **knows how** (applying them), **shows how** (demonstrating in a controlled setting), **does** (performing unobserved in practice). It is the most useful single diagram in assessment because it stops people confusing the bottom of the pyramid with the top.
 
-**How we would use it.** As a blueprinting tool. Every assessment item in the Institute's programme is tagged with its Miller level, and the tags are published in the assessment blueprint. The rule that follows is commitment three's operational form: **no certificate is issued on *knows* alone**, and every certificate requires evidence at *shows how* and at least one countersigned data point at *does*.
+**How we would use it.** As a blueprinting tool. Every assessment item in the Institute's programme is tagged with its Miller level, and the tags are published in the assessment blueprint. The rule that follows is [commitment three](/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on)'s operational form: **no certificate is issued on *knows* alone**, and every certificate requires evidence at *shows how* and at least one countersigned data point at *does*.
 
 **The extension.** [Ten Cate and colleagues have proposed a fifth level — entrustment, or "trusted with future care"](https://academic.oup.com/academicmedicine/article-abstract/96/2/199/8346705) — which reframes the question from *how good is this trainee's performance* to *what would I now let this trainee do unsupervised*. That is the question a supervisor actually asks, and phrasing it that way tends to produce better-calibrated judgements than a numerical rating scale. For us the natural **entrustable professional activity** is: *"independently conducts an AI-assisted diagnostic consultation, including detection and disclosure of model error."* Rated on a supervision scale — observed only / with direct supervision / with indirect supervision / independently / able to supervise others — rather than on a 1-to-9 performance scale that no two assessors interpret alike.
 

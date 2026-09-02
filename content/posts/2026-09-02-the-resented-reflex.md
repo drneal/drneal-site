@@ -43,7 +43,7 @@ featured: false
   </audio>
 </div>
 
-Commitment two, in the [blueprint](/post/2026-08-05-another-arrow-in-the-quiver), is nine words:
+[Commitment two](/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on), in the [blueprint](/post/2026-08-05-another-arrow-in-the-quiver), is nine words:
 
 > **Scepticism is trained explicitly, and it is assessed.** Not a lecture on limitations — a drilled reflex, like recognising a deteriorating patient.
 
@@ -281,7 +281,7 @@ Put the three mechanisms together with Lyell and Coiera's finding that automatio
 Consider what it costs a clinician to verify a plausible AI-generated differential in a district hospital at eleven at night. Two minutes at least, often ten. Attention taken from a queue. A working memory already carrying four other patients. And what does verification usually buy? Confirmation that the answer was fine. The expected return on any individual act of checking is low, because the tool is usually right — which is exactly the condition under which automation bias flourishes. A tool that was wrong half the time would train scepticism by itself, for free, in a week. A tool that is wrong three per cent of the time trains the opposite, and the three per cent is where the patients are.
 
 <div class="rr-key">
-<strong>You do not solve a cost problem by informing people that the cost exists.</strong> You solve it by changing the costs. Every element of the design in Part 6 is either a reduction in the cost of checking — structure, protocol, tooling, a second person — or an increase in the cost of not checking: assessment, countersignature, audit, consequence. This is why commitment two has two clauses, and why the second one is the one that does the work.
+<strong>You do not solve a cost problem by informing people that the cost exists.</strong> You solve it by changing the costs. Every element of the design in Part 6 is either a reduction in the cost of checking — structure, protocol, tooling, a second person — or an increase in the cost of not checking: assessment, countersignature, audit, consequence. This is why <a href="/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on" style="color:#00d4f5;">commitment two</a> has two clauses, and why the second one is the one that does the work.
 </div>
 
 ---
@@ -313,7 +313,7 @@ I do not think that is the right conclusion, and here is the argument for why �
 The interventions that failed were **instructional**. A course. A strategy. A named routine to be recalled and applied under load, by an individual, unprompted, in an environment that neither required it nor checked for it. The interventions that have worked in adjacent domains were **structural and procedural**: they changed the task, or they changed what the person was accountable for, or they drilled the behaviour to automaticity against a standard.
 
 <div class="rr-key">
-So commitment two, as written, is under-specified in a way that would let it fail exactly as Sherbino's intervention failed. What it needs is a third clause, and I would now write it as: <strong>scepticism is trained explicitly, built into the workflow structurally, and assessed behaviourally.</strong> The middle clause is the one the evidence says is missing from every AI curriculum I have read, including, until I wrote this post, the fine print of my own.
+So <a href="/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on" style="color:#00d4f5;">commitment two</a>, as written, is under-specified in a way that would let it fail exactly as Sherbino's intervention failed. What it needs is a third clause, and I would now write it as: <strong>scepticism is trained explicitly, built into the workflow structurally, and assessed behaviourally.</strong> The middle clause is the one the evidence says is missing from every AI curriculum I have read, including, until I wrote this post, the fine print of my own.
 </div>
 
 ---
@@ -380,7 +380,7 @@ This is Buçinca's cognitive forcing function, implemented as a workflow constra
 
 Every simulation encounter runs on a sandbox where we control what the model appears to say. A proportion of encounters contain a seeded clinically significant error.
 
-**The taxonomy.** This is the part that has to be Kenyan and specific, per commitment five, and it has to be weighted towards omission, per Skitka. Working categories:
+**The taxonomy.** This is the part that has to be Kenyan and specific, per [commitment five](/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on), and it has to be weighted towards omission, per Skitka. Working categories:
 
 | Category | Example | Type |
 |---|---|---|
@@ -523,7 +523,7 @@ A candidate is characterised by both. High sensitivity with a sensible criterion
 
 ### 6.4 The interprofessional station
 
-Commitment eight says interprofessional wherever the work is interprofessional, and the space between a nurse and a consultant is where these failures actually live.
+[Commitment eight](/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on) says interprofessional wherever the work is interprofessional, and the space between a nurse and a consultant is where these failures actually live.
 
 So one station in every assessment cycle is built like this. A confederate playing a senior clinician has already accepted an AI-generated recommendation that contains a seeded error. The candidate — a nurse, a clinical officer, a pharmacist, a junior doctor — has the information needed to detect it. **The assessed behaviour is not detection. It is speaking up.**
 
@@ -531,7 +531,7 @@ The vehicle is [SBAR](/post/2026-08-18-four-letters-from-a-submarine), which exi
 
 Two design commitments follow, and both cost money:
 
-- **The consultant is assessed too, on the receiving end.** A cohort of nurses trained to challenge, released into a hospital of consultants who have never practised being challenged, is an experiment in professional attrition. Commitment nine — faculty are certified and their teaching is observed — is not separable from this. You cannot examine a reflex you do not have.
+- **The consultant is assessed too, on the receiving end.** A cohort of nurses trained to challenge, released into a hospital of consultants who have never practised being challenged, is an experiment in professional attrition. [Commitment nine](/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on) — faculty are certified and their teaching is observed — is not separable from this. You cannot examine a reflex you do not have.
 - **The mixed-cadre group is not a scheduling convenience.** The Level 1 common core is taught in mixed groups deliberately, and this station is why.
 
 ### 6.5 Adversarial rounds
@@ -542,7 +542,7 @@ A recurring seminar in which the learner's job is to break the model on a case f
 2. It shifts the learner from the receiving end to the adversarial end, which is where the useful intuitions live.
 3. It gives us a continuously refreshed **source of new seeded errors** from real practice, which is the only defence I have against the objection in Part 8 that our seeded errors are limited to the failures we can imagine.
 
-The output is a written failure-mode entry, countersigned, which is also the learner's portfolio product under commitment seven.
+The output is a written failure-mode entry, countersigned, which is also the learner's portfolio product under [commitment seven](/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on).
 
 ### 6.6 Where this sits in the programme
 
@@ -566,7 +566,7 @@ The full apparatus is in the [Kirkpatrick companion](/post/2026-08-17-measuring-
 **The unassisted-performance audit.** Budzyń and colleagues did something in colonoscopy that we should copy deliberately rather than discover accidentally: they measured the clinician *without* the tool, before and after exposure to it. That is the only design that detects deskilling, and it is not expensive if it is planned. So: a proportion of workplace observations are conducted on cases where AI is not used, and the cohort's unassisted diagnostic performance is tracked over time as a **balancing measure**.
 
 <div class="rr-key">
-<strong>And it is pre-declared as publishable whichever way it goes.</strong> If our trained cohorts' unassisted performance is falling, that is a finding about our training and about the tool, and it goes in the annual report. Commitment ten says we measure at Kirkpatrick 3 and 4 or we admit we do not know; this is the specific measurement most likely to embarrass us, which is a reason to register it in advance rather than a reason to omit it.
+<strong>And it is pre-declared as publishable whichever way it goes.</strong> If our trained cohorts' unassisted performance is falling, that is a finding about our training and about the tool, and it goes in the annual report. <a href="/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on" style="color:#00d4f5;">Commitment ten</a> says we measure at Kirkpatrick 3 and 4 or we admit we do not know; this is the specific measurement most likely to embarrass us, which is a reason to register it in advance rather than a reason to omit it.
 </div>
 
 **Decay.** The independent-impression rule is my candidate for the fastest-decaying element, because it is a small effortful behaviour with no immediate reward, executed in private, under time pressure. I would measure impression integrity at three and twelve months, expect it to fall, and treat the shape of the fall as the thing that determines where the booster goes. If it does not fall, I was wrong and should say so.
@@ -610,7 +610,7 @@ All four are answerable with the evaluation design already specified, and all fo
 
 Compressed, so it fits on one page of an operations manual.
 
-1. **Commitment two is amended to read: scepticism is trained explicitly, built into the workflow structurally, and assessed behaviourally.** The middle clause is not optional and its absence is what the evidence predicts would sink it.
+1. **[Commitment two](/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on) is amended to read: scepticism is trained explicitly, built into the workflow structurally, and assessed behaviourally.** The middle clause is not optional and its absence is what the evidence predicts would sink it.
 2. **The independent-impression rule is a structural constraint, not an instruction.** The AI output does not unlock until a specific, committed impression is recorded and timestamped. Impressions cannot be edited after the output is revealed.
 3. **A hedged impression is scored as absent.** Stated to learners in the first hour.
 4. **No less than 40% of seeded errors are errors of omission.** Because training already handles the other kind.
