@@ -29,7 +29,7 @@ featured: false
 
 <div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
   🎬 <strong>Watch this first &mdash; a quick summary of the text that follows.</strong> Eight minutes on the whole argument: the randomised trial in which physicians who had completed twenty hours of AI-literacy training still deferred to output they had been taught to question, why literacy and discernment are different capacities, and what would have to be built to train the second one. Everything below is the same case at length &mdash; the evidence, the design, the numbers and the honest limits &mdash; so the video is the shape of it and the text is the substance.<br/><br/>
-  <video controls preload="metadata" style="width:100%; margin-top:0.4em; border-radius:6px;">
+  <video controls preload="metadata" poster="/static/img/resented-reflex/video-poster.jpg" style="width:100%; margin-top:0.4em; border-radius:6px;">
     <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/The_Resented_Reflex.mp4" type="video/mp4">
     <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/The_Resented_Reflex.mp4">Download the video</a>
   </video>
