@@ -27,6 +27,14 @@ featured: false
 }
 </style>
 
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post:</strong> A deep dive into the argument &mdash; the randomised trial in which physicians with twenty hours of AI-literacy training deferred to answers that were confidently wrong, the mammography study whose average effect was nil while it quietly helped the weakest readers and harmed the strongest, the controlled trial showing that taught debiasing does not transfer at all, and why an examination that scores how many AI errors a candidate catches can be passed at the top of the cohort by someone who has simply stopped trusting the machine.<br/><br/>
+  <audio controls preload="none" style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Why_smart_doctors_trust_flawed_AI.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 Commitment two, in the [blueprint](/post/2026-08-05-another-arrow-in-the-quiver), is nine words:
 
 > **Scepticism is trained explicitly, and it is assessed.** Not a lecture on limitations — a drilled reflex, like recognising a deteriorating patient.
