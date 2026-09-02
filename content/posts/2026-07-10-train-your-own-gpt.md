@@ -7,6 +7,9 @@ level: Intermediate–Advanced
 read_time: 35 min
 summary: "Lesson 5 of Learning With Dr Neal. Stop reading and train one: take the TinyGPT from Lesson 4, feed it a corpus small enough for a laptop, write the training loop with your own hands, and watch generated text condense out of randomness — from noise, to word-shaped noise, to sentences."
 featured: false
+series: Learning With Dr Neal
+series_index: 5
+companion: 2026-07-21-how-noise-becomes-knowledge
 ---
 
 <style>
@@ -76,7 +79,7 @@ figure.diagram figcaption {
 📚 <strong>Lessons series — #5.</strong> This is the hands-on payoff of <a href="/post/2026-07-10-inside-the-transformer">Lesson 4</a>, and it leans on the gradient-descent foundations of <a href="/post/2026-06-19-how-deep-neural-networks-really-work">Lesson 1</a> and <a href="/post/2026-06-26-deep-learning-spreadsheet-exercise">Lesson 2</a>. You'll want a laptop with Python and PyTorch installed. The full curriculum lives on the <a href="/lessons">Lessons page</a>.
 </div>
 
-Lesson 4 ended with a promise: stop reading and *train one*. Today we keep it.
+[Lesson 4](/post/2026-07-10-inside-the-transformer) ended with a promise: stop reading and *train one*. Today we keep it.
 
 By the end of this lesson you will have taken the `TinyGPT` we built last time, pointed it at a text corpus small enough for a laptop, written the training loop with your own hands, and — this is the part I want you to actually watch, in real time, rather than take on faith — seen its output evolve from random characters, to word-shaped gibberish, to grammatical sentences in the voice of your corpus. Nothing I know of calibrates your intuitions about what these models *are* better than watching one condense out of randomness in front of you. It takes about an hour, most of which is the computer's time rather than yours.
 
@@ -232,7 +235,7 @@ for step in range(5001):
 
 That's the entire loop — compare it line by line against Figure 1. Two notes for the practitioners:
 
-**The optimizer is AdamW, not raw gradient descent.** It's the same "step downhill" idea from Lesson 2, with two refinements earned by a decade of practice: each parameter gets an adaptive step size based on its recent gradient history, and a slight pull toward zero (weight decay) discourages overfitting. You could train with plain SGD; it would just take longer and land somewhere slightly worse.
+**The optimizer is AdamW, not raw gradient descent.** It's the same "step downhill" idea from [Lesson 2](/post/2026-06-26-deep-learning-spreadsheet-exercise), with two refinements earned by a decade of practice: each parameter gets an adaptive step size based on its recent gradient history, and a slight pull toward zero (weight decay) discourages overfitting. You could train with plain SGD; it would just take longer and land somewhere slightly worse.
 
 **The loss number is interpretable — use that.** Cross-entropy here is the model's average surprise, in units of *nats*, at each true next character. Before training, with ~85 characters all equally likely, expect ln(85) ≈ **4.4**. A model that has learned English character statistics lands around **2.0**; a well-trained one on this corpus reaches **1.4–1.5** on validation. When your step-0 print shows ≈4.4, that's your first sanity check passing: the untrained model is exactly as ignorant as theory predicts.
 

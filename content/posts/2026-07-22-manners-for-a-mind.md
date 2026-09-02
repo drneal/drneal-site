@@ -7,6 +7,9 @@ level: Intermediate
 read_time: 40 min
 summary: "Chapter Six of a ground-up account of how large language models work. The last chapter left us with a base model — vast, fluent, knowledgeable, and useless: a mind without a manner, that answers your question with three more questions. This chapter is about the second, smaller, stranger training that gives it a manner — and about why the seams of that final shaping are exactly where a deployed model's most important behaviours, and its most dangerous failures, are quietly decided."
 featured: false
+series: How Large Language Models Work
+series_index: 6
+companion: 2026-07-11-from-predictor-to-assistant
 ---
 
 <a href="/static/img/How_Large_Language_Models_Work.png" target="_blank" rel="noopener"><img src="/static/img/How_Large_Language_Models_Work.png" alt="How an LLM Works — a one-page visual map of all eight chapters" style="display:block; width:100%; height:auto; border-radius:10px; margin:0.4em 0 1.8em; box-shadow:0 2px 12px rgba(0,0,0,0.35);"></a>

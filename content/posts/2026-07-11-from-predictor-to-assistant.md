@@ -7,6 +7,9 @@ level: Intermediate–Advanced
 read_time: 30 min
 summary: "Lesson 6 of Learning With Dr Neal. The raw next-token predictor you trained in Lesson 5 is the 'before' picture. This is the 'after' — instruction tuning, feedback-based refinement, why the same weights can host such different behaviours, and what the post-training pipeline means for the failure modes you'll meet in deployed clinical tools."
 featured: false
+series: Learning With Dr Neal
+series_index: 6
+companion: 2026-07-22-manners-for-a-mind
 ---
 
 <style>
@@ -76,9 +79,9 @@ figure.diagram figcaption {
 📚 <strong>Lessons series — #6.</strong> This lesson assumes you've met the transformer (<a href="/post/2026-07-10-inside-the-transformer">Lesson 4</a>) and — ideally — trained one (<a href="/post/2026-07-10-train-your-own-gpt">Lesson 5</a>). It also closes a loop opened in <a href="/post/2026-07-10-anatomy-of-an-ai-coding-agent">Lesson 3</a>, where an assistant sat at the centre of the agent loop and we took its helpfulness on faith. The full curriculum lives on the <a href="/lessons">Lessons page</a>.
 </div>
 
-If you ran Lesson 5's script, you now own something valuable: a genuinely unhelpful language model. Ask your TinyGPT a question and it will not answer. It will *continue* — with more anatomy, more Edwardian prose, more of whatever statistical neighbourhood your prompt landed it in. It is a mirror of its corpus, and mirrors don't answer questions.
+If you ran [Lesson 5](/post/2026-07-10-train-your-own-gpt)'s script, you now own something valuable: a genuinely unhelpful language model. Ask your TinyGPT a question and it will not answer. It will *continue* — with more anatomy, more Edwardian prose, more of whatever statistical neighbourhood your prompt landed it in. It is a mirror of its corpus, and mirrors don't answer questions.
 
-Yet the models you use daily — the one powering the coding agent from Lesson 3, the one drafting your clinic letters — began life as exactly this kind of mirror, scaled up. Somewhere between "raw predictor trained on the internet" and "assistant that answers, follows instructions, and declines to help with the dangerous stuff," something happened. This lesson is about that something: **post-training**. It is the least understood stage of the pipeline among otherwise well-informed people, and — I'll argue by the end — the stage whose fingerprints are on the specific failure modes that matter most in clinical deployment.
+Yet the models you use daily — the one powering the coding agent from [Lesson 3](/post/2026-07-10-anatomy-of-an-ai-coding-agent), the one drafting your clinic letters — began life as exactly this kind of mirror, scaled up. Somewhere between "raw predictor trained on the internet" and "assistant that answers, follows instructions, and declines to help with the dangerous stuff," something happened. This lesson is about that something: **post-training**. It is the least understood stage of the pipeline among otherwise well-informed people, and — I'll argue by the end — the stage whose fingerprints are on the specific failure modes that matter most in clinical deployment.
 
 <div class="audio-section">
   🎧 <strong>Listen to this post:</strong> Why AI prioritises preference over truth — the audio companion to this lesson.<br/><br/>
@@ -121,7 +124,7 @@ One detail makes it click into place with what you already know. A "conversation
 &lt;|end|&gt;
 </div>
 
-The model is trained to predict the tokens of the assistant turns, given everything before them. That's all a "chat format" is — a document convention, learned like any other. When you had a "conversation" with an LLM this morning, the model received one long document in this shape and did Lesson 4's Figure 1 on it, token by token. (And when Lesson 3's agent loop appended tool results into a transcript — same convention, more roles.)
+The model is trained to predict the tokens of the assistant turns, given everything before them. That's all a "chat format" is — a document convention, learned like any other. When you had a "conversation" with an LLM this morning, the model received one long document in this shape and did [Lesson 4](/post/2026-07-10-inside-the-transformer)'s Figure 1 on it, token by token. (And when Lesson 3's agent loop appended tool results into a transcript — same convention, more roles.)
 
 After instruction tuning, the mirror is gone. Ask a question, get an answer. But two gaps remain, and they set up the second stage. First, demonstrations teach *format and typical content*, not *judgment* — the fine calls (how cautious to be, when to refuse, how to handle a request that's ambiguous or half-dangerous) are poorly specified by examples alone. Second, writing demonstrations is expensive and slow, and it caps the model at "imitates a good human answer" when we'd like "produces the answer humans *prefer*, even over what a demonstrator would have written."
 

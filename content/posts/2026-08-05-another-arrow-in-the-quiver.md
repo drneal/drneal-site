@@ -199,7 +199,7 @@ Kenya's position is different, and the difference is an advantage:
 - Our CPD architecture is already **mandatory and centrally administered** — the Kenya Medical Practitioners and Dentists Council requires 50 CPD points per calendar year for retention on the register; the Nursing Council of Kenya operates its own points requirement for licence renewal.
 - Our health system has a clean **six-level structure** from community units to national referral hospitals.
 - We have a **national AI strategy** (2025–2030) that names health as a priority sector.
-- We have a **digital health statute** — the Digital Health Act 2023 — establishing a Digital Health Agency and setting data principles, alongside the Data Protection Act 2019.
+- We have a **digital health statute** — the [Digital Health Act](/post/2026-08-01-the-law-is-part-of-the-architecture) 2023 — establishing a Digital Health Agency and setting data principles, alongside the Data Protection Act 2019.
 - And we have the rare and precious circumstance of a workforce that is adopting a technology **right now**, in real time, before habits have calcified.
 
 <div class="kcai-key">
@@ -295,7 +295,7 @@ The framework's teaching course adds one further structural idea that maps onto 
 
 **Delegation, clinically**, is the construction of a *non-delegable list* — the clinical acts that never leave your hands regardless of how good the tool becomes. My own list, offered as a starting point for argument rather than doctrine: obtaining consent; breaking bad news; the decision to operate; the final diagnosis committed to the record; the prescription; the signature. Around that hard core sits a much larger and genuinely negotiable territory. Teaching the boundary is the work.
 
-**Description, clinically**, is something a clinician already knows how to do and does not know they know. A good prompt is a good handover. The SBAR structure a nurse uses to hand over a deteriorating patient is a better prompt template than anything in the prompt-engineering literature. What must be added is the context a Kenyan clinician takes for granted and a model does not: which level of facility, which formulary, which tests exist, what the local prevalence actually is. And one absolute rule, taught on day one and assessed: **identifiable patient data does not go into a system you do not control.**
+**Description, clinically**, is something a clinician already knows how to do and does not know they know. A good prompt is a good handover. The [SBAR](/post/2026-08-18-four-letters-from-a-submarine) structure a nurse uses to hand over a deteriorating patient is a better prompt template than anything in the prompt-engineering literature. What must be added is the context a Kenyan clinician takes for granted and a model does not: which level of facility, which formulary, which tests exist, what the local prevalence actually is. And one absolute rule, taught on day one and assessed: **identifiable patient data does not go into a system you do not control.**
 
 **Diligence, clinically**, is documentation of what was AI-assisted and how; disclosure to patients and colleagues; data protection and consent within Kenyan law; incident reporting where AI contributed to harm; and the professional obligation to guard your own skills against decay. The point I would drive hardest: **the signature is yours, the liability is yours, and no tool has ever taken responsibility for anything.**
 
@@ -488,7 +488,7 @@ A note on the mobile unit, because it is the thing most likely to be cut: a vehi
 
 I would rather name these than have them named for me.
 
-**We teach enthusiasm and produce automation bias.** The most likely failure and the most damaging. Mitigated by making the discernment core the largest single component of the curriculum, error-catch rate a conjunctive pass requirement, and unassisted performance a longitudinally measured outcome.
+**We teach enthusiasm and produce [automation bias](/post/2026-09-02-the-resented-reflex).** The most likely failure and the most damaging. Mitigated by making the discernment core the largest single component of the curriculum, error-catch rate a conjunctive pass requirement, and unassisted performance a longitudinally measured outcome.
 
 **Certification becomes a box-tick.** Pressure to raise throughput will arrive in year two, dressed as equity of access. Mitigated by externally set and published pass standards, an external examiner reporting to the board, and pass rates published by cohort. If a pass rate rises, someone has to explain why in public.
 

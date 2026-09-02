@@ -7,6 +7,9 @@ level: Beginner–Intermediate
 read_time: 40 min
 summary: "The opening chapter of a ground-up account of how large language models actually work. Before a model can think, it must read — and reading, for a machine, means something stranger and more consequential than most people imagine. This is the story of how the raw text of the internet becomes the tokens a model sees, why the model builds its own alphabet to do it, and why that single design choice explains so many of an LLM's strangest habits."
 featured: false
+series: How Large Language Models Work
+series_index: 1
+companion: 2026-07-10-inside-the-transformer
 ---
 
 <a href="/static/img/How_Large_Language_Models_Work.png" target="_blank" rel="noopener"><img src="/static/img/How_Large_Language_Models_Work.png" alt="How an LLM Works — a one-page visual map of all eight chapters" style="display:block; width:100%; height:auto; border-radius:10px; margin:0.4em 0 1.8em; box-shadow:0 2px 12px rgba(0,0,0,0.35);"></a>

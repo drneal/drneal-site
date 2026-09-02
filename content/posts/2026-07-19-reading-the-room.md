@@ -7,6 +7,9 @@ level: Intermediate
 read_time: 40 min
 summary: "Chapter Three of a ground-up account of how large language models work. In the last chapter we left every token stranded — rich with meaning but frozen, wearing the same face in every sentence. This chapter builds the single mechanism that lets a token turn its head, look at the words around it, and become a different thing in every context. It is called attention, it is the beating heart of every modern language model, and we are going to derive it from nothing."
 featured: false
+series: How Large Language Models Work
+series_index: 3
+companion: 2026-07-10-inside-the-transformer
 ---
 
 <a href="/static/img/How_Large_Language_Models_Work.png" target="_blank" rel="noopener"><img src="/static/img/How_Large_Language_Models_Work.png" alt="How an LLM Works — a one-page visual map of all eight chapters" style="display:block; width:100%; height:auto; border-radius:10px; margin:0.4em 0 1.8em; box-shadow:0 2px 12px rgba(0,0,0,0.35);"></a>

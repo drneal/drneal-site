@@ -184,6 +184,11 @@ def load_posts(limit: int = None) -> list[dict]:
             # Accept either rather than silently falling through to the excerpt.
             "summary": meta.get("summary") or meta.get("description") or excerpt,
             "featured": meta.get("featured", "false").lower() == "true",
+            # Optional. Posts that belong to a numbered course or book-style
+            # sequence carry `series` and `series_index`; everything else has
+            # an empty series and is simply never grouped.
+            "series": meta.get("series", "").strip(),
+            "series_index": int(meta["series_index"]) if str(meta.get("series_index", "")).strip().isdigit() else 0,
         })
     if limit:
         return posts[:limit]
@@ -248,6 +253,9 @@ def load_post(slug: str) -> dict | None:
         "level": meta.get("level", ""),
         "read_time": meta.get("read_time", ""),
         "summary": meta.get("summary") or meta.get("description") or "",
+        "series": meta.get("series", "").strip(),
+        "series_index": int(meta["series_index"]) if str(meta.get("series_index", "")).strip().isdigit() else 0,
+        "companion": meta.get("companion", "").strip(),
         "content": html,
     }
 
@@ -298,7 +306,36 @@ def post(slug):
     idx = next((i for i, x in enumerate(all_posts) if x["slug"] == slug), None)
     prev_post = all_posts[idx + 1] if idx is not None and idx + 1 < len(all_posts) else None
     next_post = all_posts[idx - 1] if idx is not None and idx > 0 else None
-    return render_template("post.html", post=p, prev_post=prev_post, next_post=next_post)
+
+    # Series navigation. The chronological prev/next above happens to walk each
+    # series correctly today, but only because the posts went out on consecutive
+    # days; insert one unrelated post and it breaks. This is explicit instead.
+    series = series_prev = series_next = None
+    series_posts = []
+    meta_series = (all_posts[idx].get("series") if idx is not None else "") or ""
+    if meta_series:
+        series = meta_series
+        series_posts = sorted(
+            (x for x in all_posts if x.get("series") == series),
+            key=lambda x: x.get("series_index", 0),
+        )
+        pos = next((i for i, x in enumerate(series_posts) if x["slug"] == slug), None)
+        if pos is not None:
+            series_prev = series_posts[pos - 1] if pos > 0 else None
+            series_next = series_posts[pos + 1] if pos + 1 < len(series_posts) else None
+
+    # The same syllabus is covered twice on this site — once with the code and
+    # the maths, once in prose for a reader with no ML background. `companion`
+    # points at the other treatment of the same material.
+    companion = None
+    comp_slug = p.get("companion")
+    if comp_slug:
+        companion = next((x for x in all_posts if x["slug"] == comp_slug), None)
+
+    return render_template("post.html", post=p, prev_post=prev_post, next_post=next_post,
+                           series=series, series_posts=series_posts,
+                           series_prev=series_prev, series_next=series_next,
+                           companion=companion)
 
 
 # The Kenya Institute for Clinical AI proposal. The five companion essays are

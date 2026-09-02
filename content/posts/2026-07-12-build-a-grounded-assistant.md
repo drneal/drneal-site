@@ -7,6 +7,8 @@ level: Advanced
 read_time: 40 min
 summary: "Lesson 8 of Learning With Dr Neal — the capstone. Build a working retrieval assistant over a folder of your own documents: local embeddings, the twenty-line retriever, grounded answers with citations, and an honest recall@k evaluation that will teach you more about deployed clinical AI than any product demo ever will."
 featured: false
+series: Learning With Dr Neal
+series_index: 8
 ---
 
 <style>
@@ -151,7 +153,7 @@ The complete script: **[build_rag_assistant.py](/static/build_rag_assistant.py)*
 Any folder of `.txt` or `.md` files works. Aim for something between twenty and a few hundred documents that you *know well* — that last property is what makes the evaluation meaningful. Good choices: a society's published guidelines, a course's worth of lecture notes, your own blog or thesis, a set of departmental protocols *if and only if they contain no patient data*.
 
 <div class="callout">
-⚠️ <strong>Say it before the tooling makes it easy to forget:</strong> do this first build with public documents. The moment patient-identifiable text enters the pipeline you have created a new PHI store (the chunk text <em>and</em> the vectors — Lesson 7 explained why embeddings of clinical text are themselves PHI), and everything you know about information governance applies to a folder called <code>.rag_index</code> just as it does to a filing cabinet. Learn the mechanics on safe material; involve your governance people before the real thing.
+⚠️ <strong>Say it before the tooling makes it easy to forget:</strong> do this first build with public documents. The moment patient-identifiable text enters the pipeline you have created a new PHI store (the chunk text <em>and</em> the vectors — <a href="/post/2026-07-11-meaning-as-geometry" style="color:#00d4f5;">Lesson 7</a> explained why embeddings of clinical text are themselves PHI), and everything you know about information governance applies to a folder called <code>.rag_index</code> just as it does to a filing cabinet. Learn the mechanics on safe material; involve your governance people before the real thing.
 </div>
 
 ## Step 1: chunking — the decision everyone underestimates
@@ -231,7 +233,7 @@ Then `python build_rag_assistant.py docs/ --eval eval.tsv` scores **recall@5**: 
 <figcaption><strong>Figure 2.</strong> The evaluation loop, and the taxonomy of what you'll find. Expect a first-run recall@5 somewhere between 60% and 90% — almost never 100%. Every miss is a small, safe, laptop-scale preview of a failure that ships inside commercial clinical AI products every day.</figcaption>
 </figure>
 
-Two disciplines while you iterate. Don't tune on your test set into oblivion — after a few fix-and-re-run cycles, write ten *fresh* questions and see if the improvements held (derivation and validation cohorts; you know this dance). And spot-check *faithfulness* separately: for five questions where retrieval succeeded, read the generated answer against the passages, sentence by sentence. Anything asserted that the passages don't support is Lesson 6's polished hallucination surviving inside a "grounded" system — the single most important thing to catch, and the reason the citation instruction exists.
+Two disciplines while you iterate. Don't tune on your test set into oblivion — after a few fix-and-re-run cycles, write ten *fresh* questions and see if the improvements held (derivation and validation cohorts; you know this dance). And spot-check *faithfulness* separately: for five questions where retrieval succeeded, read the generated answer against the passages, sentence by sentence. Anything asserted that the passages don't support is [Lesson 6](/post/2026-07-11-from-predictor-to-assistant)'s polished hallucination surviving inside a "grounded" system — the single most important thing to catch, and the reason the citation instruction exists.
 
 <div class="keyidea">
 💡 <strong>Key idea.</strong> After this afternoon you own something rarer than a working RAG system: a <em>calibrated</em> one — a tool whose failure rate, failure modes, and fixes you have personally measured on your own material. Scale changes the engineering (indexes, rerankers, caching); it does not change the epistemics. When a vendor cannot answer "what's your retrieval recall on questions like ours, and how did you measure it?", you now know precisely what they haven't done.
@@ -239,9 +241,9 @@ Two disciplines while you iterate. Don't tune on your test set into oblivion —
 
 ## Where this connects back — and forward
 
-Wire the pieces into Lesson 3's picture and notice what you've built: `retrieve()` is a **tool**; the folder is **Memory**; the answer loop is one turn of the **agent loop**. Give an agent this script as a callable tool and it will search your corpus iteratively — rephrasing queries, chasing cross-references, synthesising across files — which is exactly the fix Figure 2 prescribes for the hardest failure class. The capstone isn't beside the agent architecture; it's a component of it.
+Wire the pieces into [Lesson 3](/post/2026-07-10-anatomy-of-an-ai-coding-agent)'s picture and notice what you've built: `retrieve()` is a **tool**; the folder is **Memory**; the answer loop is one turn of the **agent loop**. Give an agent this script as a callable tool and it will search your corpus iteratively — rephrasing queries, chasing cross-references, synthesising across files — which is exactly the fix Figure 2 prescribes for the hardest failure class. The capstone isn't beside the agent architecture; it's a component of it.
 
-And the series arc is now closed. A neuron (Lesson 1) — trained by hand (2) — stacked into a transformer (4) — trained into a language model (5) — shaped into an assistant (6) — grounded in your documents (7, 8) — wrapped in an agent that acts (3). Eight lessons, and there is no box in any vendor's architecture diagram you can't now open.
+And the series arc is now closed. A neuron ([Lesson 1](/post/2026-06-19-how-deep-neural-networks-really-work)) — trained by hand (2) — stacked into a transformer (4) — trained into a language model (5) — shaped into an assistant (6) — grounded in your documents (7, 8) — wrapped in an agent that acts (3). Eight lessons, and there is no box in any vendor's architecture diagram you can't now open.
 
 ## What's next
 

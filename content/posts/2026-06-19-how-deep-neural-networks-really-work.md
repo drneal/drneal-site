@@ -7,6 +7,8 @@ level: Intermediate
 read_time: 35 min
 summary: "Professional differentiation. In medicine, law, finance, engineering, and research — every field that processes data — practitioners who can build and evaluate AI tools will command significant advantages over those who can only consume them."
 featured: false
+series: Learning With Dr Neal
+series_index: 1
 ---
 
 <style>

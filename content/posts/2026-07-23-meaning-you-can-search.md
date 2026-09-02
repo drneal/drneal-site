@@ -7,6 +7,9 @@ level: Intermediate
 read_time: 40 min
 summary: "Chapter Seven of a ground-up account of how large language models work. The assistant we finished building is sealed inside the moment its training ended — it knows nothing of your documents, and it bluffs when it does not know. This chapter gives it a way to reach outside itself: to turn text into geometry, search a body of knowledge by meaning rather than by keyword, and ground its answers in sources a human can open and check. It is the machine's first honest connection to the living world."
 featured: false
+series: How Large Language Models Work
+series_index: 7
+companion: 2026-07-11-meaning-as-geometry
 ---
 
 <a href="/static/img/How_Large_Language_Models_Work.png" target="_blank" rel="noopener"><img src="/static/img/How_Large_Language_Models_Work.png" alt="How an LLM Works — a one-page visual map of all eight chapters" style="display:block; width:100%; height:auto; border-radius:10px; margin:0.4em 0 1.8em; box-shadow:0 2px 12px rgba(0,0,0,0.35);"></a>
@@ -71,7 +74,7 @@ It is not that the assistant knows too little. It knows an extraordinary amount 
 
 You might imagine the fix is to retrain it on the missing knowledge. For facts, this is almost always the wrong tool — we saw why in Chapter Five. Pretraining is a months-long, multi-million-dollar industrial process, and the lighter fine-tuning of Chapter Six relocates a model's *defaults*, not its reliably-recallable knowledge. What we actually want is something far more surgical: at the very moment a question is asked, *reach into a body of documents we control, find the passages that bear on it, and lay them in front of the model as part of its context* — so that when the model does its Chapter Four forward pass, the evidence is already on the page. The model then does what it has always done, continue the text, except the text now contains the facts.
 
-That is **retrieval-augmented generation** — RAG — and it rests on a single idea of real beauty, one we have already met in miniature and now scale up: that meaning itself can be given coordinates.
+That is **[retrieval-augmented generation](/post/2026-07-11-meaning-as-geometry)** — RAG — and it rests on a single idea of real beauty, one we have already met in miniature and now scale up: that meaning itself can be given coordinates.
 
 ## Part I — The same geometry, scaled up
 

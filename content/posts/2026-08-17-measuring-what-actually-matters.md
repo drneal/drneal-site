@@ -453,7 +453,7 @@ The Institute's Level 2 evidence has three components:
 <strong>What it does not entitle us to say:</strong> anything whatsoever about what they will do at 3 a.m. in a busy casualty department in eight months' time, when the model is fluent and confident and they are tired and the queue is thirty deep.
 </div>
 
-That second paragraph is the whole reason Level 3 exists, and it is not a hypothetical worry. The [2025 NEJM AI randomised trial](https://ai.nejm.org/doi/full/10.1056/AIoa2501001) that motivated the entire blueprint found physicians who had already completed twenty hours of AI-literacy training still deferring to deliberately erroneous model output. Those physicians would, I have no doubt, have passed a knowledge test on automation bias. The knowledge was not the binding constraint. That is a Level 2/Level 3 dissociation, observed directly, in exactly our population, on exactly our topic.
+That second paragraph is the whole reason Level 3 exists, and it is not a hypothetical worry. The [2025 NEJM AI randomised trial](https://ai.nejm.org/doi/full/10.1056/AIoa2501001) that motivated the entire blueprint found physicians who had already completed twenty hours of AI-literacy training still deferring to deliberately erroneous model output. Those physicians would, I have no doubt, have passed a knowledge test on [automation bias](/post/2026-09-02-the-resented-reflex). The knowledge was not the binding constraint. That is a Level 2/Level 3 dissociation, observed directly, in exactly our population, on exactly our topic.
 
 ---
 

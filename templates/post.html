@@ -49,6 +49,46 @@
   </div>
   {% endif %}
 
+  <!-- ── Series navigation ───────────────────────────────────────────── -->
+  {% if series and series_posts|length > 1 %}
+  <nav class="post-series" aria-label="Series navigation"
+       style="margin-top:1.75rem;border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.3rem;">
+    <div class="text-mono text-dim" style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem">
+      {{ series }} · part {{ post.series_index }} of {{ series_posts|length }}
+    </div>
+    <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0.3rem">
+      {% for sp in series_posts %}
+      <li style="display:flex;gap:0.6rem;align-items:baseline;font-size:0.86rem">
+        <span class="text-mono text-dim" style="min-width:1.4rem">{{ sp.series_index }}</span>
+        {% if sp.slug == post.slug %}
+        <span style="color:var(--text);font-weight:600">{{ sp.title }} <span class="text-dim">— you are here</span></span>
+        {% else %}
+        <a href="/post/{{ sp.slug }}">{{ sp.title }}</a>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+    {% if series_prev or series_next %}
+    <div style="display:flex;justify-content:space-between;gap:1rem;margin-top:0.9rem;padding-top:0.8rem;border-top:1px solid var(--border);font-size:0.82rem">
+      <span>{% if series_prev %}<a href="/post/{{ series_prev.slug }}">← Part {{ series_prev.series_index }}</a>{% endif %}</span>
+      <span>{% if series_next %}<a href="/post/{{ series_next.slug }}">Part {{ series_next.series_index }} →</a>{% endif %}</span>
+    </div>
+    {% endif %}
+  </nav>
+  {% endif %}
+
+  <!-- ── Companion treatment (the other pass over the same material) ─── -->
+  {% if companion %}
+  <aside class="post-companion" aria-label="Companion post"
+         style="margin-top:1rem;border-left:3px solid var(--accent,#00d4f5);border-radius:0 6px 6px 0;padding:0.9rem 1.2rem;background:rgba(0,212,245,0.05)">
+    <div class="text-mono text-dim" style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.4rem">
+      The same material, the other way round
+    </div>
+    <a href="/post/{{ companion.slug }}" style="font-size:0.92rem">{{ companion.title }}</a>
+    {% if companion.level %}<span class="text-dim" style="font-size:0.82rem"> — {{ companion.level }}</span>{% endif %}
+  </aside>
+  {% endif %}
+
   <!-- ── Post navigation ─────────────────────────────────────────────── -->
   <nav class="post-nav" aria-label="Post navigation">
     {% if prev_post %}

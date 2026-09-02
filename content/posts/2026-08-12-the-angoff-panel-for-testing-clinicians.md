@@ -119,7 +119,7 @@ The items are drawn from across the Level 1 units, with the difficulty spread yo
 | 5 | 1.5 | At which step of the independent-impression rule must the clinician write | 0.85 | 0.78 | 0.88 | 0.71 | 0.82 | **0.81** |
 | 6 | 1.5 | Correct response to a differential that omits TB in a wasting patient | 0.62 | 0.55 | 0.73 | 0.45 | 0.60 | **0.59** |
 | 7 | 1.6 | Which documentation phrasing correctly discloses AI involvement | 0.72 | 0.62 | 0.78 | 0.58 | 0.68 | **0.68** |
-| 8 | 1.5 | Classify a behaviour: under-trust, calibrated trust, or automation bias | 0.73 | 0.60 | 0.76 | 0.62 | 0.69 | **0.68** |
+| 8 | 1.5 | Classify a behaviour: under-trust, calibrated trust, or [automation bias](/post/2026-09-02-the-resented-reflex) | 0.73 | 0.60 | 0.76 | 0.62 | 0.69 | **0.68** |
 | | | **Judge cut score** | **75.0** | **66.2** | **81.3** | **61.4** | **72.6** | **71.3%** |
 
 Panel cut score: **71.3%**. Between-judge standard deviation: **7.7 points**.

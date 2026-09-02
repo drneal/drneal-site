@@ -7,6 +7,8 @@ level: Beginner–Intermediate
 read_time: 25 min
 summary: "Before Chapter 4 throws you into the deep end, build a working neural network from scratch — in a spreadsheet. No code. No libraries. Just arithmetic you can see and touch."
 featured: false
+series: Learning With Dr Neal
+series_index: 2
 ---
 
 <style>

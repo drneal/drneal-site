@@ -7,6 +7,9 @@ level: Intermediate
 read_time: 30 min
 summary: "Lesson 3 of Learning With Dr Neal. What separates a chatbot from an agent, the six building blocks every production agent shares, how a single request travels from your keystroke to the final answer, and how a permission system keeps an autonomous loop from wrecking your machine."
 featured: false
+series: Learning With Dr Neal
+series_index: 3
+companion: 2026-07-24-the-agent
 ---
 
 <style>

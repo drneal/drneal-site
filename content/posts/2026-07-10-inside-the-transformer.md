@@ -7,6 +7,9 @@ level: Intermediate–Advanced
 read_time: 35 min
 summary: "Lesson 4 of Learning With Dr Neal. How a language model actually turns a transcript into the next token: tokens and embeddings, why attention was the breakthrough, what a context window physically is — and a complete tiny GPT in PyTorch, small enough to read in one sitting and train on your laptop."
 featured: false
+series: Learning With Dr Neal
+series_index: 4
+companion: 2026-07-20-the-tower
 ---
 
 <style>
@@ -56,7 +59,7 @@ figure.diagram figcaption {
 📚 <strong>Lessons series — #4.</strong> This lesson sits between <a href="/post/2026-06-19-how-deep-neural-networks-really-work">Lesson 1</a> (what a neural network computes) and <a href="/post/2026-07-10-anatomy-of-an-ai-coding-agent">Lesson 3</a> (what's wrapped around the model to make an agent). Today we open the model itself. The full curriculum lives on the <a href="/lessons">Lessons page</a>.
 </div>
 
-At the end of the last lesson I promised we'd close the gap in the middle of our stack. At the bottom (Lessons 1–2): neurons, weights, gradient descent. At the top (Lesson 3): the agent loop, tools, permissions. Between them sits the machine that does the actual thinking — the thing that receives a transcript and produces, of all the words it could say next, the right one.
+At the end of the last lesson I promised we'd close the gap in the middle of our stack. At the bottom (Lessons 1–2): neurons, weights, gradient descent. At the top ([Lesson 3](/post/2026-07-10-anatomy-of-an-ai-coding-agent)): the agent loop, tools, permissions. Between them sits the machine that does the actual thinking — the thing that receives a transcript and produces, of all the words it could say next, the right one.
 
 That machine is the **transformer**, and it has been the architecture behind essentially every frontier language model since 2017. This lesson explains it the way I wish someone had explained it to me: not as a wall of matrix algebra, but as a small number of design decisions, each solving a specific problem — ending with working PyTorch code for a complete miniature GPT that you can read in one sitting.
 
@@ -145,7 +148,7 @@ Neural networks eat vectors, not words. So before anything interesting happens, 
 
 **Tokenisation.** The raw string is chopped into *tokens* — chunks from a fixed vocabulary, typically 50,000–200,000 entries learned from data. Common words get their own token; rarer words are assembled from pieces (`hyponatraemia` might become `hypo|nat|ra|emia`). This is why LLMs are notoriously shaky at counting letters: the model never sees letters, only chunk IDs.
 
-**Embedding.** Each token ID indexes into a big lookup table and retrieves a learned vector — several hundred to several thousand numbers. These *embeddings* are learned during training, and they end up encoding meaning as geometry: tokens used in similar contexts drift toward each other in the vector space. You met this idea in Lesson 1; here it's the front door of the whole model.
+**Embedding.** Each token ID indexes into a big lookup table and retrieves a learned vector — several hundred to several thousand numbers. These *embeddings* are learned during training, and they end up encoding meaning as geometry: tokens used in similar contexts drift toward each other in the vector space. You met this idea in [Lesson 1](/post/2026-06-19-how-deep-neural-networks-really-work); here it's the front door of the whole model.
 
 One more ingredient: the model needs to know *where* each token sits, because "dog bites man" and "man bites dog" contain the same tokens. So a **position signal** is mixed into each embedding — in the simplest scheme, a second lookup table indexed by position 0, 1, 2, …
 
@@ -413,7 +416,7 @@ class TinyGPT(nn.Module):
         return self.head(self.ln_out(x))                   # logits: (B, T, vocab)
 ```
 
-Sixty lines, and it is not a toy in any structural sense. Scale `d_model` to 12,288, `n_heads` to 96, `n_layers` to 96, `ctx` into the hundreds of thousands, train it on a large slice of the internet, and you have sketched a frontier base model. The recipe you'd use to train it is the one you already own: cross-entropy loss on next-token prediction, backpropagation, gradient descent — Lessons 1 and 2, at industrial scale.
+Sixty lines, and it is not a toy in any structural sense. Scale `d_model` to 12,288, `n_heads` to 96, `n_layers` to 96, `ctx` into the hundreds of thousands, train it on a large slice of the internet, and you have sketched a frontier base model. The recipe you'd use to train it is the one you already own: cross-entropy loss on next-token prediction, [backpropagation](/post/2026-08-12-backpropagation-by-hand), gradient descent — Lessons 1 and 2, at industrial scale.
 
 Line up the pieces against Figure 2 and notice how little is left unexplained: `tok_emb` and `pos_emb` are the lookup tables; each `Block` is Figure 4; the causal mask is Figure 3's "earlier tokens only" rule; `head` produces the scores that softmax turns into Figure 1's probability bars.
 

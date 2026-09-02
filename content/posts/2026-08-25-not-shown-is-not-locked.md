@@ -104,7 +104,7 @@ The point is that an attacker does not have to wait in order to *steal* the data
 
 So the question I ask is not *when will quantum computers arrive?* It is: *how long does this record need to stay private, and does that period stretch past the arrival date?*
 
-For a medical record, the answer is obviously yes, by decades. Kenya's Digital Health Act 2023 alone requires health records to be kept for twenty years, and that is a floor, not a lifetime. A record created for a child today has to hold its secrecy into the 2090s.
+For a medical record, the answer is obviously yes, by decades. Kenya's [Digital Health Act](/post/2026-08-01-the-law-is-part-of-the-architecture) 2023 alone requires health records to be kept for twenty years, and that is a floor, not a lifetime. A record created for a child today has to hold its secrecy into the 2090s.
 
 Which is why MedLattice uses quantum-resistant encryption for every record from the very first one, rather than adopting it later when the threat feels closer. There is no upgrade path for a file that has already been copied. You cannot retrospectively re-encrypt something that is sitting on somebody else's disk.
 

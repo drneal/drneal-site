@@ -7,6 +7,9 @@ level: Beginner–Intermediate
 read_time: 40 min
 summary: "Chapter Two of a ground-up account of how large language models work. A model is handed a stream of tokens that mean nothing — arbitrary ID numbers — and a single, almost insultingly simple task: guess the next one. This is the story of why that one task is enough to summon everything an LLM can do, and of the quiet trick that turns a meaningless number into something that behaves like understanding: giving every token a place in space."
 featured: false
+series: How Large Language Models Work
+series_index: 2
+companion: 2026-07-10-train-your-own-gpt
 ---
 
 <a href="/static/img/How_Large_Language_Models_Work.png" target="_blank" rel="noopener"><img src="/static/img/How_Large_Language_Models_Work.png" alt="How an LLM Works — a one-page visual map of all eight chapters" style="display:block; width:100%; height:auto; border-radius:10px; margin:0.4em 0 1.8em; box-shadow:0 2px 12px rgba(0,0,0,0.35);"></a>

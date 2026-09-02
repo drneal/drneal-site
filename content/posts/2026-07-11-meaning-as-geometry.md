@@ -7,6 +7,9 @@ level: Intermediate–Advanced
 read_time: 30 min
 summary: "Lesson 7 of Learning With Dr Neal. The assistant from Lesson 6 knows nothing about your hospital's guidelines, your patient's notes, or anything published since its training data was collected. Closing that gap without retraining is the job of embeddings and retrieval — turning documents into geometry, searching by meaning, and grounding answers in sources you control."
 featured: false
+series: Learning With Dr Neal
+series_index: 7
+companion: 2026-07-23-meaning-you-can-search
 ---
 
 <style>
@@ -64,7 +67,7 @@ figure.diagram figcaption {
 📚 <strong>Lessons series — #7.</strong> This lesson builds directly on <a href="/post/2026-07-11-from-predictor-to-assistant">Lesson 6</a> (what the assistant is) and <a href="/post/2026-07-10-inside-the-transformer">Lesson 4</a> (token embeddings, the context window), and finally explains the machinery behind the Memory component of <a href="/post/2026-07-10-anatomy-of-an-ai-coding-agent">Lesson 3</a>'s agent. The full curriculum lives on the <a href="/lessons">Lessons page</a>.
 </div>
 
-The assistant we assembled across Lessons 4–6 has a strange epistemic profile. It writes beautifully, defaults to helpfulness, and knows a compressed, blurry copy of everything its pretraining corpus contained — as of the day that corpus was collected. It knows *nothing else*. Not your hospital's antimicrobial guidelines. Not the trial published last month. Not the allergy documented in the notes of the patient in front of you. And, as Lesson 6 established, it will answer questions about all of these anyway — fluently.
+The assistant we assembled across Lessons 4–6 has a strange epistemic profile. It writes beautifully, defaults to helpfulness, and knows a compressed, blurry copy of everything its pretraining corpus contained — as of the day that corpus was collected. It knows *nothing else*. Not your hospital's antimicrobial guidelines. Not the trial published last month. Not the allergy documented in the notes of the patient in front of you. And, as [Lesson 6](/post/2026-07-11-from-predictor-to-assistant) established, it will answer questions about all of these anyway — fluently.
 
 You could try to fix this by retraining. For facts, that's the wrong tool: pretraining is a nine-figure industrial process, and Lesson 6's fine-tuning relocates *defaults*, not reliably-recallable knowledge. What you actually want is something more surgical: at the moment a question is asked, *find the right passages from documents you control and hand them to the model as context*. The model then does what it has always done — continue a transcript — except the transcript now contains the evidence.
 
@@ -88,7 +91,7 @@ That is retrieval-augmented generation — **RAG** — and it rests on one genui
 
 ## Meaning as geometry
 
-You met embeddings in Lesson 4 as the transformer's front door: each *token* gets a learned vector, and tokens used similarly end up near each other. The idea scales up. An **embedding model** — itself a transformer, trained for exactly this job — reads a whole sentence, paragraph, or document chunk and outputs a single vector, typically a few hundred to a few thousand numbers, such that **texts with similar meaning land near each other in the vector space**.
+You met embeddings in [Lesson 4](/post/2026-07-10-inside-the-transformer) as the transformer's front door: each *token* gets a learned vector, and tokens used similarly end up near each other. The idea scales up. An **embedding model** — itself a transformer, trained for exactly this job — reads a whole sentence, paragraph, or document chunk and outputs a single vector, typically a few hundred to a few thousand numbers, such that **texts with similar meaning land near each other in the vector space**.
 
 Not similar *wording* — similar *meaning*. A well-trained embedding model places "the patient developed an itchy rash after the first dose of amoxicillin" close to "penicillin allergy — urticaria" and far from "the patient's rash improved after stopping the statin," even though the surface vocabulary overlaps more with the latter. How? Training by contrast: the model sees millions of pairs known to be related (question and its answer, title and its abstract, two translations of one sentence) and is optimised to pull related pairs together and push unrelated ones apart. Geometry is sculpted until distance *means* dissimilarity.
 
@@ -246,7 +249,7 @@ def answer(question):
                f"{context}\n\nQuestion: {question}")
 ```
 
-Twenty lines, and every one of them is a concept you already own: the embedding is Lesson 4's front door scaled up, the `llm()` call is Lesson 6's assistant, and the prompt assembly is Lesson 3's context management. This is also, incidentally, exactly how the Memory system in Lesson 3's agent works: memory notes are chunks, session start embeds the task, and the nearest notes get injected into context. You have now closed that loop.
+Twenty lines, and every one of them is a concept you already own: the embedding is Lesson 4's front door scaled up, the `llm()` call is Lesson 6's assistant, and the prompt assembly is [Lesson 3](/post/2026-07-10-anatomy-of-an-ai-coding-agent)'s context management. This is also, incidentally, exactly how the Memory system in Lesson 3's agent works: memory notes are chunks, session start embeds the task, and the nearest notes get injected into context. You have now closed that loop.
 
 ## Why this beats retraining for knowledge
 
@@ -258,7 +261,7 @@ It's worth being crisp about why retrieval, not fine-tuning, is the default answ
 
 **Access control that actually works.** Retrieval respects permissions: the index can serve different users different document sets. Knowledge baked into weights is available to every user of the model, always — you cannot revoke a fact from a fine-tune.
 
-**Honest failure.** When retrieval finds nothing relevant, the system can *say so* — and a well-prompted model asked to answer only from provided passages will decline far more reliably than one asked to search its own parametric memory, where (Lesson 5) something plausible-sounding is always available.
+**Honest failure.** When retrieval finds nothing relevant, the system can *say so* — and a well-prompted model asked to answer only from provided passages will decline far more reliably than one asked to search its own parametric memory, where ([Lesson 5](/post/2026-07-10-train-your-own-gpt)) something plausible-sounding is always available.
 
 ## Where RAG fails — and how to catch it
 
