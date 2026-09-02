@@ -28,6 +28,14 @@ featured: false
 </style>
 
 <div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎬 <strong>Watch this first &mdash; a quick summary of the text that follows.</strong> Eight minutes on the whole argument: the randomised trial in which physicians who had completed twenty hours of AI-literacy training still deferred to output they had been taught to question, why literacy and discernment are different capacities, and what would have to be built to train the second one. Everything below is the same case at length &mdash; the evidence, the design, the numbers and the honest limits &mdash; so the video is the shape of it and the text is the substance.<br/><br/>
+  <video controls preload="metadata" style="width:100%; margin-top:0.4em; border-radius:6px;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/The_Resented_Reflex.mp4" type="video/mp4">
+    <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/The_Resented_Reflex.mp4">Download the video</a>
+  </video>
+</div>
+
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
   🎧 <strong>Listen to this post:</strong> A deep dive into the argument &mdash; the randomised trial in which physicians with twenty hours of AI-literacy training deferred to answers that were confidently wrong, the mammography study whose average effect was nil while it quietly helped the weakest readers and harmed the strongest, the controlled trial showing that taught debiasing does not transfer at all, and why an examination that scores how many AI errors a candidate catches can be passed at the top of the cohort by someone who has simply stopped trusting the machine.<br/><br/>
   <audio controls preload="none" style="width:100%; margin-top:0.4em;">
     <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Why_smart_doctors_trust_flawed_AI.m4a" type="audio/mp4">
