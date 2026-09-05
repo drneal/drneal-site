@@ -13,6 +13,22 @@ featured: false
 <em>I write here in a personal capacity. This post is about a communication framework, not a clinical guideline, and nothing in it should be read as advice on the management of any individual patient. The worked calls are illustrative.</em>
 </div>
 
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎬 <strong>Watch this first &mdash; a quick summary of the text that follows.</strong> Eight minutes on the whole argument: the three-in-the-morning phone call that contains everything the listener needs and delivers none of it, what the four letters do to that sentence, why the framework was lifted from the control room of a nuclear submarine rather than invented in a hospital, what the evidence does and does not show, and where SBAR stops. Everything below is the same case at length &mdash; the worked call, the history, the variants, the honest reading of the trials and what implementation actually takes &mdash; so the video is the shape of it and the text is the substance.<br/><br/>
+  <video controls preload="metadata" poster="/static/img/four-letters-from-a-submarine/video-poster.jpg" style="width:100%; margin-top:0.4em; border-radius:6px;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/ISBAR___Patient_Safety.mp4" type="video/mp4">
+    <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/ISBAR___Patient_Safety.mp4">Download the video</a>
+  </video>
+</div>
+
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post (52 minutes):</strong> A deep dive into the framework &mdash; how a submarine crew learned to say the important thing first and how that discipline reached the ward, what each of the four moves does to a clinical call, why the R is a recommendation from one seat and a request from another, what the trials of SBAR actually measured, which variant to adopt and why, and the situations in which four letters are not enough.<br/><br/>
+  <audio controls preload="none" style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/How_submarine_protocols_save_hospital_lives.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 There is a particular sentence that every senior clinician has been woken by, and it goes something like this:
 
 > "Hi, sorry to bother you — it's about the gentleman in bed four, the one we admitted yesterday, I think it was yesterday, anyway he's the one with the chest thing, and the nurses are a bit worried about him, he's just not looking great, and I wondered whether you might want to come and have a look at some point?"
