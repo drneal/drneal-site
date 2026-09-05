@@ -29,6 +29,27 @@ featured: false
 }
 </style>
 
+<figure class="kp-fig">
+<a href="/static/img/measuring-what-actually-matters/clinical-ai-training-framework-guide.png" target="_blank" rel="noopener"><img src="/static/img/measuring-what-actually-matters/clinical-ai-training-framework-guide-1600.jpg" alt="Measuring What Actually Matters: the Kirkpatrick framework for clinical AI training. A four-step staircase climbs from Level 1, Reaction (happy sheets and star ratings, which correlate poorly with learning), through Level 2, Learning (invigilated tests and AI-OSCEs in which clinicians must detect seeded AI errors), to Level 3, Behaviour (the Does level of Miller's pyramid — months of workplace-based assessment, mini-CEX and chart audit, with the independent-impression rule that clinicians record their own working impression before opening the AI model), to Level 4, Results (facility indicators such as escalation times, investigation rates and AI-contributed harm). On the left, backward planning runs from Level 4 down to the curriculum, resting on four required drivers: reinforcement, encouragement, reward and monitoring. Top right, the reality of skill decay: procedural discipline has a half-life of about 2.3 months against 15.4 months for factual knowledge, so a 45-minute booster is timed at three months. Below it, behavioural truth is triangulated from three sources — observed encounters, chart audits and sandbox interaction logs — and a table compares stepped-wedge trials, interrupted time series and before-and-after designs for Level 4." style="display:block; width:100%; height:auto; border-radius:10px; box-shadow:0 2px 14px rgba(0,0,0,0.4);"></a>
+<figcaption>The whole post on one sheet: the four Kirkpatrick levels as a staircase up Miller's pyramid, the four drivers that make Level 3 happen, the decay curve that fixes the booster at three months, the three sources that triangulate what a clinician actually does, and the three study designs that can honestly claim a Level 4 result. Click for the full-resolution version.</figcaption>
+</figure>
+
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎬 <strong>Watch this first &mdash; a quick summary of the text that follows.</strong> Eight minutes on the whole argument: why a satisfaction score at the end of a course tells you almost nothing, what the four Kirkpatrick levels actually ask, why Level 3 &mdash; whether a clinician does it on the ward, months later, when nobody is watching &mdash; is the one that costs money and the one that gets dropped, and what it would take to measure it honestly. Everything below is the same case at length &mdash; the instruments, the decay curve, the study designs and the honest limits &mdash; so the video is the shape of it and the text is the substance.<br/><br/>
+  <video controls preload="metadata" poster="/static/img/measuring-what-actually-matters/video-poster.jpg" style="width:100%; margin-top:0.4em; border-radius:6px;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/Measuring_Real_Behavior.mp4" type="video/mp4">
+    <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/Measuring_Real_Behavior.mp4">Download the video</a>
+  </video>
+</div>
+
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post (45 minutes):</strong> A deep dive into commitment ten &mdash; why happy sheets are close to worthless and what they are still good for, how Levels 1 and 2 are built for student-clinicians, what Level 3 looks like in operational detail (mini-CEX, chart audit, the independent-impression rule, the three-month booster), how a Level 4 result can be claimed without fooling yourself, and what this whole apparatus still cannot tell you.<br/><br/>
+  <audio controls preload="none" style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Why_Satisfied_Doctors_Fail_With_AI.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 [Commitment ten](/post/2026-08-05-another-arrow-in-the-quiver#the-pedagogy-i-would-insist-on), in the [blueprint](/post/2026-08-05-another-arrow-in-the-quiver), is one sentence:
 
 > **We measure at Kirkpatrick 3 and 4, or we admit we do not know.** Satisfaction scores are close to worthless.
