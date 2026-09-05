@@ -22,6 +22,30 @@ featured: false
 .ml-fig figcaption { font-size: 0.82em; color: #8ba0b8; text-align: left; padding: 0.8em 0.6em 0.4em; line-height: 1.55; }
 </style>
 
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎬 <strong>Watch this first &mdash; a quick summary of the text that follows.</strong> Nine minutes on the whole argument: why &ldquo;the receptionist cannot see your diagnosis&rdquo; describes a rule rather than a lock, how splitting a record into separately locked drawers and a key tree turns need-to-know into arithmetic, what each role actually receives &mdash; and what the IT department receives, which is nothing &mdash; and why the locks have to hold until the patient is dead rather than until the next procurement cycle. Everything below is the same design at length &mdash; the drawers, the envelopes, the logbook, break-glass, erasure and the honest limits &mdash; so the video is the shape of it and the text is the substance.<br/><br/>
+  <video controls preload="metadata" poster="/static/img/not-shown-is-not-locked/video-poster.jpg" style="width:100%; margin-top:0.4em; border-radius:6px;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/MedLattice__Key_Tree_Privacy.mp4" type="video/mp4">
+    <a href="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/video/MedLattice__Key_Tree_Privacy.mp4">Download the video</a>
+  </video>
+</div>
+
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post (68 minutes):</strong> The full-length conversation about MedLattice &mdash; why hidden is not the same as locked and what happens on the day the software is wrong, how the key tree lets a reader derive everything beneath the key they were handed and nothing beside it, what the shared logbook is for and why it holds no medical data, what the patient controls, what break-glass looks like at three in the morning, how a record is erased when the logbook cannot forget, and why the cryptography was chosen for the length of a human life.<br/><br/>
+  <audio controls preload="none" style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Why_Hidden_Medical_Records_Are_Not_Locked.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>A shorter deep dive (43 minutes):</strong> A second conversation about the design &mdash; why &ldquo;not shown&rdquo; is not the same as locked, how a key tree turns need-to-know into arithmetic, what the shared logbook is actually for, and why the encryption had to be chosen for the length of a human life rather than the length of a procurement cycle.<br/><br/>
+  <audio controls preload="none" style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Mathematical_locks_for_quantum-proof_medical_records.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 There is a sentence in every hospital's information-governance policy that is not true in the way people think it is.
 
 It says something like: *the receptionist cannot see your diagnosis.*
@@ -37,14 +61,6 @@ That gap is the thing I have been building against. This post is the whole desig
 <a href="/static/img/medlattice-blueprint.png" target="_blank" rel="noopener"><img src="/static/img/medlattice-blueprint.svg" alt="MedLattice — locking a patient record, not hiding it. Five panels. One: the conventional record is one database behind one login, where a permissions table declines to draw the diagnosis, so one misconfiguration, injection flaw or angry administrator turns cannot-see into can-see. Two: MedLattice splits the record into about twenty separately locked drawers, splits each drawer into individually sealed envelopes, and uses a key tree in which a key cuts only the keys below it — the clerk is given one branch and can reach the surname and birth date beneath it but not the diagnosis or notes on the branch beside. Three: who sees what — a reception clerk gets name, date of birth and contact but not diagnoses or notes; a nurse gets observations, medications, allergies and the diagnosis name but not the notes behind it; a consultant gets the full clinical record and genetics but not mental health, and only for patients they are treating; a pharmacist gets medications, allergies and kidney and liver results; the patient gets every drawer and can restrict a category or dismiss a clinician; IT and hosting staff get nothing at all. Four: a shared append-only logbook held by hospital, laboratory and regulator, recording who, what, why and when, with no medical data in it. Five: the break-glass procedure — override instantly, reason recorded, four hours then gone, still inside the role limits, patient notified, counter increments. A footer names the cryptography: ML-KEM-1024 with X448, ML-DSA-87 with Ed448, AES-256-GCM with key commitment, and hash-only notarisation of history." style="display:block; width:100%; height:auto; border-radius:10px; margin:1.6em 0 1em; box-shadow:0 2px 12px rgba(0,0,0,0.35);"></a>
 
 The whole argument on one sheet. Top left, the problem: one container, one login, and a permissions table that decides what gets drawn on the screen — which is worth precisely nothing on the day the software is wrong. In the middle, the answer: about twenty separately locked drawers, each broken down again into individually sealed envelopes, and the key tree that lets a reader derive everything beneath the key they were handed and nothing above it or beside it. Down the right, what that produces for each person who opens the record — a receptionist with a name and a date, a nurse with the observations and the name of the diagnosis but not the notes behind it, a consultant with the clinical record but only for patients they are actually treating, a pharmacist with the drugs and the kidney function, a patient who can restrict a category or dismiss a clinician outright, and an IT department excluded by arithmetic rather than by contract. Bottom centre, the shared logbook that holds every look and every refusal and no medical data at all. Bottom left, the break-glass procedure — deliberately easy to use and impossible to hide.
-
-<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
-  🎧 <strong>Listen to this post:</strong> A deep dive into the design &mdash; why &ldquo;not shown&rdquo; is not the same as locked, how a key tree turns need-to-know into arithmetic, what the shared logbook is actually for, and why the encryption had to be chosen for the length of a human life rather than the length of a procurement cycle.<br/><br/>
-  <audio controls preload="none" style="width:100%; margin-top:0.4em;">
-    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Mathematical_locks_for_quantum-proof_medical_records.m4a" type="audio/mp4">
-    Your browser does not support the audio element.
-  </audio>
-</div>
 
 ## What I am building, in one page
 
