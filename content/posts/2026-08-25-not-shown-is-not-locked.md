@@ -38,14 +38,6 @@ featured: false
   </audio>
 </div>
 
-<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
-  🎧 <strong>A shorter deep dive (43 minutes):</strong> A second conversation about the design &mdash; why &ldquo;not shown&rdquo; is not the same as locked, how a key tree turns need-to-know into arithmetic, what the shared logbook is actually for, and why the encryption had to be chosen for the length of a human life rather than the length of a procurement cycle.<br/><br/>
-  <audio controls preload="none" style="width:100%; margin-top:0.4em;">
-    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/Mathematical_locks_for_quantum-proof_medical_records.m4a" type="audio/mp4">
-    Your browser does not support the audio element.
-  </audio>
-</div>
-
 There is a sentence in every hospital's information-governance policy that is not true in the way people think it is.
 
 It says something like: *the receptionist cannot see your diagnosis.*
