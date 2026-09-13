@@ -132,6 +132,13 @@
     </h3>
     <p style="font-size:.9rem;color:var(--text-muted);margin:0 0 .4rem;line-height:1.55">{{ item.why }}</p>
     <a class="read-more" href="/post/{{ item.post.slug }}">Read &rarr;</a>
+    {% if item.pdfs %}
+    <div class="library-filters" style="margin:.7rem 0 0">
+      {% for label, href, pages in item.pdfs %}
+      <a class="filter-btn" href="{{ href }}">&#11015; {{ label }} <span class="text-dim">{{ pages }}</span></a>
+      {% endfor %}
+    </div>
+    {% endif %}
   </div>
   {% endfor %}
 

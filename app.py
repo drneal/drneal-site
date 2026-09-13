@@ -341,6 +341,30 @@ def post(slug):
 # The Kenya Institute for Clinical AI proposal. The five companion essays are
 # looked up from the posts themselves rather than restated here, so titles, dates
 # and read times can never drift out of sync with the posts.
+# Downloadable PDFs offered per essay in the institute series. The Blueprint
+# essay carries the full document set (itself plus its three annexes); each
+# companion essay carries just its own typeset PDF.
+INSTITUTE_PDFS = {
+    "2026-08-05-another-arrow-in-the-quiver": [
+        ("Blueprint", "/static/Kenya_Institute_for_Clinical_AI_Blueprint.pdf", "45 pp"),
+        ("Annex A \u2014 Business case", "/static/A-business-case.pdf", "15 pp"),
+        ("Annex B \u2014 Competency standards", "/static/B-competency-standards.pdf", "13 pp"),
+        ("Annex C \u2014 Level 1 common core", "/static/C-level-1-common-core.pdf", "21 pp"),
+    ],
+    "2026-08-10-borrowed-from-an-art-school": [
+        ("PDF", "/static/Borrowed-From-an-Art-School.pdf", "8 pp"),
+    ],
+    "2026-08-11-one-hidden-error": [
+        ("PDF", "/static/One-Hidden-Error.pdf", "16 pp"),
+    ],
+    "2026-08-12-the-angoff-panel-for-testing-clinicians": [
+        ("PDF", "/static/The-Angoff-Panel-for-Testing-Clinicians.pdf", "15 pp"),
+    ],
+    "2026-08-17-measuring-what-actually-matters": [
+        ("PDF", "/static/Measuring-What-Actually-Matters.pdf", "33 pp"),
+    ],
+}
+
 INSTITUTE_SERIES = [
     ("2026-08-05-another-arrow-in-the-quiver",
      "The proposal itself: the case, the institution, the curriculum, the sequence, "
@@ -363,7 +387,7 @@ INSTITUTE_SERIES = [
 @app.route("/institute")
 def institute():
     by_slug = {p["slug"]: p for p in load_posts()}
-    series = [{"post": by_slug[slug], "why": why}
+    series = [{"post": by_slug[slug], "why": why, "pdfs": INSTITUTE_PDFS.get(slug, [])}
               for slug, why in INSTITUTE_SERIES if slug in by_slug]
     return render_template("institute.html", series=series)
 
