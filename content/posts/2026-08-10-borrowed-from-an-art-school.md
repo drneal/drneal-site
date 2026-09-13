@@ -15,6 +15,20 @@ featured: false
 <em>I write here in a personal capacity. This post is a companion to <a href="/post/2026-08-05-another-arrow-in-the-quiver" style="color:#00d4f5;">Another Arrow in the Quiver</a>, which sets out the blueprint the framework sits underneath. Three further companions follow: <a href="/post/2026-08-11-one-hidden-error" style="color:#00d4f5;">One Hidden Error</a> on the OSCE and the AI-OSCE, <a href="/post/2026-08-12-the-angoff-panel-for-testing-clinicians" style="color:#00d4f5;">The Angoff Panel</a> on where the pass mark comes from, and <a href="/post/2026-08-17-measuring-what-actually-matters" style="color:#00d4f5;">Measuring What Actually Matters</a> on Kirkpatrick levels 3 and 4.</em>
 </div>
 
+---
+
+## Download this essay as a PDF
+
+Eight pages, one continuous argument: where the AI Fluency Framework came from, why its provenance outside medicine is the reason it transfers to clinical work, and exactly what I kept, reframed, reweighted and added on the way to a clinical adaptation.
+
+<div style="background: linear-gradient(135deg, #0D1B2A 0%, #14384f 100%); color: white; padding: 1.4em 1.8em; border-radius: 8px; margin: 1.5em 0;">
+  <strong style="font-size: 1.08em;">📄 Aggarwal N. <em>Borrowed From an Art School: Where the Clinical AI Framework Actually Came From.</em> 2026.</strong>
+  <br><br>
+  <a href="/static/Borrowed-From-an-Art-School.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (65 KB, 8 pages)</a>
+</div>
+
+---
+
 When I published the blueprint for a national clinical AI institute last week, the competency framework underneath it carried an attribution line that most readers will have skimmed past:
 
 > Domains adapted from the AI Fluency Framework by Prof. Rick Dakan (Ringling) and Prof. Joseph Feller (UCC) / Anthropic.

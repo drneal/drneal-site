@@ -15,6 +15,20 @@ featured: false
 <em>I write here in a personal capacity. This is the third companion to <a href="/post/2026-08-05-another-arrow-in-the-quiver" style="color:#00d4f5;">Another Arrow in the Quiver</a>, following <a href="/post/2026-08-10-borrowed-from-an-art-school" style="color:#00d4f5;">Borrowed From an Art School</a> on where the competency framework came from and <a href="/post/2026-08-11-one-hidden-error" style="color:#00d4f5;">One Hidden Error</a> on the OSCE and the AI-OSCE. It is followed by <a href="/post/2026-08-17-measuring-what-actually-matters" style="color:#00d4f5;">Measuring What Actually Matters</a> on Kirkpatrick levels 3 and 4 — where the cut score set here goes on to be used, and where its limits show.</em>
 </div>
 
+---
+
+## Download this essay as a PDF
+
+Fifteen pages unpacking one sentence from a facilitator deck: what a cut score actually is, who the borderline candidate is, a fully worked panel with the arithmetic exposed, and precisely where Angoff stops working.
+
+<div style="background: linear-gradient(135deg, #0D1B2A 0%, #14384f 100%); color: white; padding: 1.4em 1.8em; border-radius: 8px; margin: 1.5em 0;">
+  <strong style="font-size: 1.08em;">📄 Aggarwal N. <em>The Angoff Panel for Testing Clinicians.</em> 2026.</strong>
+  <br><br>
+  <a href="/static/The-Angoff-Panel-for-Testing-Clinicians.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (197 KB, 15 pages)</a>
+</div>
+
+---
+
 The final slide of the Level 1 facilitator deck is called **Assessment Architecture**. In the Knowledge Assessment column, between "40-item invigilated MCQ" and the note about Discernment carrying 40% of the weight, sits this:
 
 > **Standard set by modified Angoff panel (No arbitrary 50% pass rate).**

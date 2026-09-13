@@ -13,6 +13,20 @@ featured: false
 <em>I write here in a personal capacity. This is the fourth companion to <a href="/post/2026-08-05-another-arrow-in-the-quiver" style="color:#00d4f5;">Another Arrow in the Quiver</a>, following <a href="/post/2026-08-10-borrowed-from-an-art-school" style="color:#00d4f5;">Borrowed From an Art School</a> on where the competency framework came from, <a href="/post/2026-08-11-one-hidden-error" style="color:#00d4f5;">One Hidden Error</a> on the OSCE and the AI-OSCE, and <a href="/post/2026-08-12-the-angoff-panel-for-testing-clinicians" style="color:#00d4f5;">The Angoff Panel</a> on where the pass mark comes from. Read on its own it should still make sense; nothing here assumes you have taught before.</em>
 </div>
 
+---
+
+## Download this essay as a PDF
+
+Thirty-three pages on the tenth pedagogical commitment: what Kirkpatrick levels 3 and 4 actually require, how to observe and audit a student-clinician at three and twelve months, and a working catalogue of the other pedagogical instruments in play.
+
+<div style="background: linear-gradient(135deg, #0D1B2A 0%, #14384f 100%); color: white; padding: 1.4em 1.8em; border-radius: 8px; margin: 1.5em 0;">
+  <strong style="font-size: 1.08em;">📄 Aggarwal N. <em>Measuring What Actually Matters: Kirkpatrick 3 and 4 for Student-Clinicians.</em> 2026.</strong>
+  <br><br>
+  <a href="/static/Measuring-What-Actually-Matters.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (320 KB, 33 pages)</a>
+</div>
+
+---
+
 <style>
 .kp-callout { font-size: 0.9em; background: #101a2e; border-left: 4px solid #00d4f5; padding: 0.9em 1.3em; margin: 1.4em 0; border-radius: 0 4px 4px 0; }
 .kp-warn { font-size: 0.9em; background: #1a0f14; border-left: 4px solid #f87171; padding: 0.9em 1.3em; margin: 1.4em 0; border-radius: 0 4px 4px 0; }

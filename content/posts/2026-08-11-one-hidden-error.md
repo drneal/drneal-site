@@ -15,6 +15,20 @@ featured: false
 <em>I write here in a personal capacity. This post is a companion to <a href="/post/2026-08-05-another-arrow-in-the-quiver" style="color:#00d4f5;">Another Arrow in the Quiver</a>, which sets out the blueprint the framework sits underneath, and to <a href="/post/2026-08-10-borrowed-from-an-art-school" style="color:#00d4f5;">Borrowed From an Art School</a>, which traces where the competency framework came from. Two further companions follow: <a href="/post/2026-08-12-the-angoff-panel-for-testing-clinicians" style="color:#00d4f5;">The Angoff Panel</a> on where the pass mark comes from, and <a href="/post/2026-08-17-measuring-what-actually-matters" style="color:#00d4f5;">Measuring What Actually Matters</a> on why a pass here tells you nothing about what happens on the ward eight months later.</em>
 </div>
 
+---
+
+## Download this essay as a PDF
+
+Sixteen pages on the exam the whole blueprint rests on: what an OSCE is, why Harden built it, what an AI-OSCE would add, and why conjunctive failure means a fluent candidate can still fail the station.
+
+<div style="background: linear-gradient(135deg, #0D1B2A 0%, #14384f 100%); color: white; padding: 1.4em 1.8em; border-radius: 8px; margin: 1.5em 0;">
+  <strong style="font-size: 1.08em;">📄 Aggarwal N. <em>One Hidden Error: What an OSCE Is, and What an AI-OSCE Would Be.</em> 2026.</strong>
+  <br><br>
+  <a href="/static/One-Hidden-Error.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (303 KB, 16 pages)</a>
+</div>
+
+---
+
 A curriculum is a promise. An examination is the only part of it that can be broken.
 
 You can write a beautiful syllabus, teach it with conviction, and issue a certificate at the end, and none of that tells you whether the person holding the certificate can actually do the thing. The assessment is where the promise is tested, and it is the part of my blueprint that will decide whether the whole institute is worth building or is an expensive way of producing lanyards.
