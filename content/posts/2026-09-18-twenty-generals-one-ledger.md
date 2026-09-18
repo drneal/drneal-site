@@ -304,6 +304,10 @@ O(n&sup2;) message complexity is a hard ceiling on how many validators a QBFT ne
 | Smart contract | A program stored on a shared ledger and executed identically by every node, so its logic cannot be quietly altered by any one party |
 | Validator | A node authorised to propose and vote on new blocks under the consensus protocol |
 
+<div style="font-size:0.92em; background:#101a2e; border-left:4px solid #f0a836; padding:1em 1.3em; margin:1.4em 0; border-radius:0 4px 4px 0;">
+📄 <a href="/static/Twenty_Generals_One_Ledger.pdf" style="color:#f0a836; font-weight:bold;">Twenty Generals, One Ledger (PDF)</a> <span style="color:#6b82a0;">&mdash; this post as a single downloadable document, for printing or reading offline. Same diagrams, same references, same argument &mdash; no audio yet; that link will be added here once the companion deep dive exists.</span>
+</div>
+
 ## Further reading
 
 The primary sources behind this post, in case you want the mathematics rather than my summary of it:
