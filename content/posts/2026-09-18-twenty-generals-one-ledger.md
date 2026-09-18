@@ -5,12 +5,12 @@ category: AI & Medicine
 tags: Hyperledger, Besu, QBFT, Byzantine fault tolerance, PBFT, IBFT 2.0, consensus, blockchain, MedLattice, distributed ledger, smart contracts, Ethereum, EVM
 level: All readers — no technical background assumed
 read_time: 25 min
-summary: "MedLattice's own specification states its topology in one line — 'permissioned EVM consortium (Besu/QBFT)' — and moves on. This post is the argument behind that line, built from the ground up: what a blockchain is actually doing underneath the word, why a permissioned chain and not a public one, what the Byzantine Generals Problem is and why every consensus protocol in use today is answering a question posed in 1982, how Practical Byzantine Fault Tolerance became Istanbul BFT became QBFT, why Besu specifically rather than Fabric or Corda, and how MedLattice's own three contracts — IdentityRegistry, ConsentCapabilityManager, RecordAnchorRegistry — sit on top of all of it. It closes with what the choice does not solve. The audio companion is still being made; I did not want that to hold up the text."
+summary: "MedLattice's own specification states its topology in one line — 'permissioned EVM consortium (Besu/QBFT)' — and moves on. This post is the argument behind that line, built from the ground up: what a blockchain is actually doing underneath the word, why a permissioned chain and not a public one, what the Byzantine Generals Problem is and why every consensus protocol in use today is answering a question posed in 1982, how Practical Byzantine Fault Tolerance became Istanbul BFT became QBFT, why Besu specifically rather than Fabric or Corda, and how MedLattice's own three contracts — IdentityRegistry, ConsentCapabilityManager, RecordAnchorRegistry — sit on top of all of it. It closes with what the choice does not solve."
 featured: false
 ---
 
 <div style="font-size:0.85em; background:#111827; border-left:4px solid #6b82a0; padding:0.9em 1.3em; border-radius:0 6px 6px 0; margin:1.5em 0; color:#9fb3cc;">
-<em>I write here in a personal capacity. This post is a companion to <a href="/post/2026-08-25-not-shown-is-not-locked">Not Shown Is Not Locked</a>, which describes MedLattice's cryptography in full; this one is about the ledger underneath it, not the record itself. There is no audio deep dive on this post yet — the one I generated turned out to be a tour of the whole Hyperledger family rather than this specific decision, so I am making a proper one and will add it here once it exists.</em>
+<em>I write here in a personal capacity. This post is a companion to <a href="/post/2026-08-25-not-shown-is-not-locked">Not Shown Is Not Locked</a>, which describes MedLattice's cryptography in full; this one is about the ledger underneath it, not the record itself.</em>
 </div>
 
 <style>
@@ -19,6 +19,14 @@ featured: false
 .tg-fig { background: #0c1420; border: 1px solid #1f2b3d; border-radius: 8px; padding: 1.2em 1em 0.6em; margin: 1.8em 0; text-align: center; }
 .tg-fig figcaption { font-size: 0.82em; color: #8ba0b8; text-align: left; padding: 0.8em 0.6em 0.4em; line-height: 1.55; }
 </style>
+
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post (56 minutes):</strong> The full-length conversation about why MedLattice runs on Hyperledger Besu and QBFT &mdash; what a blockchain is actually doing underneath the word, the fork between public and permissioned chains and why a hospital consortium takes the permissioned one, the Byzantine Generals Problem and the messengers who might not arrive, how Practical Byzantine Fault Tolerance became Istanbul BFT became QBFT, why Besu specifically rather than Fabric or Corda, what actually runs on MedLattice's own chain &mdash; IdentityRegistry, ConsentCapabilityManager, RecordAnchorRegistry &mdash; and what the choice does not solve.<br/><br/>
+  <audio controls preload="none" style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/How_QBFT_Secures_Medical_Records.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 
 Every consensus protocol running on a blockchain today — including the one under MedLattice — is a working answer to a question first posed precisely in 1982, about generals who cannot fully trust each other and messengers who might not arrive.
 
@@ -80,21 +88,21 @@ On a **permissioned** chain, only vetted, known organisations may run a node at 
   </g>
   <g font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10.5">
     <g stroke="#10b981" stroke-width="1.1" opacity="0.85">
-      <line x1="500" y1="82"  x2="420" y2="140"/><line x1="500" y1="82"  x2="580" y2="140"/>
-      <line x1="500" y1="82"  x2="500" y2="200"/><line x1="500" y1="82"  x2="450" y2="205"/>
-      <line x1="420" y1="140" x2="580" y2="140"/><line x1="420" y1="140" x2="500" y2="200"/>
-      <line x1="420" y1="140" x2="450" y2="205"/><line x1="580" y1="140" x2="500" y2="200"/>
-      <line x1="580" y1="140" x2="450" y2="205"/><line x1="500" y1="200" x2="450" y2="205"/>
+      <line x1="500" y1="68" x2="569" y2="118"/><line x1="500" y1="68" x2="542" y2="198"/>
+      <line x1="500" y1="68" x2="458" y2="198"/><line x1="500" y1="68" x2="432" y2="118"/>
+      <line x1="569" y1="118" x2="542" y2="198"/><line x1="569" y1="118" x2="458" y2="198"/>
+      <line x1="569" y1="118" x2="432" y2="118"/><line x1="542" y1="198" x2="458" y2="198"/>
+      <line x1="542" y1="198" x2="432" y2="118"/><line x1="458" y1="198" x2="432" y2="118"/>
     </g>
     <g fill="#0e2b22" stroke="#10b981" stroke-width="1.2">
-      <rect x="467" y="62" width="66" height="22" rx="4"/><rect x="388" y="130" width="66" height="22" rx="4"/>
-      <rect x="548" y="130" width="66" height="22" rx="4"/><rect x="467" y="190" width="66" height="22" rx="4"/>
-      <rect x="417" y="195" width="66" height="22" rx="4"/>
+      <rect x="462" y="56" width="76" height="24" rx="4"/><rect x="530" y="106" width="76" height="24" rx="4"/>
+      <rect x="504" y="186" width="76" height="24" rx="4"/><rect x="420" y="186" width="76" height="24" rx="4"/>
+      <rect x="393" y="106" width="76" height="24" rx="4"/>
     </g>
     <g fill="#8ff0cc" text-anchor="middle">
-      <text x="500" y="77">Hospital A</text><text x="421" y="145">Regulator</text>
-      <text x="581" y="145">Hospital B</text><text x="500" y="205">Laboratory</text>
-      <text x="450" y="210">Hospital C</text>
+      <text x="500" y="72">Hospital A</text><text x="568" y="122">Hospital B</text>
+      <text x="542" y="202">Laboratory</text><text x="458" y="202">Hospital C</text>
+      <text x="431" y="122">Regulator</text>
     </g>
   </g>
   <g font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="10.5" fill="#7f8ea1">
@@ -305,7 +313,7 @@ O(n&sup2;) message complexity is a hard ceiling on how many validators a QBFT ne
 | Validator | A node authorised to propose and vote on new blocks under the consensus protocol |
 
 <div style="font-size:0.92em; background:#101a2e; border-left:4px solid #f0a836; padding:1em 1.3em; margin:1.4em 0; border-radius:0 4px 4px 0;">
-📄 <a href="/static/Twenty_Generals_One_Ledger.pdf" style="color:#f0a836; font-weight:bold;">Twenty Generals, One Ledger (PDF)</a> <span style="color:#6b82a0;">&mdash; this post as a single downloadable document, for printing or reading offline. Same diagrams, same references, same argument &mdash; no audio yet; that link will be added here once the companion deep dive exists.</span>
+📄 <a href="/static/Twenty_Generals_One_Ledger.pdf" style="color:#f0a836; font-weight:bold;">Twenty Generals, One Ledger (PDF)</a> <span style="color:#6b82a0;">&mdash; this post as a single downloadable document, for printing or reading offline. Same diagrams, same references, same argument.</span>
 </div>
 
 ## Further reading
@@ -322,4 +330,4 @@ The primary sources behind this post, in case you want the mathematics rather th
 - Kaleido — [Comparing Hyperledger Fabric and Hyperledger Besu: A Deep Dive](https://www.kaleido.io/blockchain-blog/comparing-hyperledger-fabric-and-hyperledger-besu)
 - NIST — [FIPS 203, the ML-KEM standard](https://csrc.nist.gov/pubs/fips/203/final) (August 2024), referenced above and covered in full in <a href="/post/2026-08-25-not-shown-is-not-locked">Not Shown Is Not Locked</a>
 
-I'll add the audio deep dive here once I've made one that's actually about this decision rather than the whole Hyperledger landscape. If you spot a gap in the reasoning above — particularly on the validator-governance question I flagged as unresolved — I'd rather hear it now than after it's calcified into the spec.
+If you spot a gap in the reasoning above — particularly on the validator-governance question I flagged as unresolved — I'd rather hear it now than after it's calcified into the spec.
