@@ -25,6 +25,14 @@ Twenty-two pages walking through quantum superposition, Euclid's algorithm, and 
   <a href="/static/The-Spinning-Coin-and-the-Stolen-Key.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (381 KB, 22 pages, 8 figures)</a>
 </div>
 
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post (43 minutes):</strong> The full conversation behind this post — why a quantum computer running Shor's algorithm is a nearer, more concrete threat than AI takeover narratives, how superposition and the quantum Fourier transform actually let it find a hidden period, and why ML-KEM's lattice mathematics resists the same attack that breaks RSA and secp256k1.<br/><br/>
+  <audio controls preload="none" style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/How_Shor_s_Algorithm_Breaks_Modern_Encryption.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 ---
 
 <style>
