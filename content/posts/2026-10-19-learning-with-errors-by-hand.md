@@ -30,6 +30,14 @@ The whole argument as a printable essay — Learning With Errors worked by hand 
   <a href="/static/Learning-With-Errors-by-Hand.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (580 KB, 35 pages, 3 figures)</a>
 </div>
 
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post (71 minutes):</strong> The full conversation behind this essay &mdash; why equations anyone can solve become unsolvable once each answer is nudged by a whisper of noise, how that noise turns into the problem of finding the nearest point on a lattice, how one bit is locked by shifting it half-way round a clock, how the toy grows into ML-KEM-1024, why Shor&rsquo;s algorithm finds no period to grip, and what 2026&rsquo;s claimed break, shrinking attack estimates and leaking chips actually mean for MedLattice.<br/><br/>
+  <audio controls preload="none" style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/How_Broken_Math_Defeats_Quantum_Computers.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 ---
 
 <style>
