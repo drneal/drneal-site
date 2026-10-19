@@ -20,6 +20,18 @@ featured: false
 
 ---
 
+## Download this essay as a PDF
+
+The whole argument as a printable essay — Learning With Errors worked by hand on numbers you can check with a pencil, the lattice geometry underneath it, one bit locked and unlocked, the spreadsheet and the Python, the walk from that toy to ML-KEM-1024, and what 2026 threw at the assumption.
+
+<div style="background: linear-gradient(135deg, #0D1B2A 0%, #14384f 100%); color: white; padding: 1.4em 1.8em; border-radius: 8px; margin: 1.5em 0;">
+  <strong style="font-size: 1.08em;">📄 Aggarwal N. <em>Learning With Errors, by Hand: The Mathematics MedLattice Is Named After.</em> 2026.</strong>
+  <br><br>
+  <a href="/static/Learning-With-Errors-by-Hand.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (580 KB, 35 pages, 3 figures)</a>
+</div>
+
+---
+
 <style>
 .lw-key { font-size: 0.95em; background: #101a2e; border-left: 4px solid #00d4f5; padding: 0.9em 1.3em; margin: 1.4em 0; border-radius: 0 4px 4px 0; }
 .lw-story { font-size: 0.93em; background: #1d1408; border-left: 4px solid #f0a836; padding: 0.9em 1.3em; margin: 1.4em 0; border-radius: 0 4px 4px 0; }
