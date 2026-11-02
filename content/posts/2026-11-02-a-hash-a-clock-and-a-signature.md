@@ -27,7 +27,15 @@ The whole argument as a printable essay — a payment channel worked through fiv
 <div style="background: linear-gradient(135deg, #0D1B2A 0%, #14384f 100%); color: white; padding: 1.4em 1.8em; border-radius: 8px; margin: 1.5em 0;">
   <strong style="font-size: 1.08em;">📄 Aggarwal N. <em>A Hash, a Clock and a Signature: The Lightning Network, by Hand, and the Malipo Rail.</em> 2026.</strong>
   <br><br>
-  <a href="/static/A-Hash-a-Clock-and-a-Signature.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (601 KB, 36 pages, 3 figures)</a>
+  <a href="/static/A-Hash-a-Clock-and-a-Signature.pdf" style="background: white; color: #0D1B2A; padding: 0.5em 1.2em; border-radius: 4px; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 0.3em;">⬇ Download PDF (602 KB, 37 pages, 3 figures)</a>
+</div>
+
+<div style="font-size:0.8em; background:#1a1f2e; border-left:4px solid #1a237e; padding:1em 1.4em; border-radius:0 6px 6px 0; margin:1.5em 0;">
+  🎧 <strong>Listen to this post (62 minutes):</strong> The full conversation behind this essay &mdash; how a payment channel turns signed but unbroadcast transactions into money two parties can trust, why broadcasting an old state is suicidal, how one hash and a shrinking clock let a payment cross strangers who cannot steal it, why liquidity makes every payment a probability, how a hold invoice wired to M-Pesa&rsquo;s Daraja API lets bitcoin land as shillings on a phone, and why the re-specified Malipo Rail keeps patients on M-Pesa and the Institute&rsquo;s reserves out of channels altogether.<br/><br/>
+  <audio controls preload="none" style="width:100%; margin-top:0.4em;">
+    <source src="https://pub-f57cd770c3d9448dafde9725cbc874b9.r2.dev/audio/How_Bitcoin_Lightning_Bridges_to_M-Pesa.m4a" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
 </div>
 
 ---
