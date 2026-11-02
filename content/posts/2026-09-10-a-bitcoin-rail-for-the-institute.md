@@ -13,6 +13,10 @@ featured: false
 <em>I write here in a personal capacity. This post is a status update on work in progress, not a finished piece — it exists to keep readers of the <a href="/post/2026-08-05-another-arrow-in-the-quiver">Institute blueprint</a> and <a href="/post/2026-08-25-not-shown-is-not-locked">MedLattice</a> posts abreast of what comes next while I am still arguing with myself about the details. I expect to delete this post and replace it with a proper, full-length piece once the design has been through more rounds of that argument.</em>
 </div>
 
+<div style="font-size:0.9em; background:#0e1e1a; border-left:4px solid #10b981; padding:0.9em 1.3em; border-radius:0 6px 6px 0; margin:1.5em 0; color:#cfe9dd;">
+<strong>Update, 2 November 2026:</strong> the full write-up is now published as <a href="/post/2026-11-02-a-hash-a-clock-and-a-signature">A Hash, a Clock and a Signature: The Lightning Network, by Hand, and the Malipo Rail</a>. It explains how Lightning works from first principles, connects it to M-Pesa, and corrects three points in the draft discussed below. I have kept this note, with its video and audio, as the record of where the design started.
+</div>
+
 <style>
 .mr-honest { font-size: 0.93em; background: #1a0f14; border-left: 4px solid #f87171; padding: 0.9em 1.3em; margin: 1.4em 0; border-radius: 0 4px 4px 0; }
 .mr-key { font-size: 0.95em; background: #101a2e; border-left: 4px solid #00d4f5; padding: 0.9em 1.3em; margin: 1.4em 0; border-radius: 0 4px 4px 0; }
